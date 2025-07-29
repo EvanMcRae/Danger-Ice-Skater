@@ -8,7 +8,7 @@ Developed in Unity 6.1 (Version 6000.1.13f1) for the 2025 GMTK Game Jam.
 - Dax Mikow
 - Evan McRae
 - Ryan Whitfield
-- Ky "Lupidcorvid" DeSilva
+- Ky "LupidCorvid" DeSilva
 
 **Artists**
 - Luke Schultz
