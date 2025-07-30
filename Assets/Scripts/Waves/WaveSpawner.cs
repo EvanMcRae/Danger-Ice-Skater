@@ -1,8 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using Enemies;
+using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Waves {
     public class WaveSpawner : MonoBehaviour {
+        public EnemyTypeManager enemyTypeManager;
         public WaveManager waveManagerSO;
 
         /// <summary>
@@ -41,7 +45,7 @@ namespace Waves {
         /// </summary>
         /// <returns>True if the sub wave was properly progressed, else false.</returns>
         public bool NextSubWave() {
-            if (waveManagerSO.waves.Count <= currentSubWave + 1) {
+            if (waveManagerSO.waves[currentWave].subWaves.Count <= currentSubWave + 1) {
                 Debug.Log("All subwaves cleared!");
                 return false; //All sub-waves cleared!
             }
@@ -53,10 +57,15 @@ namespace Waves {
         ///     Spawns the enemies in the current sub wave.
         /// </summary>
         public void SpawnSubWave() {
-            //Debug.Log("Spawning sub wave " + currentSubWave);
-            foreach (EnemyListEntry enemySet in waveManagerSO.waves[currentWave].subWaves[currentSubWave].setEnemyTypes) {
+            Debug.Log("Spawning sub wave " + currentSubWave);
+            Wave wave = waveManagerSO.waves[currentWave];
+            SubWave subWave = wave.subWaves[currentSubWave];
+            
+            List<EnemyListEntry> enemies = ConvertCreditsToWaves(wave.waveLevel, subWave.randomEnemyCredits, subWave.enemies);
+            
+            foreach (EnemyListEntry enemySet in enemies) {
                 
-                //Debug.Log("Spawning " + enemySet.count + " " + enemySet.enemy + " enemies!"); 
+                Debug.Log("Spawning " + enemySet.count + " " + enemySet.enemy + " enemies!"); 
                 
                 for (int i = 0; i < enemySet.count; i++) {
                     GetValidSpawnLocation();
@@ -72,6 +81,50 @@ namespace Waves {
         /// <returns>The spawn position.</returns>
         public Vector3 GetValidSpawnLocation() {
             return Vector3.zero; //TODO: Find a valid location, after rink impl.
+        }
+
+        public List<EnemyListEntry> ConvertCreditsToWaves(int level, int credits, List<EnemyListEntry> enemyList) {
+            
+            //Get a list of the possible enemies we can spawn, ASSUMES THE ENEMIES IN THE ETM ARE SORTED BY LEVEL!
+            List<EnemyMapping> validEnemies = new List<EnemyMapping>();
+            foreach (EnemyMapping e in enemyTypeManager.enemies) {
+                if (e.enemyData.enemyLevel > level) break;
+                validEnemies.Add(e);
+            }
+            
+            if (validEnemies.Count == 0) return enemyList;
+            
+            List<EnemyListEntry> enemyListCopy = new List<EnemyListEntry>(enemyList);
+            
+            //Add random enemies from possible to the valid enemies list
+            
+            while (credits > 0) {
+                //Get a random enemy
+                int random = Random.Range(0, validEnemies.Count);
+
+                //Remove the enemy trying to be selected if the enemy is too expensive.
+                if (credits < validEnemies[random].enemyData.creditCost) {
+                    validEnemies.RemoveAt(random);
+                    continue;
+                }
+                //Subtract the credits it costs
+                credits -= validEnemies[random].enemyData.creditCost;
+
+                //Iterate over the existing list to see if it's already in there
+                bool found = false;
+                for (int i = 0; i < enemyListCopy.Count; i++) {
+                    if (enemyListCopy[i].enemy == validEnemies[random].enemyType) {
+                        enemyListCopy[i].count++;
+                        found = true;
+                        break;
+                    }
+                }
+                //If the enemy wasn't already added, add it to the list of enemies to spawn.
+                if (!found) enemyListCopy.Add(new EnemyListEntry(validEnemies[random].enemyType, 1));
+                
+            }
+
+            return enemyListCopy;
         }
 
         public void Update() {
