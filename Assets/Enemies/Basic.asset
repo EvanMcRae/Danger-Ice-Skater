@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
   enemyType: 0
-  creditCost: 0
-  enemyLevel: 0
+  creditCost: 10
+  enemyLevel: 1

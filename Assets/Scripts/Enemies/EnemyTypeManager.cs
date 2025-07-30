@@ -9,7 +9,7 @@ namespace Enemies {
     [Serializable]
     public struct EnemyMapping {
         public EnemyType enemyType;
-        [FormerlySerializedAs("enemyPrefab")] public EnemyData enemyData;
+        public EnemyData enemyData;
     }
     
     [CreateAssetMenu(fileName = "Enemy Type Manager", menuName = "Managers")]

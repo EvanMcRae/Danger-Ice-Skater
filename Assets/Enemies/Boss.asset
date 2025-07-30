@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Boss
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  enemyType: 0
-  creditCost: 0
-  enemyLevel: 0
+  enemyType: 2
+  creditCost: 300
+  enemyLevel: 5
