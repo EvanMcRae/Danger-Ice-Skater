@@ -23,9 +23,9 @@ namespace Enemies
 
         public override void Behavior()
         {
-            print(m_speed);
+            //print(m_speed);
             GameObject player = GameObject.FindGameObjectWithTag("Player");
-            LinearMovement(player.transform.position);
+            //LinearMovement(player.transform.position);
         }
     }
 }
