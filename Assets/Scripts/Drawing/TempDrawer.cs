@@ -13,8 +13,17 @@ public class TempDrawer : MonoBehaviour
     public bool isDrawing = false;
     public bool hasOverlapped = false;
 
-    public const float LOOP_ALLOWANCE = 0.2f;
+    public const float LOOP_ALLOWANCE = 1f;
     public const int MIN_POINTS = 8;
+    public const float RESOLUTION = 0.1f;
+
+    private LineRenderer lineRenderer;
+    private Vector2 lastMousePos;
+
+    private void Start()
+    {
+        lineRenderer = GetComponent<LineRenderer>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -22,9 +31,17 @@ public class TempDrawer : MonoBehaviour
         if (Mouse.current.leftButton.IsPressed())
         {
             isDrawing = true;
-            Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-            Physics.Raycast(ray, out RaycastHit hit);
-            Points.Add(new(hit.point.x, hit.point.z));
+            Vector2 mousePos = Mouse.current.position.ReadValue();
+
+            if (Vector2.Distance(mousePos, lastMousePos) >= RESOLUTION)
+            {
+                lastMousePos = mousePos;
+                Ray ray = Camera.main.ScreenPointToRay(mousePos);
+                Physics.Raycast(ray, out RaycastHit hit);
+                Points.Add(new(hit.point.x, hit.point.z));
+                lineRenderer.positionCount++;
+                lineRenderer.SetPosition(lineRenderer.positionCount - 1, hit.point - transform.position);
+            }
         }
 
         if (isDrawing)
@@ -74,6 +91,7 @@ public class TempDrawer : MonoBehaviour
 
         // Clear points array for next time
         Points = new();
+        lineRenderer.positionCount = 0;
         isDrawing = false;
         hasOverlapped = false;
     }
@@ -93,8 +111,6 @@ public class TempDrawer : MonoBehaviour
 
     bool IsClosedLoop()
     {
-        return true;
-
-        //return Points.Count >= MIN_POINTS && Vector2.Distance(Points[0], Points[^1]) <= LOOP_ALLOWANCE;
+        return Points.Count >= MIN_POINTS && Vector2.Distance(Points[0], Points[^1]) <= LOOP_ALLOWANCE;
     }
 }
