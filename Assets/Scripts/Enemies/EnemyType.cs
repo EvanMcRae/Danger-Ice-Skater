@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Waves {
+namespace Enemies {
     [Serializable]
     public enum EnemyType {
         BASIC,
