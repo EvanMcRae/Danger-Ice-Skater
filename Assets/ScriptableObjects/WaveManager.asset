@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da51db570094d2383fa5baab0b9d9b8, type: 3}
+  m_Name: WaveManager
+  m_EditorClassIdentifier: 
+  waves:
+  - subWaves:
+    - enemies:
+      - enemy: 0
+        count: 3
+      randomEnemyCredits: 0
+    - enemies:
+      - enemy: 0
+        count: 5
+      randomEnemyCredits: 0
+    - enemies:
+      - enemy: 0
+        count: 10
+      randomEnemyCredits: 0
+    waveLevel: 0
+  - subWaves:
+    - enemies:
+      - enemy: 0
+        count: 30
+      randomEnemyCredits: 100
+    - enemies:
+      - enemy: 1
+        count: 2
+      - enemy: 0
+        count: 20
+      randomEnemyCredits: 200
+    - enemies:
+      - enemy: 0
+        count: 40
+      - enemy: 1
+        count: 5
+      randomEnemyCredits: 300
+    waveLevel: 1
+  - subWaves:
+    - enemies:
+      - enemy: 1
+        count: 17
+      - enemy: 0
+        count: 15
+      randomEnemyCredits: 1000
+    - enemies: []
+      randomEnemyCredits: 0
+    - enemies: []
+      randomEnemyCredits: 0
+    - enemies: []
+      randomEnemyCredits: 0
+    waveLevel: 3
