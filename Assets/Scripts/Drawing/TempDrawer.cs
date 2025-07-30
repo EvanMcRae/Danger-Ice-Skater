@@ -38,7 +38,6 @@ public class TempDrawer : MonoBehaviour
 
         if (Keyboard.current[Key.R].wasPressedThisFrame)
         {
-            Debug.Log("hiuhih");
             foreach (GameObject _ in DrawnObjects)
             {
                 Destroy(_);
