@@ -13,5 +13,11 @@ MonoBehaviour:
   m_Name: EnemyTypeManager
   m_EditorClassIdentifier: 
   enemies:
-  - enemyType: 0
+  - enemyType: 1
+    enemyPrefab: {fileID: 0}
+  - enemyType: 2
+    enemyPrefab: {fileID: 0}
+  - enemyType: 3
+    enemyPrefab: {fileID: 0}
+  - enemyType: 4
     enemyPrefab: {fileID: 0}
