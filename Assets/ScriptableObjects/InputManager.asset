@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ccd45c42123d43408c1de77d30782ba, type: 3}
+  m_Name: InputManager
+  m_EditorClassIdentifier: 
+  xAxis: {fileID: 4515558967355559614, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  yAxis: {fileID: -5463600593059028787, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  jump: {fileID: 7369011187908980499, guid: 052faaac586de48259a63d0c4782560b, type: 3}
