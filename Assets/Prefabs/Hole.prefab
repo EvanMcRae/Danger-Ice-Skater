@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7331307831011578558}
   - component: {fileID: 1414796201927455464}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PolygonCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,8 @@ GameObject:
   - component: {fileID: 4984899129906041357}
   - component: {fileID: 3036528227239451664}
   - component: {fileID: 3524833632236488885}
-  m_Layer: 0
+  - component: {fileID: 4010535588170157198}
+  m_Layer: 6
   m_Name: Hole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,10 +188,22 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &4010535588170157198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4884329261990287930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf5cedbf6c05c4e128adae5005550dbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
