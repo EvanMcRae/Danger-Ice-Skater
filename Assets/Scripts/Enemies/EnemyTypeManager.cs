@@ -8,7 +8,7 @@ namespace Enemies {
     [Serializable]
     public struct EnemyMapping {
         public EnemyType enemyType;
-        public Enemy enemyPrefab;
+        public EnemyData enemyPrefab;
     }
     
     [CreateAssetMenu(fileName = "Enemy Type Manager")]
@@ -16,7 +16,7 @@ namespace Enemies {
 
         public List<EnemyMapping> enemies;
 
-        public Enemy Get(EnemyType type) {
+        public EnemyData Get(EnemyType type) {
             foreach (EnemyMapping pair in enemies) {
                 if (pair.enemyType == type) return pair.enemyPrefab;
             }
