@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ccd45c42123d43408c1de77d30782ba, type: 3}
+  m_Name: InputManager
+  m_EditorClassIdentifier: 
+  XAxis:
+    m_Name: X Axis
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: aad79197-2983-4532-956b-5fc925d2e506
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: LeftRight
+      m_Id: 5556f98c-9b95-4fba-80b9-0801e9796387
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: X Axis
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 9c5f493b-99d3-4a08-a266-34d4e44575fe
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: X Axis
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: c7c4de77-55cc-4622-89f5-99192de19aea
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: X Axis
+      m_Flags: 8
+    m_Flags: 0
+  YAxis:
+    m_Name: Y Axis
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 19a6cd93-a620-4300-8594-96e2ee1f63b3
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: DownUp
+      m_Id: 93f7d053-96bb-43b2-b16d-15146ba90325
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Y Axis
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 013c6c3c-d2ac-41c5-a464-f674fd21981b
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Y Axis
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 87499a18-6e5f-4eaf-bf5f-51af37a4e291
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Y Axis
+      m_Flags: 8
+    m_Flags: 0
+  Jump:
+    m_Name: Jump
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: fd621f9e-2544-4114-83c9-ff3e468df0a3
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 50984732-edfb-4674-9dad-37c2b155eba2
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Jump
+      m_Flags: 0
+    m_Flags: 0
