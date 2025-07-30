@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Enemies;
+using UnityEngine.Serialization;
 
 namespace Waves { 
     
@@ -8,9 +9,14 @@ namespace Waves {
     ///     A list entry that stores enemy type and count to spawn.
     /// </summary>
     [Serializable]
-    public struct EnemyListEntry {
+    public class EnemyListEntry {
         public EnemyType enemy;
         public int count;
+
+        public EnemyListEntry(EnemyType enemy, int count) {
+            this.enemy = enemy;
+            this.count = count;
+        }
     }
     
     /// <summary>
@@ -21,7 +27,8 @@ namespace Waves {
         /// <summary>
         ///     The list of enemies and counts.
         /// </summary>
-        public List<EnemyListEntry> setEnemyTypes;
+        public List<EnemyListEntry> enemies;
+        
         /// <summary>
         ///     The number of credits that the waves have to buy smaller enemies with.
         /// </summary>

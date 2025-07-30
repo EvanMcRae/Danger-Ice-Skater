@@ -6,7 +6,7 @@ namespace Waves {
     /// <summary>
     ///     Contains a list of the waves.
     /// </summary>
-    [CreateAssetMenu(fileName = "Wave Manager")]
+    [CreateAssetMenu(fileName = "Wave Manager", menuName = "Managers")]
     public class WaveManager : ScriptableObject {
         /// <summary>
         ///     The waves.
