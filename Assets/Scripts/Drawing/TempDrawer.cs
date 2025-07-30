@@ -78,7 +78,7 @@ public class TempDrawer : MonoBehaviour
             Mesh mesh = poly.CreateMesh(false, false);
             if (mesh == null)
             {
-                Debug.LogError("Null mesh!! why? idk, unity sucks!");
+                Debug.LogError("Null mesh, did you go out of bounds?");
             }
             //MeshRenderer meshRenderer = newDrawnObject.GetComponent<MeshRenderer>();
             MeshFilter meshFilter = newDrawnObject.GetComponent<MeshFilter>();
