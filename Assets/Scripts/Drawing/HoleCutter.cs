@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class TempDrawer : MonoBehaviour
+public class HoleCutter : MonoBehaviour
 {
-    [SerializeField] private GameObject DrawnObjectPrefab;
-    [SerializeField] private List<GameObject> DrawnObjects;
+    [SerializeField] private GameObject HolePrefab;
+    [SerializeField] private List<GameObject> Holes;
 
     public List<Vector2> Points = new();
 
@@ -55,7 +55,7 @@ public class TempDrawer : MonoBehaviour
 
         if (Keyboard.current[Key.R].wasPressedThisFrame)
         {
-            foreach (GameObject _ in DrawnObjects)
+            foreach (GameObject _ in Holes)
             {
                 Destroy(_);
             }
@@ -71,22 +71,22 @@ public class TempDrawer : MonoBehaviour
     {
         if (IsClosedLoop())
         {
-            // Spawn new drawn object, converting drawn points into a PolygonCollider2D and then into a mesh
-            GameObject newDrawnObject = Instantiate(DrawnObjectPrefab, transform.position, Quaternion.identity);
-            PolygonCollider2D poly = newDrawnObject.GetComponentInChildren<PolygonCollider2D>();
+            // Spawn new hole, converting drawn points into a PolygonCollider2D and then into a mesh
+            GameObject newHole = Instantiate(HolePrefab, transform.position, Quaternion.identity);
+            PolygonCollider2D poly = newHole.GetComponentInChildren<PolygonCollider2D>();
             poly.points = Points.ToArray();
             Mesh mesh = poly.CreateMesh(false, false);
             if (mesh == null)
             {
-                Debug.LogError("Null mesh, did you go out of bounds?");
+                Debug.LogError("Null hole mesh, did you draw out of bounds?");
             }
             //MeshRenderer meshRenderer = newDrawnObject.GetComponent<MeshRenderer>();
-            MeshFilter meshFilter = newDrawnObject.GetComponent<MeshFilter>();
+            MeshFilter meshFilter = newHole.GetComponent<MeshFilter>();
             meshFilter.mesh = mesh;
-            MeshCollider meshCollider = newDrawnObject.GetComponent<MeshCollider>();
+            MeshCollider meshCollider = newHole.GetComponent<MeshCollider>();
             meshCollider.sharedMesh = mesh;
-            newDrawnObject.transform.SetPositionAndRotation(new Vector3(0, -29.9f, 30), Quaternion.Euler(90, 0, 0));
-            DrawnObjects.Add(newDrawnObject);
+            newHole.transform.SetPositionAndRotation(new Vector3(0, -29.9f, 30), Quaternion.Euler(90, 0, 0));
+            Holes.Add(newHole);
         }
 
         // Clear points array for next time

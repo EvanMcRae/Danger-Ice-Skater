@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 295178771}
   - component: {fileID: 295178773}
   m_Layer: 0
-  m_Name: TempDrawer
+  m_Name: HoleCutter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,11 +146,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 295178770}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b1181af7b33ed4478192d289e62953b, type: 3}
+  m_Script: {fileID: 11500000, guid: 054997dca76554247b6d85d98a902ab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DrawnObjectPrefab: {fileID: 4884329261990287930, guid: 3c87df03299336b4aaf6ff2fd2ef509c, type: 3}
-  DrawnObjects: []
+  HolePrefab: {fileID: 4884329261990287930, guid: 3c87df03299336b4aaf6ff2fd2ef509c, type: 3}
+  Holes: []
   Points: []
   isDrawing: 0
   hasOverlapped: 0
@@ -565,63 +565,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 1
---- !u!1001 &720611949
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2895458946814763177, guid: 3c87df03299336b4aaf6ff2fd2ef509c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.84561
-      objectReference: {fileID: 0}
-    - target: {fileID: 2895458946814763177, guid: 3c87df03299336b4aaf6ff2fd2ef509c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -30
-      objectReference: {fileID: 0}
-    - target: {fileID: 2895458946814763177, guid: 3c87df03299336b4aaf6ff2fd2ef509c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.67345
-      objectReference: {fileID: 0}
-    - target: {fileID: 2895458946814763177, guid: 3c87df03299336b4aaf6ff2fd2ef509c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2895458946814763177, guid: 3c87df03299336b4aaf6ff2fd2ef509c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2895458946814763177, guid: 3c87df03299336b4aaf6ff2fd2ef509c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2895458946814763177, guid: 3c87df03299336b4aaf6ff2fd2ef509c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2895458946814763177, guid: 3c87df03299336b4aaf6ff2fd2ef509c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2895458946814763177, guid: 3c87df03299336b4aaf6ff2fd2ef509c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2895458946814763177, guid: 3c87df03299336b4aaf6ff2fd2ef509c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4884329261990287930, guid: 3c87df03299336b4aaf6ff2fd2ef509c, type: 3}
-      propertyPath: m_Name
-      value: DrawnObject
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3c87df03299336b4aaf6ff2fd2ef509c, type: 3}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,6 +827,5 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 944782022}
-  - {fileID: 720611949}
   - {fileID: 295178772}
   - {fileID: 1644779074}

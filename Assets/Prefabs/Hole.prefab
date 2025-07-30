@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7331307831011578558}
   - component: {fileID: 1414796201927455464}
   m_Layer: 0
-  m_Name: Polygon
+  m_Name: PolygonCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 3036528227239451664}
   - component: {fileID: 3524833632236488885}
   m_Layer: 0
-  m_Name: DrawnObject
+  m_Name: Hole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
