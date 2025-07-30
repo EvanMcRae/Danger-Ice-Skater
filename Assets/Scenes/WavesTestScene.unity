@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d35217ae2f7441b4b449a50f61011409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyTypeManager: {fileID: 11400000, guid: 0981b7ed99cb7f1439d28cb8d896121a, type: 2}
   waveManagerSO: {fileID: 11400000, guid: 7d0ae3bb436f6e14caee43a21c38f8f8, type: 2}
   currentWave: -1
   currentSubWave: -1

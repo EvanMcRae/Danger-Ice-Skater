@@ -14,57 +14,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - subWaves:
-    - setEnemyTypes:
+    - enemies:
       - enemy: 0
         count: 3
       randomEnemyCredits: 0
-    - setEnemyTypes:
-      - enemy: 0
-        count: 3
-      randomEnemyCredits: 0
-    - setEnemyTypes:
+    - enemies:
       - enemy: 0
         count: 5
       randomEnemyCredits: 0
-  - subWaves:
-    - setEnemyTypes:
-      - enemy: 0
-        count: 3
-      - enemy: 1
-        count: 1
-      randomEnemyCredits: 0
-    - setEnemyTypes:
-      - enemy: 0
-        count: 4
-      - enemy: 1
-        count: 2
-      randomEnemyCredits: 0
-    - setEnemyTypes:
-      - enemy: 1
-        count: 3
-      randomEnemyCredits: 0
-  - subWaves:
-    - setEnemyTypes:
+    - enemies:
       - enemy: 0
         count: 10
       randomEnemyCredits: 0
-    - setEnemyTypes:
+    waveLevel: 0
+  - subWaves:
+    - enemies:
       - enemy: 0
-        count: 5
+        count: 30
+      randomEnemyCredits: 100
+    - enemies:
       - enemy: 1
-        count: 5
-      randomEnemyCredits: 0
-    - setEnemyTypes:
-      - enemy: 0
         count: 2
-      - enemy: 1
-        count: 8
-      randomEnemyCredits: 0
-    - setEnemyTypes:
       - enemy: 0
-        count: 8
+        count: 20
+      randomEnemyCredits: 200
+    - enemies:
+      - enemy: 0
+        count: 40
       - enemy: 1
-        count: 8
-      - enemy: 2
-        count: 1
+        count: 5
+      randomEnemyCredits: 300
+    waveLevel: 1
+  - subWaves:
+    - enemies:
+      - enemy: 1
+        count: 17
+      - enemy: 0
+        count: 15
+      randomEnemyCredits: 1000
+    - enemies: []
       randomEnemyCredits: 0
+    - enemies: []
+      randomEnemyCredits: 0
+    - enemies: []
+      randomEnemyCredits: 0
+    waveLevel: 3
