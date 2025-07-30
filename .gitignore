@@ -77,3 +77,7 @@ crashlytics-build.properties
 # VSCode
 .vscode/*
 .vs/*
+
+# Mac
+mono_crash.*
+.DS_Store
