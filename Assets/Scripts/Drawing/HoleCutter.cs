@@ -6,10 +6,10 @@ using UnityEngine.InputSystem;
 public class HoleCutter : MonoBehaviour
 {
     [SerializeField] private GameObject HolePrefab;
-    [SerializeField] private List<GameObject> Holes;
+    public static List<GameObject> Holes = new();
 
     [SerializeField] private GameObject CutoutPrefab;
-    [SerializeField] private List<GameObject> Cutouts;
+    public static List<GameObject> Cutouts = new();
 
     public List<Vector2> Points = new();
 
