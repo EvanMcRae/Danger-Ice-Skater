@@ -8,8 +8,12 @@ public class HoleCutter : MonoBehaviour
     [SerializeField] private GameObject HolePrefab;
     [SerializeField] private List<GameObject> Holes;
 
+    [SerializeField] private GameObject CutoutPrefab;
+    [SerializeField] private List<GameObject> Cutouts;
+
     public List<Vector2> Points = new();
 
+    public bool isTouchingGround = false;
     public bool isDrawing = false;
     public bool hasOverlapped = false;
 
@@ -18,7 +22,11 @@ public class HoleCutter : MonoBehaviour
     public const float RESOLUTION = 0.1f;
     public const int MAX_POINTS = 200;
     private LineRenderer lineRenderer;
-    private Vector2 lastMousePos;
+    private Vector3 lastPos;
+
+    [SerializeField] private PlayerControler player;
+
+    [SerializeField] private float planeHeight;
 
     private void Start()
     {
@@ -28,17 +36,15 @@ public class HoleCutter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Mouse.current.leftButton.IsPressed())
+        if (player.isTouchingGround)
         {
             isDrawing = true;
-            Vector2 mousePos = Mouse.current.position.ReadValue();
+            Vector3 pos = player.transform.position;
 
-            if (Vector2.Distance(mousePos, lastMousePos) >= RESOLUTION)
+            if (Vector3.Distance(pos, lastPos) >= RESOLUTION)
             {
-                lastMousePos = mousePos;
-                Ray ray = Camera.main.ScreenPointToRay(mousePos);
-                Physics.Raycast(ray, out RaycastHit hit, 1000, ~(1 << 2));
-                Vector2 pointToAdd = new(hit.point.x, hit.point.z);
+                lastPos = pos;
+                Vector2 pointToAdd = new(pos.x, pos.z);
 
                 if (Points.Count > 0)
                 {
@@ -74,19 +80,19 @@ public class HoleCutter : MonoBehaviour
 
                 if (Points.Count < MAX_POINTS)
                 {
-                    Points.Add(new(hit.point.x, hit.point.z));
+                    Points.Add(pointToAdd);
                     lineRenderer.positionCount++;
-                    lineRenderer.SetPosition(lineRenderer.positionCount - 1, hit.point - transform.position);
+                    lineRenderer.SetPosition(lineRenderer.positionCount - 1, new Vector3(pos.x, planeHeight, pos.z));
                 }
                 else
                 {
                     //Move buffer over. Poor scaling run time (O(n)), but size is capped small enough it is not an issue. 
                     Points.RemoveAt(0);
-                    Points.Add(new(hit.point.x, hit.point.z));
+                    Points.Add(pointToAdd);
 
                     for(int i = 0; i < lineRenderer.positionCount; i++)
                     {
-                        lineRenderer.SetPosition(i, new Vector3(Points[i].x, 0, Points[i].y));
+                        lineRenderer.SetPosition(i, new Vector3(Points[i].x, planeHeight, Points[i].y));
                     }
                     
                 }
@@ -94,18 +100,16 @@ public class HoleCutter : MonoBehaviour
             }
         }
 
-        if (isDrawing)
+        if (isDrawing && !player.isTouchingGround)
         {
-            if (ShouldEndDraw())
-            {
-                // Clear points array for next time
-                Points = new();
-                lineRenderer.positionCount = 0;
-                isDrawing = false;
-                hasOverlapped = false;
-            }
+            // Clear points array for next time
+            Points = new();
+            lineRenderer.positionCount = 0;
+            isDrawing = false;
+            hasOverlapped = false;
         }
 
+        // TODO DEBUG - remove
         if (Keyboard.current[Key.R].wasPressedThisFrame)
         {
             foreach (GameObject _ in Holes)
@@ -115,16 +119,12 @@ public class HoleCutter : MonoBehaviour
         }
     }
 
-    bool ShouldEndDraw()
-    {
-        return InputSystem.actions["Jump"].WasPressedThisFrame() || Mouse.current.leftButton.wasReleasedThisFrame;
-    }
-
-
     void MakeCutout(List<Vector2> points)
     {
         // Spawn new hole, converting drawn points into a PolygonCollider2D and then into a mesh
         GameObject newHole = Instantiate(HolePrefab, transform.position, Quaternion.identity);
+        GameObject newCutout = Instantiate(CutoutPrefab, transform.position, Quaternion.identity);
+
         PolygonCollider2D poly = newHole.GetComponentInChildren<PolygonCollider2D>();
         poly.points = points.ToArray();
         Mesh mesh = poly.CreateMesh(false, false);
@@ -132,13 +132,44 @@ public class HoleCutter : MonoBehaviour
         {
             Debug.LogError("Null hole mesh, did you draw out of bounds?");
         }
-        MeshFilter meshFilter = newHole.GetComponent<MeshFilter>();
-        meshFilter.mesh = mesh;
-        MeshCollider meshCollider = newHole.GetComponent<MeshCollider>();
-        meshCollider.sharedMesh = mesh;
-        newHole.transform.SetPositionAndRotation(new Vector3(0, -29.9999f, 30), Quaternion.Euler(90, 0, 0));
         poly.enabled = false;
+
+        PopulateMesh(newHole, mesh, false);
+        PopulateMesh(newCutout, mesh, true);
+        
         Holes.Add(newHole);
+        Cutouts.Add(newCutout);
+    }
+
+    void PopulateMesh(GameObject newObject, Mesh mesh, bool isCutout)
+    {
+        MeshFilter meshFilter = newObject.GetComponent<MeshFilter>();
+        meshFilter.mesh = mesh;
+        MeshCollider meshCollider = newObject.GetComponent<MeshCollider>();
+        meshCollider.sharedMesh = mesh;
+
+        if (isCutout)
+        {
+            // Apply UV coordinates for texture rendering
+            Vector2[] uvs = new Vector2[mesh.vertexCount];
+            Bounds bounds = mesh.bounds;
+            for (int i = 0; i < mesh.vertexCount; i++)
+            {
+                // Map each vertex to a UV based on its position relative to the bounds
+                uvs[i] = new Vector2((mesh.vertices[i].x - bounds.min.x) / bounds.size.x, (mesh.vertices[i].y - bounds.min.y) / bounds.size.y);
+            }
+            mesh.uv = uvs;
+
+            // Calculate normals
+            mesh.RecalculateNormals();
+        }
+
+        if (mesh == null)
+        {
+            Debug.LogError("Null hole mesh, did you draw out of bounds?");
+        }
+
+        newObject.transform.SetPositionAndRotation(new Vector3(0, planeHeight + 0.0001f, 0), Quaternion.Euler(90, 0, 0));
     }
 
     //From https://www.reddit.com/r/gamedev/comments/7ww4yx/whats_the_easiest_way_to_check_if_two_line/

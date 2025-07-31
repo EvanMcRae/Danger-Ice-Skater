@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2030717889472604321}
   - component: {fileID: 2537937922704579174}
   - component: {fileID: 8138859471652383118}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TrapEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &8138859471652383118
 MonoBehaviour:
@@ -154,6 +154,8 @@ MonoBehaviour:
   gameEventBroadcaster: {fileID: 11400000, guid: f8714c97c5f2ac84fa1762773bdaad01, type: 2}
   m_spawnLocation: {x: 0, y: 0, z: 0}
   m_enemyType: 4
+  m_killHeight: -10
+  m_isDead: 0
   player: {fileID: 0}
   rb: {fileID: 2537937922704579174}
   rotateTowardsPlayer: 0
