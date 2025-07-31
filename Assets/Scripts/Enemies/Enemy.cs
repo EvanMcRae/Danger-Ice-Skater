@@ -13,11 +13,14 @@ namespace Enemies {
             //TODO: Play death animation
             Destroy(gameObject);
         }
-        public void LinearMovement(Vector3 target)
+        public int DistanceFromPlayer()
         {
-            gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, target, m_speed);
+            print("WIP");
+            return 0;
         }
-
-        public abstract void Behavior();
+        //public void LinearMovement(Vector3 target)
+        //{
+        //    gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, target, m_speed);
+        //}
     }
 }

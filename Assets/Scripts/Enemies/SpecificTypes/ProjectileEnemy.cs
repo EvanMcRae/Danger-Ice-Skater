@@ -40,10 +40,5 @@ namespace Enemies.SpecificTypes {
 
         }
         
-        
-        
-        public override void Behavior() {
-            //throw new System.NotImplementedException();
-        }
     }
 }

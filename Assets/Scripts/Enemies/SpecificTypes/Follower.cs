@@ -7,7 +7,7 @@ namespace Enemies {
         public Rigidbody rb;
         
         public bool rotateTowardsPlayer;
-        public bool moveTowardsPlayer;
+        public bool moveTowardsPlayer; //Check this to make enemy go towards player
 
         public float moveForce;
 
@@ -32,9 +32,6 @@ namespace Enemies {
                 rb.AddForce(vectorDiff * moveForce, ForceMode.Force);
             }
         }
-
-        public override void Behavior() {
-            //throw new System.NotImplementedException();
-        }
+        
     }
 }
