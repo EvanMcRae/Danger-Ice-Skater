@@ -5,20 +5,30 @@ using UnityEngine.InputSystem;
 
 public class HoleCutter : MonoBehaviour
 {
+    public struct Point
+    {
+        public Vector2? coord;
+        public int age;
+    }
+
     [SerializeField] private GameObject HolePrefab;
     [SerializeField] private List<GameObject> Holes;
 
-    public List<Vector2> Points = new();
-
     public bool isDrawing = false;
     public bool hasOverlapped = false;
+    public int overlapStart = -1, overlapEnd = -1;
 
-    public const float LOOP_ALLOWANCE = 1f;
-    public const int MIN_POINTS = 8;
-    public const float RESOLUTION = 0.1f;
+    public const float LOOP_ALLOWANCE = 0.2f;
+    public const int MIN_POINTS = 30;
+    public const float RESOLUTION = 2f;
 
     private LineRenderer lineRenderer;
     private Vector2 lastMousePos;
+
+    public const int MAX_POINTS = 400;
+    public List<Point> Points = new();
+
+    public int numPoints = 0;
 
     private void Start()
     {
@@ -37,10 +47,28 @@ public class HoleCutter : MonoBehaviour
             {
                 lastMousePos = mousePos;
                 Ray ray = Camera.main.ScreenPointToRay(mousePos);
-                Physics.Raycast(ray, out RaycastHit hit);
-                Points.Add(new(hit.point.x, hit.point.z));
-                lineRenderer.positionCount++;
-                lineRenderer.SetPosition(lineRenderer.positionCount - 1, hit.point - transform.position);
+                Physics.Raycast(ray, out RaycastHit hit, 1000, ~(1 << 2));
+
+                numPoints++;
+
+                if (lineRenderer.positionCount < MAX_POINTS)
+                {
+                    lineRenderer.positionCount++;
+                }
+
+                // Keep cycling list of points
+                Point newPoint;
+                newPoint.coord = new(hit.point.x, hit.point.z);
+                newPoint.age = numPoints;
+                Points.Add(newPoint);
+                if (numPoints > MAX_POINTS)
+                {
+                    Points.RemoveAt(0);
+                }
+
+                lineRenderer.SetPosition((numPoints - 1) % MAX_POINTS, hit.point - transform.position);
+                
+                //if ((numPoints - 1) % MAX_POINTS == 0) Debug.Break();
             }
         }
 
@@ -53,6 +81,7 @@ public class HoleCutter : MonoBehaviour
             }
         }
 
+        // TODO DEBUG -- reset key
         if (Keyboard.current[Key.R].wasPressedThisFrame)
         {
             foreach (GameObject _ in Holes)
@@ -69,12 +98,30 @@ public class HoleCutter : MonoBehaviour
 
     void EndDraw()
     {
-        if (IsClosedLoop())
+        if (hasOverlapped)
         {
             // Spawn new hole, converting drawn points into a PolygonCollider2D and then into a mesh
             GameObject newHole = Instantiate(HolePrefab, transform.position, Quaternion.identity);
             PolygonCollider2D poly = newHole.GetComponentInChildren<PolygonCollider2D>();
-            poly.points = Points.ToArray();
+
+            // Get only the two points that touched
+            List<Vector2> pts = new();
+            for (int i = overlapStart; i <= overlapEnd; i++)
+            {
+                if (Points[i].coord != null)
+                    pts.Add(Points[i].coord.Value);
+            }
+
+            poly.points = pts.ToArray();
+
+            // Null out the points in the hole
+            for (int i = overlapStart; i <= overlapEnd; i++)
+            {
+                Point pt = Points[i];
+                pt.coord = null;
+                Points[i] = pt;
+            }
+
             Mesh mesh = poly.CreateMesh(false, false);
             if (mesh == null)
             {
@@ -90,9 +137,6 @@ public class HoleCutter : MonoBehaviour
             Holes.Add(newHole);
         }
 
-        // Clear points array for next time
-        Points = new();
-        lineRenderer.positionCount = 0;
         isDrawing = false;
         hasOverlapped = false;
     }
@@ -100,18 +144,22 @@ public class HoleCutter : MonoBehaviour
     void CheckOverlap()
     {
         if (hasOverlapped) return;
-        for (int i = 0; i < Points.Count - 2; i++) // 2 instead of 1 to prevent detecting a collision with the previously drawn point (which would otherwise always happen)
+        for (int i = 0; i < Mathf.Min(numPoints, MAX_POINTS) - 1; i++)
         {
-            if (Vector2.Distance(Points[i], Points[^1]) < 0.02f)
+            for (int j = i + 1; j < Mathf.Min(numPoints, MAX_POINTS); j++)
             {
-                hasOverlapped = true;
-                return;
+                if (Points[i].coord != null && Points[j].coord != null)
+                {
+                    if (Vector2.Distance(Points[i].coord.Value, Points[j].coord.Value) <= LOOP_ALLOWANCE
+                        && Points[j].age - Points[i].age >= MIN_POINTS)
+                    {
+                        hasOverlapped = true;
+                        overlapStart = i;
+                        overlapEnd = j;
+                        return;
+                    }
+                }
             }
         }
-    }
-
-    bool IsClosedLoop()
-    {
-        return Points.Count >= MIN_POINTS && Vector2.Distance(Points[0], Points[^1]) <= LOOP_ALLOWANCE;
     }
 }
