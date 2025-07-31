@@ -14,6 +14,7 @@ namespace Enemies.SpecificTypes {
         }
 
         public new void Update() {
+            base.Update();
             dashDelay -= Time.deltaTime;
             if (dashDelay <= 0) {
                 moveTowardsPlayer = false;
