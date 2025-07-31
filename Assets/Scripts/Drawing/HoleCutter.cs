@@ -8,6 +8,9 @@ public class HoleCutter : MonoBehaviour
     [SerializeField] private GameObject HolePrefab;
     [SerializeField] private List<GameObject> Holes;
 
+    [SerializeField] private GameObject CutoutPrefab;
+    [SerializeField] private List<GameObject> Cutouts;
+
     public List<Vector2> Points = new();
 
     public bool isTouchingGround = false;
@@ -120,6 +123,8 @@ public class HoleCutter : MonoBehaviour
     {
         // Spawn new hole, converting drawn points into a PolygonCollider2D and then into a mesh
         GameObject newHole = Instantiate(HolePrefab, transform.position, Quaternion.identity);
+        GameObject newCutout = Instantiate(CutoutPrefab, transform.position, Quaternion.identity);
+
         PolygonCollider2D poly = newHole.GetComponentInChildren<PolygonCollider2D>();
         poly.points = points.ToArray();
         Mesh mesh = poly.CreateMesh(false, false);
@@ -127,13 +132,44 @@ public class HoleCutter : MonoBehaviour
         {
             Debug.LogError("Null hole mesh, did you draw out of bounds?");
         }
-        MeshFilter meshFilter = newHole.GetComponent<MeshFilter>();
-        meshFilter.mesh = mesh;
-        MeshCollider meshCollider = newHole.GetComponent<MeshCollider>();
-        meshCollider.sharedMesh = mesh;
-        newHole.transform.SetPositionAndRotation(new Vector3(0, planeHeight + 0.0001f, 30), Quaternion.Euler(90, 0, 0));
         poly.enabled = false;
+
+        PopulateMesh(newHole, mesh, false);
+        PopulateMesh(newCutout, mesh, true);
+        
         Holes.Add(newHole);
+        Cutouts.Add(newCutout);
+    }
+
+    void PopulateMesh(GameObject newObject, Mesh mesh, bool isCutout)
+    {
+        MeshFilter meshFilter = newObject.GetComponent<MeshFilter>();
+        meshFilter.mesh = mesh;
+        MeshCollider meshCollider = newObject.GetComponent<MeshCollider>();
+        meshCollider.sharedMesh = mesh;
+
+        if (isCutout)
+        {
+            // Apply UV coordinates for texture rendering
+            Vector2[] uvs = new Vector2[mesh.vertexCount];
+            Bounds bounds = mesh.bounds;
+            for (int i = 0; i < mesh.vertexCount; i++)
+            {
+                // Map each vertex to a UV based on its position relative to the bounds
+                uvs[i] = new Vector2((mesh.vertices[i].x - bounds.min.x) / bounds.size.x, (mesh.vertices[i].y - bounds.min.y) / bounds.size.y);
+            }
+            mesh.uv = uvs;
+
+            // Calculate normals
+            mesh.RecalculateNormals();
+        }
+
+        if (mesh == null)
+        {
+            Debug.LogError("Null hole mesh, did you draw out of bounds?");
+        }
+
+        newObject.transform.SetPositionAndRotation(new Vector3(0, planeHeight + 0.0001f, 0), Quaternion.Euler(90, 0, 0));
     }
 
     //From https://www.reddit.com/r/gamedev/comments/7ww4yx/whats_the_easiest_way_to_check_if_two_line/
