@@ -74,6 +74,10 @@ public class HoleCutter : MonoBehaviour
                         }
 
                         MakeCutout(cutoutPoints);
+
+                        Points.RemoveRange(intersectPoint, Points.Count - intersectPoint);
+                        intersectPoint = -1;
+
                         Debug.Log("CuttingSegment");
                     }
                 }
@@ -81,8 +85,8 @@ public class HoleCutter : MonoBehaviour
                 if (Points.Count < MAX_POINTS)
                 {
                     Points.Add(pointToAdd);
-                    lineRenderer.positionCount++;
-                    lineRenderer.SetPosition(lineRenderer.positionCount - 1, new Vector3(pos.x, planeHeight, pos.z));
+                    //lineRenderer.positionCount++;
+                    //lineRenderer.SetPosition(lineRenderer.positionCount - 1, new Vector3(pos.x, planeHeight, pos.z));
                 }
                 else
                 {
@@ -90,10 +94,10 @@ public class HoleCutter : MonoBehaviour
                     Points.RemoveAt(0);
                     Points.Add(pointToAdd);
 
-                    for(int i = 0; i < lineRenderer.positionCount; i++)
-                    {
-                        lineRenderer.SetPosition(i, new Vector3(Points[i].x, planeHeight, Points[i].y));
-                    }
+                    //for(int i = 0; i < lineRenderer.positionCount; i++)
+                    //{
+                    //    lineRenderer.SetPosition(i, new Vector3(Points[i].x, planeHeight, Points[i].y));
+                    //}
                     
                 }
                 
