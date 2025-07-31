@@ -20,7 +20,7 @@ namespace Enemies {
             rb = GetComponent<Rigidbody>();
         }
 
-        public void Update() {
+        public new void Update() {
             base.Update();
             if (rotateTowardsPlayer) {
                 transform.LookAt(player.transform);
