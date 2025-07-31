@@ -152,12 +152,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEventBroadcaster: {fileID: 11400000, guid: f8714c97c5f2ac84fa1762773bdaad01, type: 2}
-  m_spawnLocation: {x: 0, y: 0, z: 0}
-  m_enemyType: 4
+  rb: {fileID: 2537937922704579174}
   m_killHeight: -10
   m_isDead: 0
+  canMove: 0
   player: {fileID: 0}
-  rb: {fileID: 2537937922704579174}
   rotateTowardsPlayer: 0
   moveTowardsPlayer: 0
   moveForce: 5
