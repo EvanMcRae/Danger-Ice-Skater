@@ -1,18 +1,17 @@
 ﻿using Game;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Enemies {
     public abstract class Enemy : MonoBehaviour {
         public GameEventBroadcaster gameEventBroadcaster;
-        
-        public Vector3 m_spawnLocation;
-        public int m_enemyType;
-        public int m_damage { get; set; }
-        public int m_health { get; set; }
-        public float m_speed { get; set; }
+
+        public Rigidbody rb;
 
         public float m_killHeight = -10f;
         public bool m_isDead = false;
+
+        public bool canMove = false;
 
         public void DestroyEnemy()
         {
@@ -24,7 +23,12 @@ namespace Enemies {
         }
         
         public void Start() {
+            SetCanMove(false);
             EnemySpawned();
+            rb = GetComponent<Rigidbody>();
+            if (!rb) {
+                Debug.Log("No rigidbody on this object! Please attach one!");
+            }
         }
 
         public void Update()
@@ -51,6 +55,10 @@ namespace Enemies {
         public void EnemySpawned() {
             gameEventBroadcaster.OnEnemySpawn.Invoke(this);
         }
+
+        public void EnemySent() {
+            gameEventBroadcaster.OnEnemySend.Invoke(this);
+        }
         
         /// <summary>
         ///     Broadcasts that the enemy died to the rest of the game.
@@ -59,6 +67,12 @@ namespace Enemies {
         /// </summary>
         public void EnemyDied() {
             gameEventBroadcaster.OnEnemyDeath.Invoke(this);
+        }
+
+        public void SetCanMove(bool newValue) {
+            canMove = newValue;
+            if (newValue) rb.constraints = RigidbodyConstraints.FreezeRotation;
+            else rb.constraints = RigidbodyConstraints.FreezeAll;
         }
     }
 }
