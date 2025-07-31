@@ -37,7 +37,7 @@ public class HoleCutter : MonoBehaviour
             {
                 lastMousePos = mousePos;
                 Ray ray = Camera.main.ScreenPointToRay(mousePos);
-                Physics.Raycast(ray, out RaycastHit hit);
+                Physics.Raycast(ray, out RaycastHit hit, 1000, ~(1 << 2));
                 Vector2 pointToAdd = new(hit.point.x, hit.point.z);
 
                 if (Points.Count > 0)
