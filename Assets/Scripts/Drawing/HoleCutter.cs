@@ -136,7 +136,7 @@ public class HoleCutter : MonoBehaviour
         meshFilter.mesh = mesh;
         MeshCollider meshCollider = newHole.GetComponent<MeshCollider>();
         meshCollider.sharedMesh = mesh;
-        newHole.transform.SetPositionAndRotation(new Vector3(0, -29.9f, 30), Quaternion.Euler(90, 0, 0));
+        newHole.transform.SetPositionAndRotation(new Vector3(0, -29.9999f, 30), Quaternion.Euler(90, 0, 0));
         poly.enabled = false;
         Holes.Add(newHole);
     }
