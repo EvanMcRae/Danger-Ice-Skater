@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class Hole : MonoBehaviour
 {
-    private void OnTriggerStay(Collider other)
+    private void OnCollisionStay(Collision other)
     {
-        Bounds myBounds = gameObject.GetComponent<MeshCollider>().bounds;
-        Bounds otherBounds = other.gameObject.GetComponent<Collider>().bounds;
+        Bounds myBounds = gameObject.GetComponent<Collider>().bounds;
+        Bounds otherBounds = other.collider.bounds;
 
         Vector3 min = otherBounds.min;
         min.y = myBounds.min.y;
@@ -14,7 +14,7 @@ public class Hole : MonoBehaviour
 
         if (myBounds.Contains(min) && myBounds.Contains(max))
         {
-            other.gameObject.GetComponent<Rigidbody>().useGravity = true;
+            other.gameObject.GetComponent<Rigidbody>().excludeLayers = 1 << 6 | 1 << 7; // ignore ice and hole
         }
     }
 }
