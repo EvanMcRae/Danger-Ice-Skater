@@ -145,7 +145,7 @@ public class HoleCutter : MonoBehaviour
     {
         MeshFilter meshFilter = newObject.GetComponent<MeshFilter>();
         meshFilter.mesh = mesh;
-        MeshCollider meshCollider = newObject.GetComponent<MeshCollider>();
+        MeshCollider meshCollider = newObject.GetComponentInChildren<MeshCollider>();
         meshCollider.sharedMesh = mesh;
 
         if (isCutout)

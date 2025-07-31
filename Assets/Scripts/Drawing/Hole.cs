@@ -5,12 +5,14 @@ public class Hole : MonoBehaviour
     private float m_spawnTime, m_killHeight = -10f;
     private bool m_isDead = false, m_isFalling = false;
     [SerializeField] private Material m_maskMat;
+    [SerializeField] private MeshCollider m_meshCollider;
     private Bounds m_bounds;
 
     private void Start()
     {
         m_spawnTime = Time.time;
-        m_bounds = GetComponent<Collider>().bounds;
+        m_meshCollider = GetComponentInChildren<MeshCollider>();
+        m_bounds = m_meshCollider.bounds; // TODO this might not be populated early enough
 
         // Find all holes inside this hole and make them fall too
         // TODO: This is not a super accurate check!! It unfortunately cannot use actual concave->concave
@@ -20,7 +22,7 @@ public class Hole : MonoBehaviour
         {
             if (holeObj == null || !holeObj.activeInHierarchy) return;
             Hole hole = holeObj.GetComponent<Hole>();
-            if (hole != null && !hole.m_isDead && ContainsBounds(hole.GetComponent<Collider>().bounds)
+            if (hole != null && !hole.m_isDead && ContainsBounds(hole.GetComponentInChildren<MeshCollider>().bounds)
                 && m_spawnTime > hole.m_spawnTime && !m_isFalling)
             {
                 hole.m_isFalling = true;
@@ -56,7 +58,7 @@ public class Hole : MonoBehaviour
 
     private bool ContainsBounds(Bounds otherBounds)
     {
-        m_bounds = GetComponent<Collider>().bounds;
+        m_bounds = m_meshCollider.bounds;
 
         Vector3 min = otherBounds.min;
         min.y = m_bounds.min.y;
