@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6306629217463522763}
   - component: {fileID: 4713842041731944712}
   - component: {fileID: 5975663975648950306}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: DasherEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -154,6 +154,8 @@ MonoBehaviour:
   gameEventBroadcaster: {fileID: 11400000, guid: f8714c97c5f2ac84fa1762773bdaad01, type: 2}
   m_spawnLocation: {x: 0, y: 0, z: 0}
   m_enemyType: 5
+  m_killHeight: -10
+  m_isDead: 0
   player: {fileID: 0}
   rb: {fileID: 4713842041731944712}
   rotateTowardsPlayer: 1

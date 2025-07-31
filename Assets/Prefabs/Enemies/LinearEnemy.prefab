@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7652989749962115737}
   - component: {fileID: 2865376438257044195}
   - component: {fileID: 2549344607763642334}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LinearEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -154,6 +154,8 @@ MonoBehaviour:
   gameEventBroadcaster: {fileID: 11400000, guid: f8714c97c5f2ac84fa1762773bdaad01, type: 2}
   m_spawnLocation: {x: 0, y: 0, z: 0}
   m_enemyType: 1
+  m_killHeight: -10
+  m_isDead: 0
   player: {fileID: 0}
   rb: {fileID: 2865376438257044195}
   rotateTowardsPlayer: 1

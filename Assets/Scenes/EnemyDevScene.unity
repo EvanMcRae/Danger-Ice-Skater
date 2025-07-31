@@ -306,6 +306,10 @@ PrefabInstance:
       value: Player (1)
       objectReference: {fileID: 0}
     - target: {fileID: 8840452199310655019, guid: a55e6b8a288afd44584fbc25568c57fe, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8840452199310655019, guid: a55e6b8a288afd44584fbc25568c57fe, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -622,7 +626,7 @@ GameObject:
   - component: {fileID: 1581952941}
   - component: {fileID: 1581952943}
   - component: {fileID: 1581952942}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
