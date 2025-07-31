@@ -369,7 +369,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1068397256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -931,9 +931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HolePrefab: {fileID: 4884329261990287930, guid: 3c87df03299336b4aaf6ff2fd2ef509c, type: 3}
-  Holes: []
   CutoutPrefab: {fileID: 4884329261990287930, guid: 1eb40acb03c3e425685f30210619ef12, type: 3}
-  Cutouts: []
   Points: []
   isTouchingGround: 0
   isDrawing: 0
