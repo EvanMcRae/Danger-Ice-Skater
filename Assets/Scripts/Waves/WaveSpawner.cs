@@ -126,21 +126,5 @@ namespace Waves {
 
             return enemyListCopy;
         }
-
-        public void Update() {
-            
-            // Debug
-            if (Keyboard.current != null)
-            {
-                if (Keyboard.current.spaceKey.wasPressedThisFrame) {
-                    NextWave();
-                }
-
-                if (Keyboard.current.backspaceKey.wasPressedThisFrame) {
-                    if (NextSubWave()) SpawnSubWave();
-                }
-            }
-
-        }
     }
 }
