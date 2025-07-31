@@ -6,17 +6,26 @@ namespace Enemies
     {
         public float idleTime;
         public float placingRadius;
+        public float idleForce;
+        public float idleCooldown;
         [SerializeField] public GameObject trap;
+
         float idleDelay;
+        public float cooldownDelay;
         Vector3 targetSpot;
+        public Vector3 targetSpot2;
+
         bool placingTrap;
         bool arrivedAtTarget = false;
+        bool notMoving = false;
         
         public new void Start()
         {
             base.Start();
             idleDelay = idleTime;
             placingTrap = false;
+            cooldownDelay = idleCooldown;
+            targetSpot2 = GenerateTarget(placingRadius / 2);
         }
         public new void Update()
         {
@@ -24,11 +33,7 @@ namespace Enemies
             if (idleDelay <= 0f && !placingTrap)
             {
                 placingTrap = true;
-                float randX = Random.Range(transform.position.x - placingRadius,
-                                           transform.position.x + placingRadius);
-                float randZ = Random.Range(transform.position.z - placingRadius,
-                                           transform.position.z + placingRadius);
-                targetSpot = new Vector3(randX, transform.position.y, randZ);
+                targetSpot = GenerateTarget(placingRadius);
                 idleDelay = idleTime;
             }
             
@@ -36,9 +41,10 @@ namespace Enemies
             else Idle();
         }
 
+        //Seeks a target spot to drop a trap
         public void DropTrap()
         {
-            //Pick a random spot within a radius around the enemy to drop a trap
+            //Pick a random spot within a radius 
             if (!arrivedAtTarget)
             {
                 Vector3 vectorDiff = targetSpot - transform.position;
@@ -51,19 +57,56 @@ namespace Enemies
             }
             else
             {
+                //Drop trap once movement stops
                 if(Mathf.Abs(rb.linearVelocity.x) <= .05f && Mathf.Abs(rb.linearVelocity.z) <= .05f)
                 {
-                    Instantiate(trap, transform.position, Quaternion.identity);
+                    Vector3 spot = transform.position;
+                    spot.x += 3f;
+                    Instantiate(trap, spot, Quaternion.identity);
                     placingTrap = false;
                     arrivedAtTarget = false;
+                    cooldownDelay = 0f;
+                    notMoving = true;
                 }
             }
         }
 
+        //Skates around aimlessly
+        //Adds a little impulse in a random direction for idleDelay/idleTime seconds
         public void Idle()
         {
-            //Pick a random unoccupied space to idle
+            //Move in a direction
+            if (cooldownDelay > 0f && !notMoving)
+            {
+                Vector3 vectorDiff = targetSpot2 - transform.position;
+                vectorDiff.Normalize();
+                rb.AddForce(targetSpot2 * idleForce, ForceMode.Force);
+                cooldownDelay -= Time.deltaTime;
+            }
+            else notMoving = true;
+
+            //Standing still
+            if (notMoving) cooldownDelay += Time.deltaTime;
+
+            //Ready to move again (resetting variables)
+            if ((cooldownDelay >= 3) && notMoving)
+            {
+                notMoving = false;
+                targetSpot2 = GenerateTarget(placingRadius / 2);
+                cooldownDelay = idleCooldown;
+            }
+
             idleDelay -= Time.deltaTime;
+        }
+
+        //Random X, Z coordinate within a given radius
+        public Vector3 GenerateTarget(float radius)
+        {
+            float randX = Random.Range(transform.position.x - radius,
+                                           transform.position.x + radius);
+            float randZ = Random.Range(transform.position.z - radius,
+                                       transform.position.z + radius);
+            return new Vector3(randX, transform.position.y, randZ);
         }
     }
 }
