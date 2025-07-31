@@ -11,6 +11,7 @@ namespace Enemies
         }
         public new void Update()
         {
+            base.Update();
         }
     }
 }

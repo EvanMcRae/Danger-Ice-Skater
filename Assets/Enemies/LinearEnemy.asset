@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94a0e934baac4ab09282db9dfdfeb7b6, type: 3}
-  m_Name: Special
+  m_Name: LinearEnemy
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
-  enemyType: 1
-  creditCost: 50
-  enemyLevel: 3
+  enemy: {fileID: 2549344607763642334, guid: 1265a48f4ac8cb840b8c67230b9fb071, type: 3}
+  enemyType: 4
+  creditCost: 10
+  enemyLevel: 1

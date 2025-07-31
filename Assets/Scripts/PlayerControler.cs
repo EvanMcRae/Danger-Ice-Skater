@@ -1,3 +1,4 @@
+using Enemies;
 using Input;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -50,5 +51,14 @@ public class PlayerControler : MonoBehaviour
         }
 
         rb.AddForce(horizontal * acceleration, 0, vertical * acceleration);
+    }
+
+    
+    // Testing combat, substitute for "killing enemies with the ice break"
+    public void OnCollisionEnter(Collision other) {
+        if (other.gameObject.CompareTag("Enemy")) {
+            Enemy e = other.gameObject.GetComponent<Enemy>();
+            e.DestroyEnemy();
+        }
     }
 }
