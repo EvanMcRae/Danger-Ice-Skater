@@ -20,7 +20,7 @@ public class PlayerControler : MonoBehaviour
     [SerializeField, Tooltip("The modifier to player acceleration if they move in the opposite direction (a value of 2 means they slow down 2x as fast as they speed up)")]
     private float reverseMod;
 
-    
+    public bool isTouchingGround;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -58,7 +58,20 @@ public class PlayerControler : MonoBehaviour
     public void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("Enemy")) {
             Enemy e = other.gameObject.GetComponent<Enemy>();
-            e.DestroyEnemy();
+            //e.DestroyEnemy();
+            Debug.Log("-1 Health -- TODO add this");
+        }
+        else if (other.gameObject.layer == 7) // ice
+        {
+            isTouchingGround = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.layer == 7) // ice
+        {
+            isTouchingGround = false;
         }
     }
 }
