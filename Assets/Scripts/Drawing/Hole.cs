@@ -21,19 +21,21 @@ public class Hole : MonoBehaviour
         // This is actually a really really bad idea now that I think about it.
         foreach (GameObject holeObj in HoleCutter.Holes)
         {
-            if (holeObj == null || !holeObj.activeInHierarchy) return;
+            if (holeObj == null) return;
             Hole hole = holeObj.GetComponent<Hole>();
-            if (hole != null && !hole.m_isDead && ContainsHole(hole)
-                && m_spawnTime > hole.m_spawnTime && !m_isFalling)
+            if (hole == null || hole == this) return;
+
+            if (!hole.m_isDead //&& ContainsHole(hole)
+                && m_spawnTime > hole.m_spawnTime && !hole.m_isFalling)
             {
-                // Debug.Log("hole should fall now! " + hole);s
-                hole.m_isFalling = true;
+            hole.m_isFalling = true;
                 Rigidbody rb = hole.GetComponent<Rigidbody>();
                 hole.m_meshCollider.convex = true;
                 hole.m_meshCollider.isTrigger = true;
                 rb.isKinematic = false;
                 rb.useGravity = true;
                 rb.excludeLayers = 1 << 6 | 1 << 7; // ignore ice and hole
+                rb.MovePosition(new Vector3(rb.transform.position.x, rb.transform.position.y + 0.001f, rb.transform.position.z)); // nudge up to prevent z fighting
                 hole.GetComponent<MeshRenderer>().material = m_maskMat;
             }
         }
@@ -45,6 +47,7 @@ public class Hole : MonoBehaviour
         if (transform.position.y < m_killHeight && !m_isDead)
         {
             m_isDead = true;
+            HoleCutter.Holes.Remove(gameObject);
             Destroy(gameObject);
         }
     }
@@ -56,27 +59,23 @@ public class Hole : MonoBehaviour
         if (ContainsBounds(other.collider.bounds))
         {
             other.gameObject.GetComponent<Rigidbody>().excludeLayers = 1 << 6 | 1 << 7; // ignore ice and hole
-            other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
+            // other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
         }
-
-
     }
 
     private bool ContainsHole(Hole hole)
     {
-        List<Vector3> myVertices = GetVertices();
-        List<Vector3> holeVertices = hole.GetVertices();
+        // List<Vector3> myVertices = GetVertices();
+        // List<Vector3> holeVertices = hole.GetVertices();
 
-        foreach (Vector3 vertex in holeVertices)
-        {
-            // Debug.Log(vertex);
-
-            if (!GeometryUtils.PointInPolygon(vertex, myVertices))
-            {
-                return false;
-            }
-        }
-        return true;
+        // foreach (Vector3 vertex in holeVertices)
+        // {
+        //     if (!GeometryUtils.PointInPolygon(vertex, myVertices))
+        //     {
+        //         return false;
+        //     }
+        // }
+        return false;
     }
 
     private bool ContainsBounds(Bounds otherBounds)

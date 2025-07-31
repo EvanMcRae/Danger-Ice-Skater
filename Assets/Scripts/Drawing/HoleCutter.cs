@@ -151,7 +151,7 @@ public class HoleCutter : MonoBehaviour
         MeshCollider meshCollider = newObject.GetComponentInChildren<MeshCollider>();
         meshCollider.sharedMesh = mesh;
 
-        if (isCutout)
+        if (isCutout && mesh != null)
         {
             // Apply UV coordinates for texture rendering
             Vector2[] uvs = new Vector2[mesh.vertexCount];
