@@ -1,14 +1,18 @@
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
     [SerializeField]
     GameObject[] Menus;
 
+    [SerializeField]
+    string NextSceneName;
+
     public void StartGame()
     {
-
+        SceneManager.LoadScene(NextSceneName);
     }
 
     public void Title()
@@ -31,7 +35,14 @@ public class MenuManager : MonoBehaviour
 
     public void QuitGame()
     {
-
+        if (Application.isEditor)
+        {
+            EditorApplication.ExitPlaymode();
+        }
+        else
+        {
+            Application.Quit();
+        }
     }
 
     private void TurnOffMenus()
