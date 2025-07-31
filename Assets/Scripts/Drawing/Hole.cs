@@ -15,6 +15,7 @@ public class Hole : MonoBehaviour
         if (myBounds.Contains(min) && myBounds.Contains(max))
         {
             other.gameObject.GetComponent<Rigidbody>().excludeLayers = 1 << 6 | 1 << 7; // ignore ice and hole
+            other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
         }
     }
 }

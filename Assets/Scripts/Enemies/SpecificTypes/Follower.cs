@@ -21,7 +21,7 @@ namespace Enemies {
         }
 
         public void Update() {
-            //base.Update();
+            base.Update();
             if (rotateTowardsPlayer) {
                 transform.LookAt(player.transform);
             }

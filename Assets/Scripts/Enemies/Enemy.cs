@@ -11,8 +11,13 @@ namespace Enemies {
         public int m_health { get; set; }
         public float m_speed { get; set; }
 
+        public float m_killHeight = -10f;
+        public bool m_isDead = false;
+
         public void DestroyEnemy()
         {
+            if (m_isDead) return;
+            m_isDead = true;
             EnemyDied();
             //TODO: Play death animation
             Destroy(gameObject);
@@ -21,6 +26,15 @@ namespace Enemies {
         public void Start() {
             EnemySpawned();
         }
+
+        public void Update()
+        {
+            if (transform.position.y <= m_killHeight)
+            {
+                DestroyEnemy();
+            }
+        }
+
         public float DistanceFromTarget(Vector3 target)
         {
             Vector2 enemyLoc = new Vector2(gameObject.transform.position.x, gameObject.transform.position.z);
