@@ -25,7 +25,7 @@ public class Hole : MonoBehaviour
             Hole hole = holeObj.GetComponent<Hole>();
             if (hole == null || hole == this) return;
 
-            if (!hole.m_isDead //&& ContainsHole(hole)
+            if (!hole.m_isDead && ContainsHole(hole)
                 && m_spawnTime > hole.m_spawnTime && !hole.m_isFalling)
             {
             hole.m_isFalling = true;
@@ -35,7 +35,7 @@ public class Hole : MonoBehaviour
                 rb.isKinematic = false;
                 rb.useGravity = true;
                 rb.excludeLayers = 1 << 6 | 1 << 7; // ignore ice and hole
-                rb.MovePosition(new Vector3(rb.transform.position.x, rb.transform.position.y + 0.001f, rb.transform.position.z)); // nudge up to prevent z fighting
+                rb.MovePosition(new Vector3(rb.transform.position.x, rb.transform.position.y + 0.01f, rb.transform.position.z)); // nudge up to prevent z fighting
                 hole.GetComponent<MeshRenderer>().material = m_maskMat;
             }
         }
