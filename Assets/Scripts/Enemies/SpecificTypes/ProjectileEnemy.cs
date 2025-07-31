@@ -1,26 +1,31 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 
 namespace Enemies.SpecificTypes {
-    public class ProjectileEnemy : Enemy {
+    public class ProjectileEnemy : Follower {
         
         [Header("Projectile Enemy Settings")]
         public float projectileDelayMin;
         public float projectileDelayMax;
         
         public float projectileTimer;
-
+        
         public GameObject projectileSpawnPosition;
         public GameObject puck;
 
         public float forceScalar;
         
-        public void Start() {
+        public new void Start() {
+            base.Start();
             projectileTimer = projectileDelayMax;
         }
-        public void Update() {
+        public new void Update() {
+            base.Update();
             projectileTimer -= Time.deltaTime;
             if (projectileTimer <= 0) {
-                Shoot(Vector3.forward);
+                Vector3 diff = player.transform.position - transform.position;
+                diff.Normalize();
+                Shoot(diff);
                 projectileTimer = Random.Range(projectileDelayMin, projectileDelayMax);
             }
         }
@@ -31,9 +36,7 @@ namespace Enemies.SpecificTypes {
 
             GameObject puckInstance = Instantiate(puck, projectileSpawnPosition.transform.position, Quaternion.identity);
             
-            
-            
-            puckInstance.GetComponent<Rigidbody>().AddForce(direction * forceScalar);
+            puckInstance.GetComponent<Rigidbody>().AddForce(direction * forceScalar, ForceMode.Impulse);
 
         }
         
