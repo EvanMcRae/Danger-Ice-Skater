@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Materials/MaskMaterial.mat.meta
+guid: 6523a2faee3ec4a08b99c83d55f7b1e5
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+========
+guid: 3839af05cfba756429ff20761423c8fa
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+>>>>>>>> dev:Assets/ScriptableObjects/InputManager.asset.meta
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
