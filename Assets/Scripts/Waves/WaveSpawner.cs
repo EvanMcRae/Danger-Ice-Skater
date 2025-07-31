@@ -42,14 +42,16 @@ namespace Waves {
 
         /// <summary>
         ///     Progresses the spawner to the next sub wave. Does not do additional checks.
+        ///     <param name="spawnEnemies">Whether the sub wave progression should spawn enemies.</param>
         /// </summary>
         /// <returns>True if the sub wave was properly progressed, else false.</returns>
-        public bool NextSubWave() {
+        public bool NextSubWave(bool spawnEnemies = false) {
             if (waveManagerSO.waves[currentWave].subWaves.Count <= currentSubWave + 1) {
                 Debug.Log("All subwaves cleared!");
                 return false; //All sub-waves cleared!
             }
             currentSubWave++;
+            if (spawnEnemies) SpawnSubWave();
             return true;
         }
 
@@ -68,8 +70,8 @@ namespace Waves {
                 Debug.Log("Spawning " + enemySet.count + " " + enemySet.enemy + " enemies!"); 
                 
                 for (int i = 0; i < enemySet.count; i++) {
-                    GetValidSpawnLocation();
-                    //TODO: Instantiate the enemy.
+                    Vector3 spawnPos = GetValidSpawnLocation();
+                    Instantiate(enemyTypeManager.Get(enemySet.enemy).enemy, spawnPos, Quaternion.identity);
                 }
                 
             }
@@ -80,7 +82,8 @@ namespace Waves {
         /// </summary>
         /// <returns>The spawn position.</returns>
         public Vector3 GetValidSpawnLocation() {
-            return Vector3.zero; //TODO: Find a valid location, after rink impl.
+            return new Vector3(Random.Range(-20, 20), 0, Random.Range(-20, 20));
+            //TODO: Find a valid location, after rink impl.
         }
 
         public List<EnemyListEntry> ConvertCreditsToWaves(int level, int credits, List<EnemyListEntry> enemyList) {
@@ -125,22 +128,6 @@ namespace Waves {
             }
 
             return enemyListCopy;
-        }
-
-        public void Update() {
-            
-            // Debug
-            if (Keyboard.current != null)
-            {
-                if (Keyboard.current.spaceKey.wasPressedThisFrame) {
-                    NextWave();
-                }
-
-                if (Keyboard.current.backspaceKey.wasPressedThisFrame) {
-                    if (NextSubWave()) SpawnSubWave();
-                }
-            }
-
         }
     }
 }
