@@ -26,8 +26,11 @@ public class Hole : MonoBehaviour
             if (hole != null && !hole.m_isDead && ContainsHole(hole)
                 && m_spawnTime > hole.m_spawnTime && !m_isFalling)
             {
+                // Debug.Log("hole should fall now! " + hole);s
                 hole.m_isFalling = true;
                 Rigidbody rb = hole.GetComponent<Rigidbody>();
+                hole.m_meshCollider.convex = true;
+                hole.m_meshCollider.isTrigger = true;
                 rb.isKinematic = false;
                 rb.useGravity = true;
                 rb.excludeLayers = 1 << 6 | 1 << 7; // ignore ice and hole
@@ -56,16 +59,18 @@ public class Hole : MonoBehaviour
             other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
         }
 
-        
+
     }
 
     private bool ContainsHole(Hole hole)
     {
-        List<Vector3> myVertices = new(GetComponent<MeshFilter>().mesh.vertices);
-        List<Vector3> holeVertices = new(hole.GetComponent<MeshFilter>().mesh.vertices);
+        List<Vector3> myVertices = GetVertices();
+        List<Vector3> holeVertices = hole.GetVertices();
 
         foreach (Vector3 vertex in holeVertices)
         {
+            // Debug.Log(vertex);
+
             if (!GeometryUtils.PointInPolygon(vertex, myVertices))
             {
                 return false;
@@ -76,12 +81,7 @@ public class Hole : MonoBehaviour
 
     private bool ContainsBounds(Bounds otherBounds)
     {
-        List<Vector3> myVertices = new(GetComponent<MeshFilter>().mesh.vertices);
-
-        for (int i = 0; i < myVertices.Count; i++)
-        {
-            myVertices[i] = transform.TransformPoint(myVertices[i]);
-        }
+        List<Vector3> myVertices = GetVertices();
 
         Bounds myBounds = m_meshCollider.bounds;
         Vector3 min = otherBounds.min;
@@ -90,5 +90,15 @@ public class Hole : MonoBehaviour
         max.y = myBounds.max.y;
 
         return GeometryUtils.PointInPolygon(min, myVertices) && GeometryUtils.PointInPolygon(max, myVertices);
+    }
+
+    private List<Vector3> GetVertices()
+    {
+        List<Vector3> vertices = new(GetComponent<MeshFilter>().mesh.vertices);
+        for (int i = 0; i < vertices.Count; i++)
+        {
+            vertices[i] = transform.TransformPoint(vertices[i]);
+        }
+        return vertices;
     }
 }
