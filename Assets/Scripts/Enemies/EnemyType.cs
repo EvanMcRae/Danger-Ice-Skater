@@ -8,6 +8,7 @@ namespace Enemies {
         CIRCULAR,
         PROJECTILE,
         TRAP,
+        DASHER,
         SPECIAL,
         BOSS
     }
