@@ -13,6 +13,7 @@ namespace Enemies {
 
 
         public new void Start() {
+            base.Start();
             player = GameObject.FindWithTag("Player");
             if (!player) Debug.Log("Player could not be found!");
             
@@ -20,6 +21,7 @@ namespace Enemies {
         }
 
         public void Update() {
+            //base.Update();
             if (rotateTowardsPlayer) {
                 transform.LookAt(player.transform);
             }

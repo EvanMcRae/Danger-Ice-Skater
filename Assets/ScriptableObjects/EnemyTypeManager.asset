@@ -14,8 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - enemyType: 0
-    enemyData: {fileID: 11400000, guid: 23df9123a347b0e4bb7c06294d69ce4d, type: 2}
+    enemyData: {fileID: 11400000, guid: 3d6c26aab06772a4aa8c9a383f2a97c7, type: 2}
+  - enemyType: 3
+    enemyData: {fileID: 11400000, guid: 40a955b33d63b394e99c3e63271129d5, type: 2}
+  - enemyType: 4
+    enemyData: {fileID: 11400000, guid: 1a1455c66193f4d4788137b3d99ab300, type: 2}
   - enemyType: 1
-    enemyData: {fileID: 11400000, guid: b7c801746ce9af447bf4363c7465b105, type: 2}
+    enemyData: {fileID: 11400000, guid: c54bf71b6c14da14c807a8cca72da7d7, type: 2}
   - enemyType: 2
-    enemyData: {fileID: 11400000, guid: 9324a3e6a299b4c4bb4f6a4d94cba85a, type: 2}
+    enemyData: {fileID: 11400000, guid: 7e11611f7162cf94b95bcf43873c8c13, type: 2}
