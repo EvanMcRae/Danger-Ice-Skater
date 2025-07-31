@@ -13,14 +13,12 @@ namespace Enemies {
             //TODO: Play death animation
             Destroy(gameObject);
         }
-        public int DistanceFromPlayer()
+        public float DistanceFromTarget(Vector3 target)
         {
-            print("WIP");
-            return 0;
+            Vector2 enemyLoc = new Vector2(gameObject.transform.position.x, gameObject.transform.position.z);
+            Vector2 targetLoc = new Vector2(target.x, target.z);
+            //print(Vector2.Distance(enemyLoc, targetLoc)); //Debug
+            return Vector2.Distance(enemyLoc, targetLoc);
         }
-        //public void LinearMovement(Vector3 target)
-        //{
-        //    gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, target, m_speed);
-        //}
     }
 }

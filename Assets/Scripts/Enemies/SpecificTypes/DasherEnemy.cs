@@ -32,7 +32,5 @@ namespace Enemies.SpecificTypes {
             
             rb.AddForce(vectorDiff * dashForce, ForceMode.Impulse);
         }
-
-
     }
 }

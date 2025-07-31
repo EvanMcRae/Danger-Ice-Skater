@@ -501,7 +501,7 @@ MonoBehaviour:
   dashForce: 5
   rangeTime: 5
   dashTime: 3
-  targetRange: 0
+  targetRange: 15
 --- !u!1 &719813889
 GameObject:
   m_ObjectHideFlags: 0

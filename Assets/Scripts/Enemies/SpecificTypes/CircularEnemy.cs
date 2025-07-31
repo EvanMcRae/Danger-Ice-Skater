@@ -4,7 +4,7 @@ namespace Enemies
 {
     public class CircularEnemy : Follower
     {
-        public float dashForce; //Min: 5f
+        public float dashForce;
         public float rangeTime;
         public float dashTime;
         public float targetRange;
@@ -20,7 +20,7 @@ namespace Enemies
         public new void Update()
         {
             //If in range, circle player
-            if ((DistanceFromPlayer() <= targetRange) && !isAttacking) {
+            if ((DistanceFromTarget(player.transform.position) <= targetRange) && !isAttacking) {
                 CirclePlayer();
                 rangeDelay -= Time.deltaTime;
 
@@ -43,7 +43,7 @@ namespace Enemies
         
         public void CirclePlayer()
         {
-
+            print("hi");
         }
 
         public void AttackPlayer()
