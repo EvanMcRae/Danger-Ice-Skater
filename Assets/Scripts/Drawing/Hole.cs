@@ -2,16 +2,19 @@ using UnityEngine;
 
 public class Hole : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerStay(Collider other)
     {
-        Debug.Log("what and why");
-        collision.gameObject.GetComponent<Rigidbody>().useGravity = true;
-        collision.gameObject.GetComponent<Rigidbody>().excludeLayers = 1 << 6;
-    }
+        Bounds myBounds = gameObject.GetComponent<MeshCollider>().bounds;
+        Bounds otherBounds = other.gameObject.GetComponent<Collider>().bounds;
 
-    private void OnTriggerEnter(Collider collision)
-    {
-        collision.gameObject.GetComponent<Rigidbody>().useGravity = true;
-        //collision.gameObject.GetComponent<Collider>().excludeLayers = LayerMask.NameToLayer("Hole");
+        Vector3 min = otherBounds.min;
+        min.y = myBounds.min.y;
+        Vector3 max = otherBounds.max;
+        max.y = myBounds.max.y;
+
+        if (myBounds.Contains(min) && myBounds.Contains(max))
+        {
+            other.gameObject.GetComponent<Rigidbody>().useGravity = true;
+        }
     }
 }
