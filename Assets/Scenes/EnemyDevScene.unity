@@ -493,15 +493,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnLocation: {x: 0, y: 0, z: 0}
   m_enemyType: 0
-  player: {fileID: 0}
-  rb: {fileID: 0}
+  player: {fileID: 28843258}
+  rb: {fileID: 697479115}
   rotateTowardsPlayer: 1
   moveTowardsPlayer: 1
   moveForce: 10
-  dashForce: 5
+  dashForce: 12
+  minCircleForce: 2
   rangeTime: 5
   dashTime: 3
   targetRange: 15
+  clockwise: 1
 --- !u!1 &719813889
 GameObject:
   m_ObjectHideFlags: 0
