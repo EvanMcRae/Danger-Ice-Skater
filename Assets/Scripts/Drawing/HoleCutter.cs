@@ -16,7 +16,7 @@ public class HoleCutter : MonoBehaviour
     public const float LOOP_ALLOWANCE = 1f;
     public const int MIN_POINTS = 8;
     public const float RESOLUTION = 0.1f;
-
+    public const int MAX_POINTS = 200;
     private LineRenderer lineRenderer;
     private Vector2 lastMousePos;
 
@@ -38,18 +38,71 @@ public class HoleCutter : MonoBehaviour
                 lastMousePos = mousePos;
                 Ray ray = Camera.main.ScreenPointToRay(mousePos);
                 Physics.Raycast(ray, out RaycastHit hit);
-                Points.Add(new(hit.point.x, hit.point.z));
-                lineRenderer.positionCount++;
-                lineRenderer.SetPosition(lineRenderer.positionCount - 1, hit.point - transform.position);
+                Vector2 pointToAdd = new(hit.point.x, hit.point.z);
+
+                if (Points.Count > 0)
+                {
+                    int intersectPoint = -1;
+                    //Check if new segment intersects with any prior segment
+                    for (int i = 1; i < Points.Count; i++)
+                    {
+                        if (lineSegmentsIntersect(Points[i - 1], Points[i], pointToAdd, Points[^1]))
+                        {
+                            intersectPoint = i - 1;
+                            break;
+                        }
+                    }
+
+                    if (Points.Count - intersectPoint <= 5)
+                        intersectPoint = -1;
+
+                    List<Vector2> cutoutPoints = new List<Vector2>();
+
+                    
+                    if (intersectPoint >= 0)
+                    {
+                        //Copy segment that creates hole.
+                        for (int i = intersectPoint; i < Points.Count; i++)
+                        {
+                            cutoutPoints.Add(Points[i]);
+                        }
+
+                        MakeCutout(cutoutPoints);
+                        Debug.Log("CuttingSegment");
+                    }
+                }
+
+                if (Points.Count < MAX_POINTS)
+                {
+                    Points.Add(new(hit.point.x, hit.point.z));
+                    lineRenderer.positionCount++;
+                    lineRenderer.SetPosition(lineRenderer.positionCount - 1, hit.point - transform.position);
+                }
+                else
+                {
+                    //Move buffer over. Poor scaling run time (O(n)), but size is capped small enough it is not an issue. 
+                    Points.RemoveAt(0);
+                    Points.Add(new(hit.point.x, hit.point.z));
+
+                    for(int i = 0; i < lineRenderer.positionCount; i++)
+                    {
+                        lineRenderer.SetPosition(i, new Vector3(Points[i].x, 0, Points[i].y));
+                    }
+                    
+                }
+                
             }
         }
 
         if (isDrawing)
         {
-            CheckOverlap();
             if (ShouldEndDraw())
             {
-                EndDraw();
+                // Clear points array for next time
+                Points = new();
+                lineRenderer.positionCount = 0;
+                isDrawing = false;
+                hasOverlapped = false;
             }
         }
 
@@ -64,54 +117,31 @@ public class HoleCutter : MonoBehaviour
 
     bool ShouldEndDraw()
     {
-        return hasOverlapped || InputSystem.actions["Jump"].WasPressedThisFrame() || Mouse.current.leftButton.wasReleasedThisFrame;
+        return InputSystem.actions["Jump"].WasPressedThisFrame() || Mouse.current.leftButton.wasReleasedThisFrame;
     }
 
-    void EndDraw()
+
+    void MakeCutout(List<Vector2> points)
     {
-        if (IsClosedLoop())
+        // Spawn new hole, converting drawn points into a PolygonCollider2D and then into a mesh
+        GameObject newHole = Instantiate(HolePrefab, transform.position, Quaternion.identity);
+        PolygonCollider2D poly = newHole.GetComponentInChildren<PolygonCollider2D>();
+        poly.points = points.ToArray();
+        Mesh mesh = poly.CreateMesh(false, false);
+        if (mesh == null)
         {
-            // Spawn new hole, converting drawn points into a PolygonCollider2D and then into a mesh
-            GameObject newHole = Instantiate(HolePrefab, transform.position, Quaternion.identity);
-            PolygonCollider2D poly = newHole.GetComponentInChildren<PolygonCollider2D>();
-            poly.points = Points.ToArray();
-            Mesh mesh = poly.CreateMesh(false, false);
-            if (mesh == null)
-            {
-                Debug.LogError("Null hole mesh, did you draw out of bounds?");
-            }
-            //MeshRenderer meshRenderer = newDrawnObject.GetComponent<MeshRenderer>();
-            MeshFilter meshFilter = newHole.GetComponent<MeshFilter>();
-            meshFilter.mesh = mesh;
-            MeshCollider meshCollider = newHole.GetComponent<MeshCollider>();
-            meshCollider.sharedMesh = mesh;
-            newHole.transform.SetPositionAndRotation(new Vector3(0, -29.9f, 30), Quaternion.Euler(90, 0, 0));
-            poly.enabled = false;
-            Holes.Add(newHole);
+            Debug.LogError("Null hole mesh, did you draw out of bounds?");
         }
-
-        // Clear points array for next time
-        Points = new();
-        lineRenderer.positionCount = 0;
-        isDrawing = false;
-        hasOverlapped = false;
+        MeshFilter meshFilter = newHole.GetComponent<MeshFilter>();
+        meshFilter.mesh = mesh;
+        MeshCollider meshCollider = newHole.GetComponent<MeshCollider>();
+        meshCollider.sharedMesh = mesh;
+        newHole.transform.SetPositionAndRotation(new Vector3(0, -29.9f, 30), Quaternion.Euler(90, 0, 0));
+        poly.enabled = false;
+        Holes.Add(newHole);
     }
 
-    void CheckOverlap()
-    {
-        if (hasOverlapped) return;
-        for (int i = 0; i < Points.Count - 2; i++) // 2 instead of 1 to prevent detecting a collision with the previously drawn point (which would otherwise always happen)
-        {
-            if (Vector2.Distance(Points[i], Points[^1]) < 0.02f)
-            {
-                hasOverlapped = true;
-                return;
-            }
-        }
-    }
-
-    bool IsClosedLoop()
-    {
-        return Points.Count >= MIN_POINTS && Vector2.Distance(Points[0], Points[^1]) <= LOOP_ALLOWANCE;
-    }
+    //From https://www.reddit.com/r/gamedev/comments/7ww4yx/whats_the_easiest_way_to_check_if_two_line/
+    public static bool lineSegmentsIntersect(Vector2 lineOneA, Vector2 lineOneB, Vector2 lineTwoA, Vector2 lineTwoB) 
+    { return (((lineTwoB.y - lineOneA.y) * (lineTwoA.x - lineOneA.x) > (lineTwoA.y - lineOneA.y) * (lineTwoB.x - lineOneA.x)) != ((lineTwoB.y - lineOneB.y) * (lineTwoA.x - lineOneB.x) > (lineTwoA.y - lineOneB.y) * (lineTwoB.x - lineOneB.x)) && ((lineTwoA.y - lineOneA.y) * (lineOneB.x - lineOneA.x) > (lineOneB.y - lineOneA.y) * (lineTwoA.x - lineOneA.x)) != ((lineTwoB.y - lineOneA.y) * (lineOneB.x - lineOneA.x) > (lineOneB.y - lineOneA.y) * (lineTwoB.x - lineOneA.x))); }
 }
