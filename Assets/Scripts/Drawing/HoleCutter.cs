@@ -53,7 +53,7 @@ public class HoleCutter : MonoBehaviour
                     //Check if new segment intersects with any prior segment
                     for (int i = 1; i < Points.Count; i++)
                     {
-                        if (lineSegmentsIntersect(Points[i - 1], Points[i], pointToAdd, Points[^1]))
+                        if (LineSegmentsIntersect(Points[i - 1], Points[i], pointToAdd, Points[^1]))
                         {
                             intersectPoint = i - 1;
                             break;
@@ -69,7 +69,7 @@ public class HoleCutter : MonoBehaviour
                         intersectPoint = -1;
                     }
 
-                    List<Vector2> cutoutPoints = new List<Vector2>();
+                    List<Vector2> cutoutPoints = new();
 
                     
                     if (intersectPoint >= 0)
@@ -116,8 +116,9 @@ public class HoleCutter : MonoBehaviour
         {
             foreach (GameObject _ in Holes)
             {
-                Destroy(_);
+                _.GetComponent<Hole>().SpawnRespawnVisuals();
             }
+            Holes.Clear();
         }
     }
 
@@ -130,11 +131,13 @@ public class HoleCutter : MonoBehaviour
         PolygonCollider2D poly = newHole.GetComponentInChildren<PolygonCollider2D>();
         poly.points = points.ToArray();
         Mesh mesh = poly.CreateMesh(false, false);
+        poly.enabled = false;
+
         if (mesh == null)
         {
-            Debug.LogError("Null hole mesh, did you draw out of bounds?");
+            Debug.LogWarning("Null hole mesh -- drew too small or out of bounds");
+            return;
         }
-        poly.enabled = false;
 
         PopulateMesh(newHole, mesh, false);
         PopulateMesh(newCutout, mesh, true);
@@ -150,21 +153,27 @@ public class HoleCutter : MonoBehaviour
         MeshCollider meshCollider = newObject.GetComponentInChildren<MeshCollider>();
         meshCollider.sharedMesh = mesh;
 
-        if (isCutout && mesh != null)
+        // Calculate normals for cutouts to have proper lighting
+        if (isCutout)
         {
-            // Calculate normals
+            // Apply UV coordinates for texture rendering
+            Vector2[] uvs = new Vector2[mesh.vertexCount];
+            Bounds bounds = mesh.bounds;
+            for (int i = 0; i < mesh.vertexCount; i++)
+            {
+                // Map each vertex to a UV based on its position relative to the bounds
+                uvs[i] = new Vector2((mesh.vertices[i].x - bounds.min.x), (mesh.vertices[i].y - bounds.min.y));
+            }
+            mesh.uv = uvs;
+
             mesh.RecalculateNormals();
         }
 
-        if (mesh == null)
-        {
-            Debug.LogError("Null hole mesh, did you draw out of bounds?");
-        }
-
+        // Rotate final mesh to be on XZ plane
         newObject.transform.SetPositionAndRotation(new Vector3(0, planeHeight + (isCutout ? 0 : 0.0001f), 0), Quaternion.Euler(90, 0, 0));
     }
 
     //From https://www.reddit.com/r/gamedev/comments/7ww4yx/whats_the_easiest_way_to_check_if_two_line/
-    public static bool lineSegmentsIntersect(Vector2 lineOneA, Vector2 lineOneB, Vector2 lineTwoA, Vector2 lineTwoB) 
-    { return (((lineTwoB.y - lineOneA.y) * (lineTwoA.x - lineOneA.x) > (lineTwoA.y - lineOneA.y) * (lineTwoB.x - lineOneA.x)) != ((lineTwoB.y - lineOneB.y) * (lineTwoA.x - lineOneB.x) > (lineTwoA.y - lineOneB.y) * (lineTwoB.x - lineOneB.x)) && ((lineTwoA.y - lineOneA.y) * (lineOneB.x - lineOneA.x) > (lineOneB.y - lineOneA.y) * (lineTwoA.x - lineOneA.x)) != ((lineTwoB.y - lineOneA.y) * (lineOneB.x - lineOneA.x) > (lineOneB.y - lineOneA.y) * (lineTwoB.x - lineOneA.x))); }
+    public static bool LineSegmentsIntersect(Vector2 lineOneA, Vector2 lineOneB, Vector2 lineTwoA, Vector2 lineTwoB) 
+    { return ((lineTwoB.y - lineOneA.y) * (lineTwoA.x - lineOneA.x) > (lineTwoA.y - lineOneA.y) * (lineTwoB.x - lineOneA.x)) != ((lineTwoB.y - lineOneB.y) * (lineTwoA.x - lineOneB.x) > (lineTwoA.y - lineOneB.y) * (lineTwoB.x - lineOneB.x)) && ((lineTwoA.y - lineOneA.y) * (lineOneB.x - lineOneA.x) > (lineOneB.y - lineOneA.y) * (lineTwoA.x - lineOneA.x)) != ((lineTwoB.y - lineOneA.y) * (lineOneB.x - lineOneA.x) > (lineOneB.y - lineOneA.y) * (lineTwoB.x - lineOneA.x)); }
 }

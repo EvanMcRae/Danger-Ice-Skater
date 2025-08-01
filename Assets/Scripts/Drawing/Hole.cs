@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using Game;
 using UnityEngine;
 using Unity.XR.CoreUtils;
+using Unity.VisualScripting;
 
 public class Hole : MonoBehaviour
 {
+    private float m_killHeight = -10;
     private float m_spawnTime;
-    private bool m_isDead = false, m_isFalling = false;
+    private bool m_isDead = false, m_isFalling = false, m_isReplenishing = false;
     [SerializeField] private Material m_maskMat;
     [SerializeField] private MeshCollider m_meshCollider;
     private List<Vector3> m_vertices;
@@ -21,48 +23,55 @@ public class Hole : MonoBehaviour
     {
         spawnedPos = transform.position;
         m_spawnTime = Time.time;
-        m_meshCollider = GetComponentInChildren<MeshCollider>();
-        m_vertices = GetVertices();
 
-        // Find all holes inside this hole and make them fall too
-        foreach (GameObject holeObj in HoleCutter.Holes)
+        if (!m_isFalling)
         {
-            if (holeObj == null) return;
-            Hole hole = holeObj.GetComponent<Hole>();
-            if (hole == null || hole == this) return;
+            m_meshCollider = GetComponentInChildren<MeshCollider>();
+            m_vertices = GetVertices();
 
-            if (!hole.m_isDead && m_spawnTime > hole.m_spawnTime && !hole.m_isFalling)
+            // Find all holes inside this hole and make them fall too
+            foreach (GameObject holeObj in HoleCutter.Holes)
             {
-                if (ContainsHole(hole))
+                if (holeObj == null) return;
+                Hole hole = holeObj.GetComponent<Hole>();
+                if (hole == null || hole == this) return;
+
+                if (!hole.m_isDead && !hole.m_isReplenishing && m_spawnTime > hole.m_spawnTime && !hole.m_isFalling)
                 {
-                    hole.FallDown();
-                }
-                else if (OverlapsHole(hole))
-                {
-                    GameObject newHole = Instantiate(hole.gameObject);
-                    newHole.GetComponent<Hole>().FallDown();
-                    newHole.GetComponent<Hole>().enabled = false;
+                    if (ContainsHole(hole))
+                    {
+                        hole.FallDown();
+                    }
+                    else if (OverlapsHole(hole))
+                    {
+                        GameObject newHole = Instantiate(hole.gameObject);
+                        newHole.GetComponent<Hole>().FallDown();
+                    }
                 }
             }
         }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > HOLE_LIFETIME + m_spawnTime && !m_isDead)
+        if (!m_isDead && !m_isReplenishing && ((!m_isFalling && Time.time > HOLE_LIFETIME + m_spawnTime) || (m_isFalling && transform.position.y < m_killHeight)))
         {
-            m_isDead = true;
-            if (!m_isFalling)
+            if (!m_isFalling && !m_isReplenishing)
+            {
                 SpawnRespawnVisuals();
-            HoleCutter.Holes.Remove(gameObject);
-            Destroy(gameObject);
+            }
+            else
+            {
+                RemoveHole();
+            }
         }
     }
 
     private void OnCollisionStay(Collision other)
     {
-        if (m_isDead) return;
+        if (m_isDead || m_isFalling || m_isReplenishing) return;
 
         if (ContainsBounds(other.collider.bounds))
         {
@@ -70,9 +79,7 @@ public class Hole : MonoBehaviour
             other.gameObject.GetComponent<Rigidbody>().linearVelocity.Normalize();
             other.gameObject.GetComponent<Rigidbody>().linearVelocity /= 5;
 
-            PlayerController player = other.gameObject.GetComponent<PlayerController>();
-
-            if (player != null)
+            if (other.gameObject.TryGetComponent<PlayerController>(out var player))
             {
                 PlayerController.gameOvered = true;
                 geb.OnPlayerDeathByFalling.Invoke(player); //Event invocation.
@@ -153,7 +160,16 @@ public class Hole : MonoBehaviour
 
     public void SpawnRespawnVisuals()
     {
+        m_isReplenishing = true;
         GameObject addedVisuals = Instantiate(holeRefillVisuals, spawnedPos, transform.rotation);
         addedVisuals.GetComponent<MeshFilter>().mesh = GetComponent<MeshFilter>().mesh;
+        addedVisuals.GetComponent<HoleRefillVisuals>().SetHole(this);
+    }
+
+    public void RemoveHole()
+    {
+        m_isDead = true;
+        HoleCutter.Holes.Remove(gameObject);
+        Destroy(gameObject);
     }
 }
