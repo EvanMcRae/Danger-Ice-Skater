@@ -3,7 +3,7 @@ Shader "Custom/Mask"
     SubShader
     {
         Tags {
-            "Queue" = "Transparent+1"
+            "Queue" = "Transparent+3"
         }
 
         Pass {

@@ -1,14 +1,33 @@
+using DG.Tweening;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class MenuManager : MonoBehaviour
 {
     [SerializeField]
     GameObject[] Menus;
 
+    private List<float> startPositions;
+
     [SerializeField]
     string NextSceneName;
+
+    private void Start()
+    {
+        startPositions = new List<float>(); ///[Menus.Length];
+        foreach (GameObject menu in Menus)
+        {
+            startPositions.Add(menu.transform.position.y);
+            if (menu != Menus[0])
+            {
+                menu.transform.DOMoveY(-900, 0f);
+            }
+        }
+    }
 
     public void StartGame()
     {
@@ -18,19 +37,20 @@ public class MenuManager : MonoBehaviour
     public void Title()
     {
         TurnOffMenus();
+
         Menus[0].SetActive(true);
     }
 
     public void Credits()
     {
         TurnOffMenus();
-        Menus[1].SetActive(true);
+        ActivateMenuWithAnimation(1);
     }
 
     public void Instructions()
     {
         TurnOffMenus();
-        Menus[2].SetActive(true);
+        ActivateMenuWithAnimation(2);
     }
 
     public void QuitGame()
@@ -49,7 +69,23 @@ public class MenuManager : MonoBehaviour
     {
         foreach (GameObject menu in Menus)
         {
-            menu.SetActive(false);
+            if(menu != Menus[0])
+            {
+                //menu.SetActive(false);
+                menu.transform.DOMoveY(-900, .4f);
+            }
         }
+    }
+
+    private void ActivateMenuWithAnimation(int index)
+    {
+        GameObject menu = Menus[index];
+        menu.SetActive(true);
+
+        float startPos = startPositions[index];
+
+        DG.Tweening.Sequence mySequence = DOTween.Sequence();
+        mySequence.Append(menu.transform.DOMoveY(startPos + 50, .4f));
+        mySequence.Append(menu.transform.DOMoveY(startPos, .5f));
     }
 }

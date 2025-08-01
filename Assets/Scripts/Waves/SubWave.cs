@@ -33,5 +33,15 @@ namespace Waves {
         ///     The number of credits that the waves have to buy smaller enemies with.
         /// </summary>
         public int randomEnemyCredits;
+
+        public bool IsSubWaveInSize(int maxNum) {
+            int total = 0;
+            foreach (EnemyListEntry e in enemies) {
+                total += e.count;
+            }
+
+            if (total > maxNum) return false;
+            return true;
+        }
     }
 }
