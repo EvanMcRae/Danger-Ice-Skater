@@ -21,6 +21,7 @@ public class HoleCutter : MonoBehaviour
     public const int MIN_POINTS = 8;
     public const float RESOLUTION = 0.1f;
     public const int MAX_POINTS = 200;
+    public const int MIN_POINTS_FOR_HOLE = 25;
     private LineRenderer lineRenderer;
     private Vector3 lastPos;
 
@@ -59,8 +60,14 @@ public class HoleCutter : MonoBehaviour
                         }
                     }
 
-                    if (Points.Count - intersectPoint <= 5)
+                    if (Points.Count - intersectPoint <= MIN_POINTS_FOR_HOLE && intersectPoint > 0)
+                    {
+                        //This removeRange removes loops that are too small from the path
+                        //This means you cannot hit the loop again to cut things off, but it prevents an issue
+                        //where in a series of loops, finishing a large enough later loop would cut out all too small earlier ones
+                        Points.RemoveRange(intersectPoint, Points.Count - intersectPoint);
                         intersectPoint = -1;
+                    }
 
                     List<Vector2> cutoutPoints = new List<Vector2>();
 
