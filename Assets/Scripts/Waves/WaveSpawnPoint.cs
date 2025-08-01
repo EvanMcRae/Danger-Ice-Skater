@@ -6,10 +6,18 @@ namespace Waves {
         
         public GameObject spawnPoint;
         public GameObject relativeDirection;
+
+        public MeshRenderer pointRenderer;
+        public MeshRenderer directionRenderer;
         
         public Enemy thisEnemy;
 
         public float forceScalar;
+
+        public void Start() {
+            pointRenderer.enabled = false;
+            directionRenderer.enabled = false;
+        }
 
         public void SpawnEnemyAt(Enemy e) {
 
