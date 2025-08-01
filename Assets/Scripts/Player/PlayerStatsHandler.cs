@@ -18,10 +18,11 @@ namespace Player {
             hd.UpdateMaxHealth(maxHealth);
         }
 
-        public void Damage(int damage) {
+        public bool Damage(int damage) {
             health = Mathf.Max(health - damage, 0);
-            if (health == 0) KillFromDamage();
             hd.DealDamage(damage);
+            if (health == 0) KillFromDamage();
+            return health == 0;
         }
         
         public void Heal(int amount) {
