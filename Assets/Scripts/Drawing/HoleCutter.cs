@@ -154,9 +154,12 @@ public class HoleCutter : MonoBehaviour
             GameObject newCutout = Instantiate(CutoutPrefab, transform.position, Quaternion.identity);
             PopulateMesh(newCutout, mesh, true);
             Cutouts.Add(newCutout);
+            Holes.Add(newHole);
         }
-
-        Holes.Add(newHole);
+        else
+        {
+            Destroy(newHole);
+        }
     }
 
     void PopulateMesh(GameObject newObject, Mesh mesh, bool isCutout)

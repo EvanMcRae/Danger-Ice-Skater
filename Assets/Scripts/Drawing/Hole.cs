@@ -87,7 +87,6 @@ public class Hole : MonoBehaviour
 
             if (other.gameObject.TryGetComponent<PlayerController>(out var player))
             {
-                
                 PlayerStatsHandler sh = player.GetComponent<PlayerStatsHandler>();
                 if (sh.Damage(2)) geb.OnPlayerDeathByHit.Invoke(sh);
                 else {
