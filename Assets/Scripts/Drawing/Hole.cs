@@ -50,7 +50,8 @@ public class Hole : MonoBehaviour
         if (Time.time > HOLE_LIFETIME + m_spawnTime && !m_isDead)
         {
             m_isDead = true;
-            SpawnRespawnVisuals();
+            if (!m_isFalling)
+                SpawnRespawnVisuals();
             HoleCutter.Holes.Remove(gameObject);
             Destroy(gameObject);
         }
@@ -145,7 +146,7 @@ public class Hole : MonoBehaviour
         // Apply new mask material to apply to falling cutout
         GetComponent<MeshRenderer>().material = m_maskMat;
     }
-    
+
     public void SpawnRespawnVisuals()
     {
         GameObject addedVisuals = Instantiate(holeRefillVisuals, spawnedPos, transform.rotation);

@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 moveDir = new Vector3(horizontal * acceleration, 0, vertical * acceleration);
         
-        Debug.Log(moveDir);
+        // Debug.Log(moveDir);
         rb.AddForce(moveDir);
 
         
