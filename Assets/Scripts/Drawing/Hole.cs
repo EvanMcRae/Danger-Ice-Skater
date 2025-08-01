@@ -5,7 +5,7 @@ using Unity.XR.CoreUtils;
 
 public class Hole : MonoBehaviour
 {
-    private float m_spawnTime, m_killHeight = -10f;
+    private float m_spawnTime;
     private bool m_isDead = false, m_isFalling = false;
     [SerializeField] private Material m_maskMat;
     [SerializeField] private MeshCollider m_meshCollider;
@@ -67,11 +67,11 @@ public class Hole : MonoBehaviour
             other.gameObject.GetComponent<Rigidbody>().linearVelocity.Normalize();
             other.gameObject.GetComponent<Rigidbody>().linearVelocity /= 5;
 
-            PlayerControler player = other.gameObject.GetComponent<PlayerControler>();
+            PlayerController player = other.gameObject.GetComponent<PlayerController>();
 
             if (player != null)
             {
-                PlayerControler.gameOvered = true;
+                PlayerController.gameOvered = true;
             }
         }
     }
