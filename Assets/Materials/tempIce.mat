@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: tempIce
-  m_Shader: {fileID: -6465566751694194690, guid: 6b3361cbf9a9cbf44b5128140cc71558, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: ee3ec09ff24b9494c8d8b50b9e2ef97e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -107,9 +107,9 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _Dissolve_Edge_Depth: 0
-    - _Dissolve_Edge_Weight: 1
-    - _Dissolve_Noise_Scale: 76.24
+    - _Dissolve_Edge_Depth: 0.04
+    - _Dissolve_Edge_Weight: 0
+    - _Dissolve_Noise_Scale: 20
     - _Dissolve_Noise_Speed: 0
     - _Dissolve_Progress: 0
     - _DstBlend: 0
@@ -133,7 +133,7 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _Tile: -0.58
+    - _Tile: 0.58
     - _Tiling: 0.2
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1

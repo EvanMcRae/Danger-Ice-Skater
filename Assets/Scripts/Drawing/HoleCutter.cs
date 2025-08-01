@@ -162,7 +162,7 @@ public class HoleCutter : MonoBehaviour
             for (int i = 0; i < mesh.vertexCount; i++)
             {
                 // Map each vertex to a UV based on its position relative to the bounds
-                uvs[i] = new Vector2((mesh.vertices[i].x - bounds.min.x) / bounds.size.x, (mesh.vertices[i].y - bounds.min.y) / bounds.size.y);
+                uvs[i] = new Vector2((mesh.vertices[i].x - bounds.min.x), (mesh.vertices[i].y - bounds.min.y));
             }
             mesh.uv = uvs;
 
