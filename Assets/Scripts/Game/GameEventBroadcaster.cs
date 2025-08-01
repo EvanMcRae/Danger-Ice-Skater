@@ -7,7 +7,7 @@ namespace Game {
     public class GameEventBroadcaster : ScriptableObject {
         
         /// Params: The player that died.
-        public UnityEvent<PlayerControler> OnPlayerDeath;
+        public UnityEvent<PlayerController> OnPlayerDeath;
         
         /// Params: The wave number that was spawned.
         public UnityEvent<int> OnWaveSpawned;
