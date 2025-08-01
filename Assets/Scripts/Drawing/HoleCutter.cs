@@ -86,24 +86,19 @@ public class HoleCutter : MonoBehaviour
                     }
                 }
 
-                if (Points.Count < MAX_POINTS)
-                {
-                    Points.Add(pointToAdd);
-                    lineRenderer.positionCount++;
-                    lineRenderer.SetPosition(lineRenderer.positionCount - 1, new Vector3(pos.x, planeHeight, pos.z));
-                }
-                else
-                {
-                    //Move buffer over. Poor scaling run time (O(n)), but size is capped small enough it is not an issue. 
+                
+                
+                //Move buffer over. Poor scaling run time (O(n)), but size is capped small enough it is not an issue. 
+                if (Points.Count >= MAX_POINTS)
                     Points.RemoveAt(0);
-                    Points.Add(pointToAdd);
+                Points.Add(pointToAdd);
 
-                    lineRenderer.positionCount = Points.Count;
-                    for (int i = 0; i < lineRenderer.positionCount; i++)
-                    {
-                        lineRenderer.SetPosition(i, new Vector3(Points[i].x, planeHeight, Points[i].y));
-                    }
+                lineRenderer.positionCount = Points.Count;
+                for (int i = 0; i < lineRenderer.positionCount; i++)
+                {
+                    lineRenderer.SetPosition(i, new Vector3(Points[i].x, planeHeight, Points[i].y));
                 }
+                
             }
         }
 
@@ -157,16 +152,6 @@ public class HoleCutter : MonoBehaviour
 
         if (isCutout && mesh != null)
         {
-            // Apply UV coordinates for texture rendering
-            Vector2[] uvs = new Vector2[mesh.vertexCount];
-            Bounds bounds = mesh.bounds;
-            for (int i = 0; i < mesh.vertexCount; i++)
-            {
-                // Map each vertex to a UV based on its position relative to the bounds
-                uvs[i] = new Vector2((mesh.vertices[i].x - bounds.min.x) / bounds.size.x, (mesh.vertices[i].y - bounds.min.y) / bounds.size.y);
-            }
-            mesh.uv = uvs;
-
             // Calculate normals
             mesh.RecalculateNormals();
         }
