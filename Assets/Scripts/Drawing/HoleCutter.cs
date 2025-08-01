@@ -79,13 +79,10 @@ public class HoleCutter : MonoBehaviour
                         {
                             cutoutPoints.Add(Points[i]);
                         }
-
                         MakeCutout(cutoutPoints);
 
-                        Points.RemoveRange(intersectPoint, Points.Count - intersectPoint);
-                        intersectPoint = -1;
-
-                        Debug.Log("CuttingSegment");
+                        // Remove points that were included in the segment, minus the intersection point
+                        Points.RemoveRange(intersectPoint + 1, Points.Count - intersectPoint - 1);
                     }
                 }
 
