@@ -10,7 +10,7 @@ public class Hole : MonoBehaviour
     private float m_killHeight = -10;
     private float m_spawnTime;
     private bool m_isDead = false, m_isFalling = false, m_isReplenishing = false;
-    [SerializeField] private Material m_maskMat;
+    [SerializeField] private Material m_maskMat, m_refillMat;
     [SerializeField] private MeshCollider m_meshCollider;
     private List<Vector3> m_vertices;
     public const float HOLE_LIFETIME = 5;
@@ -166,7 +166,8 @@ public class Hole : MonoBehaviour
     public void SpawnRespawnVisuals()
     {
         m_isReplenishing = true;
-        m_refillObj = Instantiate(holeRefillVisuals, spawnedPos, transform.rotation);
+        GetComponent<MeshRenderer>().material = m_refillMat;
+        m_refillObj = Instantiate(holeRefillVisuals, spawnedPos + Vector3.down * 0.0001f, transform.rotation);
         m_refillObj.GetComponent<MeshFilter>().mesh = GetComponent<MeshFilter>().mesh;
         m_refillObj.GetComponent<HoleRefillVisuals>().SetHole(this);
     }
