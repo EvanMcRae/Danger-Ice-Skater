@@ -65,6 +65,13 @@ public class Hole : MonoBehaviour
             other.gameObject.GetComponent<Rigidbody>().excludeLayers = 1 << 6 | 1 << 7; // ignore ice and hole
             other.gameObject.GetComponent<Rigidbody>().linearVelocity.Normalize();
             other.gameObject.GetComponent<Rigidbody>().linearVelocity /= 5;
+
+            PlayerControler player = other.gameObject.GetComponent<PlayerControler>();
+
+            if (player != null)
+            {
+                PlayerControler.gameOvered = true;
+            }
         }
     }
 
