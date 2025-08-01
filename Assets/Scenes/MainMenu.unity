@@ -3741,7 +3741,7 @@ MonoBehaviour:
   - {fileID: 1597023803}
   - {fileID: 441516024}
   - {fileID: 871281765}
-  NextSceneName: SampleScene
+  NextSceneName: GameScene
 --- !u!1 &1848573764
 GameObject:
   m_ObjectHideFlags: 0

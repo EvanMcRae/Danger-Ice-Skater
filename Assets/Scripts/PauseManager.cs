@@ -27,7 +27,7 @@ public class PauseManager : MonoBehaviour
             startPositions.Add(menu.transform.position.y);
             if (menu != Menus[0])
             {
-                menu.transform.DOMoveY(-900, 0f);
+                menu.transform.DOMoveY(-Screen.height, 0f);
             }
         }
 
@@ -49,8 +49,8 @@ public class PauseManager : MonoBehaviour
             if (menu != Menus[0])
             {;
                 DG.Tweening.Sequence mySequence = DOTween.Sequence().SetUpdate(true);
-                mySequence.Append(menu.transform.DOMoveY(-900, 0f));
-                mySequence.Append(menu.transform.DOMoveY(-900, 1f));
+                mySequence.Append(menu.transform.DOMoveY(-Screen.height, 0f));
+                mySequence.Append(menu.transform.DOMoveY(-Screen.height, 1f));
             }
         }
         Time.timeScale = 1;
@@ -82,7 +82,7 @@ public class PauseManager : MonoBehaviour
         {
             if (menu != Menus[0])
             {
-                menu.transform.DOMoveY(-900, .4f).SetUpdate(true);
+                menu.transform.DOMoveY(-Screen.height, .4f).SetUpdate(true);
             }
         }
     }

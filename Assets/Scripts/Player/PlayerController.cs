@@ -1,15 +1,19 @@
 using Enemies;
 using Input;
+using Player;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    Rigidbody rb;
+    public Rigidbody rb;
     public InputManager imso;
 
     [SerializeField]
     PauseManager pm;
+
+    public PlayerStatsHandler psh;
 
     /// <summary>
     /// The rate at which the player accelerates when they move
@@ -30,6 +34,10 @@ public class PlayerController : MonoBehaviour
     public float dashCooldown;
     public float dashTimer;
 
+    public float respawnHeight;
+
+    public float fallThroughHoleTimer;
+    public float fallThroughHoleTime;
 
     public MaskObject arenaFloor;
 
@@ -59,15 +67,20 @@ public class PlayerController : MonoBehaviour
         }
         
         if (imso.jump.action.WasPressedThisFrame()) Jump();
-            
+
         dashTimer = Mathf.Max(dashTimer - Time.deltaTime, 0);
-            
-        if (imso.dash.action.WasPressedThisFrame() && 
+
+        if (imso.dash.action.WasPressedThisFrame() &&
             (imso.xAxis.action.IsPressed() || imso.yAxis.action.IsPressed()) &&
-            dashTimer <= 0) {
-                
+            dashTimer <= 0)
+        {
+
             Dash();
             dashTimer = dashCooldown;
+        }
+
+        if (gameOvered) {
+            fallThroughHoleTimer -= Time.deltaTime;
         }
     }
 
@@ -82,6 +95,16 @@ public class PlayerController : MonoBehaviour
         {
             horizontal = 0;
             vertical = 0;
+            if (fallThroughHoleTimer <= 0) {
+                rb.AddForce(Vector3.up * dashForce, ForceMode.Force);
+                rb.useGravity = false;
+            }
+            if (transform.position.y > respawnHeight) {
+                gameOvered = false;
+                rb.useGravity = true;
+                rb.excludeLayers = 0;
+                rb.linearDamping = 1;
+            }
         }
 
         if (rb.linearVelocity.x > 0 && horizontal < 0 || rb.linearVelocity.x < 0 && horizontal > 0)
@@ -112,8 +135,7 @@ public class PlayerController : MonoBehaviour
     public void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("Enemy")) {
             Enemy e = other.gameObject.GetComponent<Enemy>();
-            //e.DestroyEnemy();
-            Debug.Log("-1 Health -- TODO add this");
+            psh.Damage(1);
         }
         else if (other.gameObject.layer == 7) // ice
         {
@@ -130,12 +152,14 @@ public class PlayerController : MonoBehaviour
     }
     
     public void Dash() {
+        if (gameOvered) return;
         Vector3 dir = new Vector3(imso.xAxis.action.ReadValue<float>(), 0, imso.yAxis.action.ReadValue<float>());
         rb.linearVelocity = Vector3.zero;
         rb.AddForce(dir * dashForce, ForceMode.Impulse);
     }
 
     public void Jump() {
+        if (gameOvered) return;
         if (!isTouchingGround) return;
         rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
         rb.AddForce(Vector3.up * dashForce, ForceMode.Impulse);

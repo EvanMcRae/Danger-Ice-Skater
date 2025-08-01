@@ -1,4 +1,5 @@
 ﻿using Enemies;
+using Player;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,8 +7,11 @@ namespace Game {
     [CreateAssetMenu(fileName = "GameEventBroadcaster", menuName = "EventBroadcasters/GameEventBroadcaster")]
     public class GameEventBroadcaster : ScriptableObject {
         
-        /// Params: The player that died.
-        public UnityEvent<PlayerController> OnPlayerDeath;
+        /// Params: The player that died. Called when the player falls through the ice.
+        public UnityEvent<PlayerController> PlayerFellThroughIce;
+        
+        /// Params: The player that died. Called when the player's health drops to zero.
+        public UnityEvent<PlayerStatsHandler> OnPlayerDeathByHit;
         
         /// Params: The wave number that was spawned.
         public UnityEvent<int> OnWaveSpawned;

@@ -156,7 +156,9 @@ MonoBehaviour:
   rb: {fileID: 2537937922704579174}
   m_killHeight: -10
   m_isDead: 0
-  canMove: 0
+  m_waiting: 0
+  anim: {fileID: 6028884704192459635}
+  canMove: 1
   player: {fileID: 0}
   rotateTowardsPlayer: 0
   moveTowardsPlayer: 0
@@ -166,6 +168,11 @@ MonoBehaviour:
   idleForce: 7
   idleCooldown: 0.01
   trap: {fileID: 3176648040938010380, guid: 477a1fa50904d5045938a911394703a3, type: 3}
+  top: {fileID: 0}
+  bottom: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
+  center: {fileID: 0}
   cooldownDelay: 0
   targetSpot2: {x: 0, y: 0, z: 0}
 --- !u!95 &6028884704192459635
@@ -178,7 +185,7 @@ Animator:
   m_GameObject: {fileID: 4314613379763922495}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 01b6b8110e544024e857a6a99f5eaa6a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
