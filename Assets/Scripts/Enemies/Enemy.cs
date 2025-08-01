@@ -13,18 +13,29 @@ namespace Enemies {
 
         public float m_killHeight = -10f;
         public bool m_isDead = false;
+        public bool m_waiting; //default to true
+
+        public Animator anim;
+        float waitToDie = 0f;
 
         public void DestroyEnemy()
         {
-            if (m_isDead) return;
+            //if (m_isDead) return;
             m_isDead = true;
-            EnemyDied();
-            //TODO: Play death animation
-            Destroy(gameObject);
+
+            if(waitToDie == 0) EnemyDied();
+            anim.Play("fall");
+
+            //Allow time for the enemy to fall through the ice
+            waitToDie += Time.deltaTime;
+            if (waitToDie >= 5)
+                Destroy(gameObject);
         }
         
         public void Start() {
             EnemySpawned();
+            anim = gameObject.GetComponent<Animator>();
+            m_waiting = false; //TODO: change to true when implemented with waves
         }
 
         public void Update()

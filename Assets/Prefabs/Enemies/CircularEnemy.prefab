@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2195384543396606808}
   - component: {fileID: 3082789497159342337}
   - component: {fileID: 9024460489902341260}
+  - component: {fileID: 547468786114739637}
   m_Layer: 2
   m_Name: CircularEnemy
   m_TagString: Enemy
@@ -156,6 +157,8 @@ MonoBehaviour:
   m_enemyType: 2
   m_killHeight: -10
   m_isDead: 0
+  m_waiting: 0
+  anim: {fileID: 0}
   player: {fileID: 0}
   rb: {fileID: 3082789497159342337}
   rotateTowardsPlayer: 1
@@ -167,3 +170,25 @@ MonoBehaviour:
   dashTime: 3
   targetRange: 15
   clockwise: 1
+--- !u!95 &547468786114739637
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714323355253145324}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6157ddeac48f6eb498fd5a0173f078e2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

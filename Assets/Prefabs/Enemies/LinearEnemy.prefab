@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7652989749962115737}
   - component: {fileID: 2865376438257044195}
   - component: {fileID: 2549344607763642334}
+  - component: {fileID: 2939290769832064937}
   m_Layer: 2
   m_Name: LinearEnemy
   m_TagString: Enemy
@@ -156,8 +157,32 @@ MonoBehaviour:
   m_enemyType: 1
   m_killHeight: -10
   m_isDead: 0
+  m_waiting: 0
+  anim: {fileID: 0}
   player: {fileID: 0}
   rb: {fileID: 2865376438257044195}
   rotateTowardsPlayer: 1
   moveTowardsPlayer: 1
   moveForce: 10
+--- !u!95 &2939290769832064937
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077937690178825339}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 29778371ec564fe428d0efcb239d618e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

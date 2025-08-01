@@ -35,16 +35,24 @@ namespace Enemies
         }
         public new void Update()
         {
-            base.Update();
-            if (idleDelay <= 0f && !placingTrap)
+            if (!m_waiting && !m_isDead)
             {
-                placingTrap = true;
-                targetSpot = GenerateTarget(placingRadius);
-                idleDelay = idleTime;
+                base.Update();
+                if (idleDelay <= 0f && !placingTrap)
+                {
+                    placingTrap = true;
+                    targetSpot = GenerateTarget(placingRadius);
+                    idleDelay = idleTime;
+                }
+
+                if (placingTrap)
+                {
+                    anim.Play("placeTrap");
+                    DropTrap();
+                }
+                else Idle();
             }
-            
-            if (placingTrap) DropTrap();
-            else Idle();
+            else if (!m_isDead) anim.Play("idle");
         }
 
         //Seeks a target spot to drop a trap
@@ -87,6 +95,7 @@ namespace Enemies
             //Move in a direction
             if (cooldownDelay > 0f && !notMoving)
             {
+                anim.Play("skate");
                 Vector3 vectorDiff = targetSpot2 - transform.position;
                 vectorDiff.Normalize();
                 rb.AddForce(vectorDiff * idleForce, ForceMode.Impulse);
@@ -95,7 +104,11 @@ namespace Enemies
             else notMoving = true;
 
             //Standing still
-            if (notMoving) cooldownDelay += Time.deltaTime;
+            if (notMoving)
+            {
+                cooldownDelay += Time.deltaTime;
+                anim.Play("idle");
+            }
 
             //Ready to move again (resetting variables)
             if ((cooldownDelay >= 3) && notMoving)

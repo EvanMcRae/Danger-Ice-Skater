@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7696771339772762512}
   - component: {fileID: 1275697822901526314}
   - component: {fileID: 6887986620278232493}
+  - component: {fileID: 3220353305595372029}
   m_Layer: 2
   m_Name: ProjectileEnemy
   m_TagString: Enemy
@@ -157,6 +158,8 @@ MonoBehaviour:
   m_enemyType: 3
   m_killHeight: -10
   m_isDead: 0
+  m_waiting: 0
+  anim: {fileID: 0}
   player: {fileID: 0}
   rb: {fileID: 1275697822901526314}
   rotateTowardsPlayer: 1
@@ -168,6 +171,28 @@ MonoBehaviour:
   projectileSpawnPosition: {fileID: 8634687285915628041}
   puck: {fileID: 7109261927733015708, guid: 80d28e5bfe2ca90478103bec00e6e6bb, type: 3}
   forceScalar: 10
+--- !u!95 &3220353305595372029
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4117237134799207521}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c0ea5fcff8f19b94aafce6f32966e086, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8634687285915628041
 GameObject:
   m_ObjectHideFlags: 0
