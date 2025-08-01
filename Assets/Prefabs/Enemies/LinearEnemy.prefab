@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7652989749962115737}
   - component: {fileID: 2865376438257044195}
   - component: {fileID: 2549344607763642334}
+  - component: {fileID: 2939290769832064937}
   m_Layer: 2
   m_Name: LinearEnemy
   m_TagString: Enemy
@@ -29,13 +30,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4077937690178825339}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.006024637, y: 0.9467368, z: -0.017743096, w: -0.32146278}
+  m_LocalRotation: {x: 0.0060237236, y: -0.9467359, z: 0.017740233, w: 0.32146567}
   m_LocalPosition: {x: 0.0072, y: 0.5054, z: -2.0779}
   m_LocalScale: {x: 1.0143656, y: 0.4870177, z: 1.0024625}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 2.147, y: -142.49, z: 0}
 --- !u!33 &8703706757912135352
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -155,8 +156,32 @@ MonoBehaviour:
   rb: {fileID: 2865376438257044195}
   m_killHeight: -10
   m_isDead: 0
-  canMove: 0
+  m_waiting: 0
+  anim: {fileID: 2939290769832064937}
+  canMove: 1
   player: {fileID: 0}
   rotateTowardsPlayer: 1
   moveTowardsPlayer: 1
   moveForce: 10
+--- !u!95 &2939290769832064937
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077937690178825339}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 29778371ec564fe428d0efcb239d618e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
