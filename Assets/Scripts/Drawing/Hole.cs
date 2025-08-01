@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Game;
+using Player;
 using UnityEngine;
 using Unity.XR.CoreUtils;
 
@@ -74,8 +75,14 @@ public class Hole : MonoBehaviour
 
             if (player != null)
             {
-                PlayerController.gameOvered = true;
-                geb.OnPlayerDeathByFalling.Invoke(player); //Event invocation.
+                
+                PlayerStatsHandler sh = player.GetComponent<PlayerStatsHandler>();
+                if (sh.Damage(2)) geb.OnPlayerDeathByHit.Invoke(sh);
+                else {
+                    geb.PlayerFellThroughIce.Invoke(player); //Event invocation.
+                    PlayerController.gameOvered = true;
+                    player.fallThroughHoleTimer = player.fallThroughHoleTime;
+                }
             }
         }
     }
