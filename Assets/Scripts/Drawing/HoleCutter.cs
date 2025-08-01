@@ -172,7 +172,7 @@ public class HoleCutter : MonoBehaviour
             Debug.LogError("Null hole mesh, did you draw out of bounds?");
         }
 
-        newObject.transform.SetPositionAndRotation(new Vector3(0, planeHeight + 0.0001f, 0), Quaternion.Euler(90, 0, 0));
+        newObject.transform.SetPositionAndRotation(new Vector3(0, planeHeight + (isCutout ? 0 : 0.0001f), 0), Quaternion.Euler(90, 0, 0));
     }
 
     //From https://www.reddit.com/r/gamedev/comments/7ww4yx/whats_the_easiest_way_to_check_if_two_line/
