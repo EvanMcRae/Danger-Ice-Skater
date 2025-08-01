@@ -7,11 +7,16 @@ namespace Enemies
         public new void Start()
         {
             base.Start();
-            moveTowardsPlayer = true;
+            //moveTowardsPlayer = true;
         }
         public new void Update()
         {
-            base.Update();
+            if (m_waiting && !m_isDead) anim.Play("idle");
+            else if (!m_isDead)
+            {
+                base.Update();
+                anim.Play("skate");
+            }
         }
     }
 }

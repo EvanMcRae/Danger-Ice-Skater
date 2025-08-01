@@ -26,32 +26,39 @@ namespace Enemies
         }
         public new void Update()
         {
-            base.Update();
+            if (!m_waiting && !m_isDead)
+            {
+                base.Update();
 
-            //If in range, circle player
-            if ((DistanceFromTarget(player.transform.position) <= targetRange) && !isAttacking) {
-                CirclePlayer();
-                rangeDelay -= Time.deltaTime;
-
-                //If in range for this long, attack player
-                if(rangeDelay <= 0)
+                //If in range, circle player
+                if ((DistanceFromTarget(player.transform.position) <= targetRange) && !isAttacking)
                 {
-                    isAttacking = true;
+                    CirclePlayer();
+                    rangeDelay -= Time.deltaTime;
+
+                    //If in range for this long, attack player
+                    if (rangeDelay <= 0)
+                    {
+                        isAttacking = true;
+                        rangeDelay = rangeTime;
+                    }
+                    else if (rangeDelay <= 1f)
+                    {
+                        circleForce = circleForce / 2; //Slows down circular force
+                    }
+                }
+                //Out of range
+                else
+                {
+                    circleForce = minCircleForce;
                     rangeDelay = rangeTime;
                 }
-                else if (rangeDelay <= 1f){
-                    circleForce = circleForce / 2; //Slows down circular force
-                }
-            }
-            //Out of range
-            else
-            {
-                circleForce = minCircleForce;
-                rangeDelay = rangeTime;
-            }
 
-            if (isAttacking)
-                AttackPlayer();
+                if (isAttacking)
+                    AttackPlayer();
+                else anim.Play("skate");
+            }
+            else if (!m_isDead) anim.Play("idle");
         }
         
         public void CirclePlayer()
@@ -65,7 +72,8 @@ namespace Enemies
         public void AttackPlayer()
         {
             //Dash + Dash cooldown
-            if (dashDelay >= dashTime - .01f) { 
+            if (dashDelay >= dashTime - .01f) {
+                anim.Play("dash");
                 Vector3 vectorDiff = player.transform.position - transform.position;
                 vectorDiff.Normalize();
 
