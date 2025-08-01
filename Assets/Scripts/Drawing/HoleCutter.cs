@@ -22,12 +22,17 @@ public class HoleCutter : MonoBehaviour
     public const float RESOLUTION = 0.1f;
     public const int MAX_POINTS = 200;
     public const int MIN_POINTS_FOR_HOLE = 25;
+    public const float POINT_PLACE_WAIT_TIME = 0.025f;
     private LineRenderer lineRenderer;
     private Vector3 lastPos;
+    private float lastPlaceTime = 0;
 
     [SerializeField] private PlayerController player;
 
     [SerializeField] private float planeHeight;
+
+    
+
 
     private void Start()
     {
@@ -42,8 +47,9 @@ public class HoleCutter : MonoBehaviour
             isDrawing = true;
             Vector3 pos = player.transform.position;
 
-            if (Vector3.Distance(pos, lastPos) >= RESOLUTION)
+            if (Time.time > lastPlaceTime + POINT_PLACE_WAIT_TIME)
             {
+                lastPlaceTime = Time.time;
                 lastPos = pos;
                 Vector2 pointToAdd = new(pos.x, pos.z);
 
