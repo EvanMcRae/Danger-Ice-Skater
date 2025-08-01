@@ -6,10 +6,10 @@ using UnityEngine.InputSystem;
 public class HoleCutter : MonoBehaviour
 {
     [SerializeField] private GameObject HolePrefab;
-    [SerializeField] private List<GameObject> Holes;
+    public static List<GameObject> Holes = new();
 
     [SerializeField] private GameObject CutoutPrefab;
-    [SerializeField] private List<GameObject> Cutouts;
+    public static List<GameObject> Cutouts = new();
 
     public List<Vector2> Points = new();
 
@@ -21,6 +21,7 @@ public class HoleCutter : MonoBehaviour
     public const int MIN_POINTS = 8;
     public const float RESOLUTION = 0.1f;
     public const int MAX_POINTS = 200;
+    public const int MIN_POINTS_FOR_HOLE = 25;
     private LineRenderer lineRenderer;
     private Vector3 lastPos;
 
@@ -59,8 +60,14 @@ public class HoleCutter : MonoBehaviour
                         }
                     }
 
-                    if (Points.Count - intersectPoint <= 5)
+                    if (Points.Count - intersectPoint <= MIN_POINTS_FOR_HOLE && intersectPoint > 0)
+                    {
+                        //This removeRange removes loops that are too small from the path
+                        //This means you cannot hit the loop again to cut things off, but it prevents an issue
+                        //where in a series of loops, finishing a large enough later loop would cut out all too small earlier ones
+                        Points.RemoveRange(intersectPoint, Points.Count - intersectPoint);
                         intersectPoint = -1;
+                    }
 
                     List<Vector2> cutoutPoints = new List<Vector2>();
 
@@ -72,9 +79,10 @@ public class HoleCutter : MonoBehaviour
                         {
                             cutoutPoints.Add(Points[i]);
                         }
-
                         MakeCutout(cutoutPoints);
-                        Debug.Log("CuttingSegment");
+
+                        // Remove points that were included in the segment, minus the intersection point
+                        Points.RemoveRange(intersectPoint + 1, Points.Count - intersectPoint - 1);
                     }
                 }
 
@@ -90,13 +98,12 @@ public class HoleCutter : MonoBehaviour
                     Points.RemoveAt(0);
                     Points.Add(pointToAdd);
 
-                    for(int i = 0; i < lineRenderer.positionCount; i++)
+                    lineRenderer.positionCount = Points.Count;
+                    for (int i = 0; i < lineRenderer.positionCount; i++)
                     {
                         lineRenderer.SetPosition(i, new Vector3(Points[i].x, planeHeight, Points[i].y));
                     }
-                    
                 }
-                
             }
         }
 
@@ -145,10 +152,10 @@ public class HoleCutter : MonoBehaviour
     {
         MeshFilter meshFilter = newObject.GetComponent<MeshFilter>();
         meshFilter.mesh = mesh;
-        MeshCollider meshCollider = newObject.GetComponent<MeshCollider>();
+        MeshCollider meshCollider = newObject.GetComponentInChildren<MeshCollider>();
         meshCollider.sharedMesh = mesh;
 
-        if (isCutout)
+        if (isCutout && mesh != null)
         {
             // Apply UV coordinates for texture rendering
             Vector2[] uvs = new Vector2[mesh.vertexCount];
@@ -169,7 +176,7 @@ public class HoleCutter : MonoBehaviour
             Debug.LogError("Null hole mesh, did you draw out of bounds?");
         }
 
-        newObject.transform.SetPositionAndRotation(new Vector3(0, planeHeight + 0.0001f, 0), Quaternion.Euler(90, 0, 0));
+        newObject.transform.SetPositionAndRotation(new Vector3(0, planeHeight + (isCutout ? 0 : 0.0001f), 0), Quaternion.Euler(90, 0, 0));
     }
 
     //From https://www.reddit.com/r/gamedev/comments/7ww4yx/whats_the_easiest_way_to_check_if_two_line/
