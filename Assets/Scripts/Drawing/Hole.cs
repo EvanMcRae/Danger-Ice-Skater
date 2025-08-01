@@ -10,9 +10,13 @@ public class Hole : MonoBehaviour
     [SerializeField] private Material m_maskMat;
     [SerializeField] private MeshCollider m_meshCollider;
     private List<Vector3> m_vertices;
+    public const float HOLE_LIFETIME = 5;
+    public GameObject holeRefillVisuals;
+    private Vector3 spawnedPos;
 
     private void Start()
     {
+        spawnedPos = transform.position;
         m_spawnTime = Time.time;
         m_meshCollider = GetComponentInChildren<MeshCollider>();
         m_vertices = GetVertices();
@@ -43,9 +47,10 @@ public class Hole : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < m_killHeight && !m_isDead)
+        if (Time.time > HOLE_LIFETIME + m_spawnTime && !m_isDead)
         {
             m_isDead = true;
+            SpawnRespawnVisuals();
             HoleCutter.Holes.Remove(gameObject);
             Destroy(gameObject);
         }
@@ -132,5 +137,11 @@ public class Hole : MonoBehaviour
 
         // Apply new mask material to apply to falling cutout
         GetComponent<MeshRenderer>().material = m_maskMat;
+    }
+    
+    public void SpawnRespawnVisuals()
+    {
+        GameObject addedVisuals = Instantiate(holeRefillVisuals, spawnedPos, transform.rotation);
+        addedVisuals.GetComponent<MeshFilter>().mesh = GetComponent<MeshFilter>().mesh;
     }
 }
