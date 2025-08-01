@@ -160,7 +160,7 @@ MonoBehaviour:
   m_waiting: 0
   anim: {fileID: 3220353305595372029}
   canMove: 0
-  player: {fileID: 0}
+  player: {fileID: 5554373441892825148, guid: c2d6af4a74da97649aa016e2ce294297, type: 3}
   rotateTowardsPlayer: 1
   moveTowardsPlayer: 0
   moveForce: 10
