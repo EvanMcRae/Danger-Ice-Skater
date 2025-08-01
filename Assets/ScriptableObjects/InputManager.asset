@@ -15,3 +15,4 @@ MonoBehaviour:
   xAxis: {fileID: 4515558967355559614, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   yAxis: {fileID: -5463600593059028787, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   jump: {fileID: 7369011187908980499, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  pause: {fileID: 1756100728762767780, guid: 052faaac586de48259a63d0c4782560b, type: 3}

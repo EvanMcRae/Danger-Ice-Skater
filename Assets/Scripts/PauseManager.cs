@@ -3,6 +3,7 @@ using Input;
 using NUnit.Framework.Constraints;
 using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,6 +17,8 @@ public class PauseManager : MonoBehaviour
     [SerializeField]
     string MainMenuName;
 
+    public bool paused;
+
     private void Start()
     {
         startPositions = new List<float>();
@@ -27,19 +30,32 @@ public class PauseManager : MonoBehaviour
                 menu.transform.DOMoveY(-900, 0f);
             }
         }
+
+        paused = false;
     }
 
     public void Pause()
     {
         Time.timeScale = 0;
         Menus[0].SetActive(true);
+        paused = true;
     }
 
     public void Unpause()
     {
+        foreach (GameObject menu in Menus)
+        {
+            //this jank makes sure submenus don't stay on screen
+            if (menu != Menus[0])
+            {;
+                DG.Tweening.Sequence mySequence = DOTween.Sequence().SetUpdate(true);
+                mySequence.Append(menu.transform.DOMoveY(-900, 0f));
+                mySequence.Append(menu.transform.DOMoveY(-900, 1f));
+            }
+        }
         Time.timeScale = 1;
-        TurnOffMenus();
         Menus[0].SetActive(false);
+        paused = false;
     }
 
     public void TopPauseMenu()

@@ -8,6 +8,9 @@ public class PlayerControler : MonoBehaviour
     Rigidbody rb;
     public InputManager imso;
 
+    [SerializeField]
+    PauseManager pm;
+
     /// <summary>
     /// The rate at which the player accelerates when they move
     /// </summary>
@@ -26,12 +29,24 @@ public class PlayerControler : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        pm = FindAnyObjectByType<PauseManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (imso.pause.action.WasPressedThisFrame() && pm != null)
+        {
+            if (pm.paused)
+            {
+                pm.Unpause();
+            }
+            else
+            {
+                pm.Pause();
+            }
+        }
     }
 
     void FixedUpdate()
