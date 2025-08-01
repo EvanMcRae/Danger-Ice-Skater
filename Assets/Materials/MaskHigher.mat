@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MaskMaterial
-  m_Shader: {fileID: 4800000, guid: 52b78cab37f2c3e4a8ccd9ede7c79077, type: 3}
+  m_Name: MaskHigher
+  m_Shader: {fileID: 4800000, guid: 1d9d93a3c88c841ecb3e834a5d578cbe, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
