@@ -32,7 +32,7 @@ namespace Enemies {
         }
         
         public void Start() {
-            SetCanMove(false);
+            SetCanMove(false); //Starting value false
             EnemySpawned();
             anim = gameObject.GetComponent<Animator>();
             m_waiting = false; //TODO: change to true when implemented with waves
