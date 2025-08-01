@@ -24,7 +24,7 @@ public class MenuManager : MonoBehaviour
             startPositions.Add(menu.transform.position.y);
             if (menu != Menus[0])
             {
-                menu.transform.DOMoveY(-900, 0f);
+                menu.transform.DOMoveY(-Screen.height, 0f);
             }
         }
     }
@@ -72,7 +72,7 @@ public class MenuManager : MonoBehaviour
             if(menu != Menus[0])
             {
                 //menu.SetActive(false);
-                menu.transform.DOMoveY(-900, .4f);
+                menu.transform.DOMoveY(-Screen.height, .4f);
             }
         }
     }
