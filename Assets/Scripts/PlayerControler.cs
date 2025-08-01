@@ -27,7 +27,7 @@ public class PlayerControler : MonoBehaviour
 
     public MaskObject arenaFloor;
 
-    public bool gameOvered = false;
+    public static bool gameOvered = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -104,7 +104,6 @@ public class PlayerControler : MonoBehaviour
         if (other.gameObject.layer == 7) // ice
         {
             isTouchingGround = false;
-            gameOvered = true;
         }
     }
 }
