@@ -85,12 +85,7 @@ public class MenuManager : MonoBehaviour
         float startPos = startPositions[index];
 
         DG.Tweening.Sequence mySequence = DOTween.Sequence();
-        //mySequence.Append(menu.transform.DOMoveY(-900, .0f));
         mySequence.Append(menu.transform.DOMoveY(startPos + 50, .4f));
         mySequence.Append(menu.transform.DOMoveY(startPos, .5f));
-        //mySequence.Append(menu.transform.DOMoveY(startPos, 0.5f));
-        
-        
-        //menu.transform.DOMoveY(-900, 1f).From();
     }
 }
