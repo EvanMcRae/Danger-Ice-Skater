@@ -826,6 +826,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6386247114682981524, guid: a55e6b8a288afd44584fbc25568c57fe, type: 3}
+      propertyPath: arenaFloor
+      value: 
+      objectReference: {fileID: 1705541773}
     - target: {fileID: 8840452199310655019, guid: a55e6b8a288afd44584fbc25568c57fe, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1784,6 +1788,7 @@ GameObject:
   - component: {fileID: 1705541771}
   - component: {fileID: 1705541770}
   - component: {fileID: 1705541769}
+  - component: {fileID: 1705541773}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -1881,6 +1886,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1705541773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705541768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52eb1e54064f51d4fb76513879756782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lower: 0
 --- !u!1 &1711921243
 GameObject:
   m_ObjectHideFlags: 0
