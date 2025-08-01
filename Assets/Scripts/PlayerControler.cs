@@ -22,6 +22,10 @@ public class PlayerControler : MonoBehaviour
 
     public bool isTouchingGround;
 
+    public MaskObject arenaFloor;
+
+    public bool gameOvered = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -40,6 +44,13 @@ public class PlayerControler : MonoBehaviour
         //modified by rigidbody's Linear Dampening
         float horizontal = imso.xAxis.action.ReadValue<float>();
         float vertical = imso.yAxis.action.ReadValue<float>();
+
+        if(gameOvered)
+        {
+            horizontal = 0;
+            vertical = 0;
+        }
+
         if (rb.linearVelocity.x > 0 && horizontal < 0 || rb.linearVelocity.x < 0 && horizontal > 0)
         {
             horizontal = horizontal * reverseMod;
@@ -51,6 +62,12 @@ public class PlayerControler : MonoBehaviour
         }
 
         rb.AddForce(horizontal * acceleration, 0, vertical * acceleration);
+
+        if(transform.position.y < arenaFloor.transform.position.y)
+        {
+            rb.linearDamping = 4;
+            rb.useGravity = false;
+        }
     }
 
     
@@ -72,6 +89,7 @@ public class PlayerControler : MonoBehaviour
         if (other.gameObject.layer == 7) // ice
         {
             isTouchingGround = false;
+            gameOvered = true;
         }
     }
 }

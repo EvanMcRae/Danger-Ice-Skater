@@ -60,6 +60,8 @@ public class Hole : MonoBehaviour
         {
             other.gameObject.GetComponent<Rigidbody>().excludeLayers = 1 << 6 | 1 << 7; // ignore ice and hole
             // other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
+            other.gameObject.GetComponent<Rigidbody>().linearVelocity.Normalize();
+            other.gameObject.GetComponent<Rigidbody>().linearVelocity /= 5;
         }
     }
 
