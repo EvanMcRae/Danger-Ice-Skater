@@ -25,7 +25,7 @@ public class HoleCutter : MonoBehaviour
     private LineRenderer lineRenderer;
     private Vector3 lastPos;
 
-    [SerializeField] private PlayerControler player;
+    [SerializeField] private PlayerController player;
 
     [SerializeField] private float planeHeight;
 

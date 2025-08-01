@@ -3,7 +3,7 @@ using Input;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerControler : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     Rigidbody rb;
     public InputManager imso;
@@ -24,6 +24,12 @@ public class PlayerControler : MonoBehaviour
     private float reverseMod;
 
     public bool isTouchingGround;
+    
+    public float dashForce;
+
+    public float dashCooldown;
+    public float dashTimer;
+
 
     public MaskObject arenaFloor;
 
@@ -51,6 +57,18 @@ public class PlayerControler : MonoBehaviour
                 pm.Pause();
             }
         }
+        
+        if (imso.jump.action.WasPressedThisFrame()) Jump();
+            
+        dashTimer = Mathf.Max(dashTimer - Time.deltaTime, 0);
+            
+        if (imso.dash.action.WasPressedThisFrame() && 
+            (imso.xAxis.action.IsPressed() || imso.yAxis.action.IsPressed()) &&
+            dashTimer <= 0) {
+                
+            Dash();
+            dashTimer = dashCooldown;
+        }
     }
 
     void FixedUpdate()
@@ -76,8 +94,12 @@ public class PlayerControler : MonoBehaviour
             vertical = vertical * reverseMod;
         }
 
-        rb.AddForce(horizontal * acceleration, 0, vertical * acceleration);
+        Vector3 moveDir = new Vector3(horizontal * acceleration, 0, vertical * acceleration);
+        
+        Debug.Log(moveDir);
+        rb.AddForce(moveDir);
 
+        
         if(transform.position.y < arenaFloor.transform.position.y)
         {
             rb.linearDamping = 4;
@@ -104,7 +126,19 @@ public class PlayerControler : MonoBehaviour
         if (other.gameObject.layer == 7) // ice
         {
             isTouchingGround = false;
-            gameOvered = true;
+            //gameOvered = true;
         }
+    }
+    
+    public void Dash() {
+        Vector3 dir = new Vector3(imso.xAxis.action.ReadValue<float>(), 0, imso.yAxis.action.ReadValue<float>());
+        rb.linearVelocity = Vector3.zero;
+        rb.AddForce(dir * dashForce, ForceMode.Impulse);
+    }
+
+    public void Jump() {
+        if (!isTouchingGround) return;
+        rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
+        rb.AddForce(Vector3.up * dashForce, ForceMode.Impulse);
     }
 }
