@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Enemies;
+using Game;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,6 +9,7 @@ namespace Waves {
     public class WaveSpawner : MonoBehaviour {
         public EnemyTypeManager enemyTypeManager;
         public WaveManager waveManagerSO;
+        public GameEventBroadcaster geb;
 
         public List<WaveSpawnPoint> validWaveSpawnPoints;
         public List<WaveSpawnPoint> invalidWaveSpawnPoints;
@@ -32,6 +34,7 @@ namespace Waves {
                 return false; //All waves cleared!
             }
             currentWave++;
+            geb.OnWaveStart.Invoke(currentWave);
             if (waveManagerSO.waves[currentWave].subWaves.Count == 0) {
                 Debug.Log("This wave didn't have any subwaves... What?");
                 return false; //No subwaves?
