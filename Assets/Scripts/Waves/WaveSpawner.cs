@@ -9,6 +9,9 @@ namespace Waves {
         public EnemyTypeManager enemyTypeManager;
         public WaveManager waveManagerSO;
 
+        public List<WaveSpawnPoint> validWaveSpawnPoints;
+        public List<WaveSpawnPoint> invalidWaveSpawnPoints;
+        
         /// <summary>
         ///     The current wave index.
         /// </summary>
@@ -18,8 +21,7 @@ namespace Waves {
         ///     The current sub wave index.
         /// </summary>
         public int currentSubWave = -1;
-
-
+        
         /// <summary>
         ///     Progresses the spawner to the next wave. Does not do additional checks.
         /// </summary>
@@ -62,6 +64,11 @@ namespace Waves {
             Debug.Log("Spawning sub wave " + currentSubWave);
             Wave wave = waveManagerSO.waves[currentWave];
             SubWave subWave = wave.subWaves[currentSubWave];
+
+            bool valid = subWave.IsSubWaveInSize(validWaveSpawnPoints.Count); //NOTE THIS WORKS BECAUSE ALL ENEMIES SHOULD BE DEAD (and all spawn points valid) FOR THIS TO BE CALLED!
+            if (!valid) {
+                Debug.Log("Subwave is too large for this rink! It will be trimmed!");
+            } 
             
             List<EnemyListEntry> enemies = ConvertCreditsToWaves(wave.waveLevel, subWave.randomEnemyCredits, subWave.enemies);
             
@@ -70,20 +77,33 @@ namespace Waves {
                 Debug.Log("Spawning " + enemySet.count + " " + enemySet.enemy + " enemies!"); 
                 
                 for (int i = 0; i < enemySet.count; i++) {
-                    Vector3 spawnPos = GetValidSpawnLocation();
-                    Instantiate(enemyTypeManager.Get(enemySet.enemy).enemy, spawnPos, Quaternion.identity);
+                    WaveSpawnPoint point = GetValidSpawnLocation();
+                    if (!point) Debug.Log("Spawn point was null! What?");
+                    else {
+                        point.SpawnEnemyAt(enemyTypeManager.Get(enemySet.enemy).enemy);
+                        validWaveSpawnPoints.Remove(point);
+                        invalidWaveSpawnPoints.Add(point);
+                    }
                 }
-                
             }
+        }
+
+        public void SendSubWave() {
+            Debug.Log("Sending sub wave " + currentSubWave);
+            foreach (WaveSpawnPoint spawnPoint in invalidWaveSpawnPoints) {
+                spawnPoint.SendEnemy();
+                validWaveSpawnPoints.Add(spawnPoint);
+            }
+            invalidWaveSpawnPoints.Clear();
         }
 
         /// <summary>
         ///     Gets a random valid spawn location for enemies.
         /// </summary>
         /// <returns>The spawn position.</returns>
-        public Vector3 GetValidSpawnLocation() {
-            return new Vector3(Random.Range(-20, 20), 0, Random.Range(-20, 20));
-            //TODO: Find a valid location, after rink impl.
+        public WaveSpawnPoint GetValidSpawnLocation() {
+            if (validWaveSpawnPoints.Count != 0) return validWaveSpawnPoints[^1];
+            return null;
         }
 
         public List<EnemyListEntry> ConvertCreditsToWaves(int level, int credits, List<EnemyListEntry> enemyList) {
@@ -128,6 +148,14 @@ namespace Waves {
             }
 
             return enemyListCopy;
+        }
+
+        public bool IsNextWaveAvailable() {
+            return currentWave + 1 < waveManagerSO.waves.Count;
+        }
+        
+        public bool IsNextSubWaveAvailable() {
+            return currentSubWave + 1 < waveManagerSO.waves[currentWave].subWaves.Count;
         }
     }
 }

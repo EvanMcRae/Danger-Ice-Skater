@@ -42,6 +42,7 @@ namespace Enemies.SpecificTypes {
         }
 
         public void Shoot(Vector3 direction) {
+            if (!canMove) return;
             anim.Play("throwPuck");
             float len = direction.sqrMagnitude;
             if (len > 1.01f || len < 0.99f) direction.Normalize();
