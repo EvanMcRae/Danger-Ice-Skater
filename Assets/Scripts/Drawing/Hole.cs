@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Game;
 using UnityEngine;
 using Unity.XR.CoreUtils;
 
@@ -13,6 +14,8 @@ public class Hole : MonoBehaviour
     public const float HOLE_LIFETIME = 5;
     public GameObject holeRefillVisuals;
     private Vector3 spawnedPos;
+
+    public GameEventBroadcaster geb; //For event invocation.
 
     private void Start()
     {
@@ -72,6 +75,7 @@ public class Hole : MonoBehaviour
             if (player != null)
             {
                 PlayerController.gameOvered = true;
+                geb.OnPlayerDeathByFalling.Invoke(player); //Event invocation.
             }
         }
     }

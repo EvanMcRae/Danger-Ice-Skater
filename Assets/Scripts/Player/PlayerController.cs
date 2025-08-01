@@ -62,13 +62,14 @@ public class PlayerController : MonoBehaviour
         }
         
         if (imso.jump.action.WasPressedThisFrame()) Jump();
-            
+
         dashTimer = Mathf.Max(dashTimer - Time.deltaTime, 0);
-            
-        if (imso.dash.action.WasPressedThisFrame() && 
+
+        if (imso.dash.action.WasPressedThisFrame() &&
             (imso.xAxis.action.IsPressed() || imso.yAxis.action.IsPressed()) &&
-            dashTimer <= 0) {
-                
+            dashTimer <= 0)
+        {
+
             Dash();
             dashTimer = dashCooldown;
         }

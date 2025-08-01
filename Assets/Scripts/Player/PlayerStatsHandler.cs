@@ -1,3 +1,4 @@
+using Game;
 using UI.PlayerUI;
 using UnityEngine;
 
@@ -5,6 +6,9 @@ namespace Player {
     public class PlayerStatsHandler : MonoBehaviour {
 
         public HealthDisplay hd;
+
+        public GameEventBroadcaster geb;
+        
         
         public int health; //Int because it's a hits based health system.=
         public int maxHealth;
@@ -26,7 +30,7 @@ namespace Player {
         }
 
         public void KillFromDamage() {
-            
+            geb.OnPlayerDeathByHit.Invoke(this);
         }
     }
 }
