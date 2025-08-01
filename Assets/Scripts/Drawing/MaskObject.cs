@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class MaskObject : MonoBehaviour
 {
-    public bool lower;
+    public int level; // 0 = cutout, 1 = plane, 2 = refill
 
     void Start()
     {
-        GetComponent<MeshRenderer>().material.renderQueue = 3002 + (lower ? 2 : 0);
+        GetComponent<MeshRenderer>().material.renderQueue = 3002 + level * 2;
     }
 }
