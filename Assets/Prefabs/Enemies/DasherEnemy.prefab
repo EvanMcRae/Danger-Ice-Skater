@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6306629217463522763}
   - component: {fileID: 4713842041731944712}
   - component: {fileID: 5975663975648950306}
+  - component: {fileID: 1996957714703517974}
   m_Layer: 2
   m_Name: DasherEnemy
   m_TagString: Enemy
@@ -29,13 +30,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6819409789602898372}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.9750762, z: 0, w: -0.22187021}
+  m_LocalRotation: {x: 0, y: -0.97507584, z: 0, w: 0.22187188}
   m_LocalPosition: {x: 4.74, y: 0, z: 0.47152}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -154.362, z: 0}
 --- !u!33 &1692070934893655718
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -155,7 +156,9 @@ MonoBehaviour:
   rb: {fileID: 4713842041731944712}
   m_killHeight: -10
   m_isDead: 0
-  canMove: 0
+  m_waiting: 0
+  anim: {fileID: 1996957714703517974}
+  canMove: 1
   player: {fileID: 0}
   rotateTowardsPlayer: 1
   moveTowardsPlayer: 1
@@ -164,3 +167,25 @@ MonoBehaviour:
   dashTimerMax: 7
   dashDelay: 0
   dashForce: 20
+--- !u!95 &1996957714703517974
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6819409789602898372}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e613ed55cfc744b4cbfb3eaeb0135663, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

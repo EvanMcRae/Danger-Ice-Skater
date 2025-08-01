@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace Waves {
     public class WaveSpawnPoint : MonoBehaviour {
-
         
         public GameObject spawnPoint;
         public GameObject relativeDirection;

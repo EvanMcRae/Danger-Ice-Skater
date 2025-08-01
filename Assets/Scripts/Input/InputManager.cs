@@ -9,6 +9,7 @@ namespace Input {
         public InputActionReference xAxis;
         public InputActionReference yAxis;
         public InputActionReference jump;
+        public InputActionReference dash;
         public InputActionReference pause;
     }
 }
