@@ -239,6 +239,7 @@ MonoBehaviour:
   m_maskMat: {fileID: 2100000, guid: 79cc5e93c8cdd42e0bc992621b31783a, type: 2}
   m_meshCollider: {fileID: 0}
   holeRefillVisuals: {fileID: 6450204578810150423, guid: a46cce65fbdeaa442b66bde158159806, type: 3}
+  geb: {fileID: 11400000, guid: f8714c97c5f2ac84fa1762773bdaad01, type: 2}
 --- !u!54 &8423245719912116802
 Rigidbody:
   m_ObjectHideFlags: 0

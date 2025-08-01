@@ -1,5 +1,6 @@
 using Enemies;
 using Input;
+using Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +11,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     PauseManager pm;
+
+    public PlayerStatsHandler psh;
 
     /// <summary>
     /// The rate at which the player accelerates when they move
@@ -57,6 +60,19 @@ public class PlayerController : MonoBehaviour
                 pm.Pause();
             }
         }
+        
+        if (imso.jump.action.WasPressedThisFrame()) Jump();
+
+        dashTimer = Mathf.Max(dashTimer - Time.deltaTime, 0);
+
+        if (imso.dash.action.WasPressedThisFrame() &&
+            (imso.xAxis.action.IsPressed() || imso.yAxis.action.IsPressed()) &&
+            dashTimer <= 0)
+        {
+
+            Dash();
+            dashTimer = dashCooldown;
+        }
     }
 
     void FixedUpdate()
@@ -93,19 +109,6 @@ public class PlayerController : MonoBehaviour
             rb.linearDamping = 4;
             rb.useGravity = false;
         }
-
-        if (imso.jump.action.WasPressedThisFrame()) Jump();
-
-        dashTimer = Mathf.Max(dashTimer - Time.deltaTime, 0);
-
-        if (imso.dash.action.WasPressedThisFrame() &&
-            (imso.xAxis.action.IsPressed() || imso.yAxis.action.IsPressed()) &&
-            dashTimer <= 0)
-        {
-
-            Dash();
-            dashTimer = dashCooldown;
-        }
     }
 
     
@@ -113,8 +116,7 @@ public class PlayerController : MonoBehaviour
     public void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("Enemy")) {
             Enemy e = other.gameObject.GetComponent<Enemy>();
-            //e.DestroyEnemy();
-            Debug.Log("-1 Health -- TODO add this");
+            psh.Damage(1);
         }
         else if (other.gameObject.layer == 7) // ice
         {

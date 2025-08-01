@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 12288992601627965}
   - component: {fileID: 3083590689317668306}
   - component: {fileID: 2939634649029205298}
+  - component: {fileID: 7892994341498651269}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -322,6 +323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imso: {fileID: 11400000, guid: 3839af05cfba756429ff20761423c8fa, type: 2}
   pm: {fileID: 0}
+  psh: {fileID: 7892994341498651269}
   acceleration: 12
   reverseMod: 1
   isTouchingGround: 0
@@ -329,3 +331,18 @@ MonoBehaviour:
   dashCooldown: 1
   dashTimer: 0
   arenaFloor: {fileID: 0}
+--- !u!114 &7892994341498651269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5554373441892825148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d6c596ad4a946199a6cc95efe52ce2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hd: {fileID: 0}
+  health: 0
+  maxHealth: 0
