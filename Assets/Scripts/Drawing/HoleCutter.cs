@@ -69,7 +69,7 @@ public class HoleCutter : MonoBehaviour
                         intersectPoint = -1;
                     }
 
-                    List<Vector2> cutoutPoints = new List<Vector2>();
+                    List<Vector2> cutoutPoints = new();
 
                     
                     if (intersectPoint >= 0)
@@ -117,7 +117,6 @@ public class HoleCutter : MonoBehaviour
             foreach (GameObject _ in Holes)
             {
                 _.GetComponent<Hole>().SpawnRespawnVisuals();
-                Destroy(_);
             }
             Holes.Clear();
         }
@@ -157,6 +156,16 @@ public class HoleCutter : MonoBehaviour
         // Calculate normals for cutouts to have proper lighting
         if (isCutout)
         {
+            // Apply UV coordinates for texture rendering
+            Vector2[] uvs = new Vector2[mesh.vertexCount];
+            Bounds bounds = mesh.bounds;
+            for (int i = 0; i < mesh.vertexCount; i++)
+            {
+                // Map each vertex to a UV based on its position relative to the bounds
+                uvs[i] = new Vector2((mesh.vertices[i].x - bounds.min.x) / bounds.size.x, (mesh.vertices[i].y - bounds.min.y) / bounds.size.y);
+            }
+            mesh.uv = uvs;
+
             mesh.RecalculateNormals();
         }
 
