@@ -79,9 +79,8 @@ public class Hole : MonoBehaviour
     {
         if (m_isDead || m_isFalling || m_isReplenishing) return;
 
-        if (ContainsBounds(other.collider.bounds))
-        {
-            other.gameObject.GetComponent<Rigidbody>().excludeLayers = 1 << 6 | 1 << 7; // ignore ice and hole
+        if (ContainsBounds(other.collider.bounds)) {
+            other.gameObject.GetComponent<Rigidbody>().excludeLayers = int.MaxValue; //Ignore all layers
             other.gameObject.GetComponent<Rigidbody>().linearVelocity.Normalize();
             other.gameObject.GetComponent<Rigidbody>().linearVelocity /= 5;
 
