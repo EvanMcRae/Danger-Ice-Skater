@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6819409789602898372}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.9750762, z: 0, w: -0.22187021}
   m_LocalPosition: {x: 4.74, y: 0, z: 0.47152}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -152,12 +152,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEventBroadcaster: {fileID: 11400000, guid: f8714c97c5f2ac84fa1762773bdaad01, type: 2}
-  m_spawnLocation: {x: 0, y: 0, z: 0}
-  m_enemyType: 5
+  rb: {fileID: 4713842041731944712}
   m_killHeight: -10
   m_isDead: 0
+  canMove: 0
   player: {fileID: 0}
-  rb: {fileID: 4713842041731944712}
   rotateTowardsPlayer: 1
   moveTowardsPlayer: 1
   moveForce: 10
