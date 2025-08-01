@@ -126,7 +126,6 @@ public class HoleCutter : MonoBehaviour
     {
         // Spawn new hole, converting drawn points into a PolygonCollider2D and then into a mesh
         GameObject newHole = Instantiate(HolePrefab, transform.position, Quaternion.identity);
-        GameObject newCutout = Instantiate(CutoutPrefab, transform.position, Quaternion.identity);
 
         PolygonCollider2D poly = newHole.GetComponentInChildren<PolygonCollider2D>();
         poly.points = points.ToArray();
@@ -140,10 +139,24 @@ public class HoleCutter : MonoBehaviour
         }
 
         PopulateMesh(newHole, mesh, false);
-        PopulateMesh(newCutout, mesh, true);
-        
+
+        bool inHole = false;
+        foreach (GameObject hole in Holes)
+        {
+            if (hole.GetComponent<Hole>().ContainsHole(newHole.GetComponent<Hole>()))
+            {
+                inHole = true;
+                break;
+            }
+        }
+        if (!inHole)
+        {
+            GameObject newCutout = Instantiate(CutoutPrefab, transform.position, Quaternion.identity);
+            PopulateMesh(newCutout, mesh, true);
+            Cutouts.Add(newCutout);
+        }
+
         Holes.Add(newHole);
-        Cutouts.Add(newCutout);
     }
 
     void PopulateMesh(GameObject newObject, Mesh mesh, bool isCutout)
@@ -153,21 +166,17 @@ public class HoleCutter : MonoBehaviour
         MeshCollider meshCollider = newObject.GetComponentInChildren<MeshCollider>();
         meshCollider.sharedMesh = mesh;
 
-        // Calculate normals for cutouts to have proper lighting
-        if (isCutout)
+        // Apply UV coordinates for texture rendering
+        Vector2[] uvs = new Vector2[mesh.vertexCount];
+        Bounds bounds = mesh.bounds;
+        for (int i = 0; i < mesh.vertexCount; i++)
         {
-            // Apply UV coordinates for texture rendering
-            Vector2[] uvs = new Vector2[mesh.vertexCount];
-            Bounds bounds = mesh.bounds;
-            for (int i = 0; i < mesh.vertexCount; i++)
-            {
-                // Map each vertex to a UV based on its position relative to the bounds
-                uvs[i] = new Vector2(mesh.vertices[i].x - bounds.min.x, mesh.vertices[i].y - bounds.min.y);
-            }
-            mesh.uv = uvs;
-
-            mesh.RecalculateNormals();
+            // Map each vertex to a UV based on its position relative to the bounds
+            uvs[i] = new Vector2(mesh.vertices[i].x - bounds.min.x, mesh.vertices[i].y - bounds.min.y);
         }
+        mesh.uv = uvs;
+
+        mesh.RecalculateNormals();
 
         // Rotate final mesh to be on XZ plane
         newObject.transform.SetPositionAndRotation(new Vector3(0, planeHeight + (isCutout ? 0 : 0.0001f), 0), Quaternion.Euler(90, 0, 0));

@@ -99,8 +99,9 @@ public class Hole : MonoBehaviour
         }
     }
 
-    private bool ContainsHole(Hole hole)
+    public bool ContainsHole(Hole hole)
     {
+        hole.m_vertices = hole.GetVertices();
         foreach (Vector3 vertex in hole.m_vertices)
         {
             if (!GeometryUtils.PointInPolygon3D(vertex, m_vertices))
@@ -111,7 +112,7 @@ public class Hole : MonoBehaviour
         return true;
     }
 
-    private bool OverlapsHole(Hole hole)
+    public bool OverlapsHole(Hole hole)
     {
         foreach (Vector3 vertex in hole.m_vertices)
         {
@@ -124,7 +125,7 @@ public class Hole : MonoBehaviour
     }
 
     // TODO: This check does not work well for partial intersection
-    private bool ContainsBounds(Bounds otherBounds)
+    public bool ContainsBounds(Bounds otherBounds)
     {
         Bounds myBounds = m_meshCollider.bounds;
         Vector3 min = otherBounds.min;
