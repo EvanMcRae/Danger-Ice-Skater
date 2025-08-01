@@ -16,6 +16,7 @@ public class Hole : MonoBehaviour
     public const float HOLE_LIFETIME = 5;
     public GameObject holeRefillVisuals;
     private Vector3 spawnedPos;
+    private GameObject m_refillObj;
 
     public GameEventBroadcaster geb; //For event invocation.
 
@@ -36,13 +37,17 @@ public class Hole : MonoBehaviour
                 Hole hole = holeObj.GetComponent<Hole>();
                 if (hole == null || hole == this) return;
 
-                if (!hole.m_isDead && !hole.m_isReplenishing && m_spawnTime > hole.m_spawnTime && !hole.m_isFalling)
+                if (!hole.m_isDead && m_spawnTime > hole.m_spawnTime && !hole.m_isFalling)
                 {
                     if (ContainsHole(hole))
                     {
                         hole.FallDown();
+                        if (hole.m_isReplenishing && hole.m_refillObj != null)
+                        {
+                            hole.m_refillObj.GetComponent<Rigidbody>().useGravity = true;
+                        }
                     }
-                    else if (OverlapsHole(hole))
+                    else if (OverlapsHole(hole) && !hole.m_isReplenishing)
                     {
                         GameObject newHole = Instantiate(hole.gameObject);
                         newHole.GetComponent<Hole>().FallDown();
@@ -161,9 +166,9 @@ public class Hole : MonoBehaviour
     public void SpawnRespawnVisuals()
     {
         m_isReplenishing = true;
-        GameObject addedVisuals = Instantiate(holeRefillVisuals, spawnedPos, transform.rotation);
-        addedVisuals.GetComponent<MeshFilter>().mesh = GetComponent<MeshFilter>().mesh;
-        addedVisuals.GetComponent<HoleRefillVisuals>().SetHole(this);
+        m_refillObj = Instantiate(holeRefillVisuals, spawnedPos, transform.rotation);
+        m_refillObj.GetComponent<MeshFilter>().mesh = GetComponent<MeshFilter>().mesh;
+        m_refillObj.GetComponent<HoleRefillVisuals>().SetHole(this);
     }
 
     public void RemoveHole()
