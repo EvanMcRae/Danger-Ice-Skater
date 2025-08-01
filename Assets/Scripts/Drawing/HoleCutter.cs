@@ -132,11 +132,13 @@ public class HoleCutter : MonoBehaviour
         PolygonCollider2D poly = newHole.GetComponentInChildren<PolygonCollider2D>();
         poly.points = points.ToArray();
         Mesh mesh = poly.CreateMesh(false, false);
+        poly.enabled = false;
+
         if (mesh == null)
         {
-            Debug.LogError("Null hole mesh, did you draw out of bounds?");
+            Debug.LogWarning("Null hole mesh -- drew too small or out of bounds");
+            return;
         }
-        poly.enabled = false;
 
         PopulateMesh(newHole, mesh, false);
         PopulateMesh(newCutout, mesh, true);
@@ -152,17 +154,13 @@ public class HoleCutter : MonoBehaviour
         MeshCollider meshCollider = newObject.GetComponentInChildren<MeshCollider>();
         meshCollider.sharedMesh = mesh;
 
-        if (isCutout && mesh != null)
+        // Calculate normals for cutouts to have proper lighting
+        if (isCutout)
         {
-            // Calculate normals
             mesh.RecalculateNormals();
         }
 
-        if (mesh == null)
-        {
-            Debug.LogError("Null hole mesh, did you draw out of bounds?");
-        }
-
+        // Rotate final mesh to be on XZ plane
         newObject.transform.SetPositionAndRotation(new Vector3(0, planeHeight + (isCutout ? 0 : 0.0001f), 0), Quaternion.Euler(90, 0, 0));
     }
 
