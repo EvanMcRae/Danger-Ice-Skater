@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
     public MaskObject arenaFloor;
 
-    public bool gameOvered = false;
+    public static bool gameOvered = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 moveDir = new Vector3(horizontal * acceleration, 0, vertical * acceleration);
         
-        Debug.Log(moveDir);
+        // Debug.Log(moveDir);
         rb.AddForce(moveDir);
 
         
@@ -126,7 +126,6 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.layer == 7) // ice
         {
             isTouchingGround = false;
-            //gameOvered = true;
         }
     }
     
