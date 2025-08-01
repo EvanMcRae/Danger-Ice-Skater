@@ -1,12 +1,13 @@
 using Enemies;
 using Input;
 using Player;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    Rigidbody rb;
+    public Rigidbody rb;
     public InputManager imso;
 
     [SerializeField]
@@ -33,6 +34,10 @@ public class PlayerController : MonoBehaviour
     public float dashCooldown;
     public float dashTimer;
 
+    public float respawnHeight;
+
+    public float fallThroughHoleTimer;
+    public float fallThroughHoleTime;
 
     public MaskObject arenaFloor;
 
@@ -73,6 +78,10 @@ public class PlayerController : MonoBehaviour
             Dash();
             dashTimer = dashCooldown;
         }
+
+        if (gameOvered) {
+            fallThroughHoleTimer -= Time.deltaTime;
+        }
     }
 
     void FixedUpdate()
@@ -86,6 +95,16 @@ public class PlayerController : MonoBehaviour
         {
             horizontal = 0;
             vertical = 0;
+            if (fallThroughHoleTimer <= 0) {
+                rb.AddForce(Vector3.up * dashForce, ForceMode.Force);
+                rb.useGravity = false;
+            }
+            if (transform.position.y > respawnHeight) {
+                gameOvered = false;
+                rb.useGravity = true;
+                rb.excludeLayers = 0;
+                rb.linearDamping = 1;
+            }
         }
 
         if (rb.linearVelocity.x > 0 && horizontal < 0 || rb.linearVelocity.x < 0 && horizontal > 0)
@@ -133,12 +152,14 @@ public class PlayerController : MonoBehaviour
     }
     
     public void Dash() {
+        if (gameOvered) return;
         Vector3 dir = new Vector3(imso.xAxis.action.ReadValue<float>(), 0, imso.yAxis.action.ReadValue<float>());
         rb.linearVelocity = Vector3.zero;
         rb.AddForce(dir * dashForce, ForceMode.Impulse);
     }
 
     public void Jump() {
+        if (gameOvered) return;
         if (!isTouchingGround) return;
         rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
         rb.AddForce(Vector3.up * dashForce, ForceMode.Impulse);

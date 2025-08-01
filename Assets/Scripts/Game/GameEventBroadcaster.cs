@@ -8,7 +8,7 @@ namespace Game {
     public class GameEventBroadcaster : ScriptableObject {
         
         /// Params: The player that died. Called when the player falls through the ice.
-        public UnityEvent<PlayerController> OnPlayerDeathByFalling;
+        public UnityEvent<PlayerController> PlayerFellThroughIce;
         
         /// Params: The player that died. Called when the player's health drops to zero.
         public UnityEvent<PlayerStatsHandler> OnPlayerDeathByHit;
