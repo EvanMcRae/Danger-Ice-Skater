@@ -848,6 +848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTypeManager: {fileID: 11400000, guid: 0981b7ed99cb7f1439d28cb8d896121a, type: 2}
   waveManagerSO: {fileID: 11400000, guid: 7d0ae3bb436f6e14caee43a21c38f8f8, type: 2}
+  geb: {fileID: 11400000, guid: f8714c97c5f2ac84fa1762773bdaad01, type: 2}
   validWaveSpawnPoints:
   - {fileID: 1470438521}
   - {fileID: 1133773520}
@@ -2016,7 +2017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52eb1e54064f51d4fb76513879756782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 2
+  level: 0
 --- !u!64 &1140369466
 MeshCollider:
   m_ObjectHideFlags: 0

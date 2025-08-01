@@ -14,7 +14,7 @@ public class Hole : MonoBehaviour
     [SerializeField] private Material m_maskMat, m_refillMat;
     [SerializeField] private MeshCollider m_meshCollider;
     private List<Vector3> m_vertices;
-    public const float HOLE_LIFETIME = 5;
+    public const float HOLE_LIFETIME = 4;
     public GameObject holeRefillVisuals;
     private Vector3 spawnedPos;
     private GameObject m_refillObj;
@@ -62,7 +62,8 @@ public class Hole : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!m_isDead && !m_isReplenishing && ((!m_isFalling && Time.time > HOLE_LIFETIME + m_spawnTime) || (m_isFalling && transform.position.y < m_killHeight)))
+        if (!m_isDead && !m_isReplenishing && 
+            ((!m_isFalling && Time.time > HOLE_LIFETIME + m_spawnTime) || (m_isFalling && transform.position.y < m_killHeight)))
         {
             if (!m_isFalling && !m_isReplenishing)
             {
@@ -79,9 +80,8 @@ public class Hole : MonoBehaviour
     {
         if (m_isDead || m_isFalling || m_isReplenishing) return;
 
-        if (ContainsBounds(other.collider.bounds))
-        {
-            other.gameObject.GetComponent<Rigidbody>().excludeLayers = 1 << 6 | 1 << 7; // ignore ice and hole
+        if (ContainsBounds(other.collider.bounds)) {
+            other.gameObject.GetComponent<Rigidbody>().excludeLayers = int.MaxValue; //Ignore all layers
             other.gameObject.GetComponent<Rigidbody>().linearVelocity.Normalize();
             other.gameObject.GetComponent<Rigidbody>().linearVelocity /= 5;
 
