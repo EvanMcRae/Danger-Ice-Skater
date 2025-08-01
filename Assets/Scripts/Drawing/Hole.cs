@@ -5,6 +5,7 @@ using Unity.XR.CoreUtils;
 
 public class Hole : MonoBehaviour
 {
+    private float m_killHeight = -10;
     private float m_spawnTime;
     private bool m_isDead = false, m_isFalling = false;
     [SerializeField] private Material m_maskMat;
@@ -18,36 +19,40 @@ public class Hole : MonoBehaviour
     {
         spawnedPos = transform.position;
         m_spawnTime = Time.time;
-        m_meshCollider = GetComponentInChildren<MeshCollider>();
-        m_vertices = GetVertices();
 
-        // Find all holes inside this hole and make them fall too
-        foreach (GameObject holeObj in HoleCutter.Holes)
+        if (!m_isFalling)
         {
-            if (holeObj == null) return;
-            Hole hole = holeObj.GetComponent<Hole>();
-            if (hole == null || hole == this) return;
+            m_meshCollider = GetComponentInChildren<MeshCollider>();
+            m_vertices = GetVertices();
 
-            if (!hole.m_isDead && m_spawnTime > hole.m_spawnTime && !hole.m_isFalling)
+            // Find all holes inside this hole and make them fall too
+            foreach (GameObject holeObj in HoleCutter.Holes)
             {
-                if (ContainsHole(hole))
+                if (holeObj == null) return;
+                Hole hole = holeObj.GetComponent<Hole>();
+                if (hole == null || hole == this) return;
+
+                if (!hole.m_isDead && m_spawnTime > hole.m_spawnTime && !hole.m_isFalling)
                 {
-                    hole.FallDown();
-                }
-                else if (OverlapsHole(hole))
-                {
-                    GameObject newHole = Instantiate(hole.gameObject);
-                    newHole.GetComponent<Hole>().FallDown();
-                    newHole.GetComponent<Hole>().enabled = false;
+                    if (ContainsHole(hole))
+                    {
+                        hole.FallDown();
+                    }
+                    else if (OverlapsHole(hole))
+                    {
+                        GameObject newHole = Instantiate(hole.gameObject);
+                        newHole.GetComponent<Hole>().FallDown();
+                    }
                 }
             }
         }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > HOLE_LIFETIME + m_spawnTime && !m_isDead)
+        if (!m_isDead && ((!m_isFalling && Time.time > HOLE_LIFETIME + m_spawnTime) || (m_isFalling && transform.position.y < m_killHeight)))
         {
             m_isDead = true;
             if (!m_isFalling)
@@ -59,7 +64,7 @@ public class Hole : MonoBehaviour
 
     private void OnCollisionStay(Collision other)
     {
-        if (m_isDead) return;
+        if (m_isDead || m_isFalling) return;
 
         if (ContainsBounds(other.collider.bounds))
         {
