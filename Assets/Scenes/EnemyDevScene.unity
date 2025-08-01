@@ -261,6 +261,14 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 112
       objectReference: {fileID: 0}
+    - target: {fileID: -3613342419603286753, guid: a55e6b8a288afd44584fbc25568c57fe, type: 3}
+      propertyPath: m_LinearDamping
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2835655699262060682, guid: a55e6b8a288afd44584fbc25568c57fe, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5731eb10069b5404e84e5e0d3b822c3a, type: 2}
     - target: {fileID: 3924630875749553167, guid: a55e6b8a288afd44584fbc25568c57fe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -300,6 +308,22 @@ PrefabInstance:
     - target: {fileID: 3924630875749553167, guid: a55e6b8a288afd44584fbc25568c57fe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6386247114682981524, guid: a55e6b8a288afd44584fbc25568c57fe, type: 3}
+      propertyPath: dashForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6386247114682981524, guid: a55e6b8a288afd44584fbc25568c57fe, type: 3}
+      propertyPath: reverseMod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6386247114682981524, guid: a55e6b8a288afd44584fbc25568c57fe, type: 3}
+      propertyPath: acceleration
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6386247114682981524, guid: a55e6b8a288afd44584fbc25568c57fe, type: 3}
+      propertyPath: dashCooldown
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8840452199310655019, guid: a55e6b8a288afd44584fbc25568c57fe, type: 3}
       propertyPath: m_Name

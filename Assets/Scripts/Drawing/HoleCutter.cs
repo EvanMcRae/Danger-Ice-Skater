@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -24,7 +25,7 @@ public class HoleCutter : MonoBehaviour
     private LineRenderer lineRenderer;
     private Vector3 lastPos;
 
-    [SerializeField] private PlayerControler player;
+    [SerializeField] private PlayerController player;
 
     [SerializeField] private float planeHeight;
 
