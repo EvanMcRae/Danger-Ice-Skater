@@ -88,4 +88,4 @@ mono_crash.*
 *.akd
 *.prof
 *.validationcache
-/Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset*
+Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset*
