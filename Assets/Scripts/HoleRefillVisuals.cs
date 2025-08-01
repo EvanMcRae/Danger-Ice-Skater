@@ -47,4 +47,10 @@ public class HoleRefillVisuals : MonoBehaviour
     {
         m_hole = hole;
     }
+
+    public void FallDown()
+    {
+        GetComponent<Rigidbody>().useGravity = true;
+        GetComponent<MeshRenderer>().material.renderQueue = 3000;
+    }
 }

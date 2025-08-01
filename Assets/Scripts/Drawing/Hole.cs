@@ -44,7 +44,7 @@ public class Hole : MonoBehaviour
                         hole.FallDown();
                         if (hole.m_isReplenishing && hole.m_refillObj != null)
                         {
-                            hole.m_refillObj.GetComponent<Rigidbody>().useGravity = true;
+                            hole.m_refillObj.GetComponent<HoleRefillVisuals>().FallDown();
                         }
                     }
                     else if (OverlapsHole(hole) && !hole.m_isReplenishing)
