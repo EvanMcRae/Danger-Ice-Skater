@@ -24,18 +24,18 @@ public class Hole : MonoBehaviour
             Hole hole = holeObj.GetComponent<Hole>();
             if (hole == null || hole == this) return;
 
-            if (!hole.m_isDead && ContainsHole(hole)
-                && m_spawnTime > hole.m_spawnTime && !hole.m_isFalling)
+            if (!hole.m_isDead && m_spawnTime > hole.m_spawnTime && !hole.m_isFalling)
             {
-                hole.m_isFalling = true;
-                Rigidbody rb = hole.GetComponent<Rigidbody>();
-                hole.m_meshCollider.convex = true;
-                hole.m_meshCollider.isTrigger = true;
-                rb.isKinematic = false;
-                rb.useGravity = true;
-                rb.excludeLayers = 1 << 6 | 1 << 7; // ignore ice and hole
-                rb.MovePosition(new Vector3(rb.transform.position.x, rb.transform.position.y + 0.01f, rb.transform.position.z)); // nudge up to prevent z fighting
-                hole.GetComponent<MeshRenderer>().material = m_maskMat;
+                if (ContainsHole(hole))
+                {
+                    hole.FallDown();
+                }
+                else if (OverlapsHole(hole))
+                {
+                    GameObject newHole = Instantiate(hole.gameObject);
+                    newHole.GetComponent<Hole>().FallDown();
+                    newHole.GetComponent<Hole>().enabled = false;
+                }
             }
         }
     }
@@ -63,7 +63,6 @@ public class Hole : MonoBehaviour
         }
     }
 
-    // TODO: This check does not work well for partial intersection
     private bool ContainsHole(Hole hole)
     {
         foreach (Vector3 vertex in hole.m_vertices)
@@ -74,6 +73,18 @@ public class Hole : MonoBehaviour
             }
         }
         return true;
+    }
+
+    private bool OverlapsHole(Hole hole)
+    {
+        foreach (Vector3 vertex in hole.m_vertices)
+        {
+            if (GeometryUtils.PointInPolygon3D(vertex, m_vertices))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     // TODO: This check does not work well for partial intersection
@@ -98,5 +109,28 @@ public class Hole : MonoBehaviour
         List<Vector3> convexHull = new();
         GeometryUtils.ConvexHull2D(vertices, convexHull);
         return convexHull;
+    }
+
+    private void FallDown()
+    {
+        m_isFalling = true;
+        Rigidbody rb = GetComponent<Rigidbody>();
+
+        // Avoid error for convex geometry collision on dynamic rigidbodies
+        m_meshCollider.convex = true;
+        m_meshCollider.isTrigger = true;
+
+        // Apply rigidbody flags
+        rb.isKinematic = false;
+        rb.useGravity = true;
+
+        // Ignore ice and hole
+        rb.excludeLayers = 1 << 6 | 1 << 7;
+
+        // Nudge up to prevent z fighting
+        rb.MovePosition(new Vector3(rb.transform.position.x, rb.transform.position.y + 0.01f, rb.transform.position.z));
+
+        // Apply new mask material to apply to falling cutout
+        GetComponent<MeshRenderer>().material = m_maskMat;
     }
 }
