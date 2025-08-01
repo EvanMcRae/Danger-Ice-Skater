@@ -119,6 +119,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &51631687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 51631688}
+  m_Layer: 0
+  m_Name: CenterBound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &51631688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51631687}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.02078, y: -2, z: -1.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &55061836
 GameObject:
   m_ObjectHideFlags: 0
@@ -2563,6 +2594,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrapEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8138859471652383118, guid: 886f7bb9ebe55134cb5b5386806e978b, type: 3}
+      propertyPath: top
+      value: 
+      objectReference: {fileID: 2005705391}
+    - target: {fileID: 8138859471652383118, guid: 886f7bb9ebe55134cb5b5386806e978b, type: 3}
+      propertyPath: left
+      value: 
+      objectReference: {fileID: 1460127965}
+    - target: {fileID: 8138859471652383118, guid: 886f7bb9ebe55134cb5b5386806e978b, type: 3}
+      propertyPath: right
+      value: 
+      objectReference: {fileID: 1596415917}
+    - target: {fileID: 8138859471652383118, guid: 886f7bb9ebe55134cb5b5386806e978b, type: 3}
+      propertyPath: bottom
+      value: 
+      objectReference: {fileID: 1236184920}
+    - target: {fileID: 8138859471652383118, guid: 886f7bb9ebe55134cb5b5386806e978b, type: 3}
+      propertyPath: center
+      value: 
+      objectReference: {fileID: 51631687}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3629,6 +3680,7 @@ SceneRoots:
   - {fileID: 1596415918}
   - {fileID: 2005705392}
   - {fileID: 1236184921}
+  - {fileID: 51631688}
   - {fileID: 1431598016}
   - {fileID: 250786244}
   - {fileID: 543450652466949655}
