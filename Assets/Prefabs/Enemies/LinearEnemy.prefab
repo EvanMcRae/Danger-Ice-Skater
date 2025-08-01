@@ -30,13 +30,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4077937690178825339}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.006024637, y: 0.9467368, z: -0.017743096, w: -0.32146278}
+  m_LocalRotation: {x: 0.0060237236, y: -0.9467359, z: 0.017740233, w: 0.32146567}
   m_LocalPosition: {x: 0.0072, y: 0.5054, z: -2.0779}
   m_LocalScale: {x: 1.0143656, y: 0.4870177, z: 1.0024625}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 2.147, y: -142.49, z: 0}
 --- !u!33 &8703706757912135352
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_killHeight: -10
   m_isDead: 0
   m_waiting: 0
-  anim: {fileID: 0}
+  anim: {fileID: 2939290769832064937}
   canMove: 0
   player: {fileID: 0}
   rotateTowardsPlayer: 1

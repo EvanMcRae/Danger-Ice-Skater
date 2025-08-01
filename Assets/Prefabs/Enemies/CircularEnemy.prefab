@@ -157,7 +157,7 @@ MonoBehaviour:
   m_killHeight: -10
   m_isDead: 0
   m_waiting: 0
-  anim: {fileID: 0}
+  anim: {fileID: 547468786114739637}
   canMove: 0
   player: {fileID: 0}
   rotateTowardsPlayer: 1

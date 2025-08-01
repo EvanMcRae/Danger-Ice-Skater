@@ -127,6 +127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2549344607763642334, guid: 1265a48f4ac8cb840b8c67230b9fb071, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1477261529}
     - target: {fileID: 4077937690178825339, guid: 1265a48f4ac8cb840b8c67230b9fb071, type: 3}
       propertyPath: m_Name
       value: LinearEnemy
@@ -188,6 +192,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProjectileEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6887986620278232493, guid: 209d042c41bf89a43932c70def9312f1, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1477261529}
     - target: {fileID: 8917729085883807064, guid: 209d042c41bf89a43932c70def9312f1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.6
@@ -871,6 +879,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5975663975648950306, guid: 7ab62b5770f06a545b1ce5cc52d2c461, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1477261529}
     - target: {fileID: 6819409789602898372, guid: 7ab62b5770f06a545b1ce5cc52d2c461, type: 3}
       propertyPath: m_Name
       value: DasherEnemy
@@ -1277,6 +1289,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9024460489902341260, guid: f9875bad22594624381e1b3fb031cd11, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1477261529}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1334,6 +1350,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrapEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8138859471652383118, guid: 886f7bb9ebe55134cb5b5386806e978b, type: 3}
+      propertyPath: top
+      value: 
+      objectReference: {fileID: 2005705391}
+    - target: {fileID: 8138859471652383118, guid: 886f7bb9ebe55134cb5b5386806e978b, type: 3}
+      propertyPath: left
+      value: 
+      objectReference: {fileID: 1460127965}
+    - target: {fileID: 8138859471652383118, guid: 886f7bb9ebe55134cb5b5386806e978b, type: 3}
+      propertyPath: right
+      value: 
+      objectReference: {fileID: 1596415917}
+    - target: {fileID: 8138859471652383118, guid: 886f7bb9ebe55134cb5b5386806e978b, type: 3}
+      propertyPath: bottom
+      value: 
+      objectReference: {fileID: 1236184920}
+    - target: {fileID: 8138859471652383118, guid: 886f7bb9ebe55134cb5b5386806e978b, type: 3}
+      propertyPath: center
+      value: 
+      objectReference: {fileID: 51631687}
+    - target: {fileID: 8138859471652383118, guid: 886f7bb9ebe55134cb5b5386806e978b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1477261529}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2203,6 +2243,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.3338432, y: 10.442848, z: 31.915787}
   m_Center: {x: -1.4560642, y: 2.2732918, z: -2.9796963}
+--- !u!1 &1477261529 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5554373441892825148, guid: c2d6af4a74da97649aa016e2ce294297, type: 3}
+  m_PrefabInstance: {fileID: 1233537506}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1486312431
 GameObject:
   m_ObjectHideFlags: 0
