@@ -53,7 +53,7 @@ public class HoleCutter : MonoBehaviour
                     //Check if new segment intersects with any prior segment
                     for (int i = 1; i < Points.Count; i++)
                     {
-                        if (lineSegmentsIntersect(Points[i - 1], Points[i], pointToAdd, Points[^1]))
+                        if (LineSegmentsIntersect(Points[i - 1], Points[i], pointToAdd, Points[^1]))
                         {
                             intersectPoint = i - 1;
                             break;
@@ -116,8 +116,10 @@ public class HoleCutter : MonoBehaviour
         {
             foreach (GameObject _ in Holes)
             {
+                _.GetComponent<Hole>().SpawnRespawnVisuals();
                 Destroy(_);
             }
+            Holes.Clear();
         }
     }
 
@@ -165,6 +167,6 @@ public class HoleCutter : MonoBehaviour
     }
 
     //From https://www.reddit.com/r/gamedev/comments/7ww4yx/whats_the_easiest_way_to_check_if_two_line/
-    public static bool lineSegmentsIntersect(Vector2 lineOneA, Vector2 lineOneB, Vector2 lineTwoA, Vector2 lineTwoB) 
-    { return (((lineTwoB.y - lineOneA.y) * (lineTwoA.x - lineOneA.x) > (lineTwoA.y - lineOneA.y) * (lineTwoB.x - lineOneA.x)) != ((lineTwoB.y - lineOneB.y) * (lineTwoA.x - lineOneB.x) > (lineTwoA.y - lineOneB.y) * (lineTwoB.x - lineOneB.x)) && ((lineTwoA.y - lineOneA.y) * (lineOneB.x - lineOneA.x) > (lineOneB.y - lineOneA.y) * (lineTwoA.x - lineOneA.x)) != ((lineTwoB.y - lineOneA.y) * (lineOneB.x - lineOneA.x) > (lineOneB.y - lineOneA.y) * (lineTwoB.x - lineOneA.x))); }
+    public static bool LineSegmentsIntersect(Vector2 lineOneA, Vector2 lineOneB, Vector2 lineTwoA, Vector2 lineTwoB) 
+    { return ((lineTwoB.y - lineOneA.y) * (lineTwoA.x - lineOneA.x) > (lineTwoA.y - lineOneA.y) * (lineTwoB.x - lineOneA.x)) != ((lineTwoB.y - lineOneB.y) * (lineTwoA.x - lineOneB.x) > (lineTwoA.y - lineOneB.y) * (lineTwoB.x - lineOneB.x)) && ((lineTwoA.y - lineOneA.y) * (lineOneB.x - lineOneA.x) > (lineOneB.y - lineOneA.y) * (lineTwoA.x - lineOneA.x)) != ((lineTwoB.y - lineOneA.y) * (lineOneB.x - lineOneA.x) > (lineOneB.y - lineOneA.y) * (lineTwoB.x - lineOneA.x)); }
 }
