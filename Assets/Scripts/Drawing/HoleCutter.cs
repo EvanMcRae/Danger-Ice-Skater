@@ -86,24 +86,19 @@ public class HoleCutter : MonoBehaviour
                     }
                 }
 
-                if (Points.Count < MAX_POINTS)
-                {
-                    Points.Add(pointToAdd);
-                    lineRenderer.positionCount++;
-                    lineRenderer.SetPosition(lineRenderer.positionCount - 1, new Vector3(pos.x, planeHeight, pos.z));
-                }
-                else
-                {
-                    //Move buffer over. Poor scaling run time (O(n)), but size is capped small enough it is not an issue. 
+                
+                
+                //Move buffer over. Poor scaling run time (O(n)), but size is capped small enough it is not an issue. 
+                if (Points.Count >= MAX_POINTS)
                     Points.RemoveAt(0);
-                    Points.Add(pointToAdd);
+                Points.Add(pointToAdd);
 
-                    lineRenderer.positionCount = Points.Count;
-                    for (int i = 0; i < lineRenderer.positionCount; i++)
-                    {
-                        lineRenderer.SetPosition(i, new Vector3(Points[i].x, planeHeight, Points[i].y));
-                    }
+                lineRenderer.positionCount = Points.Count;
+                for (int i = 0; i < lineRenderer.positionCount; i++)
+                {
+                    lineRenderer.SetPosition(i, new Vector3(Points[i].x, planeHeight, Points[i].y));
                 }
+                
             }
         }
 
