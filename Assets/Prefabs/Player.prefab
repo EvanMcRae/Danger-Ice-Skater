@@ -1372,7 +1372,7 @@ MonoBehaviour:
   imso: {fileID: 11400000, guid: 3839af05cfba756429ff20761423c8fa, type: 2}
   pm: {fileID: 153694546382013822}
   acceleration: 5
-  reverseMod: 0
+  reverseMod: 1
   isTouchingGround: 0
   dashForce: 10
   dashCooldown: 1

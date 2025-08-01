@@ -94,8 +94,12 @@ public class PlayerController : MonoBehaviour
             vertical = vertical * reverseMod;
         }
 
-        rb.AddForce(horizontal * acceleration, 0, vertical * acceleration);
+        Vector3 moveDir = new Vector3(horizontal * acceleration, 0, vertical * acceleration);
+        
+        Debug.Log(moveDir);
+        rb.AddForce(moveDir);
 
+        
         if(transform.position.y < arenaFloor.transform.position.y)
         {
             rb.linearDamping = 4;
@@ -122,7 +126,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.layer == 7) // ice
         {
             isTouchingGround = false;
-            gameOvered = true;
+            //gameOvered = true;
         }
     }
     
