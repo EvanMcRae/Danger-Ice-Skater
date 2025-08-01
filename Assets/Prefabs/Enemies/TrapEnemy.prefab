@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2030717889472604321}
   - component: {fileID: 2537937922704579174}
   - component: {fileID: 8138859471652383118}
+  - component: {fileID: 6028884704192459635}
   m_Layer: 2
   m_Name: TrapEnemy
   m_TagString: Enemy
@@ -167,3 +168,25 @@ MonoBehaviour:
   trap: {fileID: 3176648040938010380, guid: 477a1fa50904d5045938a911394703a3, type: 3}
   cooldownDelay: 0
   targetSpot2: {x: 0, y: 0, z: 0}
+--- !u!95 &6028884704192459635
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4314613379763922495}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

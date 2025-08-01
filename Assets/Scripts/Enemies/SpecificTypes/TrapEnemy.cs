@@ -80,7 +80,7 @@ namespace Enemies
             {
                 Vector3 vectorDiff = targetSpot2 - transform.position;
                 vectorDiff.Normalize();
-                rb.AddForce(targetSpot2 * idleForce, ForceMode.Force);
+                rb.AddForce(vectorDiff * idleForce, ForceMode.Impulse);
                 cooldownDelay -= Time.deltaTime;
             }
             else notMoving = true;
