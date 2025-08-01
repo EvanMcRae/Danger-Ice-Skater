@@ -9,6 +9,7 @@ namespace Game {
 
         public GameEventBroadcaster gameEventBroadcaster;
         public WaveSpawner waveSpawner;
+        public WaveStateHandler waveStateHandler;
 
         public List<Enemy> enemyList;
 
@@ -18,60 +19,24 @@ namespace Game {
 
         public void Start() {
             waveDelayTimer = timeBetweenWaves;
+            waveStateHandler.StartGame();
         }
-
-        public void Update() {
-            if (tickDelay) {
-                if (waveDelayTimer >= 0) {
-                    waveDelayTimer -= Time.deltaTime;
-                }
-                else {
-                    tickDelay = false;
-                    bool nextWaveSpawned = waveSpawner.NextWave();
-                    if (nextWaveSpawned) {
-                        gameEventBroadcaster.OnWaveStart.Invoke(waveSpawner.currentWave);
-                        bool nextSubWaveSpawned = waveSpawner.NextSubWave(true);
-                        if (nextSubWaveSpawned) {
-                            gameEventBroadcaster.OnSubWaveStart.Invoke(waveSpawner.currentWave, waveSpawner.currentSubWave);
-                        }
-                    }
-                }//()
-            }/*=-o                                              */
-        }/*   ^^^ Sisyphus pushing the boulder up the pyramid */ 
         
-        private void WaveCleared() {
-            gameEventBroadcaster.OnWaveClear.Invoke(waveSpawner.currentWave);
-            waveDelayTimer = timeBetweenWaves;
-            tickDelay = true;
-        }
-
-        private void SubWaveCleared() {
-            gameEventBroadcaster.OnSubWaveClear.Invoke(waveSpawner.currentWave, waveSpawner.currentSubWave);
-            bool nextSubWaveSpawned = waveSpawner.NextSubWave(true);
-            if (nextSubWaveSpawned) {
-                gameEventBroadcaster.OnSubWaveStart.Invoke(waveSpawner.currentWave, waveSpawner.currentSubWave);
-            }
-            else {
-                WaveCleared();
-            }
-        }
-
         
         /*
          * Event handlers:
          */
-        
         public void OnEnable() {
-            gameEventBroadcaster.OnEnemySpawn.AddListener(OnEnemySpawn);
+            gameEventBroadcaster.OnEnemySend.AddListener(OnEnemySend);
             gameEventBroadcaster.OnEnemyDeath.AddListener(OnEnemyDeath);
         }
 
         public void OnDisable() {
-            gameEventBroadcaster.OnEnemySpawn.RemoveListener(OnEnemySpawn);
+            gameEventBroadcaster.OnEnemySend.RemoveListener(OnEnemySend);
             gameEventBroadcaster.OnEnemyDeath.RemoveListener(OnEnemyDeath);
         }
         
-        private void OnEnemySpawn(Enemy e) {
+        private void OnEnemySend(Enemy e) {
             enemyList.Add(e);
         }
 
@@ -81,7 +46,7 @@ namespace Game {
                 Debug.LogError("Enemy that died was untracked by game. Enemy: " + e + " died.");
             }
 
-            if (enemyList.Count == 0) SubWaveCleared();
+            if (enemyList.Count == 0) waveStateHandler.SubWaveDone();
         }
     }
 }
