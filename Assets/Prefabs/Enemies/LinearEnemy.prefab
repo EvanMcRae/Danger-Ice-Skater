@@ -162,6 +162,8 @@ MonoBehaviour:
   player: {fileID: 0}
   rotateTowardsPlayer: 1
   moveTowardsPlayer: 1
+  pushPlayerOnCollision: 1
+  pushForce: 10
   moveForce: 10
 --- !u!95 &2939290769832064937
 Animator:

@@ -7,6 +7,8 @@ namespace Enemies {
         
         public bool rotateTowardsPlayer;
         public bool moveTowardsPlayer; //Check this to make enemy go towards player
+        public bool pushPlayerOnCollision;
+        public float pushForce;
 
         public float moveForce;
 
@@ -29,6 +31,20 @@ namespace Enemies {
             vectorDiff.Normalize();
             if (moveTowardsPlayer) {
                 rb.AddForce(vectorDiff * moveForce, ForceMode.Force);
+            }
+        }
+
+        public void OnCollisionEnter(Collision collision) {
+            if (pushPlayerOnCollision && collision.gameObject.CompareTag("Player")) {
+                Rigidbody playerRb = collision.gameObject.GetComponent<Rigidbody>();
+
+                Vector3 playerDir = collision.transform.position - transform.position;
+                Vector3 fixedDir = new Vector3(playerDir.x, 0, playerDir.z);
+                fixedDir.Normalize();
+                
+                playerRb.AddForce(fixedDir * pushForce, ForceMode.Impulse);
+                rb.AddForce(fixedDir * -1 * pushForce, ForceMode.Impulse);
+
             }
         }
         
