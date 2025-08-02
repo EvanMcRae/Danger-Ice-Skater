@@ -65,7 +65,7 @@ namespace Enemies {
             }
             else if (transform.position.y <= -3f && flag == false)
             {
-                FindObjectOfType<FloatingTextManager>().ShowFloatingSprite(transform.position);
+                FloatingTextManager.instance.ShowFloatingSprite(transform.position);
                 flag = true;
             }
         }
