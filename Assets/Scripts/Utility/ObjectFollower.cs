@@ -7,6 +7,8 @@ public class ObjectFollower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseManager.paused) return;
+
         transform.position = target.transform.position;
     }
 }

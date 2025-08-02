@@ -20,6 +20,8 @@ namespace Enemies {
         }
 
         public new void Update() {
+            if (PauseManager.paused) return;
+
             base.Update();
             if (rotateTowardsPlayer) {
                 transform.LookAt(player.transform);
@@ -27,6 +29,8 @@ namespace Enemies {
         }
 
         public void FixedUpdate() {
+            if (PauseManager.paused) return;
+
             Vector3 vectorDiff = player.transform.position - transform.position;
             vectorDiff.Normalize();
             if (moveTowardsPlayer) {

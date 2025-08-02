@@ -11,6 +11,8 @@ namespace Enemies
         }
         public new void Update()
         {
+            if (PauseManager.paused) return;
+
             if (m_waiting && !m_isDead) anim.Play("idle");
             else if (!m_isDead)
             {

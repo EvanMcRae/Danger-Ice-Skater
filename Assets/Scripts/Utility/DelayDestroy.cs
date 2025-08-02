@@ -10,6 +10,8 @@ namespace Utility {
         }
 
         public void Update() {
+            if (PauseManager.paused) return;
+
             destroyDelay -= Time.deltaTime;
             if (destroyDelay <= 0) {
                 Destroy(gameObject);
