@@ -5,6 +5,12 @@ public class FloatingTextManager : MonoBehaviour
 {
     public GameObject floatingSpritePrefab; 
     public Canvas canvas;
+    public static FloatingTextManager instance;
+
+    public void Start()
+    {
+        instance = this;
+    }
 
     public void ShowFloatingSprite(Vector3 worldPosition)
     {
@@ -24,5 +30,8 @@ public class FloatingTextManager : MonoBehaviour
         }
     }
 
-
+    public void OnDestroy()
+    {
+        instance = null;
+    }
 }

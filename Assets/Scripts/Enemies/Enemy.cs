@@ -24,7 +24,7 @@ namespace Enemies {
             m_isDead = true;
 
             EnemyDied();
-            FindFirstObjectByType<FloatingTextManager>().ShowFloatingSprite(fallPos);
+            FloatingTextManager.instance.ShowFloatingSprite(fallPos);
 
             Destroy(gameObject);
         }
