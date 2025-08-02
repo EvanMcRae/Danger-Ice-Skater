@@ -27,6 +27,7 @@ namespace Enemies
         {
             base.Start();
             trapTimer = 3;
+            //a
             /*
             idleDelay = idleTime;
             placingTrap = false;
