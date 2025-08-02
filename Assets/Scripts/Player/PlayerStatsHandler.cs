@@ -61,7 +61,7 @@ namespace Player {
         public IEnumerator KillFromDamage()
         {
             anim.SetTrigger("die");
-
+            
             // Optional delay before invoking the event
             yield return new WaitForSeconds(1.5f); // adjust as needed
 
