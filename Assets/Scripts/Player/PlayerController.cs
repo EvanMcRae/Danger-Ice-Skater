@@ -37,10 +37,11 @@ public class PlayerController : MonoBehaviour
 
     public float fallThroughHoleTimer;
     public float fallThroughHoleTime;
+    public bool fallThroughHoleDamaged = false;
 
     public MaskObject arenaFloor;
 
-    public static bool gameOvered = false;
+    public static bool fallThroughHole = false;
 
     public ParticleSystem particles;
 
@@ -55,7 +56,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         pm = FindAnyObjectByType<PauseManager>();
-        gameOvered = false;
+        fallThroughHole = false;
     }
 
     // Update is called once per frame
@@ -88,7 +89,7 @@ public class PlayerController : MonoBehaviour
             dashTimer = dashCooldown;
         }
 
-        if (gameOvered) {
+        if (fallThroughHole) {
             fallThroughHoleTimer -= Time.deltaTime;
         }
 
@@ -111,16 +112,38 @@ public class PlayerController : MonoBehaviour
         float horizontal = imso.xAxis.action.ReadValue<float>();
         float vertical = imso.yAxis.action.ReadValue<float>();
 
-        if(gameOvered)
+        if (fallThroughHole)
         {
             horizontal = 0;
             vertical = 0;
-            if (fallThroughHoleTimer <= 0) {
-                rb.AddForce(Vector3.up * dashForce, ForceMode.Force);
+
+            if (fallThroughHoleTimer > 0) // float above for a bit for comic effect
+            {
                 rb.useGravity = false;
+                rb.constraints |= RigidbodyConstraints.FreezePosition;
             }
-            if (transform.position.y > respawnHeight) {
-                gameOvered = false;
+            if (fallThroughHoleTimer <= 0 && fallThroughHoleTimer > -fallThroughHoleTime) // sploosh down
+            {
+                rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+                rb.useGravity = true;
+                rb.AddForce(10 * dashForce * Vector3.down, ForceMode.Force);
+            }
+            if (fallThroughHoleTimer <= -fallThroughHoleTime)
+            {
+                if (!fallThroughHoleDamaged)
+                {
+                    fallThroughHoleDamaged = true;
+                    psh.Damage(2);
+                }
+                rb.useGravity = false;
+                if (rb.linearVelocity.y < 0) rb.linearVelocity = Vector3.zero;
+                rb.AddForce(3 * dashForce * Vector3.up, ForceMode.Force); // rise up
+            }
+            if (transform.position.y > respawnHeight) { // once at respawn height
+                if (rb.linearVelocity.y > 0) rb.linearVelocity = Vector3.zero;
+                rb.constraints = RigidbodyConstraints.FreezeRotation;
+                fallThroughHole = false;
+                fallThroughHoleDamaged = false;
                 rb.useGravity = true;
                 rb.excludeLayers = 0;
                 rb.linearDamping = 1;
@@ -131,16 +154,16 @@ public class PlayerController : MonoBehaviour
 
         if (rb.linearVelocity.x > 0 && horizontal < 0 || rb.linearVelocity.x < 0 && horizontal > 0)
         {
-            horizontal = horizontal * reverseMod;
+            horizontal *= reverseMod;
         }
 
         if (rb.linearVelocity.y > 0 && vertical < 0 || rb.linearVelocity.y < 0 && vertical > 0)
         {
-            vertical = vertical * reverseMod;
+            vertical *= reverseMod;
         }
 
         //Rotate player to face their movement direction + some bias from their inputs
-        if (!gameOvered && new Vector3(rb.linearVelocity.x + horizontal, 0, rb.linearVelocity.z + vertical) != default)
+        if (!fallThroughHole && new Vector3(rb.linearVelocity.x + horizontal, 0, rb.linearVelocity.z + vertical) != default)
         {
             transform.rotation = Quaternion.LookRotation(new Vector3(rb.linearVelocity.x + horizontal, 0, rb.linearVelocity.z + vertical), Vector3.up);
         }
@@ -203,14 +226,14 @@ public class PlayerController : MonoBehaviour
     }
     
     public void Dash() {
-        if (gameOvered) return;
+        if (fallThroughHole) return;
         Vector3 dir = new Vector3(imso.xAxis.action.ReadValue<float>(), 0, imso.yAxis.action.ReadValue<float>());
         rb.linearVelocity = Vector3.zero;
         rb.AddForce(dir * dashForce, ForceMode.Impulse);
     }
 
     public void Jump() {
-        if (gameOvered) return;
+        if (fallThroughHole) return;
         if (!isTouchingGround) return;
         rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
         rb.AddForce(Vector3.up * dashForce, ForceMode.Impulse);

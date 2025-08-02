@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7939844134250656183}
   - component: {fileID: 890943646046127760}
   - component: {fileID: 413645191794192723}
+  - component: {fileID: 7186248294486830815}
   m_Layer: 0
   m_Name: Puck
   m_TagString: Enemy
@@ -96,7 +97,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7109261927733015708}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 5731eb10069b5404e84e5e0d3b822c3a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -135,7 +136,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &413645191794192723
 MonoBehaviour:
@@ -150,3 +151,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyDelay: 5
+  destroyOnPlayerCollision: 1
+--- !u!114 &7186248294486830815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7109261927733015708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a035e3e650304815bf522cd3123172c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallPos: {x: 0, y: 0, z: 0}

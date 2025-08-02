@@ -2,7 +2,7 @@
 using UnityEngine;
 
 namespace Enemies.SpecificTypes {
-    public class ProjectileEnemy : Follower {
+    public class ProjectileEnemy : RandomDirectionTraveler {
         
         [Header("Projectile Enemy Settings")]
         public float projectileDelayMin;
