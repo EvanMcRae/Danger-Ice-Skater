@@ -25,6 +25,9 @@ namespace Waves {
         ///     The current sub wave index.
         /// </summary>
         public int currentSubWaveCount = -1;
+
+        public static System.Action WaveStarted;
+
         
         /// <summary>
         ///     Progresses the spawner to the next wave. Does not do additional checks.
@@ -45,6 +48,8 @@ namespace Waves {
             }
             
             Debug.Log("Next wave!" + currentWaveCount);
+            WaveStarted?.Invoke();
+
             currentSubWaveCount = -1;
             return true;
         }
