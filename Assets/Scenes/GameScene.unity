@@ -1594,6 +1594,7 @@ GameObject:
   - component: {fileID: 343089339}
   - component: {fileID: 343089338}
   - component: {fileID: 343089341}
+  - component: {fileID: 343089342}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1681,6 +1682,20 @@ MonoBehaviour:
   tickTimer: 0
   spawnWaveTimer: 0
   finalSubwave: 0
+--- !u!114 &343089342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343089337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dcfcbf55a64cb4409dee0fed654b068, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floatingSpritePrefab: {fileID: 3353007841101867698, guid: 71a77bc55f8cd554496f65b8d525ccdc, type: 3}
+  canvas: {fileID: 1404093105}
 --- !u!1 &355807174
 GameObject:
   m_ObjectHideFlags: 0
@@ -4167,6 +4182,11 @@ Transform:
   - {fileID: 62042820}
   m_Father: {fileID: 141622048}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!223 &1404093105 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 3021978165765002293, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
+  m_PrefabInstance: {fileID: 568803943}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1431598015
 GameObject:
   m_ObjectHideFlags: 0
