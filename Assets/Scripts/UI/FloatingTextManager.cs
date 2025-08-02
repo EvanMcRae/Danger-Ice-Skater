@@ -3,9 +3,8 @@ using TMPro;
 
 public class FloatingTextManager : MonoBehaviour
 {
-    public GameObject floatingSpritePrefab;
+    public FloatingSprite floatingSpritePrefab;
     public static FloatingTextManager instance;
-    public Canvas canvas;
 
     public void Start()
     {
@@ -17,17 +16,17 @@ public class FloatingTextManager : MonoBehaviour
         Vector3 screenPosition = Camera.main.WorldToScreenPoint(worldPosition);
 
         // Make instance under canvas
-        GameObject instance = Instantiate(floatingSpritePrefab, canvas.transform);
+        FloatingSprite inst = Instantiate(floatingSpritePrefab, transform);
 
         // Convert screen point to canvas local point
-        Debug.Log(canvas);
+        RectTransform canvasRect = transform.parent.GetComponent<RectTransform>();
+        RectTransform instanceRect = inst.GetComponent<RectTransform>();
 
-        RectTransform canvasRect = canvas.GetComponent<RectTransform>();
-        RectTransform instanceRect = instance.GetComponent<RectTransform>();
-
-        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screenPosition, null, out Vector2 anchoredPos))
-        {
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screenPosition, null, out Vector2 anchoredPos)) {
+            
+            inst.worldStartPos = worldPosition;
             instanceRect.anchoredPosition = anchoredPos;
+            
         }
     }
 

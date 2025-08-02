@@ -154,7 +154,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameEventBroadcaster: {fileID: 11400000, guid: f8714c97c5f2ac84fa1762773bdaad01, type: 2}
   rb: {fileID: 4713842041731944712}
-  m_killHeight: -10
   m_isDead: 0
   m_waiting: 0
   anim: {fileID: 1996957714703517974}
@@ -162,6 +161,8 @@ MonoBehaviour:
   player: {fileID: 0}
   rotateTowardsPlayer: 1
   moveTowardsPlayer: 1
+  pushPlayerOnCollision: 0
+  pushForce: 0
   moveForce: 10
   dashTimerMin: 3
   dashTimerMax: 7

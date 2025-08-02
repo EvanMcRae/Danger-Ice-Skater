@@ -2828,6 +2828,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 211769688708325526, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
+      propertyPath: floatingSpritePrefab
+      value: 
+      objectReference: {fileID: -6886228154559822146, guid: 71a77bc55f8cd554496f65b8d525ccdc, type: 3}
     - target: {fileID: 3070917890617315756, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
       propertyPath: m_IsActive
       value: 1
