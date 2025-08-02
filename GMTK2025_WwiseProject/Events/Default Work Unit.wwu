@@ -14,6 +14,130 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Folder Name="Player" ID="{43EFC67E-83C0-4B24-A8C6-AD5DC6B7BA0A}" ShortID="193656000">
+					<ChildrenList>
+						<Event Name="PlayerStep" ID="{164C2E26-B903-4505-BC84-C00A937DA0F9}">
+							<ChildrenList>
+								<Action Name="" ID="{BA1CB1D8-6B08-4C7E-8EC9-56B72C06DD56}" ShortID="318543568">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Steps" ID="{7AC52866-D5DB-4682-99B3-2AEFC8D332B9}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayerSplash" ID="{9C7F0E4A-A25E-429A-AD45-6E5F88EC7A85}">
+							<ChildrenList>
+								<Action Name="" ID="{F23F24E2-B514-4517-B22C-37851ABAFBA2}" ShortID="18015503">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Player Splash" ID="{98745080-07DD-481B-A14D-FC26C8B810A8}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayerHurt" ID="{7C3D97AA-3A44-4578-9D1E-470EE66DCEF7}">
+							<ChildrenList>
+								<Action Name="" ID="{FBFB6EDC-1238-4118-955F-BF83D28E0BF2}" ShortID="692661383">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Player Damage" ID="{530DF690-3A13-481A-9CF7-21751382B45D}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Enemy" ID="{7F29F9C0-F013-4152-8820-0F6168AB4BAE}" ShortID="265989790">
+					<ChildrenList>
+						<Folder Name="Shark" ID="{CFE5DFBD-95D1-43A7-88C1-92A2B31C95ED}" ShortID="117858914">
+							<ChildrenList>
+								<Event Name="StartChomp" ID="{041933A0-D803-44A4-80A0-3EABFB07A647}">
+									<ChildrenList>
+										<Action Name="" ID="{D114C660-FB58-487A-9AA3-A87054947D7A}" ShortID="683508590">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Chomp" ID="{9735D443-A95B-4928-8154-C270014E2B61}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="SharkFall" ID="{23D73999-01D8-4437-9F7A-739A9FBCFABD}">
+									<ChildrenList>
+										<Action Name="" ID="{726F3B52-4748-48A8-AAB6-21B92536BFF0}" ShortID="39190456">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Shark Fall" ID="{B5338752-CE02-4B11-98CE-ED32CDFF018C}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="EndChomp" ID="{E45E10AF-587C-42B4-A988-B3AE197CF032}">
+									<ChildrenList>
+										<Action Name="" ID="{0465E23C-6240-4E3D-9439-4DE2A643E112}" ShortID="915719048">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Chomp" ID="{9735D443-A95B-4928-8154-C270014E2B61}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Event Name="EnemySplash" ID="{08B9D194-5769-4574-8E91-61E79994EA04}">
+							<ChildrenList>
+								<Action Name="" ID="{96657E30-84D2-4D96-9BBE-474E8FDDF606}" ShortID="238828899">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Enemy Splash" ID="{49908943-85CA-47AA-852D-85BF9A660DBB}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Folder Name="Penguin" ID="{5A82F122-3F01-4A8F-9AD6-A2B45F3A43EA}" ShortID="939168321">
+							<ChildrenList>
+								<Event Name="PenguinFall" ID="{501EBB5F-3B7C-4B90-9502-27C2B581AD07}">
+									<ChildrenList>
+										<Action Name="" ID="{E473E3E9-CC50-4CF8-A212-7028B4C235E6}" ShortID="730206818">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Pengiun Death" ID="{E4C03D64-5DD9-462A-BD4F-8EA20D8A41AC}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Hockey" ID="{257AF942-7EFA-492A-8E47-058CCED76509}" ShortID="601028921">
+							<ChildrenList>
+								<Event Name="HockeyShoot" ID="{D602C855-4B10-46C4-8DE8-27CB08BE07CF}"/>
+								<Event Name="HockeySwing" ID="{1FCCBCFA-EBAD-4B0A-B137-548F82F2342B}"/>
+								<Event Name="PuckHit" ID="{A2FD3928-5C1F-4902-905C-5FEB6C426D17}">
+									<ChildrenList>
+										<Action Name="" ID="{5099913D-20BF-4EEE-80E5-BCA8E6AFC58E}" ShortID="653933864">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Hit" ID="{0D17B101-791E-48C1-8E93-B451EBD871A5}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

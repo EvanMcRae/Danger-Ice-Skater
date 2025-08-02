@@ -18,7 +18,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{89C218AE-9E0B-8562-B379-0ABAC724E516}",
+    "Hash": "{BF36D48F-759F-E5C2-8A03-B64101B930E1}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -44,10 +44,56 @@
     },
     "Busses": [
      {
+      "Id": "393239870",
+      "Name": "SFX",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX",
+      "GUID": "{82BD75D9-95EE-495F-88CE-7A658BA55E69}"
+     },
+     {
       "Id": "3803692087",
       "Name": "Master Audio Bus",
       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus",
       "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
+     },
+     {
+      "Id": "3991942870",
+      "Name": "Music",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Music",
+      "GUID": "{8F4E0BEE-F6EE-413F-AEFF-F5ACA340B076}"
+     }
+    ],
+    "AuxBusses": [
+     {
+      "Id": "348963605",
+      "Name": "Reverb",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
+      "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
+     },
+     {
+      "Id": "1517463400",
+      "Name": "Distortion",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Distortion",
+      "GUID": "{418CD9C0-FA84-41AB-A45E-DF83011CDD82}"
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "2346531308",
+      "Name": "musicVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Volume\\musicVolume",
+      "GUID": "{DAF18041-72A2-4215-B1D0-EAE2DB16B628}"
+     },
+     {
+      "Id": "2918011349",
+      "Name": "masterVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Volume\\masterVolume",
+      "GUID": "{1211C1CB-5F06-4FC0-9FA8-2E4402C1AD49}"
+     },
+     {
+      "Id": "3873835272",
+      "Name": "soundVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Volume\\soundVolume",
+      "GUID": "{DF92366F-4997-4DFD-B8EC-F8899A911A75}"
      }
     ]
    },
@@ -56,11 +102,59 @@
     "Type": "User",
     "GUID": "{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}",
     "Language": "SFX",
-    "Hash": "{F31779A9-4B75-A949-B607-4D9C129184C0}",
+    "Hash": "{93B28AA8-BBFB-1976-8A07-F558D9160C8A}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
     "Media": [
+     {
+      "Id": "11736544",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Puck Hit.wav",
+      "CachePath": "33/{33B4372C-560B-FB90-8BC9-EAD1EF914296}.wem"
+     },
+     {
+      "Id": "112692613",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Puck Hit_1.wav",
+      "CachePath": "B8/{B8B22060-E66C-8882-A7F4-29D99096ACC1}.wem"
+     },
+     {
+      "Id": "129769630",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Steps\\Skate.wav",
+      "CachePath": "72/{7296F7E7-9ACB-576A-4C84-67C207E24675}.wem"
+     },
+     {
+      "Id": "134563642",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Steps\\Step_4.wav",
+      "CachePath": "63/{63B81F11-03CF-D91C-4EF0-896AEE89EFD5}.wem"
+     },
+     {
+      "Id": "179817375",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Hit.wav",
+      "CachePath": "59/{5964A458-E8FD-DC78-0470-828647D8C75B}.wem"
+     },
+     {
+      "Id": "188607504",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Steps\\Skate.wav",
+      "CachePath": "D3/{D35A5FB2-587A-871E-ADD5-6BCE7EB3081E}.wem"
+     },
      {
       "Id": "283519557",
       "Language": "SFX",
@@ -68,9 +162,521 @@
       "Location": "Memory",
       "ShortName": "Bear Die.wav",
       "CachePath": "2E/{2E2C3284-4DEC-965A-7DFD-79D702095BE9}.wem"
+     },
+     {
+      "Id": "293017412",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Steps\\Skate.wav",
+      "CachePath": "13/{1370D99F-0F08-4C46-292D-9144D855502F}.wem"
+     },
+     {
+      "Id": "295319387",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Steps\\Step_6.wav",
+      "CachePath": "7C/{7C5D1858-CFF0-BCDE-F282-9A9E3875ADA1}.wem"
+     },
+     {
+      "Id": "324096467",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Pengiun Death.wav",
+      "CachePath": "80/{8014FA45-FC8B-7BB9-16D8-86F9F179A55C}.wem"
+     },
+     {
+      "Id": "328313209",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Splash_2.wav",
+      "CachePath": "AE/{AECC55ED-506B-1A0D-8CD0-CEC21596CC6E}.wem"
+     },
+     {
+      "Id": "333892847",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Puck Hit_3.wav",
+      "CachePath": "34/{347E29DD-E917-8E36-51E0-A82B70C3A0B5}.wem"
+     },
+     {
+      "Id": "368301711",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Steps\\Skate.wav",
+      "CachePath": "64/{64DE0FDC-FC82-E70B-8753-A4694FD06214}.wem"
+     },
+     {
+      "Id": "383303118",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Steps\\Step_1.wav",
+      "CachePath": "0A/{0AF11F87-B211-21E4-7F80-69CBD3FEF4FC}.wem"
+     },
+     {
+      "Id": "394496959",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Swings_5.wav",
+      "CachePath": "B0/{B00C5499-1396-864A-9C2D-2C435229B121}.wem"
+     },
+     {
+      "Id": "408570755",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Puck Hit_2.wav",
+      "CachePath": "35/{356F9E72-3B04-CA94-8664-5D0C006A534E}.wem"
+     },
+     {
+      "Id": "449719526",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Steps\\Skate.wav",
+      "CachePath": "7F/{7F789D5D-5B37-1F62-AA97-60D9EB27BB1A}.wem"
+     },
+     {
+      "Id": "468795855",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Swings_4.wav",
+      "CachePath": "CD/{CD02CCB3-A068-D3FB-7E8F-00D266BDE0E5}.wem"
+     },
+     {
+      "Id": "472000575",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Swings.wav",
+      "CachePath": "89/{89470717-F0AB-609B-0914-9B4097A4110A}.wem"
+     },
+     {
+      "Id": "481543437",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Shark Chomps_3.wav",
+      "CachePath": "0F/{0FBC6EC9-850D-29FD-99ED-D16CB0AA644A}.wem"
+     },
+     {
+      "Id": "521776349",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Skate.wav",
+      "CachePath": "76/{764D2C7A-D76B-0A8E-033C-8B54E65BD550}.wem"
+     },
+     {
+      "Id": "589060082",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Swings_6.wav",
+      "CachePath": "DD/{DD45836E-3A57-C08F-4C4F-1CB2C8135A52}.wem"
+     },
+     {
+      "Id": "650797169",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Shark Chomps_4.wav",
+      "CachePath": "43/{43501F9F-16E8-7033-02FC-B0C428CC6D55}.wem"
+     },
+     {
+      "Id": "661063367",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Splash_5.wav",
+      "CachePath": "83/{83563AA8-927B-CE0A-ACF6-31D03AC77E34}.wem"
+     },
+     {
+      "Id": "713916889",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Swings_2.wav",
+      "CachePath": "9E/{9E891606-1604-ED4E-3FDF-5DE677A6858C}.wem"
+     },
+     {
+      "Id": "731922532",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Splash_3.wav",
+      "CachePath": "C5/{C59E0B15-8CBD-1332-2A05-E4E5591435AE}.wem"
+     },
+     {
+      "Id": "733039566",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Steps\\Step_2.wav",
+      "CachePath": "91/{91385B06-5946-6CA0-D83B-8559C4CAAF96}.wem"
+     },
+     {
+      "Id": "748055230",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Steps\\Step_3.wav",
+      "CachePath": "AC/{ACD53E8B-FACD-5112-B495-01A983BCBDB7}.wem"
+     },
+     {
+      "Id": "759369371",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Swings_1.wav",
+      "CachePath": "87/{87EEB0D7-5CB2-1702-B605-F701C12F87DD}.wem"
+     },
+     {
+      "Id": "768956991",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Swings_3.wav",
+      "CachePath": "CD/{CD7E1C47-C73C-9A83-0F3E-49F3C4B2EC47}.wem"
+     },
+     {
+      "Id": "788434638",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Splash_6.wav",
+      "CachePath": "01/{0139EC74-631F-4C75-7B7D-B3425CA30791}.wem"
+     },
+     {
+      "Id": "817391603",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Steps\\Step.wav",
+      "CachePath": "B6/{B6FF8C41-BF51-B239-3F0A-53022A78BCE6}.wem"
+     },
+     {
+      "Id": "835039389",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Steps\\Step_5.wav",
+      "CachePath": "D2/{D233C4F4-6761-619D-B9F9-D6C80DEE9587}.wem"
+     },
+     {
+      "Id": "874117209",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Splash_1.wav",
+      "CachePath": "21/{218C9BF4-E22C-6740-329B-F96E0DE3383F}.wem"
+     },
+     {
+      "Id": "908641076",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Shark Death.wav",
+      "CachePath": "C4/{C466DCE9-7896-D037-1F29-B39EEFAC2758}.wem"
+     },
+     {
+      "Id": "965355924",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Steps\\Skate.wav",
+      "CachePath": "16/{166E964D-D4B9-9AB7-B061-89506602A07C}.wem"
+     },
+     {
+      "Id": "994630770",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Splash_2.wav",
+      "CachePath": "1A/{1A9B7068-2AA6-935D-9176-7C1C5CAB693F}.wem"
+     },
+     {
+      "Id": "1008933578",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Steps\\Step_7.wav",
+      "CachePath": "7C/{7C696B0C-808E-EAD4-EA3B-40E3F0717D63}.wem"
      }
     ],
+    "Plugins": {
+     "ShareSets": [
+      {
+       "Id": "1237275451",
+       "Name": "Octave_Up",
+       "ObjectPath": "\\Effects\\Factory Effects\\Pitch Shifter\\Harmonize\\Octave_Up",
+       "GUID": "{A98F423C-EC97-49D8-8698-445CE91F24B7}",
+       "LibName": "Wwise Pitch Shifter",
+       "LibId": "8912899"
+      }
+     ]
+    },
     "Events": [
+     {
+      "Id": "2458991111",
+      "Name": "EndChomp",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enemy\\Shark\\EndChomp",
+      "GUID": "{E45E10AF-587C-42B4-A988-B3AE197CF032}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "MediaRefs": [
+       {
+        "Id": "481543437"
+       },
+       {
+        "Id": "650797169"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "348963605",
+        "Name": "Reverb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
+        "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
+       }
+      ]
+     },
+     {
+      "Id": "1495289514",
+      "Name": "EnemySplash",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enemy\\EnemySplash",
+      "GUID": "{08B9D194-5769-4574-8E91-61E79994EA04}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.7380988",
+      "DurationMax": "1.1500962",
+      "MediaRefs": [
+       {
+        "Id": "328313209"
+       },
+       {
+        "Id": "874117209"
+       }
+      ]
+     },
+     {
+      "Id": "2891959439",
+      "Name": "HockeyShoot",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enemy\\Hockey\\HockeyShoot",
+      "GUID": "{D602C855-4B10-46C4-8DE8-27CB08BE07CF}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "433652520",
+      "Name": "HockeySwing",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enemy\\Hockey\\HockeySwing",
+      "GUID": "{1FCCBCFA-EBAD-4B0A-B137-548F82F2342B}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "4286935516",
+      "Name": "PenguinFall",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enemy\\Penguin\\PenguinFall",
+      "GUID": "{501EBB5F-3B7C-4B90-9502-27C2B581AD07}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.38066658",
+      "DurationMax": "0.38066658",
+      "MediaRefs": [
+       {
+        "Id": "324096467"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "348963605",
+        "Name": "Reverb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
+        "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
+       }
+      ]
+     },
+     {
+      "Id": "3537581393",
+      "Name": "PlayerHurt",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player\\PlayerHurt",
+      "GUID": "{7C3D97AA-3A44-4578-9D1E-470EE66DCEF7}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.12625718",
+      "DurationMax": "0.24143492",
+      "MediaRefs": [
+       {
+        "Id": "11736544"
+       },
+       {
+        "Id": "112692613"
+       },
+       {
+        "Id": "333892847"
+       },
+       {
+        "Id": "408570755"
+       }
+      ]
+     },
+     {
+      "Id": "972739039",
+      "Name": "PlayerSplash",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player\\PlayerSplash",
+      "GUID": "{9C7F0E4A-A25E-429A-AD45-6E5F88EC7A85}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.7995664",
+      "DurationMax": "0.8380544",
+      "MediaRefs": [
+       {
+        "Id": "731922532"
+       },
+       {
+        "Id": "788434638"
+       }
+      ]
+     },
+     {
+      "Id": "412471812",
+      "Name": "PlayerStep",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player\\PlayerStep",
+      "GUID": "{164C2E26-B903-4505-BC84-C00A937DA0F9}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.32601926",
+      "DurationMax": "0.38035583",
+      "MediaRefs": [
+       {
+        "Id": "129769630"
+       },
+       {
+        "Id": "134563642"
+       },
+       {
+        "Id": "188607504"
+       },
+       {
+        "Id": "293017412"
+       },
+       {
+        "Id": "295319387"
+       },
+       {
+        "Id": "368301711"
+       },
+       {
+        "Id": "383303118"
+       },
+       {
+        "Id": "449719526"
+       },
+       {
+        "Id": "733039566"
+       },
+       {
+        "Id": "748055230"
+       },
+       {
+        "Id": "817391603"
+       },
+       {
+        "Id": "835039389"
+       },
+       {
+        "Id": "965355924"
+       },
+       {
+        "Id": "1008933578"
+       }
+      ]
+     },
+     {
+      "Id": "3993562277",
+      "Name": "PuckHit",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enemy\\Hockey\\PuckHit",
+      "GUID": "{A2FD3928-5C1F-4902-905C-5FEB6C426D17}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.21438202",
+      "DurationMax": "0.21438202",
+      "MediaRefs": [
+       {
+        "Id": "179817375"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "348963605",
+        "Name": "Reverb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
+        "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
+       }
+      ]
+     },
+     {
+      "Id": "3926006775",
+      "Name": "SharkFall",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enemy\\Shark\\SharkFall",
+      "GUID": "{23D73999-01D8-4437-9F7A-739A9FBCFABD}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.3944602",
+      "DurationMax": "0.3944602",
+      "MediaRefs": [
+       {
+        "Id": "908641076"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "1237275451"
+        }
+       ]
+      },
+      "AuxBusRefs": [
+       {
+        "Id": "348963605",
+        "Name": "Reverb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
+        "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
+       }
+      ]
+     },
+     {
+      "Id": "35164858",
+      "Name": "StartChomp",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enemy\\Shark\\StartChomp",
+      "GUID": "{041933A0-D803-44A4-80A0-3EABFB07A647}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "481543437"
+       },
+       {
+        "Id": "650797169"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "348963605",
+        "Name": "Reverb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
+        "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
+       }
+      ]
+     },
      {
       "Id": "3157003241",
       "Name": "test",
@@ -85,9 +691,63 @@
        }
       ]
      }
+    ],
+    "Busses": [
+     {
+      "Id": "393239870",
+      "Name": "SFX",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX",
+      "GUID": "{82BD75D9-95EE-495F-88CE-7A658BA55E69}"
+     },
+     {
+      "Id": "3803692087",
+      "Name": "Master Audio Bus",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus",
+      "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
+     },
+     {
+      "Id": "3991942870",
+      "Name": "Music",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Music",
+      "GUID": "{8F4E0BEE-F6EE-413F-AEFF-F5ACA340B076}"
+     }
+    ],
+    "AuxBusses": [
+     {
+      "Id": "348963605",
+      "Name": "Reverb",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
+      "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
+     },
+     {
+      "Id": "1517463400",
+      "Name": "Distortion",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Distortion",
+      "GUID": "{418CD9C0-FA84-41AB-A45E-DF83011CDD82}"
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "2346531308",
+      "Name": "musicVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Volume\\musicVolume",
+      "GUID": "{DAF18041-72A2-4215-B1D0-EAE2DB16B628}"
+     },
+     {
+      "Id": "2918011349",
+      "Name": "masterVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Volume\\masterVolume",
+      "GUID": "{1211C1CB-5F06-4FC0-9FA8-2E4402C1AD49}"
+     },
+     {
+      "Id": "3873835272",
+      "Name": "soundVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Volume\\soundVolume",
+      "GUID": "{DF92366F-4997-4DFD-B8EC-F8899A911A75}"
+     }
     ]
    }
   ],
-  "FileHash": "{5AE16877-B2B1-F1C7-A7A5-4539F6DCF995}"
+  "FileHash": "{988963C6-A0F5-2407-1112-604016F00BEA}"
  }
 }

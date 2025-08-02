@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{62E937C8-5815-4458-9D13-3B8AE8B6BBFC}" SchemaVersion="123">
 	<SoundcasterSessions>
-		<WorkUnit Name="Default Work Unit" ID="{62E937C8-5815-4458-9D13-3B8AE8B6BBFC}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{62E937C8-5815-4458-9D13-3B8AE8B6BBFC}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="New Soundcaster Session" ID="{5A195EB6-D5E6-446E-9AD9-D24E1EB55B79}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="EndChomp" ID="{E45E10AF-587C-42B4-A988-B3AE197CF032}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlayerSplash" ID="{9C7F0E4A-A25E-429A-AD45-6E5F88EC7A85}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="SharkFall" ID="{23D73999-01D8-4437-9F7A-739A9FBCFABD}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlayerStep" ID="{164C2E26-B903-4505-BC84-C00A937DA0F9}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="StartChomp" ID="{041933A0-D803-44A4-80A0-3EABFB07A647}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundcasterSessions>
 </WwiseDocument>

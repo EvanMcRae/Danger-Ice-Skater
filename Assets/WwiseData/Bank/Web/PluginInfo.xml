@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PluginInfo Platform="Web" BasePlatform="Web">
 	<PluginLibs>
+		<PluginLib LibName="Wwise Pitch Shifter" LibId="8912899" Type="Effect" DLL="AkPitchShifter" StaticLib="AkPitchShifterFX"/>
 		<PluginLib LibName="System" LibId="11403271" Type="AudioDevice"/>
 		<PluginLib LibName="No Output" LibId="11862023" Type="AudioDevice"/>
 	</PluginLibs>
-	<FileHash>{792AEDBC-FF9D-2877-EB78-90A7B67363FD}</FileHash>
+	<FileHash>{33877190-4D25-FCA7-2E24-5261E2FA5364}</FileHash>
 </PluginInfo>
