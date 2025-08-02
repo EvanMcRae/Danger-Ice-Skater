@@ -72,7 +72,14 @@ public class PauseManager : MonoBehaviour
 
     public void MainMenu()
     {
+        ScreenWipe.current.WipeIn();
+        ScreenWipe.current.PostWipe += GoToMainMenu;
+    }
+
+    public void GoToMainMenu()
+    {
         Time.timeScale = 1;
+        ScreenWipe.current.PostWipe -= GoToMainMenu;
         SceneManager.LoadScene(MainMenuName);
     }
 
