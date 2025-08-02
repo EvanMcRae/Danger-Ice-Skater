@@ -481,7 +481,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6386247114682981524, guid: a55e6b8a288afd44584fbc25568c57fe, type: 3}
   m_PrefabInstance: {fileID: 537469634}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 415119287}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0d520773327f914c9b2acd76fcb7faa, type: 3}
@@ -499,6 +499,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e0710ab941574915829682ae9b6913d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &848937595
+Rigidbody:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415119287}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &1009056632 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9132219513353598986, guid: a63f9d992b0ce204fb155502ae76520a, type: 3}
@@ -543,6 +570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTypeManager: {fileID: 11400000, guid: 0981b7ed99cb7f1439d28cb8d896121a, type: 2}
   waveManagerSO: {fileID: 11400000, guid: 7d0ae3bb436f6e14caee43a21c38f8f8, type: 2}
+  geb: {fileID: 0}
   validWaveSpawnPoints:
   - {fileID: 561308613}
   - {fileID: 1009056632}
@@ -572,6 +600,7 @@ MonoBehaviour:
   timeBetweenWaves: 5
   waveDelayTimer: 0
   tickDelay: 1
+  score: 0
 --- !u!4 &1068397258
 Transform:
   m_ObjectHideFlags: 0
@@ -784,6 +813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52eb1e54064f51d4fb76513879756782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 0
 --- !u!1 &1307965684
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,6 +825,7 @@ GameObject:
   - component: {fileID: 1307965686}
   - component: {fileID: 1307965685}
   - component: {fileID: 1307965689}
+  - component: {fileID: 1307965690}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -867,6 +898,19 @@ MonoBehaviour:
   unloadTriggerList: 958ca0ea
   bankNameInternal: 
   valueGuidInternal: 
+--- !u!114 &1307965690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307965684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed39f2b237e573f4f85990bb5d1440ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitBank: {fileID: 11400000, guid: a033be40b5ddc4c459a94681c150c22d, type: 2}
 --- !u!1001 &1330572111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1298,9 +1342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HolePrefab: {fileID: 4884329261990287930, guid: 3c87df03299336b4aaf6ff2fd2ef509c, type: 3}
-  Holes: []
   CutoutPrefab: {fileID: 4884329261990287930, guid: 1eb40acb03c3e425685f30210619ef12, type: 3}
-  Cutouts: []
   Points: []
   isTouchingGround: 0
   isDrawing: 0

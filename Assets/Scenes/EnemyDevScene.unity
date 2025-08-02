@@ -272,6 +272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTypeManager: {fileID: 11400000, guid: 0981b7ed99cb7f1439d28cb8d896121a, type: 2}
   waveManagerSO: {fileID: 11400000, guid: 7d0ae3bb436f6e14caee43a21c38f8f8, type: 2}
+  geb: {fileID: 0}
   validWaveSpawnPoints: []
   invalidWaveSpawnPoints: []
   currentWave: -1
@@ -295,6 +296,7 @@ MonoBehaviour:
   timeBetweenWaves: 5
   waveDelayTimer: 0
   tickDelay: 1
+  score: 0
 --- !u!4 &1068397258
 Transform:
   m_ObjectHideFlags: 0
@@ -432,7 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52eb1e54064f51d4fb76513879756782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lower: 1
+  level: 0
 --- !u!1 &1307965684
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,6 +446,7 @@ GameObject:
   - component: {fileID: 1307965686}
   - component: {fileID: 1307965685}
   - component: {fileID: 1307965689}
+  - component: {fileID: 1307965690}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -516,6 +519,19 @@ MonoBehaviour:
   unloadTriggerList: 958ca0ea
   bankNameInternal: 
   valueGuidInternal: 
+--- !u!114 &1307965690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307965684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed39f2b237e573f4f85990bb5d1440ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitBank: {fileID: 11400000, guid: a033be40b5ddc4c459a94681c150c22d, type: 2}
 --- !u!1 &2008202748
 GameObject:
   m_ObjectHideFlags: 0

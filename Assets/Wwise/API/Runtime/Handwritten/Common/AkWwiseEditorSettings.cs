@@ -18,7 +18,6 @@ Copyright (c) 2025 Audiokinetic Inc.
 #if !(UNITY_DASHBOARD_WIDGET || UNITY_WEBPLAYER || UNITY_WII || UNITY_WIIU || UNITY_NACL || UNITY_FLASH || UNITY_BLACKBERRY) // Disable under unsupported platforms.
 #if UNITY_EDITOR
 
-using System.IO;
 using UnityEditor;
 using System.Linq;
 
@@ -32,9 +31,9 @@ public class WwiseSettings
 		get
 		{
 			string wwiseVersion = AkUnitySoundEngine.WwiseVersion;
-			string shortWwiseVersion = wwiseVersion.Substring(2, wwiseVersion.IndexOf("Build")-3); //-3 for the space and the 2 first character that are skipped.
-			string repositoryLink = "https://github.com/audiokinetic/WwiseUnityAddressables.git";
-			repositoryLink += $"#v{shortWwiseVersion}";
+			string shortWwiseVersion = wwiseVersion.Substring(2, 6);
+			string repositoryLink = "https://github.com/danielambrits/WwiseUnityAddressables";
+			// repositoryLink += $"#v{shortWwiseVersion}";
 			return repositoryLink;
 		}
 	}
@@ -314,16 +313,6 @@ public class AkWwiseEditorSettings
 				AkUnitySoundEngineInitialization.Instance.TerminateSoundEngine();
 			}
 		}
-		
-		private bool IsFolderWwiseApplicationPath(string path)
-		{
-#if UNITY_EDITOR_OSX
-			return path.Contains("Wwise.app");
-#else
-			string fullPath = Path.GetFullPath(Path.Combine(path, "Authoring\\x64\\Release\\bin\\Wwise.exe"));
-			return File.Exists(fullPath);
-#endif
-		}
 
 		public override void OnGUI(string searchContext)
 #else
@@ -388,11 +377,7 @@ public class AkWwiseEditorSettings
 #else
 					var path = UnityEditor.EditorUtility.OpenFolderPanel("Select your Wwise application.", System.Environment.GetEnvironmentVariable("ProgramFiles(x86)"), "");
 #endif
-					if (path != "" && !IsFolderWwiseApplicationPath(path))
-					{
-						EditorUtility.DisplayDialog("Wwise Application Path could not be set", $"WwiseUnity: {path} did not contain a Wwise Authoring application.", "OK");
-					}
-					else if (path.Length != 0)
+					if (path.Length != 0)
 					{
 						settings.WwiseInstallationPath = System.IO.Path.GetFullPath(path);
 						changed = true;
