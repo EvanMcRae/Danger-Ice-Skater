@@ -114,7 +114,7 @@
     "Type": "User",
     "GUID": "{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}",
     "Language": "SFX",
-    "Hash": "{E97A8B00-EC50-AEC6-64AE-66985E5B96A4}",
+    "Hash": "{7296CA5B-D2BE-4CC9-4E0F-9B8E595F39DB}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -657,10 +657,40 @@
       "Name": "HockeySwing",
       "ObjectPath": "\\Events\\Default Work Unit\\Enemy\\Hockey\\HockeySwing",
       "GUID": "{1FCCBCFA-EBAD-4B0A-B137-548F82F2342B}",
-      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "0.21454296",
+      "DurationMax": "0.26772466",
+      "MediaRefs": [
+       {
+        "Id": "394496959"
+       },
+       {
+        "Id": "468795855"
+       },
+       {
+        "Id": "472000575"
+       },
+       {
+        "Id": "589060082"
+       },
+       {
+        "Id": "713916889"
+       },
+       {
+        "Id": "759369371"
+       },
+       {
+        "Id": "768956991"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "348963605",
+        "Name": "Reverb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
+        "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
+       }
+      ]
      },
      {
       "Id": "1589270263",
@@ -1046,6 +1076,6 @@
     ]
    }
   ],
-  "FileHash": "{FD240BB3-62C2-2AC6-520F-E677C23A7137}"
+  "FileHash": "{B2C9D39F-C8E9-6812-D31A-7BE3BD5BC0A0}"
  }
 }
