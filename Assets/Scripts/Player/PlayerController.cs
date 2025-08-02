@@ -122,7 +122,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Rotate player to face their movement direction + some bias from their inputs
-        if (!gameOvered && (rb.linearVelocity.x != 0 || rb.linearVelocity.z != 0))
+        if (!gameOvered && new Vector3(rb.linearVelocity.x + horizontal, 0, rb.linearVelocity.z + vertical) != default)
         {
             transform.rotation = Quaternion.LookRotation(new Vector3(rb.linearVelocity.x + horizontal, 0, rb.linearVelocity.z + vertical), Vector3.up);
         }
