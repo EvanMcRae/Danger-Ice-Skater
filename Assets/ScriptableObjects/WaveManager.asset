@@ -12,15 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da51db570094d2383fa5baab0b9d9b8, type: 3}
   m_Name: WaveManager
   m_EditorClassIdentifier: 
-  waves:
+  staticWaves:
   - subWaves:
     - enemies:
-      - enemy: 1
-        count: 5
-      randomEnemyCredits: 0
-    - enemies:
       - enemy: 4
-        count: 2
+        count: 1
       randomEnemyCredits: 0
     - enemies:
       - enemy: 4
@@ -28,26 +24,82 @@ MonoBehaviour:
       randomEnemyCredits: 0
     - enemies:
       - enemy: 4
-        count: 2
-      - enemy: 1
-        count: 1
+        count: 5
       randomEnemyCredits: 0
     waveLevel: 0
   - subWaves:
     - enemies:
       - enemy: 4
-        count: 4
+        count: 2
+      - enemy: 0
+        count: 2
       randomEnemyCredits: 0
     - enemies:
-      - enemy: 1
-        count: 2
+      - enemy: 0
+        count: 6
       randomEnemyCredits: 0
     - enemies:
       - enemy: 4
         count: 2
-      - enemy: 1
+      - enemy: 0
         count: 2
       - enemy: 3
         count: 1
+      randomEnemyCredits: 0
+    waveLevel: 0
+  - subWaves:
+    - enemies:
+      - enemy: 2
+        count: 2
+      randomEnemyCredits: 0
+    - enemies:
+      - enemy: 2
+        count: 2
+      - enemy: 4
+        count: 3
+      - enemy: 3
+        count: 3
+      randomEnemyCredits: 0
+    - enemies:
+      - enemy: 2
+        count: 5
+      randomEnemyCredits: 0
+    waveLevel: 0
+  - subWaves:
+    - enemies:
+      - enemy: 1
+        count: 1
+      randomEnemyCredits: 0
+    - enemies:
+      - enemy: 1
+        count: 1
+      - enemy: 4
+        count: 2
+      - enemy: 3
+        count: 2
+      randomEnemyCredits: 0
+    - enemies:
+      - enemy: 1
+        count: 3
+      randomEnemyCredits: 0
+    waveLevel: 0
+  - subWaves:
+    - enemies:
+      - enemy: 3
+        count: 8
+      randomEnemyCredits: 0
+    - enemies:
+      - enemy: 3
+        count: 4
+      - enemy: 4
+        count: 2
+      - enemy: 1
+        count: 2
+      randomEnemyCredits: 0
+    - enemies:
+      - enemy: 1
+        count: 5
+      - enemy: 2
+        count: 3
       randomEnemyCredits: 0
     waveLevel: 0

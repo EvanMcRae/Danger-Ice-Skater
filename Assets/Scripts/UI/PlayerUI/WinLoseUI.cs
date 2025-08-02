@@ -27,6 +27,20 @@ namespace UI.PlayerUI {
             Time.timeScale = 1;
         }
 
+        public void Restart()
+        {
+            ScreenWipe.current.WipeIn();
+            ScreenWipe.current.PostWipe += ToRestart;
+        }
+
+        private void ToRestart()
+        {
+            ScreenWipe.current.PostWipe -= ToRestart;
+            SceneManager.LoadScene("GameScene");
+            Time.timeScale = 1;
+        }
+
+
         public void OnEnable()
         {
             geb.OnPlayerDeathByHit.AddListener(OnDeath);
