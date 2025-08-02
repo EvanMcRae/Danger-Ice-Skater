@@ -62,7 +62,9 @@ public class Hole : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!m_isDead && !m_isReplenishing && 
+        if (PauseManager.paused) return;
+
+        if (!m_isDead && !m_isReplenishing &&
             ((!m_isFalling && Time.time > HOLE_LIFETIME + m_spawnTime) || (m_isFalling && transform.position.y < m_killHeight)))
         {
             if (!m_isFalling && !m_isReplenishing)
@@ -88,7 +90,7 @@ public class Hole : MonoBehaviour
             if (other.gameObject.TryGetComponent<PlayerController>(out var player))
             {
                 PlayerStatsHandler sh = player.GetComponent<PlayerStatsHandler>();
-                if (sh.Damage(2)) geb.OnPlayerDeathByHit.Invoke(sh);
+                if (sh.Damage(2)) geb.OnPlayerDeathByHit.Invoke(sh); // TODO: This feels bad, you should die when you touch water
                 else {
                     geb.PlayerFellThroughIce.Invoke(player); //Event invocation.
                     PlayerController.gameOvered = true;

@@ -323,6 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edfd77060ffc4946aef5dccd14c5a171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuButton: {fileID: 2090272697106746423}
   geb: {fileID: 11400000, guid: f8714c97c5f2ac84fa1762773bdaad01, type: 2}
   diePanel: {fileID: 227618586922755246}
   scoreText: {fileID: 8044944636840246473}
@@ -378,7 +379,10 @@ MonoBehaviour:
   - {fileID: 6167745421120086562}
   - {fileID: 2211778230999430372}
   MainMenuName: MainMenu
-  paused: 0
+  eventSystem: {fileID: 0}
+  settingsBackButton: {fileID: 0}
+  settingsButton: {fileID: 0}
+  playButton: {fileID: 0}
 --- !u!1 &1189676237418870209
 GameObject:
   m_ObjectHideFlags: 0

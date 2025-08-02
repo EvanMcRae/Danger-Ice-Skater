@@ -1,32 +1,44 @@
 using Game;
 using Player;
-using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 
 namespace UI.PlayerUI {
     public class WinLoseUI : MonoBehaviour {
 
+        public GameObject menuButton;
         public GameEventBroadcaster geb;
         
         public RectTransform diePanel;
         public TMP_Text scoreText;
 
         public void ToMainMenu() {
+            ScreenWipe.current.WipeIn();
+            ScreenWipe.current.PostWipe += GoToMainMenu;
+        }
+
+        public void GoToMainMenu()
+        {
+            ScreenWipe.current.PostWipe -= GoToMainMenu;
             SceneManager.LoadScene("MainMenu");
             Time.timeScale = 1;
         }
 
-        public void OnEnable() {
+        public void OnEnable()
+        {
             geb.OnPlayerDeathByHit.AddListener(OnDeath);
             geb.OnScoreIncreased.AddListener(ScoreIncrease);
         }
 
-        public void OnDeath(PlayerStatsHandler sh) {
+        public void OnDeath(PlayerStatsHandler sh)
+        {
             diePanel.gameObject.SetActive(true);
             Time.timeScale = 0;
+            Cursor.visible = true;
+            EventSystem.current.SetSelectedGameObject(menuButton);
         }
 
         public void ScoreIncrease(int newScore)

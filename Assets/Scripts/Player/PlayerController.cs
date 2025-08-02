@@ -51,14 +51,15 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         pm = FindAnyObjectByType<PauseManager>();
+        gameOvered = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (imso.pause.action.WasPressedThisFrame() && pm != null)
+        if (imso.pause.action.WasPressedThisFrame() && pm != null && psh != null && psh.health != 0)
         {
-            if (pm.paused)
+            if (PauseManager.paused)
             {
                 pm.Unpause();
             }
@@ -67,7 +68,9 @@ public class PlayerController : MonoBehaviour
                 pm.Pause();
             }
         }
-        
+
+        if (PauseManager.paused) return;
+
         if (imso.jump.action.WasPressedThisFrame()) Jump();
 
         dashTimer = Mathf.Max(dashTimer - Time.deltaTime, 0);
@@ -88,6 +91,8 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (PauseManager.paused) return;
+
         //make the player move
         //modified by rigidbody's Linear Dampening
         float horizontal = imso.xAxis.action.ReadValue<float>();

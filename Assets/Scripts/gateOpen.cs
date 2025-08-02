@@ -11,6 +11,8 @@ public class gateOpen : MonoBehaviour
 
     public void Update()
     {
+        if (PauseManager.paused) return;
+
         if (opened) Open();
         if (closing) Close();
         
@@ -24,8 +26,6 @@ public class gateOpen : MonoBehaviour
     public void Open()
     {
         timer += Time.deltaTime;
-        //print("Opening " + transform.localEulerAngles.y);
-        //Debug.Log(transform.eulerAngles.y + ", " + transform.rotation.y + ", " + transform.localRotation.y + ", " + transform.localEulerAngles);
 
         if (open90)
         {
@@ -39,13 +39,11 @@ public class gateOpen : MonoBehaviour
             if (transform.localEulerAngles.y > 270 || transform.localEulerAngles.y <= 0)
             {
                 transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y - openAmount, transform.localEulerAngles.z);
-                print("hi");
             }
         }
     }
     public void Close()
     {
-        print("Closing " + transform.localEulerAngles.y);
         if (open90)
         {
             if (transform.localEulerAngles.y > 0)

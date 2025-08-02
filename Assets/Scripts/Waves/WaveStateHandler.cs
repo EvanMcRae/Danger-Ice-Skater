@@ -26,6 +26,8 @@ namespace Waves {
         }
 
         public void Update() {
+            if (PauseManager.paused) return;
+
             //5s timer for sending enemies.
             if (tickTimer) spawnWaveTimer -= Time.deltaTime;
             if (tickTimer && spawnWaveTimer <= 0) {

@@ -29,6 +29,8 @@ public class HoleRefillVisuals : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseManager.paused) return;
+        
         if (!m_isDead)
         {
             m_matBlock.SetFloat("_Dissolve_Progress", m_dissolveProgress);

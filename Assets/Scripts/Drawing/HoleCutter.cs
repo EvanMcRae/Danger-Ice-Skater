@@ -37,6 +37,8 @@ public class HoleCutter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseManager.paused) return;
+
         if (player.isTouchingGround)
         {
             isDrawing = true;

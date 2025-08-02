@@ -8,6 +8,8 @@ public class Cutout : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseManager.paused) return;
+        
         if (transform.position.y < m_killHeight && !m_isDead)
         {
             m_isDead = true;
