@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.XR.CoreUtils;
 using DG.Tweening;
+using Game;
 
 public class HoleRefillVisuals : MonoBehaviour
 {
@@ -37,7 +38,7 @@ public class HoleRefillVisuals : MonoBehaviour
             m_meshRenderer.SetPropertyBlock(m_matBlock);
         }
 
-        if (Time.time > m_lifetime + m_spawnTime && !m_isDead)
+        if ((Time.time > m_lifetime + m_spawnTime || transform.position.y < GameController.KILL_HEIGHT * 2) && !m_isDead)
         {
             Destroy(gameObject);
             m_hole.RemoveHole();
