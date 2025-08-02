@@ -3470,6 +3470,7 @@ GameObject:
   - component: {fileID: 907173960}
   - component: {fileID: 907173962}
   - component: {fileID: 907173961}
+  - component: {fileID: 907173963}
   m_Layer: 0
   m_Name: Rink Wall
   m_TagString: Untagged
@@ -3544,6 +3545,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907173959}
+  m_Mesh: {fileID: 5879288303062096648, guid: fece82e0f13ce8042905566b25d3117c, type: 3}
+--- !u!64 &907173963
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907173959}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 5879288303062096648, guid: fece82e0f13ce8042905566b25d3117c, type: 3}
 --- !u!1001 &936039884
 PrefabInstance:
@@ -5109,7 +5132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6003470660119103750, guid: a63f9d992b0ce204fb155502ae76520a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.1094675
+      value: -1.05
       objectReference: {fileID: 0}
     - target: {fileID: 6003470660119103750, guid: a63f9d992b0ce204fb155502ae76520a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5758,7 +5781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6003470660119103750, guid: a63f9d992b0ce204fb155502ae76520a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.1177897
+      value: -1.05
       objectReference: {fileID: 0}
     - target: {fileID: 6003470660119103750, guid: a63f9d992b0ce204fb155502ae76520a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6573,7 +6596,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6003470660119103750, guid: a63f9d992b0ce204fb155502ae76520a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.1011136
+      value: -1.05
       objectReference: {fileID: 0}
     - target: {fileID: 6003470660119103750, guid: a63f9d992b0ce204fb155502ae76520a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6581,7 +6604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6003470660119103750, guid: a63f9d992b0ce204fb155502ae76520a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.9872504
+      value: -1.987
       objectReference: {fileID: 0}
     - target: {fileID: 6003470660119103750, guid: a63f9d992b0ce204fb155502ae76520a, type: 3}
       propertyPath: m_LocalRotation.w

@@ -161,10 +161,13 @@ MonoBehaviour:
   canMove: 1
   player: {fileID: 0}
   rotateTowardsPlayer: 1
-  moveTowardsPlayer: 0
-  pushPlayerOnCollision: 0
-  pushForce: 0
+  move: 1
+  runDistance: 10
+  pushPlayerOnCollision: 1
+  pushForce: 2
+  dir: {x: 0, y: 0, z: 0}
   moveForce: 10
+  directionChangeTime: 2
   projectileDelayMin: 1
   projectileDelayMax: 3
   projectileTimer: 0

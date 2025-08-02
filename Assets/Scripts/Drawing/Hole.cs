@@ -82,13 +82,12 @@ public class Hole : MonoBehaviour
     {
         if (m_isDead || m_isFalling || m_isReplenishing) return;
 
-        if (ContainsBounds(other.collider.bounds)) {    
+        if (ContainsBounds(other.collider.bounds)) {
             other.gameObject.GetComponent<Rigidbody>().excludeLayers = int.MaxValue; //Ignore all layers
             other.gameObject.GetComponent<Rigidbody>().linearVelocity.Normalize();
             other.gameObject.GetComponent<Rigidbody>().linearVelocity /= 5;
 
-            if (other.gameObject.TryGetComponent<PlayerController>(out var player))
-            {
+            if (other.gameObject.TryGetComponent<PlayerController>(out var player)) {
                 PlayerStatsHandler sh = player.GetComponent<PlayerStatsHandler>();
                 geb.PlayerFellThroughIce.Invoke(player); //Event invocation.
                 player.fallThroughHoleTimer = player.fallThroughHoleTime;
@@ -100,8 +99,7 @@ public class Hole : MonoBehaviour
                     m_spawnTime += 2f;
                 }
             }
-            else if (other.gameObject.TryGetComponent<Enemy>(out var enemy))
-            {
+            else if (other.gameObject.TryGetComponent<HoleFallable>(out var enemy) || other.gameObject.CompareTag("Enemy")) {
                 enemy.Fall();
                 // Give the enemy time to fall
                 if (HOLE_LIFETIME + m_spawnTime - Time.time < 0.3f)
