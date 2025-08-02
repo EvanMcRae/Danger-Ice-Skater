@@ -1751,6 +1751,7 @@ GameObject:
   - component: {fileID: 1089197949}
   - component: {fileID: 1089197948}
   - component: {fileID: 1089197947}
+  - component: {fileID: 1089197950}
   m_Layer: 0
   m_Name: HoleCutter
   m_TagString: Untagged
@@ -1812,7 +1813,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.1
+        value: 0.07311254
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1854,7 +1855,7 @@ LineRenderer:
       m_NumAlphaKeys: 5
     numCornerVertices: 0
     numCapVertices: 0
-    alignment: 0
+    alignment: 1
     textureMode: 0
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
@@ -1882,7 +1883,7 @@ MonoBehaviour:
   isDrawing: 0
   hasOverlapped: 0
   player: {fileID: 1965001071}
-  planeHeight: -2
+  planeHeight: -1.99
 --- !u!4 &1089197949
 Transform:
   m_ObjectHideFlags: 0
@@ -1891,13 +1892,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1089197946}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1089197950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089197946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52eb1e54064f51d4fb76513879756782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 2
 --- !u!1 &1107975110
 GameObject:
   m_ObjectHideFlags: 0
