@@ -15,7 +15,7 @@ TagManager:
   - Hole
   - Ice
   - PlayerBound
-  - 
+  - SpectatorOverlay
   - 
   - 
   - 
@@ -41,6 +41,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: SpectatorOverlay
+    uniqueID: 363784653
     locked: 0
   m_RenderingLayers:
   - Default

@@ -2023,6 +2023,62 @@ MonoBehaviour:
   unloadTriggerList: 958ca0ea
   bankNameInternal: 
   valueGuidInternal: 
+--- !u!1 &385196575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 385196577}
+  - component: {fileID: 385196576}
+  m_Layer: 9
+  m_Name: SpectatorSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &385196576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385196575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f53b726977a4376b6c99ef63b71f57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  geb: {fileID: 11400000, guid: f8714c97c5f2ac84fa1762773bdaad01, type: 2}
+  spectatorPrefabs:
+  - {fileID: 7953544223266174843, guid: fe267898dcd6b1b47be6b11dd64ea7bf, type: 3}
+  spectators: []
+  spectatorCount: 20
+  gap: 5
+  timerMin: 0.4
+  timerMax: 1.5
+  amplitudeMin: 1
+  amplitudeMax: 3
+  excitementTimer: 0
+  excitementTime: 3
+--- !u!4 &385196577
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385196575}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -24.81, y: 0.92, z: -1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &413902537
 GameObject:
   m_ObjectHideFlags: 0
@@ -7400,6 +7456,7 @@ SceneRoots:
   - {fileID: 568803943}
   - {fileID: 141492649}
   - {fileID: 1220600894}
+  - {fileID: 385196577}
   - {fileID: 141622048}
   - {fileID: 1642395336}
   - {fileID: 157314096}
