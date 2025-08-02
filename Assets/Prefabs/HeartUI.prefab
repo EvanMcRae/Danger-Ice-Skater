@@ -89,4 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rt: {fileID: 6385254258850793951}
+  image: {fileID: 4940482616233069970}
+  aliveHeart: {fileID: 21300000, guid: 0720f536b8611394092ab9580a522a37, type: 3}
+  deadHeart: {fileID: 21300000, guid: d6da0e18bdab888428525ffc1a7f0e85, type: 3}
   alive: 1

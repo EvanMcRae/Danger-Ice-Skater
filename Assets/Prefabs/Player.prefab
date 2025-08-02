@@ -5013,5 +5013,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hd: {fileID: 0}
   geb: {fileID: 11400000, guid: f8714c97c5f2ac84fa1762773bdaad01, type: 2}
+  mr: {fileID: 3378056549392829005}
+  invincibilityTimer: 0
+  invincibilityTime: 1
   health: 0
   maxHealth: 10
