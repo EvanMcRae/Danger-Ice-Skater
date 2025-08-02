@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4005627041650242821}
   - component: {fileID: 745703500590921189}
   - component: {fileID: 373710465794742477}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 3083590689317668306}
   - component: {fileID: 2939634649029205298}
   - component: {fileID: 7892994341498651269}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -321,6 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdc8f32285eaff44ab77cd0f5a515e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   imso: {fileID: 11400000, guid: 3839af05cfba756429ff20761423c8fa, type: 2}
   pm: {fileID: 0}
   psh: {fileID: 7892994341498651269}
@@ -330,6 +331,9 @@ MonoBehaviour:
   dashForce: 10
   dashCooldown: 1
   dashTimer: 0
+  respawnHeight: 3
+  fallThroughHoleTimer: 0
+  fallThroughHoleTime: 0.5
   arenaFloor: {fileID: 0}
 --- !u!114 &7892994341498651269
 MonoBehaviour:
@@ -344,5 +348,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hd: {fileID: 0}
+  geb: {fileID: 11400000, guid: f8714c97c5f2ac84fa1762773bdaad01, type: 2}
   health: 0
-  maxHealth: 0
+  maxHealth: 10

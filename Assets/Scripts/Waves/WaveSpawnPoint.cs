@@ -6,6 +6,8 @@ namespace Waves {
         
         public GameObject spawnPoint;
         public GameObject relativeDirection;
+        public bool dualGate;
+        public GameObject gate1, gate2;
 
         public MeshRenderer pointRenderer;
         public MeshRenderer directionRenderer;
@@ -35,6 +37,10 @@ namespace Waves {
             thisEnemy.rb.detectCollisions = true;
             thisEnemy.EnemySent();
             thisEnemy = null;
+
+            //Open gate animation
+            gate1.GetComponent<gateOpen>().opened = true;
+            if (dualGate) gate2.GetComponent<gateOpen>().opened = true;
         }
 
     }
