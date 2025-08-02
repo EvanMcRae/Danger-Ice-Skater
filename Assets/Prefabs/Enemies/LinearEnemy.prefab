@@ -109,7 +109,7 @@ MonoBehaviour:
   gameEventBroadcaster: {fileID: 11400000, guid: f8714c97c5f2ac84fa1762773bdaad01, type: 2}
   rb: {fileID: 2865376438257044195}
   m_isDead: 0
-  m_waiting: 0
+  m_waiting: 1
   anim: {fileID: 6999724777246183788}
   canMove: 1
   player: {fileID: 0}

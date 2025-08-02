@@ -101,6 +101,15 @@ public class Hole : MonoBehaviour
                     m_spawnTime += 2f;
                 }
             }
+            else if (other.gameObject.TryGetComponent<Enemy>(out var enemyOther))
+            {
+                enemyOther.Fall();
+                // Give the enemy time to fall
+                if (HOLE_LIFETIME + m_spawnTime - Time.time < 0.3f && !m_extendedLife)
+                {
+                    m_spawnTime += 0.3f;
+                }
+            }
             else if (other.gameObject.TryGetComponent<HoleFallable>(out var enemy) || other.gameObject.CompareTag("Enemy")) {
                 enemy.Fall();
                 // Give the enemy time to fall
