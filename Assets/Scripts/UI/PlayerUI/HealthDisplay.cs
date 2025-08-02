@@ -51,14 +51,14 @@ namespace UI.PlayerUI {
                 }
             }
             
-            rt.sizeDelta = new Vector2(55 * newMaxHealth + 5, 60);
+            rt.sizeDelta = new Vector2(55 * newMaxHealth + 25, 100);
             
         }
 
         public void CreateHeart(int index) {
             
             Heart h = Instantiate(heart, transform);
-            h.rt.anchoredPosition = new Vector2(5 + 55 * index, 0);
+            h.rt.anchoredPosition = new Vector2(15 + 55 * index, 0);
             heartImages.Add(h);
         }
 
