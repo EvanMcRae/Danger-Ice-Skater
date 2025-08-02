@@ -6,12 +6,6 @@ public class FloatingTextManager : MonoBehaviour
     public GameObject floatingSpritePrefab;
     public static FloatingTextManager instance;
     public Canvas canvas;
-    public static FloatingTextManager instance;
-
-    public void Start()
-    {
-        instance = this;
-    }
 
     public void Start()
     {
