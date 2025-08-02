@@ -18,7 +18,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{CE76433A-3FE7-F185-0F67-F8DD92A8A0BB}",
+    "Hash": "{5C8D899B-4A8F-4876-7510-EA084226D417}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -84,6 +84,12 @@
       "GUID": "{DAF18041-72A2-4215-B1D0-EAE2DB16B628}"
      },
      {
+      "Id": "2886637823",
+      "Name": "playerVelocity",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\playerVelocity",
+      "GUID": "{0F28D0E4-ED96-453E-8A56-B0877F9264C5}"
+     },
+     {
       "Id": "2918011349",
       "Name": "masterVolume",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Volume\\masterVolume",
@@ -108,7 +114,7 @@
     "Type": "User",
     "GUID": "{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}",
     "Language": "SFX",
-    "Hash": "{97B8B6F5-68D9-12AA-AFB5-C872E6235A3D}",
+    "Hash": "{E97A8B00-EC50-AEC6-64AE-66985E5B96A4}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -351,7 +357,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Skate.wav",
-      "CachePath": "EB/{EB5824A8-2A21-8B72-CF18-F4F26130F51F}.wem"
+      "CachePath": "E5/{E5764773-FAFD-D5F1-5D23-3B124B7C9E26}.wem"
      },
      {
       "Id": "731922532",
@@ -1014,6 +1020,12 @@
       "GUID": "{DAF18041-72A2-4215-B1D0-EAE2DB16B628}"
      },
      {
+      "Id": "2886637823",
+      "Name": "playerVelocity",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\playerVelocity",
+      "GUID": "{0F28D0E4-ED96-453E-8A56-B0877F9264C5}"
+     },
+     {
       "Id": "2918011349",
       "Name": "masterVolume",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Volume\\masterVolume",
@@ -1034,6 +1046,6 @@
     ]
    }
   ],
-  "FileHash": "{F641C86D-8BAD-FD0B-62BE-184B73257CAA}"
+  "FileHash": "{FD240BB3-62C2-2AC6-520F-E677C23A7137}"
  }
 }

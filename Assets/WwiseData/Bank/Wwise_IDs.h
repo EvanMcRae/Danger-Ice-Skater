@@ -39,6 +39,7 @@ namespace AK
         static const AkUniqueID MASTERVOLUME = 2918011349U;
         static const AkUniqueID MUSICVOLUME = 2346531308U;
         static const AkUniqueID PENGUINDASHVOL = 3647101706U;
+        static const AkUniqueID PLAYERVELOCITY = 2886637823U;
         static const AkUniqueID SOUNDVOLUME = 3873835272U;
     } // namespace GAME_PARAMETERS
 

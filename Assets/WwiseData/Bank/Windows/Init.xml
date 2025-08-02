@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="154">
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{2E8B8295-6DE2-0939-2CEE-F88E364CF6A5}">
+		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{FC6F315D-C33D-31A3-5F66-154C12F8286B}">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -22,11 +22,12 @@
 			</AuxBusses>
 			<GameParameters>
 				<GameParameter Id="2346531308" Name="musicVolume" ObjectPath="\Game Parameters\Default Work Unit\Volume\musicVolume" GUID="{DAF18041-72A2-4215-B1D0-EAE2DB16B628}"/>
+				<GameParameter Id="2886637823" Name="playerVelocity" ObjectPath="\Game Parameters\Default Work Unit\playerVelocity" GUID="{0F28D0E4-ED96-453E-8A56-B0877F9264C5}"/>
 				<GameParameter Id="2918011349" Name="masterVolume" ObjectPath="\Game Parameters\Default Work Unit\Volume\masterVolume" GUID="{1211C1CB-5F06-4FC0-9FA8-2E4402C1AD49}"/>
 				<GameParameter Id="3647101706" Name="PenguinDashVol" ObjectPath="\Game Parameters\Default Work Unit\Enemies\PenguinDashVol" GUID="{51EFFE07-2F62-40E7-9AD3-3A8BD411DFD4}"/>
 				<GameParameter Id="3873835272" Name="soundVolume" ObjectPath="\Game Parameters\Default Work Unit\Volume\soundVolume" GUID="{DF92366F-4997-4DFD-B8EC-F8899A911A75}"/>
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{FEB5609A-98E8-AA0A-7699-EA6D8108D636}</FileHash>
+	<FileHash>{D34A38DF-BDE6-89F3-5B44-F08F33CD001A}</FileHash>
 </SoundBanksInfo>

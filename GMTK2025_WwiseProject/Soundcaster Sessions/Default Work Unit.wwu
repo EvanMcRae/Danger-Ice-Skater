@@ -14,10 +14,6 @@
 							<Position X="0" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Testbreak" ID="{9FE179F0-9010-49FE-8F27-7F9329BDBB6D}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
-							<Position X="0" Y="2"/>
-						</Module>
-						<Module>
 							<ObjectRef Name="SharkFall" ID="{23D73999-01D8-4437-9F7A-739A9FBCFABD}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
 							<Position X="1" Y="0"/>
 						</Module>

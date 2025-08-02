@@ -21,6 +21,7 @@ Event	ID	Name			Wwise Object Path	Notes
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	2346531308	musicVolume			\Default Work Unit\Volume\musicVolume	
+	2886637823	playerVelocity			\Default Work Unit\playerVelocity	
 	2918011349	masterVolume			\Default Work Unit\Volume\masterVolume	
 	3647101706	PenguinDashVol			\Default Work Unit\Enemies\PenguinDashVol	
 	3873835272	soundVolume			\Default Work Unit\Volume\soundVolume	
@@ -70,7 +71,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	650797169	Shark Chomps_4	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\43\{43501F9F-16E8-7033-02FC-B0C428CC6D55}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Shark\Shark Moving\Chomps\Chomp\Shark Chomps_4		20096
 	661063367	Splash_5	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\83\{83563AA8-927B-CE0A-ACF6-31D03AC77E34}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Splashes\Ice Splash\Splash_5		119428
 	713916889	Swings_2	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\9E\{9E891606-1604-ED4E-3FDF-5DE677A6858C}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Hockey\Hockey Swing\Swings_2		17786
-	720322715	LongSkate	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\EB\{EB5824A8-2A21-8B72-CF18-F4F26130F51F}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Skates\LongSkate		950982
+	720322715	LongSkate	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\E5\{E5764773-FAFD-D5F1-5D23-3B124B7C9E26}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Skates\LongSkate		371424
 	731922532	Splash_3	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\C5\{C59E0B15-8CBD-1332-2A05-E4E5591435AE}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Splashes\Player Splash\Splash_3		147928
 	733039566	Step_2	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\91\{91385B06-5946-6CA0-D83B-8559C4CAAF96}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Skates\Steps\Step\Step_2		10758
 	748055230	Step_3	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\AC\{ACD53E8B-FACD-5112-B495-01A983BCBDB7}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Penguin\StepsPenguin\Step\Step_3		10524

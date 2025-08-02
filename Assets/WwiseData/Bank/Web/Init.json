@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{EDA1372F-C80D-338A-C24F-F8204500B340}",
+    "Hash": "{79560EEE-66BA-159B-CA2F-9FA788190F45}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -76,6 +76,12 @@
       "GUID": "{DAF18041-72A2-4215-B1D0-EAE2DB16B628}"
      },
      {
+      "Id": "2886637823",
+      "Name": "playerVelocity",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\playerVelocity",
+      "GUID": "{0F28D0E4-ED96-453E-8A56-B0877F9264C5}"
+     },
+     {
       "Id": "2918011349",
       "Name": "masterVolume",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Volume\\masterVolume",
@@ -96,6 +102,6 @@
     ]
    }
   ],
-  "FileHash": "{36576970-4516-4AB5-59C8-870DE4BB4076}"
+  "FileHash": "{65D18AB8-6806-6738-BF49-EF8556AED1F9}"
  }
 }

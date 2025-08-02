@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{EDA1372F-C80D-338A-C24F-F8204500B340}">
+		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{79560EEE-66BA-159B-CA2F-9FA788190F45}">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -30,12 +30,13 @@
 			</AuxBusses>
 			<GameParameters>
 				<GameParameter Id="2346531308" Name="musicVolume" ObjectPath="\Game Parameters\Default Work Unit\Volume\musicVolume" GUID="{DAF18041-72A2-4215-B1D0-EAE2DB16B628}"/>
+				<GameParameter Id="2886637823" Name="playerVelocity" ObjectPath="\Game Parameters\Default Work Unit\playerVelocity" GUID="{0F28D0E4-ED96-453E-8A56-B0877F9264C5}"/>
 				<GameParameter Id="2918011349" Name="masterVolume" ObjectPath="\Game Parameters\Default Work Unit\Volume\masterVolume" GUID="{1211C1CB-5F06-4FC0-9FA8-2E4402C1AD49}"/>
 				<GameParameter Id="3647101706" Name="PenguinDashVol" ObjectPath="\Game Parameters\Default Work Unit\Enemies\PenguinDashVol" GUID="{51EFFE07-2F62-40E7-9AD3-3A8BD411DFD4}"/>
 				<GameParameter Id="3873835272" Name="soundVolume" ObjectPath="\Game Parameters\Default Work Unit\Volume\soundVolume" GUID="{DF92366F-4997-4DFD-B8EC-F8899A911A75}"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" GUID="{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}" Language="SFX" Hash="{97B8B6F5-68D9-12AA-AFB5-C872E6235A3D}">
+		<SoundBank Id="3161908922" Type="User" GUID="{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}" Language="SFX" Hash="{E97A8B00-EC50-AEC6-64AE-66985E5B96A4}">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -158,7 +159,7 @@
 				</File>
 				<File Id="720322715" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Skate.wav</ShortName>
-					<CachePath>EB/{EB5824A8-2A21-8B72-CF18-F4F26130F51F}.wem</CachePath>
+					<CachePath>E5/{E5764773-FAFD-D5F1-5D23-3B124B7C9E26}.wem</CachePath>
 				</File>
 				<File Id="731922532" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Splash_3.wav</ShortName>
@@ -409,11 +410,12 @@
 			</AuxBusses>
 			<GameParameters>
 				<GameParameter Id="2346531308" Name="musicVolume" ObjectPath="\Game Parameters\Default Work Unit\Volume\musicVolume" GUID="{DAF18041-72A2-4215-B1D0-EAE2DB16B628}"/>
+				<GameParameter Id="2886637823" Name="playerVelocity" ObjectPath="\Game Parameters\Default Work Unit\playerVelocity" GUID="{0F28D0E4-ED96-453E-8A56-B0877F9264C5}"/>
 				<GameParameter Id="2918011349" Name="masterVolume" ObjectPath="\Game Parameters\Default Work Unit\Volume\masterVolume" GUID="{1211C1CB-5F06-4FC0-9FA8-2E4402C1AD49}"/>
 				<GameParameter Id="3647101706" Name="PenguinDashVol" ObjectPath="\Game Parameters\Default Work Unit\Enemies\PenguinDashVol" GUID="{51EFFE07-2F62-40E7-9AD3-3A8BD411DFD4}"/>
 				<GameParameter Id="3873835272" Name="soundVolume" ObjectPath="\Game Parameters\Default Work Unit\Volume\soundVolume" GUID="{DF92366F-4997-4DFD-B8EC-F8899A911A75}"/>
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{932740E2-BF8E-62A8-8F66-594A211FCB48}</FileHash>
+	<FileHash>{D5F130F2-0849-8466-D397-BAE7897BF14A}</FileHash>
 </SoundBanksInfo>

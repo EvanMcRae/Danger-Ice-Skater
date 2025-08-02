@@ -548,7 +548,7 @@
 												<Property Name="FadeInDuration" Type="Real64" Value="0.243844250814615"/>
 												<Property Name="LoopBegin" Type="Real64" Value="0.256678158752226"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-												<Property Name="TrimEnd" Type="Real64" Value="10.7804823414845"/>
+												<Property Name="TrimEnd" Type="Real64" Value="4.20952147742747"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Skate.wav</AudioFile>
@@ -557,6 +557,140 @@
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="RTPC">
+											<Reference>
+												<Local>
+													<RTPC Name="" ID="{1940F55A-5A32-4EEC-B41B-341DE87A7583}" ShortID="883962271">
+														<PropertyList>
+															<Property Name="PropertyName" Type="string" Value="Volume"/>
+														</PropertyList>
+														<ReferenceList>
+															<Reference Name="ControlInput">
+																<ObjectRef Name="playerVelocity" ID="{0F28D0E4-ED96-453E-8A56-B0877F9264C5}" WorkUnitID="{AA9D7DBE-CB2B-45C3-93D7-CBA6863CB875}"/>
+															</Reference>
+															<Reference Name="Curve">
+																<Custom>
+																	<Curve Name="" ID="{D2E2B588-4788-4BA0-9E56-4F2DF123034B}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>-200</YPos>
+																				<Flags>5</Flags>
+																				<SegmentShape>Log2</SegmentShape>
+																			</Point>
+																			<Point>
+																				<XPos>19.93411</XPos>
+																				<YPos>-200</YPos>
+																				<Flags>0</Flags>
+																				<SegmentShape>Log2</SegmentShape>
+																			</Point>
+																			<Point>
+																				<XPos>96.86985</XPos>
+																				<YPos>0.11888</YPos>
+																				<Flags>0</Flags>
+																				<SegmentShape>Exp2</SegmentShape>
+																			</Point>
+																			<Point>
+																				<XPos>100</XPos>
+																				<YPos>-6.19679</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</RTPC>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<RTPC Name="" ID="{0D7670CE-D81C-4502-96DB-A22EC3C0263A}" ShortID="979320939">
+														<PropertyList>
+															<Property Name="PropertyName" Type="string" Value="Highpass"/>
+														</PropertyList>
+														<ReferenceList>
+															<Reference Name="ControlInput">
+																<ObjectRef Name="playerVelocity" ID="{0F28D0E4-ED96-453E-8A56-B0877F9264C5}" WorkUnitID="{AA9D7DBE-CB2B-45C3-93D7-CBA6863CB875}"/>
+															</Reference>
+															<Reference Name="Curve">
+																<Custom>
+																	<Curve Name="" ID="{54DA1394-9355-4852-8A99-711793526AB2}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="65537"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>50</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>19.77273</XPos>
+																				<YPos>50</YPos>
+																				<Flags>0</Flags>
+																				<SegmentShape>Exp1</SegmentShape>
+																			</Point>
+																			<Point>
+																				<XPos>100</XPos>
+																				<YPos>24</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</RTPC>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<RTPC Name="" ID="{1A777B5B-4E5F-43E5-A7BF-93936CFFA386}" ShortID="541281697">
+														<PropertyList>
+															<Property Name="PropertyName" Type="string" Value="Lowpass"/>
+														</PropertyList>
+														<ReferenceList>
+															<Reference Name="ControlInput">
+																<ObjectRef Name="playerVelocity" ID="{0F28D0E4-ED96-453E-8A56-B0877F9264C5}" WorkUnitID="{AA9D7DBE-CB2B-45C3-93D7-CBA6863CB875}"/>
+															</Reference>
+															<Reference Name="Curve">
+																<Custom>
+																	<Curve Name="" ID="{C209F9EC-566E-4878-88BF-CFD04D3411F8}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="65537"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>29.87013</XPos>
+																				<YPos>26</YPos>
+																				<Flags>0</Flags>
+																				<SegmentShape>Exp1</SegmentShape>
+																			</Point>
+																			<Point>
+																				<XPos>100</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</RTPC>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
 									<ActiveSourceList>
 										<ActiveSource Name="Skate" ID="{44933A70-BDFC-4E30-A7B0-899B7078AA5D}" Platform="Linked"/>
 									</ActiveSourceList>
