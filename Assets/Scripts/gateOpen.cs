@@ -50,13 +50,21 @@ public class gateOpen : MonoBehaviour
         {
             if (transform.localEulerAngles.y > 0)
                 transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y - openAmount, transform.localEulerAngles.z);
-            else closing = false;
+            else
+            {
+                closing = false;
+                transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, 0, transform.localEulerAngles.z);
+            }
         }
         else
         {
             if (transform.localEulerAngles.y < 0 || transform.localEulerAngles.y >= 268)
                 transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y + openAmount, transform.localEulerAngles.z);
-            else closing = false;
+            else
+            {
+                closing = false;
+                transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, 0, transform.localEulerAngles.z);
+            }
         }
     }
 }

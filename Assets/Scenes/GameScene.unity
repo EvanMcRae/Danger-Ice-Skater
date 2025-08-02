@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   opened: 0
-  open90: 0
+  open90: 1
 --- !u!23 &4233060
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1421,7 +1421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   opened: 0
-  open90: 0
+  open90: 1
 --- !u!23 &301562155
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2484,7 +2484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   opened: 0
-  open90: 0
+  open90: 1
 --- !u!23 &711884542
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4731,7 +4731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   opened: 0
-  open90: 0
+  open90: 1
 --- !u!23 &1521129076
 MeshRenderer:
   m_ObjectHideFlags: 0
