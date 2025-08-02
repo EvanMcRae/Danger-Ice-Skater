@@ -89,7 +89,8 @@ public class PlayerController : MonoBehaviour
             dashTimer = dashCooldown;
         }
 
-        if (fallThroughHole) {
+        if (fallThroughHole)
+        {
             fallThroughHoleTimer -= Time.deltaTime;
         }
 
@@ -98,9 +99,11 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("isMoving", true);
         }
-        else { 
+        else
+        {
             anim.SetBool("isMoving", false);
         }
+        AkUnitySoundEngine.SetRTPCValue("playerVelocity", horizVel.magnitude);
     }
 
     void FixedUpdate()
@@ -111,6 +114,8 @@ public class PlayerController : MonoBehaviour
         //modified by rigidbody's Linear Dampening
         float horizontal = imso.xAxis.action.ReadValue<float>();
         float vertical = imso.yAxis.action.ReadValue<float>();
+
+        anim.SetBool("isInputting", horizontal != 0 || vertical != 0);
 
         if (fallThroughHole)
         {
@@ -139,7 +144,8 @@ public class PlayerController : MonoBehaviour
                 if (rb.linearVelocity.y < 0) rb.linearVelocity = Vector3.zero;
                 rb.AddForce(3 * dashForce * Vector3.up, ForceMode.Force); // rise up
             }
-            if (transform.position.y > respawnHeight) { // once at respawn height
+            if (transform.position.y > respawnHeight)
+            { // once at respawn height
                 if (rb.linearVelocity.y > 0) rb.linearVelocity = Vector3.zero;
                 rb.constraints = RigidbodyConstraints.FreezeRotation;
                 fallThroughHole = false;
@@ -148,7 +154,7 @@ public class PlayerController : MonoBehaviour
                 rb.excludeLayers = 0;
                 rb.linearDamping = 1;
             }
-            
+
         }
         
 

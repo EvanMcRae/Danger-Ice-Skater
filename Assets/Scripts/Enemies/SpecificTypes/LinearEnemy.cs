@@ -13,11 +13,11 @@ namespace Enemies
         {
             if (PauseManager.paused) return;
 
-            if (m_waiting && !m_isDead) anim.Play("idle");
+            if (m_waiting && !m_isDead) anim.SetBool("Idle", true);
             else if (!m_isDead)
             {
                 base.Update();
-                anim.Play("skate");
+                anim.SetBool("Idle", false);
             }
         }
     }
