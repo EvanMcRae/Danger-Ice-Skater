@@ -15,16 +15,20 @@ namespace AK
     {
         static const AkUniqueID ENDCHOMP = 2458991111U;
         static const AkUniqueID ENEMYSPLASH = 1495289514U;
+        static const AkUniqueID FOXFALL = 2594447999U;
         static const AkUniqueID HOCKEYSHOOT = 2891959439U;
         static const AkUniqueID HOCKEYSWING = 433652520U;
+        static const AkUniqueID PAUSEGAME = 1589270263U;
         static const AkUniqueID PENGUINFALL = 4286935516U;
         static const AkUniqueID PLAYERHURT = 3537581393U;
         static const AkUniqueID PLAYERSPLASH = 972739039U;
         static const AkUniqueID PLAYERSTEP = 412471812U;
         static const AkUniqueID PUCKHIT = 3993562277U;
+        static const AkUniqueID RESUMEGAME = 1133184122U;
         static const AkUniqueID SHARKFALL = 3926006775U;
-        static const AkUniqueID STARTCHOMP = 35164858U;
+        static const AkUniqueID SHARKSPAWN = 563965641U;
         static const AkUniqueID TEST = 3157003241U;
+        static const AkUniqueID TESTBREAK = 3140753194U;
     } // namespace EVENTS
 
     namespace GAME_PARAMETERS

@@ -1,11 +1,15 @@
 Event	ID	Name			Wwise Object Path	Notes
-	35164858	StartChomp			\Default Work Unit\Enemy\Shark\StartChomp	
 	412471812	PlayerStep			\Default Work Unit\Player\PlayerStep	
 	433652520	HockeySwing			\Default Work Unit\Enemy\Hockey\HockeySwing	
+	563965641	SharkSpawn			\Default Work Unit\Enemy\Shark\SharkSpawn	
 	972739039	PlayerSplash			\Default Work Unit\Player\PlayerSplash	
+	1133184122	ResumeGame			\Default Work Unit\UI\ResumeGame	
 	1495289514	EnemySplash			\Default Work Unit\Enemy\EnemySplash	
+	1589270263	PauseGame			\Default Work Unit\UI\PauseGame	
 	2458991111	EndChomp			\Default Work Unit\Enemy\Shark\EndChomp	
+	2594447999	FoxFall			\Default Work Unit\Enemy\Fox\FoxFall	
 	2891959439	HockeyShoot			\Default Work Unit\Enemy\Hockey\HockeyShoot	
+	3140753194	Testbreak			\Default Work Unit\UI\Testbreak	
 	3157003241	test			\Default Work Unit\test	
 	3537581393	PlayerHurt			\Default Work Unit\Player\PlayerHurt	
 	3926006775	SharkFall			\Default Work Unit\Enemy\Shark\SharkFall	
@@ -31,6 +35,7 @@ Effect plug-ins	ID	Name	Type				Notes
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	11736544	Player Hurt	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\33\{33B4372C-560B-FB90-8BC9-EAD1EF914296}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Player Damage\Player Hurt		17588
+	92250040	Fox Fall	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\50\{50F8A7F9-F1E5-DEBA-B912-0FEC0DA43029}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Fox\Fox Fall		90180
 	112692613	Player Hurt_01	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\B8\{B8B22060-E66C-8882-A7F4-29D99096ACC1}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Player Damage\Player Hurt_01		9460
 	129769630	Skate_04	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\72\{7296F7E7-9ACB-576A-4C84-67C207E24675}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Skates\Steps\Skate\Skate_04		31248
 	134563642	Step_4	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\63\{63B81F11-03CF-D91C-4EF0-896AEE89EFD5}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Skates\Steps\Step\Step_4		10708
@@ -49,10 +54,10 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	449719526	Skate	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\7F\{7F789D5D-5B37-1F62-AA97-60D9EB27BB1A}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Skates\Steps\Skate\Skate		33644
 	468795855	Swings_4	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\CD\{CD02CCB3-A068-D3FB-7E8F-00D266BDE0E5}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Hockey\Hockey Swing\Swings_4		17616
 	472000575	Swings	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\89\{89470717-F0AB-609B-0914-9B4097A4110A}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Hockey\Hockey Swing\Swings		17126
-	481543437	Shark Chomps_3	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\0F\{0FBC6EC9-850D-29FD-99ED-D16CB0AA644A}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Shark\Chomp\Shark Chomps_3		19912
+	481543437	Shark Chomps_3	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\0F\{0FBC6EC9-850D-29FD-99ED-D16CB0AA644A}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Shark\Shark Moving\Chomp\Shark Chomps_3		19912
 	521776349	LongSkate	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\76\{764D2C7A-D76B-0A8E-033C-8B54E65BD550}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Skates\LongSkate		963386
 	589060082	Swings_6	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\DD\{DD45836E-3A57-C08F-4C4F-1CB2C8135A52}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Hockey\Hockey Swing\Swings_6		14272
-	650797169	Shark Chomps_4	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\43\{43501F9F-16E8-7033-02FC-B0C428CC6D55}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Shark\Chomp\Shark Chomps_4		20096
+	650797169	Shark Chomps_4	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\43\{43501F9F-16E8-7033-02FC-B0C428CC6D55}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Shark\Shark Moving\Chomp\Shark Chomps_4		20096
 	661063367	Splash_5	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\83\{83563AA8-927B-CE0A-ACF6-31D03AC77E34}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Splashes\Ice Splash\Splash_5		119428
 	713916889	Swings_2	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\9E\{9E891606-1604-ED4E-3FDF-5DE677A6858C}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Hockey\Hockey Swing\Swings_2		17786
 	731922532	Splash_3	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\C5\{C59E0B15-8CBD-1332-2A05-E4E5591435AE}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Splashes\Player Splash\Splash_3		147928
@@ -64,7 +69,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	817391603	Step	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\B6\{B6FF8C41-BF51-B239-3F0A-53022A78BCE6}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Skates\Steps\Step\Step		10720
 	835039389	Step_5	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\D2\{D233C4F4-6761-619D-B9F9-D6C80DEE9587}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Skates\Steps\Step\Step_5		11246
 	874117209	Splash_1	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\21\{218C9BF4-E22C-6740-329B-F96E0DE3383F}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Splashes\Enemy Splash\Splash_1		202972
-	908641076	Shark Fall	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\C4\{C466DCE9-7896-D037-1F29-B39EEFAC2758}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Shark\Shark Fall		69676
+	908641076	Shark Fall	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\98\{9829F16D-A181-D3A9-F8D8-E97E801B7A30}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Shark\Shark Fall		69244
 	965355924	Skate_05	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\16\{166E964D-D4B9-9AB7-B061-89506602A07C}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Skates\Steps\Skate\Skate_05		30048
 	994630770	Splash_2	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\1A\{1A9B7068-2AA6-935D-9176-7C1C5CAB693F}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Splashes\Ice Splash\Splash_2		116396
 	1008933578	Step_7	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\7C\{7C696B0C-808E-EAD4-EA3B-40E3F0717D63}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Skates\Steps\Step\Step_7		10056

@@ -34,7 +34,7 @@
 				<GameParameter Id="3873835272" Name="soundVolume" ObjectPath="\Game Parameters\Default Work Unit\Volume\soundVolume" GUID="{DF92366F-4997-4DFD-B8EC-F8899A911A75}"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" GUID="{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}" Language="SFX" Hash="{93B28AA8-BBFB-1976-8A07-F558D9160C8A}">
+		<SoundBank Id="3161908922" Type="User" GUID="{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}" Language="SFX" Hash="{48764353-CDA2-50E1-24D8-FACDB2C12DB6}">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -42,6 +42,10 @@
 				<File Id="11736544" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Puck Hit.wav</ShortName>
 					<CachePath>33/{33B4372C-560B-FB90-8BC9-EAD1EF914296}.wem</CachePath>
+				</File>
+				<File Id="92250040" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Roar Death .wav</ShortName>
+					<CachePath>50/{50F8A7F9-F1E5-DEBA-B912-0FEC0DA43029}.wem</CachePath>
 				</File>
 				<File Id="112692613" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Puck Hit_1.wav</ShortName>
@@ -177,7 +181,7 @@
 				</File>
 				<File Id="908641076" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Shark Death.wav</ShortName>
-					<CachePath>C4/{C466DCE9-7896-D037-1F29-B39EEFAC2758}.wem</CachePath>
+					<CachePath>98/{9829F16D-A181-D3A9-F8D8-E97E801B7A30}.wem</CachePath>
 				</File>
 				<File Id="965355924" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Steps\Skate.wav</ShortName>
@@ -213,8 +217,17 @@
 						<MediaRef Id="874117209"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2594447999" Name="FoxFall" ObjectPath="\Events\Default Work Unit\Enemy\Fox\FoxFall" GUID="{2BAD48DC-A604-489C-92DD-E1B5994DB13A}" DurationType="OneShot" DurationMin="0.2341452" DurationMax="0.2341452">
+					<MediaRefs>
+						<MediaRef Id="92250040"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="348963605" Name="Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Reverb" GUID="{39432060-1A71-40A3-B958-9264FDE9BB75}"/>
+					</AuxBusRefs>
+				</Event>
 				<Event Id="2891959439" Name="HockeyShoot" ObjectPath="\Events\Default Work Unit\Enemy\Hockey\HockeyShoot" GUID="{D602C855-4B10-46C4-8DE8-27CB08BE07CF}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="433652520" Name="HockeySwing" ObjectPath="\Events\Default Work Unit\Enemy\Hockey\HockeySwing" GUID="{1FCCBCFA-EBAD-4B0A-B137-548F82F2342B}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1589270263" Name="PauseGame" ObjectPath="\Events\Default Work Unit\UI\PauseGame" GUID="{3E1FF75B-A95C-4AAC-8393-9E03EFB89250}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="4286935516" Name="PenguinFall" ObjectPath="\Events\Default Work Unit\Enemy\Penguin\PenguinFall" GUID="{501EBB5F-3B7C-4B90-9502-27C2B581AD07}" DurationType="OneShot" DurationMin="0.38066658" DurationMax="0.38066658">
 					<MediaRefs>
 						<MediaRef Id="324096467"/>
@@ -263,8 +276,12 @@
 						<AuxBusRef Id="348963605" Name="Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Reverb" GUID="{39432060-1A71-40A3-B958-9264FDE9BB75}"/>
 					</AuxBusRefs>
 				</Event>
-				<Event Id="3926006775" Name="SharkFall" ObjectPath="\Events\Default Work Unit\Enemy\Shark\SharkFall" GUID="{23D73999-01D8-4437-9F7A-739A9FBCFABD}" DurationType="OneShot" DurationMin="0.3944602" DurationMax="0.3944602">
+				<Event Id="1133184122" Name="ResumeGame" ObjectPath="\Events\Default Work Unit\UI\ResumeGame" GUID="{6EE39B59-5463-4465-AE39-2CF5CFD89D1F}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3926006775" Name="SharkFall" ObjectPath="\Events\Default Work Unit\Enemy\Shark\SharkFall" GUID="{23D73999-01D8-4437-9F7A-739A9FBCFABD}" DurationType="OneShot" DurationMin="0.39199996" DurationMax="0.39199996">
 					<MediaRefs>
+						<MediaRef Id="481543437"/>
+						<MediaRef Id="521776349"/>
+						<MediaRef Id="650797169"/>
 						<MediaRef Id="908641076"/>
 					</MediaRefs>
 					<PluginRefs>
@@ -276,9 +293,10 @@
 						<AuxBusRef Id="348963605" Name="Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Reverb" GUID="{39432060-1A71-40A3-B958-9264FDE9BB75}"/>
 					</AuxBusRefs>
 				</Event>
-				<Event Id="35164858" Name="StartChomp" ObjectPath="\Events\Default Work Unit\Enemy\Shark\StartChomp" GUID="{041933A0-D803-44A4-80A0-3EABFB07A647}" DurationType="Infinite">
+				<Event Id="563965641" Name="SharkSpawn" ObjectPath="\Events\Default Work Unit\Enemy\Shark\SharkSpawn" GUID="{041933A0-D803-44A4-80A0-3EABFB07A647}" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="481543437"/>
+						<MediaRef Id="521776349"/>
 						<MediaRef Id="650797169"/>
 					</MediaRefs>
 					<AuxBusRefs>
@@ -290,6 +308,7 @@
 						<MediaRef Id="283519557"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3140753194" Name="Testbreak" ObjectPath="\Events\Default Work Unit\UI\Testbreak" GUID="{9FE179F0-9010-49FE-8F27-7F9329BDBB6D}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 			<Busses>
 				<Bus Id="393239870" Name="SFX" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX" GUID="{82BD75D9-95EE-495F-88CE-7A658BA55E69}"/>
@@ -307,5 +326,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{968AF6F4-01D8-0B34-D5E0-54FF85A08241}</FileHash>
+	<FileHash>{19121399-22D1-5F7C-0899-56D75FF7D4BE}</FileHash>
 </SoundBanksInfo>

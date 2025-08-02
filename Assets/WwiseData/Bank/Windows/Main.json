@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}",
     "Language": "SFX",
-    "Hash": "{93B28AA8-BBFB-1976-8A07-F558D9160C8A}",
+    "Hash": "{48764353-CDA2-50E1-24D8-FACDB2C12DB6}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -22,6 +22,14 @@
       "Location": "Memory",
       "ShortName": "Puck Hit.wav",
       "CachePath": "33/{33B4372C-560B-FB90-8BC9-EAD1EF914296}.wem"
+     },
+     {
+      "Id": "92250040",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Roar Death .wav",
+      "CachePath": "50/{50F8A7F9-F1E5-DEBA-B912-0FEC0DA43029}.wem"
      },
      {
       "Id": "112692613",
@@ -293,7 +301,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Shark Death.wav",
-      "CachePath": "C4/{C466DCE9-7896-D037-1F29-B39EEFAC2758}.wem"
+      "CachePath": "98/{9829F16D-A181-D3A9-F8D8-E97E801B7A30}.wem"
      },
      {
       "Id": "965355924",
@@ -377,6 +385,28 @@
       ]
      },
      {
+      "Id": "2594447999",
+      "Name": "FoxFall",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enemy\\Fox\\FoxFall",
+      "GUID": "{2BAD48DC-A604-489C-92DD-E1B5994DB13A}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.2341452",
+      "DurationMax": "0.2341452",
+      "MediaRefs": [
+       {
+        "Id": "92250040"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "348963605",
+        "Name": "Reverb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
+        "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
+       }
+      ]
+     },
+     {
       "Id": "2891959439",
       "Name": "HockeyShoot",
       "ObjectPath": "\\Events\\Default Work Unit\\Enemy\\Hockey\\HockeyShoot",
@@ -391,6 +421,16 @@
       "Name": "HockeySwing",
       "ObjectPath": "\\Events\\Default Work Unit\\Enemy\\Hockey\\HockeySwing",
       "GUID": "{1FCCBCFA-EBAD-4B0A-B137-548F82F2342B}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "1589270263",
+      "Name": "PauseGame",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\PauseGame",
+      "GUID": "{3E1FF75B-A95C-4AAC-8393-9E03EFB89250}",
       "MaxAttenuation": "0",
       "DurationType": "OneShot",
       "DurationMin": "0",
@@ -534,14 +574,33 @@
       ]
      },
      {
+      "Id": "1133184122",
+      "Name": "ResumeGame",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\ResumeGame",
+      "GUID": "{6EE39B59-5463-4465-AE39-2CF5CFD89D1F}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
       "Id": "3926006775",
       "Name": "SharkFall",
       "ObjectPath": "\\Events\\Default Work Unit\\Enemy\\Shark\\SharkFall",
       "GUID": "{23D73999-01D8-4437-9F7A-739A9FBCFABD}",
       "DurationType": "OneShot",
-      "DurationMin": "0.3944602",
-      "DurationMax": "0.3944602",
+      "DurationMin": "0.39199996",
+      "DurationMax": "0.39199996",
       "MediaRefs": [
+       {
+        "Id": "481543437"
+       },
+       {
+        "Id": "521776349"
+       },
+       {
+        "Id": "650797169"
+       },
        {
         "Id": "908641076"
        }
@@ -563,14 +622,17 @@
       ]
      },
      {
-      "Id": "35164858",
-      "Name": "StartChomp",
-      "ObjectPath": "\\Events\\Default Work Unit\\Enemy\\Shark\\StartChomp",
+      "Id": "563965641",
+      "Name": "SharkSpawn",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enemy\\Shark\\SharkSpawn",
       "GUID": "{041933A0-D803-44A4-80A0-3EABFB07A647}",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
         "Id": "481543437"
+       },
+       {
+        "Id": "521776349"
        },
        {
         "Id": "650797169"
@@ -598,6 +660,16 @@
         "Id": "283519557"
        }
       ]
+     },
+     {
+      "Id": "3140753194",
+      "Name": "Testbreak",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Testbreak",
+      "GUID": "{9FE179F0-9010-49FE-8F27-7F9329BDBB6D}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
      }
     ],
     "Busses": [
@@ -656,6 +728,6 @@
     ]
    }
   ],
-  "FileHash": "{92FC2DFE-2A9C-B646-C49C-50EBC824BD27}"
+  "FileHash": "{C4A8FF32-7FB6-A7E6-14C2-9DAEF8EEB233}"
  }
 }
