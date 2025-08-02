@@ -450,10 +450,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HolePrefab: {fileID: 4884329261990287930, guid: 3c87df03299336b4aaf6ff2fd2ef509c, type: 3}
-  Holes: []
+  CutoutPrefab: {fileID: 0}
   Points: []
+  isTouchingGround: 0
   isDrawing: 0
   hasOverlapped: 0
+  player: {fileID: 0}
+  planeHeight: 0
 --- !u!4 &295178772
 Transform:
   m_ObjectHideFlags: 0
@@ -1892,6 +1895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52eb1e54064f51d4fb76513879756782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 0
 --- !u!64 &944782019
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2593,6 +2597,7 @@ GameObject:
   - component: {fileID: 1644779074}
   - component: {fileID: 1644779073}
   - component: {fileID: 1644779075}
+  - component: {fileID: 1644779076}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -2665,6 +2670,19 @@ MonoBehaviour:
   unloadTriggerList: 958ca0ea
   bankNameInternal: 
   valueGuidInternal: 
+--- !u!114 &1644779076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644779072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed39f2b237e573f4f85990bb5d1440ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitBank: {fileID: 11400000, guid: a033be40b5ddc4c459a94681c150c22d, type: 2}
 --- !u!1 &1734188243
 GameObject:
   m_ObjectHideFlags: 0

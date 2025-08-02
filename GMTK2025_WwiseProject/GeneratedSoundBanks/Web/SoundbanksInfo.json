@@ -1,0 +1,93 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Web",
+  "BasePlatform": "Web",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "RootPaths": {
+   "ProjectRoot": "../..",
+   "SourceFilesRoot": "../../.cache",
+   "SoundBanksRoot": ".",
+   "ExternalSourcesInputFile": "",
+   "ExternalSourcesOutputRoot": "."
+  },
+  "DialogueEvents": [],
+  "SoundBanks": [
+   {
+    "Id": "1355168291",
+    "Type": "User",
+    "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
+    "Language": "SFX",
+    "Hash": "{5B1A1B30-A164-3386-2B5F-3FF552178E23}",
+    "ObjectPath": "Init",
+    "ShortName": "Init",
+    "Path": "Init.bnk",
+    "Plugins": {
+     "AudioDevices": [
+      {
+       "Id": "2317455096",
+       "Name": "No_Output",
+       "ObjectPath": "\\Audio Devices\\Default Work Unit\\No_Output",
+       "GUID": "{139A470B-986A-439E-A063-283FDDE18E42}",
+       "LibName": "No Output",
+       "LibId": "11862023"
+      },
+      {
+       "Id": "3859886410",
+       "Name": "System",
+       "ObjectPath": "\\Audio Devices\\Default Work Unit\\System",
+       "GUID": "{EA64E564-E793-4E69-A034-EA9C63BEA441}",
+       "LibName": "System",
+       "LibId": "11403271"
+      }
+     ]
+    },
+    "Busses": [
+     {
+      "Id": "3803692087",
+      "Name": "Master Audio Bus",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus",
+      "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
+     }
+    ]
+   },
+   {
+    "Id": "3161908922",
+    "Type": "User",
+    "GUID": "{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}",
+    "Language": "SFX",
+    "Hash": "{F31779A9-4B75-A949-B607-4D9C129184C0}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
+    "ShortName": "Main",
+    "Path": "Main.bnk",
+    "Media": [
+     {
+      "Id": "283519557",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Bear Die.wav",
+      "CachePath": "2E/{2E2C3284-4DEC-965A-7DFD-79D702095BE9}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3157003241",
+      "Name": "test",
+      "ObjectPath": "\\Events\\Default Work Unit\\test",
+      "GUID": "{EC8DE7D5-586B-4A64-B2D1-E2FA5E748762}",
+      "DurationType": "OneShot",
+      "DurationMin": "4.0635147",
+      "DurationMax": "4.0635147",
+      "MediaRefs": [
+       {
+        "Id": "283519557"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{4731ED44-CD56-F1B8-7CDC-946810392755}"
+ }
+}

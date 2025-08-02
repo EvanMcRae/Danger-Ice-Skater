@@ -202,29 +202,14 @@ public class AkPluginActivator : UnityEditor.AssetPostprocessor
 		foreach (var pluginImporter in importers)
 		{
 			var pluginPlatform = GetPluginInfoPlatform(pluginImporter.assetPath);
-			if (string.IsNullOrEmpty(pluginPlatform) || (pluginPlatform != "Mac" && pluginPlatform != "Windows" && pluginPlatform != "Linux"))
+			if (string.IsNullOrEmpty(pluginPlatform) || (pluginPlatform != "Mac" && pluginPlatform != "Windows"))
 			{
 				pluginImporter.SetCompatibleWithEditor(false);
 				changedSomeAssets = true;
 				continue;
 			}
 
-			BuildTarget pluginBuildTarget;
-			switch (pluginPlatform)
-			{
-				case "Windows":
-					pluginBuildTarget = BuildTarget.StandaloneWindows64;
-					break;
-				case "Mac":
-					pluginBuildTarget = BuildTarget.StandaloneOSX;
-					break;
-				case "Linux":
-					pluginBuildTarget = BuildTarget.StandaloneLinux64;
-					break;
-				default:
-					pluginBuildTarget = BuildTarget.StandaloneWindows64;
-					break;
-			}
+			BuildTarget pluginBuildTarget = pluginPlatform == "Mac" ? BuildTarget.StandaloneOSX : BuildTarget.StandaloneWindows64;
 			
 			if (!BuildTargetToPlatformPluginActivator.TryGetValue(pluginBuildTarget, out var platformPluginActivator))
 			{
