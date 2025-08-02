@@ -103,7 +103,8 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("isMoving", false);
         }
-        AkUnitySoundEngine.SetRTPCValue("playerVelocity", horizVel.magnitude);
+        Debug.Log(horizVel.magnitude);
+        AkUnitySoundEngine.SetRTPCValue("playerVelocity", 100f * Mathf.Clamp01(horizVel.magnitude / 11.5f));
     }
 
     void FixedUpdate()

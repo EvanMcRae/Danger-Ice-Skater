@@ -130,6 +130,8 @@ public class PauseManager : MonoBehaviour
         GameObject menu = Menus[index];
         menu.SetActive(true);
 
+        menu.GetComponent<RectTransform>().localScale = Vector3.one;
+
         float startPos = startPositions[index];
 
         mySequence = DOTween.Sequence().SetUpdate(true);

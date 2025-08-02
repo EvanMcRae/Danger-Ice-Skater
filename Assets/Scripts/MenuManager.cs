@@ -128,6 +128,7 @@ public class MenuManager : MonoBehaviour
     private void ActivateMenuWithAnimation(int index)
     {
         GameObject menu = Menus[index];
+        menu.GetComponent<RectTransform>().localScale = Vector3.one;
         menu.SetActive(true);
 
         float startPos = startPositions[index];
