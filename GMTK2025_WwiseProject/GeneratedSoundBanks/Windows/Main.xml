@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="154">
+	<SoundBanks>
+		<SoundBank Id="3161908922" Type="User" GUID="{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}" Language="SFX" Hash="{F31779A9-4B75-A949-B607-4D9C129184C0}">
+			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
+			<ShortName>Main</ShortName>
+			<Path>Main.bnk</Path>
+			<Media>
+				<File Id="283519557" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Bear Die.wav</ShortName>
+					<CachePath>2E/{2E2C3284-4DEC-965A-7DFD-79D702095BE9}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="3157003241" Name="test" ObjectPath="\Events\Default Work Unit\test" GUID="{EC8DE7D5-586B-4A64-B2D1-E2FA5E748762}" DurationType="OneShot" DurationMin="4.0635147" DurationMax="4.0635147">
+					<MediaRefs>
+						<MediaRef Id="283519557"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{EDBAB357-32EE-D330-3E2B-FB932786B801}</FileHash>
+</SoundBanksInfo>

@@ -1,10 +1,10 @@
 {
-    "originalSdkFolder": "/Applications/Audiokinetic/Wwise2024.1.6.8842/SDK",
+    "originalSdkFolder": "C:\\Audiokinetic\\Wwise2024.1.5.8803\\SDK",
     "currentVersion": {
         "nickname": "",
-        "build": 3614,
+        "build": 3507,
         "major": 1,
-        "minor": 6,
+        "minor": 5,
         "year": 2024
     },
     "installedBundleGroups": [
@@ -23,6 +23,10 @@
         {
             "id": "DeploymentPlatforms",
             "valueId": "Windows"
+        },
+        {
+            "id": "DeploymentPlatforms",
+            "valueId": "Emscripten"
         }
     ]
 }
