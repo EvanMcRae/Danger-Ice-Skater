@@ -18,6 +18,7 @@ public class Hole : MonoBehaviour
     public GameObject holeRefillVisuals;
     private Vector3 spawnedPos;
     private GameObject m_refillObj;
+    private bool m_extendedLife = false;
 
     public GameEventBroadcaster geb; //For event invocation.
 
@@ -65,7 +66,7 @@ public class Hole : MonoBehaviour
         if (PauseManager.paused) return;
 
         if (!m_isDead && !m_isReplenishing &&
-            ((!m_isFalling && Time.time > HOLE_LIFETIME + m_spawnTime) || (m_isFalling && transform.position.y < GameController.KILL_HEIGHT)))
+            ((!m_isFalling && Time.time > HOLE_LIFETIME + m_spawnTime) || (m_isFalling && transform.position.y < GameController.KILL_HEIGHT * 2)))
         {
             if (!m_isFalling && !m_isReplenishing)
             {
@@ -94,15 +95,16 @@ public class Hole : MonoBehaviour
                 PlayerController.fallThroughHole = true;
 
                 // Make sure hole sticks around long enough for the player to rise through it
-                if (HOLE_LIFETIME + m_spawnTime - Time.time < 2f)
+                if (HOLE_LIFETIME + m_spawnTime - Time.time < 2f && !m_extendedLife)
                 {
+                    m_extendedLife = true;
                     m_spawnTime += 2f;
                 }
             }
             else if (other.gameObject.TryGetComponent<HoleFallable>(out var enemy) || other.gameObject.CompareTag("Enemy")) {
                 enemy.Fall();
                 // Give the enemy time to fall
-                if (HOLE_LIFETIME + m_spawnTime - Time.time < 0.3f)
+                if (HOLE_LIFETIME + m_spawnTime - Time.time < 0.3f && !m_extendedLife)
                 {
                     m_spawnTime += 0.3f;
                 }
@@ -138,6 +140,7 @@ public class Hole : MonoBehaviour
     // TODO: This check does not work well for partial intersection
     public bool ContainsBounds(Bounds otherBounds)
     {
+        m_meshCollider.sharedMesh.RecalculateBounds();
         Bounds myBounds = m_meshCollider.bounds;
         Vector3 minXminZ = otherBounds.min;
         Vector3 maxXmaxZ = otherBounds.max;
