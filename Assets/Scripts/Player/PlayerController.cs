@@ -43,6 +43,8 @@ public class PlayerController : MonoBehaviour
 
     public static bool gameOvered = false;
 
+    public ParticleSystem particles;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -105,7 +107,9 @@ public class PlayerController : MonoBehaviour
                 rb.excludeLayers = 0;
                 rb.linearDamping = 1;
             }
+            
         }
+        
 
         if (rb.linearVelocity.x > 0 && horizontal < 0 || rb.linearVelocity.x < 0 && horizontal > 0)
         {
@@ -116,6 +120,28 @@ public class PlayerController : MonoBehaviour
         {
             vertical = vertical * reverseMod;
         }
+
+        //Rotate player to face their movement direction + some bias from their inputs
+        if (!gameOvered && new Vector3(rb.linearVelocity.x + horizontal, 0, rb.linearVelocity.z + vertical) != default)
+        {
+            transform.rotation = Quaternion.LookRotation(new Vector3(rb.linearVelocity.x + horizontal, 0, rb.linearVelocity.z + vertical), Vector3.up);
+        }
+
+
+        //Particle system effects
+        ParticleSystem.MainModule particleMain = particles.main;
+        particleMain.startSpeed = rb.linearVelocity.magnitude/10;
+        ParticleSystem.EmissionModule particleEmmission = particles.emission;
+        particleEmmission.rateOverTime = Mathf.Pow(rb.linearVelocity.magnitude/2,2);
+        if (isTouchingGround && !particles.isPlaying)
+        {
+            particles.Play();
+        }
+        if(!isTouchingGround)
+        {
+            particles.Stop();
+        }
+
 
         Vector3 moveDir = new Vector3(horizontal * acceleration, 0, vertical * acceleration);
         

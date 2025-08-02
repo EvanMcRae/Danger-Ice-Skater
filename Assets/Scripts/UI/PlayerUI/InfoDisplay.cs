@@ -14,6 +14,7 @@ namespace UI.PlayerUI {
         
         public void OnEnable() {
             geb.OnWaveStart.AddListener(OnWaveIncrease);
+            geb.OnScoreIncreased.AddListener(OnScoreIncrease);
             // Add score gain event here.
         }
 

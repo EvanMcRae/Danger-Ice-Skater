@@ -18,6 +18,8 @@ public class PauseManager : MonoBehaviour
     string MainMenuName;
 
     public bool paused;
+    private bool menuOpen = false;
+    private Sequence mySequence = null;
 
     private void Start()
     {
@@ -30,7 +32,8 @@ public class PauseManager : MonoBehaviour
                 menu.transform.DOMoveY(-Screen.height, 0f);
             }
         }
-
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         paused = false;
     }
 
@@ -39,23 +42,30 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = 0;
         Menus[0].SetActive(true);
         paused = true;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void Unpause()
     {
+        if (menuOpen)
+        {
+            TurnOffMenus();
+            return;
+        }
         foreach (GameObject menu in Menus)
         {
             //this jank makes sure submenus don't stay on screen
             if (menu != Menus[0])
-            {;
-                DG.Tweening.Sequence mySequence = DOTween.Sequence().SetUpdate(true);
-                mySequence.Append(menu.transform.DOMoveY(-Screen.height, 0f));
-                mySequence.Append(menu.transform.DOMoveY(-Screen.height, 1f));
+            {
+                menu.transform.position = new Vector3(menu.transform.position.x, -Screen.height, menu.transform.position.z);
             }
         }
         Time.timeScale = 1;
         Menus[0].SetActive(false);
         paused = false;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void TopPauseMenu()
@@ -72,12 +82,22 @@ public class PauseManager : MonoBehaviour
 
     public void MainMenu()
     {
+        ScreenWipe.current.WipeIn();
+        ScreenWipe.current.PostWipe += GoToMainMenu;
+    }
+
+    public void GoToMainMenu()
+    {
         Time.timeScale = 1;
+        ScreenWipe.current.PostWipe -= GoToMainMenu;
         SceneManager.LoadScene(MainMenuName);
     }
 
     private void TurnOffMenus()
     {
+        if (mySequence != null && mySequence.active)
+            DOTween.KillAll();
+
         foreach (GameObject menu in Menus)
         {
             if (menu != Menus[0])
@@ -85,6 +105,7 @@ public class PauseManager : MonoBehaviour
                 menu.transform.DOMoveY(-Screen.height, .4f).SetUpdate(true);
             }
         }
+        menuOpen = false;
     }
 
     private void ActivateMenuWithAnimation(int index)
@@ -94,8 +115,14 @@ public class PauseManager : MonoBehaviour
 
         float startPos = startPositions[index];
 
-        DG.Tweening.Sequence mySequence = DOTween.Sequence().SetUpdate(true);
+        mySequence = DOTween.Sequence().SetUpdate(true);
         mySequence.Append(menu.transform.DOMoveY(startPos + 50, .4f));
         mySequence.Append(menu.transform.DOMoveY(startPos, .5f));
+        menuOpen = true;
+    }
+
+    private void OnDestroy()
+    {
+        DOTween.KillAll();
     }
 }

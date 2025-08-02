@@ -127,12 +127,17 @@ public class Hole : MonoBehaviour
     public bool ContainsBounds(Bounds otherBounds)
     {
         Bounds myBounds = m_meshCollider.bounds;
-        Vector3 min = otherBounds.min;
-        min.y = myBounds.min.y;
-        Vector3 max = otherBounds.max;
-        max.y = myBounds.max.y;
+        Vector3 minA = otherBounds.min;
+        minA.y = myBounds.min.y;
+        Vector3 maxA = otherBounds.max;
+        maxA.y = myBounds.max.y;
+        Vector3 minB = minA;
+        minB.x = maxA.x;
+        Vector3 maxB = maxA;
+        maxB.z = minA.z;
 
-        return GeometryUtils.PointInPolygon(min, m_vertices) && GeometryUtils.PointInPolygon(max, m_vertices);
+        return GeometryUtils.PointInPolygon(minA, m_vertices) && GeometryUtils.PointInPolygon(maxA, m_vertices)
+            && GeometryUtils.PointInPolygon(minB, m_vertices) && GeometryUtils.PointInPolygon(maxB, m_vertices);
     }
 
     private List<Vector3> GetVertices()
