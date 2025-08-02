@@ -377,6 +377,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 104786446}
   m_Mesh: {fileID: -1550514412580984892, guid: 1b9067f067616cb45adef64932931ca8, type: 3}
+--- !u!1 &111449048 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6045652433369435514, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
+  m_PrefabInstance: {fileID: 568803943}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &120337691
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,7 +514,7 @@ MonoBehaviour:
   m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_DeselectOnBackgroundClick: 1
+  m_DeselectOnBackgroundClick: 0
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
   m_ScrollDeltaPerTick: 6
@@ -525,7 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 254487683}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &141492649
@@ -1474,6 +1479,22 @@ PrefabInstance:
       propertyPath: psh
       value: 
       objectReference: {fileID: 1965001070}
+    - target: {fileID: 8516922417927150815, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
+      propertyPath: eventSystem
+      value: 
+      objectReference: {fileID: 141492648}
+    - target: {fileID: 8516922417927150815, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
+      propertyPath: settingsButton
+      value: 
+      objectReference: {fileID: 111449048}
+    - target: {fileID: 8516922417927150815, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
+      propertyPath: settingsBackButton
+      value: 
+      objectReference: {fileID: 772663253}
+    - target: {fileID: 8516922417927150815, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
+      propertyPath: instructionsBackButton
+      value: 
+      objectReference: {fileID: 772663253}
     - target: {fileID: 8885974368995231455, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1569,6 +1590,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696826985}
   m_Mesh: {fileID: -1550514412580984892, guid: 1b9067f067616cb45adef64932931ca8, type: 3}
+--- !u!1 &772663253 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5710936813729643994, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
+  m_PrefabInstance: {fileID: 568803943}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &854686402
 GameObject:
   m_ObjectHideFlags: 0
