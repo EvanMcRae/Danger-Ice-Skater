@@ -15,5 +15,12 @@ namespace Utility {
                 Destroy(gameObject);
             }
         }
+        public void OnCollisionEnter(Collision other)
+        {
+            if (other.gameObject.CompareTag("Player") && destroyDelay > 0)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }
