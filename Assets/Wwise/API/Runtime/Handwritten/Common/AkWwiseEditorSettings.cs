@@ -32,8 +32,8 @@ public class WwiseSettings
 		{
 			string wwiseVersion = AkUnitySoundEngine.WwiseVersion;
 			string shortWwiseVersion = wwiseVersion.Substring(2, 6);
-			string repositoryLink = "https://github.com/audiokinetic/WwiseUnityAddressables.git";
-			repositoryLink += $"#v{shortWwiseVersion}";
+			string repositoryLink = "https://github.com/danielambrits/WwiseUnityAddressables";
+			// repositoryLink += $"#v{shortWwiseVersion}";
 			return repositoryLink;
 		}
 	}

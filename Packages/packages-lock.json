@@ -1,13 +1,13 @@
 {
   "dependencies": {
     "com.audiokinetic.wwise.addressables": {
-      "version": "https://github.com/audiokinetic/WwiseUnityAddressables.git#v24.1.5",
+      "version": "https://github.com/danielambrits/WwiseUnityAddressables.git",
       "depth": 0,
       "source": "git",
       "dependencies": {
         "com.unity.addressables": "1.21.20"
       },
-      "hash": "312651c78ddd2ab2f39a80828a1874d35813da30"
+      "hash": "067bb49a0035e8494c67e3311617e7327334aa9a"
     },
     "com.unity.2d.sprite": {
       "version": "1.0.0",

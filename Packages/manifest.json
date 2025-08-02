@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.audiokinetic.wwise.addressables": "https://github.com/audiokinetic/WwiseUnityAddressables.git#v24.1.5",
+    "com.audiokinetic.wwise.addressables": "https://github.com/danielambrits/WwiseUnityAddressables.git",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.addressables": "2.6.0",
     "com.unity.ai.navigation": "2.0.8",

@@ -18,7 +18,7 @@
   <WaapiPort>8080</WaapiPort>
   <WaapiIP>127.0.0.1</WaapiIP>
   <UseGitRepository>true</UseGitRepository>
-  <PackageSource>https://github.com/audiokinetic/WwiseUnityAddressables.git#v24.1.5</PackageSource>
+  <PackageSource>https://github.com/danielambrits/WwiseUnityAddressables.git</PackageSource>
   <AddressableBankFolder>WwiseData/Bank</AddressableBankFolder>
   <UseCustomBuildScript>false</UseCustomBuildScript>
   <AddressableAssetBuilderPath>Assets/AddressableAssetsData/DataBuilders\BuildScriptWwisePacked.asset</AddressableAssetBuilderPath>
