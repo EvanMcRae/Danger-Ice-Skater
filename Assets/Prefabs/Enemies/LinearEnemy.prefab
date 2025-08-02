@@ -154,7 +154,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameEventBroadcaster: {fileID: 11400000, guid: f8714c97c5f2ac84fa1762773bdaad01, type: 2}
   rb: {fileID: 2865376438257044195}
-  m_killHeight: -10
   m_isDead: 0
   m_waiting: 0
   anim: {fileID: 2939290769832064937}

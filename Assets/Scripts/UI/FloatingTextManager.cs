@@ -3,26 +3,35 @@ using TMPro;
 
 public class FloatingTextManager : MonoBehaviour
 {
-    public GameObject floatingSpritePrefab; 
-    public Canvas canvas;
+    public FloatingSprite floatingSpritePrefab;
+    public static FloatingTextManager instance;
+
+    public void Start()
+    {
+        instance = this;
+    }
 
     public void ShowFloatingSprite(Vector3 worldPosition)
     {
         Vector3 screenPosition = Camera.main.WorldToScreenPoint(worldPosition);
 
         // Make instance under canvas
-        GameObject instance = Instantiate(floatingSpritePrefab, canvas.transform);
+        FloatingSprite inst = Instantiate(floatingSpritePrefab, transform);
 
         // Convert screen point to canvas local point
-        RectTransform canvasRect = canvas.GetComponent<RectTransform>();
-        RectTransform instanceRect = instance.GetComponent<RectTransform>();
+        RectTransform canvasRect = transform.parent.GetComponent<RectTransform>();
+        RectTransform instanceRect = inst.GetComponent<RectTransform>();
 
-        Vector2 anchoredPos;
-        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screenPosition, null, out anchoredPos))
-        {
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screenPosition, null, out Vector2 anchoredPos)) {
+            
+            inst.worldStartPos = worldPosition;
             instanceRect.anchoredPosition = anchoredPos;
+            
         }
     }
 
-
+    public void OnDestroy()
+    {
+        instance = null;
+    }
 }
