@@ -32,6 +32,9 @@ public class PauseManager : MonoBehaviour
     [SerializeField]
     public GameObject settingsButton;
 
+    [SerializeField]
+    public GameObject playButton;
+
     public bool paused;
     private bool menuOpen = false;
     private Sequence mySequence = null;
@@ -59,6 +62,7 @@ public class PauseManager : MonoBehaviour
         paused = true;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        eventSystem.SetSelectedGameObject(playButton);
     }
 
     public void Unpause()

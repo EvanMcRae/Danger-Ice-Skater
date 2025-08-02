@@ -712,7 +712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 254487683}
+  m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &141492649
@@ -1389,6 +1389,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c29423c3b05f4c7e934a10324211c597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &271574432 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6045652433369435514, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
+  m_PrefabInstance: {fileID: 568803943}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &301562153
 GameObject:
   m_ObjectHideFlags: 0
@@ -1905,6 +1910,16 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455310519}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &479652216 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8546162174043694085, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
+  m_PrefabInstance: {fileID: 568803943}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &516594013 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5710936813729643994, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
+  m_PrefabInstance: {fileID: 568803943}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &568803943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2014,21 +2029,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1965001070}
     - target: {fileID: 8516922417927150815, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
+      propertyPath: playButton
+      value: 
+      objectReference: {fileID: 479652216}
+    - target: {fileID: 8516922417927150815, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
       propertyPath: eventSystem
       value: 
       objectReference: {fileID: 141492648}
     - target: {fileID: 8516922417927150815, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
       propertyPath: settingsButton
       value: 
-      objectReference: {fileID: 111449048}
+      objectReference: {fileID: 271574432}
     - target: {fileID: 8516922417927150815, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
       propertyPath: settingsBackButton
       value: 
-      objectReference: {fileID: 772663253}
+      objectReference: {fileID: 516594013}
     - target: {fileID: 8516922417927150815, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
       propertyPath: instructionsBackButton
       value: 
-      objectReference: {fileID: 772663253}
+      objectReference: {fileID: 0}
     - target: {fileID: 8885974368995231455, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
