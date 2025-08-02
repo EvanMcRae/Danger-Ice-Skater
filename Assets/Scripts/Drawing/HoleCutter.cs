@@ -71,7 +71,7 @@ public class HoleCutter : MonoBehaviour
 
                     List<Vector2> cutoutPoints = new();
 
-                    
+
                     if (intersectPoint >= 0)
                     {
                         //Copy segment that creates hole.
@@ -86,8 +86,8 @@ public class HoleCutter : MonoBehaviour
                     }
                 }
 
-                
-                
+
+
                 //Move buffer over. Poor scaling run time (O(n)), but size is capped small enough it is not an issue. 
                 if (Points.Count >= MAX_POINTS)
                     Points.RemoveAt(0);
@@ -98,7 +98,7 @@ public class HoleCutter : MonoBehaviour
                 {
                     lineRenderer.SetPosition(i, new Vector3(Points[i].x, planeHeight, Points[i].y));
                 }
-                
+
             }
         }
 
@@ -186,6 +186,12 @@ public class HoleCutter : MonoBehaviour
     }
 
     //From https://www.reddit.com/r/gamedev/comments/7ww4yx/whats_the_easiest_way_to_check_if_two_line/
-    public static bool LineSegmentsIntersect(Vector2 lineOneA, Vector2 lineOneB, Vector2 lineTwoA, Vector2 lineTwoB) 
+    public static bool LineSegmentsIntersect(Vector2 lineOneA, Vector2 lineOneB, Vector2 lineTwoA, Vector2 lineTwoB)
     { return ((lineTwoB.y - lineOneA.y) * (lineTwoA.x - lineOneA.x) > (lineTwoA.y - lineOneA.y) * (lineTwoB.x - lineOneA.x)) != ((lineTwoB.y - lineOneB.y) * (lineTwoA.x - lineOneB.x) > (lineTwoA.y - lineOneB.y) * (lineTwoB.x - lineOneB.x)) && ((lineTwoA.y - lineOneA.y) * (lineOneB.x - lineOneA.x) > (lineOneB.y - lineOneA.y) * (lineTwoA.x - lineOneA.x)) != ((lineTwoB.y - lineOneA.y) * (lineOneB.x - lineOneA.x) > (lineOneB.y - lineOneA.y) * (lineTwoB.x - lineOneA.x)); }
+
+    public void OnDestroy()
+    {
+        Holes.Clear();
+        Cutouts.Clear();
+    }
 }
