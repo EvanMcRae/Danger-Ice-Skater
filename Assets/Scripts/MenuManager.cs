@@ -3,9 +3,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 public class MenuManager : MonoBehaviour
 {
     [SerializeField]
@@ -15,6 +21,18 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField]
     string NextSceneName;
+
+    [SerializeField]
+    public EventSystem eventSystem;
+
+    [SerializeField]
+    public GameObject instructionsBackButton;
+
+    [SerializeField]
+    public GameObject creditsBackButton;
+
+    [SerializeField]
+    public GameObject playButton;
 
     private void Start()
     {
@@ -31,30 +49,52 @@ public class MenuManager : MonoBehaviour
 
     public void StartGame()
     {
+        if (!ScreenWipe.over) return;
+        ScreenWipe.current.WipeIn();
+        ScreenWipe.current.PostWipe += EnterGameScene;
+    }
+
+    public void EnterGameScene()
+    {
+        ScreenWipe.current.PostWipe -= EnterGameScene;
         SceneManager.LoadScene(NextSceneName);
     }
 
     public void Title()
     {
+        if (!ScreenWipe.over) return;
         TurnOffMenus();
 
         Menus[0].SetActive(true);
+        eventSystem.SetSelectedGameObject(playButton);
     }
 
     public void Credits()
     {
+        if (!ScreenWipe.over) return;
         TurnOffMenus();
         ActivateMenuWithAnimation(1);
+        eventSystem.SetSelectedGameObject(creditsBackButton);
     }
 
     public void Instructions()
     {
+        if (!ScreenWipe.over) return;
         TurnOffMenus();
         ActivateMenuWithAnimation(2);
+        eventSystem.SetSelectedGameObject(instructionsBackButton);
     }
 
     public void QuitGame()
     {
+        if (!ScreenWipe.over) return;
+        ScreenWipe.current.WipeIn();
+        ScreenWipe.current.PostWipe += ActuallyQuitGame;
+    }
+
+    public void ActuallyQuitGame()
+    {
+        ScreenWipe.current.PostWipe -= ActuallyQuitGame;
         if (Application.isEditor)
         {
             EditorApplication.ExitPlaymode();
@@ -69,7 +109,7 @@ public class MenuManager : MonoBehaviour
     {
         foreach (GameObject menu in Menus)
         {
-            if(menu != Menus[0])
+            if (menu != Menus[0])
             {
                 //menu.SetActive(false);
                 menu.transform.DOMoveY(-Screen.height, .4f);

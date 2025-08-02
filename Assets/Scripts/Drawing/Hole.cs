@@ -62,7 +62,9 @@ public class Hole : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!m_isDead && !m_isReplenishing && 
+        if (PauseManager.paused) return;
+
+        if (!m_isDead && !m_isReplenishing &&
             ((!m_isFalling && Time.time > HOLE_LIFETIME + m_spawnTime) || (m_isFalling && transform.position.y < m_killHeight)))
         {
             if (!m_isFalling && !m_isReplenishing)
@@ -88,7 +90,7 @@ public class Hole : MonoBehaviour
             if (other.gameObject.TryGetComponent<PlayerController>(out var player))
             {
                 PlayerStatsHandler sh = player.GetComponent<PlayerStatsHandler>();
-                if (sh.Damage(2)) geb.OnPlayerDeathByHit.Invoke(sh);
+                if (sh.Damage(2)) geb.OnPlayerDeathByHit.Invoke(sh); // TODO: This feels bad, you should die when you touch water
                 else {
                     geb.PlayerFellThroughIce.Invoke(player); //Event invocation.
                     PlayerController.gameOvered = true;
@@ -127,12 +129,17 @@ public class Hole : MonoBehaviour
     public bool ContainsBounds(Bounds otherBounds)
     {
         Bounds myBounds = m_meshCollider.bounds;
-        Vector3 min = otherBounds.min;
-        min.y = myBounds.min.y;
-        Vector3 max = otherBounds.max;
-        max.y = myBounds.max.y;
+        Vector3 minA = otherBounds.min;
+        minA.y = myBounds.min.y;
+        Vector3 maxA = otherBounds.max;
+        maxA.y = myBounds.max.y;
+        Vector3 minB = minA;
+        minB.x = maxA.x;
+        Vector3 maxB = maxA;
+        maxB.z = minA.z;
 
-        return GeometryUtils.PointInPolygon(min, m_vertices) && GeometryUtils.PointInPolygon(max, m_vertices);
+        return GeometryUtils.PointInPolygon(minA, m_vertices) && GeometryUtils.PointInPolygon(maxA, m_vertices)
+            && GeometryUtils.PointInPolygon(minB, m_vertices) && GeometryUtils.PointInPolygon(maxB, m_vertices);
     }
 
     private List<Vector3> GetVertices()

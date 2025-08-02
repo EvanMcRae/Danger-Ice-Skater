@@ -14,6 +14,8 @@ namespace Enemies.SpecificTypes {
         }
 
         public new void Update() {
+            if (PauseManager.paused) return;
+
             if (!m_waiting && !m_isDead)
             {
                 base.Update();

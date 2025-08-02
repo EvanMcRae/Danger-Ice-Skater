@@ -44,6 +44,8 @@ namespace Enemies {
 
         public void Update()
         {
+            if (PauseManager.paused) return;
+
             if (transform.position.y <= m_killHeight)
             {
                 DestroyEnemy();

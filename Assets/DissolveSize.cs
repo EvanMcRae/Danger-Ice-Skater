@@ -10,10 +10,4 @@ public class DissolveSize : MonoBehaviour
         propertyBlock.SetFloat("Tile",200);
         GetComponent<MeshRenderer>().SetPropertyBlock(propertyBlock);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
