@@ -133,7 +133,7 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - []
-  m_UseDelaunayMesh: 0
+  m_UseDelaunayMesh: 1
 --- !u!1 &4884329261990287930
 GameObject:
   m_ObjectHideFlags: 0
