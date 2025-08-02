@@ -12,7 +12,6 @@ public class ScreenWipe : MonoBehaviour
 
     public void Start()
     {
-        WipeOut();
         current = this;
     }
 
@@ -35,5 +34,6 @@ public class ScreenWipe : MonoBehaviour
     public void ScreenRevealed()
     {
         over = true;
+        GetComponent<Animator>().updateMode = AnimatorUpdateMode.UnscaledTime;
     }
 }
