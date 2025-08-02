@@ -43,5 +43,8 @@ namespace Game {
         /// Params: The enemy that was spawned, the place where it died.
         public UnityEvent<Enemy> OnEnemyDeath;
 
+        ///Params: The new score
+        public UnityEvent<int> OnScoreIncreased;
+
     }
 }

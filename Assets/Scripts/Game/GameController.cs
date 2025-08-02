@@ -17,9 +17,12 @@ namespace Game {
         public float waveDelayTimer = 5f;
         public bool tickDelay = true;
 
+        public int score;
+
         public void Start() {
             waveDelayTimer = timeBetweenWaves;
             waveStateHandler.StartGame();
+            score = 0;
         }
         
         
@@ -48,6 +51,9 @@ namespace Game {
             }
 
             if (enemyList.Count == 0) waveStateHandler.SubWaveDone();
+
+            score += 1;
+            gameEventBroadcaster.OnScoreIncreased.Invoke(score);
         }
     }
 }
