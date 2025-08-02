@@ -17,6 +17,8 @@ namespace Enemies {
 
         public bool canMove = false;
 
+        private bool flag = false;
+
         public void DestroyEnemy()
         {
             //if (m_isDead) return;
@@ -24,13 +26,24 @@ namespace Enemies {
 
             if(waitToDie == 0) EnemyDied();
             anim.Play("fall");
+            print(transform.position);
+            //FindObjectOfType<FloatingTextManager>().ShowFloatingSprite(transform.position);
 
             //Allow time for the enemy to fall through the ice
             waitToDie += Time.deltaTime;
             if (waitToDie >= 5)
                 Destroy(gameObject);
         }
-        
+
+        //void OnCollisionExit(Collision other)
+        //{
+        //    if(other.gameObject.layer == 7 && flag == false)
+        //    {
+        //        FindObjectOfType<FloatingTextManager>().ShowFloatingSprite(transform.position);
+        //        flag = true;
+        //    }
+        //}
+
         public void Start() {
             SetCanMove(false); //Starting value false
             EnemySpawned();
@@ -49,6 +62,11 @@ namespace Enemies {
             if (transform.position.y <= m_killHeight)
             {
                 DestroyEnemy();
+            }
+            else if (transform.position.y <= -3f && flag == false)
+            {
+                FindObjectOfType<FloatingTextManager>().ShowFloatingSprite(transform.position);
+                flag = true;
             }
         }
 
