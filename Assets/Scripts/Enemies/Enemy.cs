@@ -3,41 +3,49 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Enemies {
-    public abstract class Enemy : MonoBehaviour {
+    public abstract class Enemy : HoleFallable
+    {
         public GameEventBroadcaster gameEventBroadcaster;
 
         public Rigidbody rb;
 
-        public float m_killHeight = -10f;
         public bool m_isDead = false;
         public bool m_waiting; //default to true
 
         public Animator anim;
-        float waitToDie = 0f;
 
         public bool canMove = false;
+        
 
         public void DestroyEnemy()
         {
-            //if (m_isDead) return;
+            if (m_isDead) return;
             m_isDead = true;
 
-            if(waitToDie == 0) EnemyDied();
-            anim.Play("fall");
+            EnemyDied();
+            FloatingTextManager.instance.ShowFloatingSprite(fallPos);
 
-            //Allow time for the enemy to fall through the ice
-            waitToDie += Time.deltaTime;
-            if (waitToDie >= 5)
-                Destroy(gameObject);
+            Destroy(gameObject);
         }
-        
-        public void Start() {
+
+        //void OnCollisionExit(Collision other)
+        //{
+        //    if(other.gameObject.layer == 7 && flag == false)
+        //    {
+        //        FindObjectOfType<FloatingTextManager>().ShowFloatingSprite(transform.position);
+        //        flag = true;
+        //    }
+        //}
+
+        public void Start()
+        {
             SetCanMove(false); //Starting value false
             EnemySpawned();
-            anim = gameObject.GetComponent<Animator>();
+            //anim = gameObject.GetComponent<Animator>(); //Commented out so that this can be set in inspector, hopefully this doesnt break anything
             m_waiting = false; //TODO: change to true when implemented with waves
             rb = GetComponent<Rigidbody>();
-            if (!rb) {
+            if (!rb)
+            {
                 Debug.Log("No rigidbody on this object! Please attach one!");
             }
         }
@@ -46,7 +54,7 @@ namespace Enemies {
         {
             if (PauseManager.paused) return;
 
-            if (transform.position.y <= m_killHeight)
+            if (transform.position.y <= GameController.KILL_HEIGHT && !m_isDead)
             {
                 DestroyEnemy();
             }
@@ -59,33 +67,43 @@ namespace Enemies {
             //print(Vector2.Distance(enemyLoc, targetLoc)); //Debug
             return Vector2.Distance(enemyLoc, targetLoc);
         }
-        
+
         /// <summary>
         ///     Broadcasts that the enemy was spawned to the rest of the game.
         ///     PLEASE FOR THE LOVE OF GOD CALL THIS FUNCTION WHEN THE ENEMY IS SPAWNED.
         ///     ALSO CALL IT AFTER YOU INSTANTIATE THE ENEMY OBJECT.
         /// </summary>
-        public void EnemySpawned() {
+        public void EnemySpawned()
+        {
             gameEventBroadcaster.OnEnemySpawn.Invoke(this);
         }
 
-        public void EnemySent() {
+        public void EnemySent()
+        {
             gameEventBroadcaster.OnEnemySend.Invoke(this);
         }
-        
+
         /// <summary>
         ///     Broadcasts that the enemy died to the rest of the game.
         ///     PLEASE FOR THE LOVE OF GOD CALL THIS FUNCTION WHEN THE ENEMY DIES FOR WHATEVER REASON.
         ///     ALSO CALL IT BEFORE YOU DESTROY THE ENEMY.
         /// </summary>
-        public void EnemyDied() {
+        public void EnemyDied()
+        {
             gameEventBroadcaster.OnEnemyDeath.Invoke(this);
         }
 
-        public void SetCanMove(bool newValue) {
+        public void SetCanMove(bool newValue)
+        {
             canMove = newValue;
             if (newValue) rb.constraints = RigidbodyConstraints.FreezeRotation;
             else rb.constraints = RigidbodyConstraints.FreezeAll;
+        }
+
+        public new void Fall()
+        {
+            base.Fall();
+            anim.Play("fall");
         }
     }
 }

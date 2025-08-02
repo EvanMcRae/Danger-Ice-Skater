@@ -3,6 +3,7 @@
 namespace Utility {
     public class DelayDestroy : MonoBehaviour {
         public float destroyDelay;
+        public bool destroyOnPlayerCollision;
         private float time;
 
         public void Start() {
@@ -17,8 +18,8 @@ namespace Utility {
                 Destroy(gameObject);
             }
         }
-        public void OnCollisionEnter(Collision other)
-        {
+        public void OnCollisionEnter(Collision other) {
+            if (!destroyOnPlayerCollision) return;
             if (other.gameObject.CompareTag("Player") && destroyDelay > 0)
             {
                 Destroy(gameObject);

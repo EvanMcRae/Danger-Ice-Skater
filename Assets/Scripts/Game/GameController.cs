@@ -16,6 +16,7 @@ namespace Game {
         public float timeBetweenWaves = 5f;
         public float waveDelayTimer = 5f;
         public bool tickDelay = true;
+        public static float KILL_HEIGHT = -4f;
 
         public int score;
 

@@ -61,7 +61,7 @@ namespace Waves {
         }
 
         public void SubWaveDone() {
-            Debug.Log("Sub wave " + ws.currentSubWave + " done!");
+            Debug.Log("Sub wave " + ws.currentSubWaveCount + " done!");
             //When finished with a subwave, send the next subwave if its avalible.
             if (!finalSubwave) { //Is there a next subwave?
                 SendAndSpawnNewSubWaveState();

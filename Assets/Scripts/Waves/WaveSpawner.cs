@@ -13,35 +13,44 @@ namespace Waves {
 
         public List<WaveSpawnPoint> validWaveSpawnPoints;
         public List<WaveSpawnPoint> invalidWaveSpawnPoints;
+
+        public Wave currentWave;
         
         /// <summary>
         ///     The current wave index.
         /// </summary>
-        public int currentWave = -1;
+        public int currentWaveCount = -1;
         
         /// <summary>
         ///     The current sub wave index.
         /// </summary>
-        public int currentSubWave = -1;
+        public int currentSubWaveCount = -1;
+
+        public static System.Action WaveStarted;
+
         
         /// <summary>
         ///     Progresses the spawner to the next wave. Does not do additional checks.
         /// </summary>
         /// <returns>True if the wave was properly progressed, else false.</returns>
         public bool NextWave() {
-            if (waveManagerSO.waves.Count <= currentWave + 1) {
-                Debug.Log("All waves cleared!");
-                return false; //All waves cleared!
+            if (waveManagerSO.staticWaves.Count <= currentWaveCount + 1) {
+                currentWave = waveManagerSO.GenerateWave(currentSubWaveCount);
             }
-            currentWave++;
-            geb.OnWaveStart.Invoke(currentWave);
-            if (waveManagerSO.waves[currentWave].subWaves.Count == 0) {
+            else {
+                currentWave = waveManagerSO.staticWaves[currentWaveCount + 1];
+            }
+            currentWaveCount++;
+            geb.OnWaveStart.Invoke(currentWaveCount);
+            if (currentWave.subWaves.Count == 0) {
                 Debug.Log("This wave didn't have any subwaves... What?");
                 return false; //No subwaves?
             }
             
-            Debug.Log("Next wave!" + currentWave);
-            currentSubWave = -1;
+            Debug.Log("Next wave!" + currentWaveCount);
+            WaveStarted?.Invoke();
+
+            currentSubWaveCount = -1;
             return true;
         }
 
@@ -51,11 +60,11 @@ namespace Waves {
         /// </summary>
         /// <returns>True if the sub wave was properly progressed, else false.</returns>
         public bool NextSubWave(bool spawnEnemies = false) {
-            if (waveManagerSO.waves[currentWave].subWaves.Count <= currentSubWave + 1) {
+            if (currentWave.subWaves.Count <= currentSubWaveCount + 1) {
                 Debug.Log("All subwaves cleared!");
                 return false; //All sub-waves cleared!
             }
-            currentSubWave++;
+            currentSubWaveCount++;
             if (spawnEnemies) SpawnSubWave();
             return true;
         }
@@ -64,9 +73,9 @@ namespace Waves {
         ///     Spawns the enemies in the current sub wave.
         /// </summary>
         public void SpawnSubWave() {
-            Debug.Log("Spawning sub wave " + currentSubWave);
-            Wave wave = waveManagerSO.waves[currentWave];
-            SubWave subWave = wave.subWaves[currentSubWave];
+            Debug.Log("Spawning sub wave " + currentSubWaveCount);
+            Wave wave = currentWave;
+            SubWave subWave = wave.subWaves[currentSubWaveCount];
 
             bool valid = subWave.IsSubWaveInSize(validWaveSpawnPoints.Count); //NOTE THIS WORKS BECAUSE ALL ENEMIES SHOULD BE DEAD (and all spawn points valid) FOR THIS TO BE CALLED!
             if (!valid) {
@@ -92,7 +101,7 @@ namespace Waves {
         }
 
         public void SendSubWave() {
-            Debug.Log("Sending sub wave " + currentSubWave);
+            Debug.Log("Sending sub wave " + currentSubWaveCount);
             foreach (WaveSpawnPoint spawnPoint in invalidWaveSpawnPoints) {
                 spawnPoint.SendEnemy();
                 validWaveSpawnPoints.Add(spawnPoint);
@@ -123,8 +132,8 @@ namespace Waves {
             List<EnemyListEntry> enemyListCopy = new List<EnemyListEntry>(enemyList);
             
             //Add random enemies from possible to the valid enemies list
-            
-            while (credits > 0) {
+            int enemiesSpawned = 0;
+            while (credits > 0 && enemiesSpawned < validWaveSpawnPoints.Count) {
                 //Get a random enemy
                 int random = Random.Range(0, validEnemies.Count);
 
@@ -148,17 +157,14 @@ namespace Waves {
                 //If the enemy wasn't already added, add it to the list of enemies to spawn.
                 if (!found) enemyListCopy.Add(new EnemyListEntry(validEnemies[random].enemyType, 1));
                 
+                enemiesSpawned++;
             }
 
             return enemyListCopy;
         }
-
-        public bool IsNextWaveAvailable() {
-            return currentWave + 1 < waveManagerSO.waves.Count;
-        }
         
         public bool IsNextSubWaveAvailable() {
-            return currentSubWave + 1 < waveManagerSO.waves[currentWave].subWaves.Count;
+            return currentSubWaveCount + 1 < currentWave.subWaves.Count;
         }
     }
 }
