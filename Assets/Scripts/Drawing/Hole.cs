@@ -82,7 +82,7 @@ public class Hole : MonoBehaviour
     {
         if (m_isDead || m_isFalling || m_isReplenishing) return;
 
-        if (ContainsBounds(other.collider.bounds)) {
+        if (ContainsBounds(other.collider.bounds)) {    
             other.gameObject.GetComponent<Rigidbody>().excludeLayers = int.MaxValue; //Ignore all layers
             other.gameObject.GetComponent<Rigidbody>().linearVelocity.Normalize();
             other.gameObject.GetComponent<Rigidbody>().linearVelocity /= 5;
@@ -90,17 +90,24 @@ public class Hole : MonoBehaviour
             if (other.gameObject.TryGetComponent<PlayerController>(out var player))
             {
                 PlayerStatsHandler sh = player.GetComponent<PlayerStatsHandler>();
-                if (sh.Damage(2)) geb.OnPlayerDeathByHit.Invoke(sh); // TODO: This feels bad, you should die when you touch water
-                else
+                geb.PlayerFellThroughIce.Invoke(player); //Event invocation.
+                player.fallThroughHoleTimer = player.fallThroughHoleTime;
+                PlayerController.fallThroughHole = true;
+
+                // Make sure hole sticks around long enough for the player to rise through it
+                if (HOLE_LIFETIME + m_spawnTime - Time.time < 2f)
                 {
-                    geb.PlayerFellThroughIce.Invoke(player); //Event invocation.
-                    PlayerController.gameOvered = true;
-                    player.fallThroughHoleTimer = player.fallThroughHoleTime;
+                    m_spawnTime += 2f;
                 }
             }
             else if (other.gameObject.TryGetComponent<Enemy>(out var enemy))
             {
                 enemy.Fall();
+                // Give the enemy time to fall
+                if (HOLE_LIFETIME + m_spawnTime - Time.time < 0.3f)
+                {
+                    m_spawnTime += 0.3f;
+                }
             }
         }
     }
@@ -134,17 +141,18 @@ public class Hole : MonoBehaviour
     public bool ContainsBounds(Bounds otherBounds)
     {
         Bounds myBounds = m_meshCollider.bounds;
-        Vector3 minA = otherBounds.min;
-        minA.y = myBounds.min.y;
-        Vector3 maxA = otherBounds.max;
-        maxA.y = myBounds.max.y;
-        Vector3 minB = minA;
-        minB.x = maxA.x;
-        Vector3 maxB = maxA;
-        maxB.z = minA.z;
+        Vector3 minXminZ = otherBounds.min;
+        Vector3 maxXmaxZ = otherBounds.max;
+        minXminZ.y = myBounds.min.y;
+        maxXmaxZ.y = myBounds.min.y;
 
-        return GeometryUtils.PointInPolygon(minA, m_vertices) && GeometryUtils.PointInPolygon(maxA, m_vertices)
-            && GeometryUtils.PointInPolygon(minB, m_vertices) && GeometryUtils.PointInPolygon(maxB, m_vertices);
+        Vector3 minXmaxZ = minXminZ;
+        minXmaxZ.z = maxXmaxZ.z;
+        Vector3 maxXminZ = maxXmaxZ;
+        maxXminZ.z = minXminZ.z;
+
+        return GeometryUtils.PointInPolygon(minXminZ, m_vertices) && GeometryUtils.PointInPolygon(maxXmaxZ, m_vertices)
+            && GeometryUtils.PointInPolygon(minXmaxZ, m_vertices) && GeometryUtils.PointInPolygon(maxXminZ, m_vertices);
     }
 
     private List<Vector3> GetVertices()
