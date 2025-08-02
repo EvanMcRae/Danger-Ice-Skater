@@ -4998,6 +4998,7 @@ MonoBehaviour:
   respawnHeight: 3
   fallThroughHoleTimer: 0
   fallThroughHoleTime: 0.5
+  fallThroughHoleDamaged: 0
   arenaFloor: {fileID: 0}
   particles: {fileID: 7915522442199613994}
   anim: {fileID: 462644127917268244}
@@ -5039,7 +5040,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
       propertyPath: m_LocalPosition.z
