@@ -45,6 +45,11 @@ public class PlayerController : MonoBehaviour
 
     public ParticleSystem particles;
 
+    [SerializeField]
+    public Animator anim;
+
+    private bool inAir = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -86,6 +91,15 @@ public class PlayerController : MonoBehaviour
 
         if (fallThroughHole) {
             fallThroughHoleTimer -= Time.deltaTime;
+        }
+
+        Vector2 horizVel = new(rb.linearVelocity.x, rb.linearVelocity.z);
+        if (horizVel.magnitude >= 0.8f)
+        {
+            anim.SetBool("isMoving", true);
+        }
+        else { 
+            anim.SetBool("isMoving", false);
         }
     }
 
@@ -171,7 +185,7 @@ public class PlayerController : MonoBehaviour
 
 
         Vector3 moveDir = new Vector3(horizontal * acceleration, 0, vertical * acceleration);
-        
+
         // Debug.Log(moveDir);
         rb.AddForce(moveDir);
 
@@ -193,6 +207,13 @@ public class PlayerController : MonoBehaviour
         else if (other.gameObject.layer == 7) // ice
         {
             isTouchingGround = true;
+            if (inAir)
+            {
+                print("what the hell");
+                inAir = false;
+                anim.ResetTrigger("jump");
+                anim.SetTrigger("land");
+            }
         }
     }
 
@@ -216,5 +237,8 @@ public class PlayerController : MonoBehaviour
         if (!isTouchingGround) return;
         rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
         rb.AddForce(Vector3.up * dashForce, ForceMode.Impulse);
+        anim.SetTrigger("jump");
+        anim.ResetTrigger("land");
+        inAir = true;
     }
 }
