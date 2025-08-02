@@ -751,7 +751,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7891002362754879681, guid: c2d6af4a74da97649aa016e2ce294297, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.4
       objectReference: {fileID: 0}
     - target: {fileID: 7891002362754879681, guid: c2d6af4a74da97649aa016e2ce294297, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1103,6 +1103,7 @@ MonoBehaviour:
   timeBetweenWaves: 5
   waveDelayTimer: 0
   tickDelay: 1
+  score: 0
 --- !u!4 &343089340
 Transform:
   m_ObjectHideFlags: 0
