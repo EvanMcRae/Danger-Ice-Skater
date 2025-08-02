@@ -15,6 +15,10 @@ MonoBehaviour:
   waves:
   - subWaves:
     - enemies:
+      - enemy: 1
+        count: 5
+      randomEnemyCredits: 0
+    - enemies:
       - enemy: 4
         count: 2
       randomEnemyCredits: 0

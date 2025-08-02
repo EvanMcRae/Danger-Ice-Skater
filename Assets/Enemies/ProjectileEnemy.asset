@@ -15,4 +15,4 @@ MonoBehaviour:
   enemy: {fileID: 6887986620278232493, guid: 209d042c41bf89a43932c70def9312f1, type: 3}
   enemyType: 1
   creditCost: 10
-  enemyLevel: 1
+  enemyLevel: 2
