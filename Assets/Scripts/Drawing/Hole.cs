@@ -78,8 +78,7 @@ public class Hole : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay(Collision other)
-    {
+    private void OnCollisionStay(Collision other) {
         if (m_isDead || m_isFalling || m_isReplenishing) return;
 
         if (ContainsBounds(other.collider.bounds)) {
@@ -87,19 +86,17 @@ public class Hole : MonoBehaviour
             other.gameObject.GetComponent<Rigidbody>().linearVelocity.Normalize();
             other.gameObject.GetComponent<Rigidbody>().linearVelocity /= 5;
 
-            if (other.gameObject.TryGetComponent<PlayerController>(out var player))
-            {
+            if (other.gameObject.TryGetComponent<PlayerController>(out var player)) {
                 PlayerStatsHandler sh = player.GetComponent<PlayerStatsHandler>();
-                if (sh.Damage(2)) geb.OnPlayerDeathByHit.Invoke(sh); // TODO: This feels bad, you should die when you touch water
-                else
-                {
+                if (sh.Damage(2))
+                    geb.OnPlayerDeathByHit.Invoke(sh); // TODO: This feels bad, you should die when you touch water
+                else {
                     geb.PlayerFellThroughIce.Invoke(player); //Event invocation.
                     PlayerController.gameOvered = true;
                     player.fallThroughHoleTimer = player.fallThroughHoleTime;
                 }
             }
-            else if (other.gameObject.TryGetComponent<Enemy>(out var enemy))
-            {
+            else if (other.gameObject.TryGetComponent<HoleFallable>(out var enemy) || other.gameObject.CompareTag("Enemy")) {
                 enemy.Fall();
             }
         }

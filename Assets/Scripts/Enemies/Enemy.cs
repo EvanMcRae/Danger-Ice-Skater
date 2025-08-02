@@ -3,7 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Enemies {
-    public abstract class Enemy : MonoBehaviour
+    public abstract class Enemy : HoleFallable
     {
         public GameEventBroadcaster gameEventBroadcaster;
 
@@ -15,8 +15,7 @@ namespace Enemies {
         public Animator anim;
 
         public bool canMove = false;
-
-        private Vector3 fallPos;
+        
 
         public void DestroyEnemy()
         {
@@ -101,10 +100,10 @@ namespace Enemies {
             else rb.constraints = RigidbodyConstraints.FreezeAll;
         }
 
-        public void Fall()
+        public new void Fall()
         {
+            base.Fall();
             anim.Play("fall");
-            fallPos = transform.position;
         }
     }
 }
