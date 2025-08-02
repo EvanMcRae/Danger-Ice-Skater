@@ -1030,7 +1030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3094882671754754662, guid: ce1359b76518a234b915b4445d75603b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1898,7 +1898,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Luke Schultz\r\nAmanuel Seifu\r\nHuang Dawei\r\nBen Langsdale (Shadow
-    Volume)\r"
+    Volume)\nCrow Witch (crowwitch.bsky.social)\n\rMixamo"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
