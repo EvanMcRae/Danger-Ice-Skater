@@ -1197,6 +1197,10 @@ PrefabInstance:
       propertyPath: hd
       value: 
       objectReference: {fileID: 1817392117}
+    - target: {fileID: 7892994341498651269, guid: c2d6af4a74da97649aa016e2ce294297, type: 3}
+      propertyPath: invincibilityTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7915522442199613994, guid: c2d6af4a74da97649aa016e2ce294297, type: 3}
       propertyPath: ShapeModule.angle
       value: 25
