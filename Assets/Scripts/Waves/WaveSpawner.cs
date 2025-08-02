@@ -4,6 +4,7 @@ using Game;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
 
 namespace Waves {
     public class WaveSpawner : MonoBehaviour {
@@ -13,6 +14,8 @@ namespace Waves {
 
         public List<WaveSpawnPoint> validWaveSpawnPoints;
         public List<WaveSpawnPoint> invalidWaveSpawnPoints;
+
+        public static Action WaveStarted;
         
         /// <summary>
         ///     The current wave index.
@@ -41,6 +44,7 @@ namespace Waves {
             }
             
             Debug.Log("Next wave!" + currentWave);
+            WaveStarted?.Invoke();
             currentSubWave = -1;
             return true;
         }
@@ -126,7 +130,7 @@ namespace Waves {
             
             while (credits > 0) {
                 //Get a random enemy
-                int random = Random.Range(0, validEnemies.Count);
+                int random = UnityEngine.Random.Range(0, validEnemies.Count);
 
                 //Remove the enemy trying to be selected if the enemy is too expensive.
                 if (credits < validEnemies[random].enemyData.creditCost) {
