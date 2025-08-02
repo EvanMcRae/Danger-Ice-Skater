@@ -54,7 +54,7 @@ namespace Enemies {
         {
             if (PauseManager.paused) return;
 
-            if (transform.position.y <= GameController.KILL_HEIGHT && !m_isDead)
+            if (transform.position.y <= (GameController.KILL_HEIGHT + 1f) && !m_isDead)
             {
                 DestroyEnemy();
             }
