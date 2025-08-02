@@ -26,6 +26,7 @@ namespace Enemies
         public new void Start()
         {
             base.Start();
+            trapTimer = 3;
             /*
             idleDelay = idleTime;
             placingTrap = false;
