@@ -272,6 +272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTypeManager: {fileID: 11400000, guid: 0981b7ed99cb7f1439d28cb8d896121a, type: 2}
   waveManagerSO: {fileID: 11400000, guid: 7d0ae3bb436f6e14caee43a21c38f8f8, type: 2}
+  geb: {fileID: 0}
   validWaveSpawnPoints: []
   invalidWaveSpawnPoints: []
   currentWave: -1
@@ -295,6 +296,7 @@ MonoBehaviour:
   timeBetweenWaves: 5
   waveDelayTimer: 0
   tickDelay: 1
+  score: 0
 --- !u!4 &1068397258
 Transform:
   m_ObjectHideFlags: 0
@@ -310,6 +312,93 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1111264161
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.9726076
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.5521437
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      propertyPath: m_Name
+      value: ice_skater
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1111264163}
+  m_SourcePrefab: {fileID: 100100000, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+--- !u!1 &1111264162 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+  m_PrefabInstance: {fileID: 1111264161}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1111264163
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111264162}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 686999739d978404eb85560b839b00c2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1185051413
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52eb1e54064f51d4fb76513879756782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lower: 1
+  level: 0
 --- !u!1 &1307965684
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,3 +845,4 @@ SceneRoots:
   - {fileID: 1068397258}
   - {fileID: 2008202751}
   - {fileID: 2033462331}
+  - {fileID: 1111264161}
