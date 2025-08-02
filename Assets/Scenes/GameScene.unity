@@ -509,7 +509,7 @@ MonoBehaviour:
   m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_DeselectOnBackgroundClick: 1
+  m_DeselectOnBackgroundClick: 0
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
   m_ScrollDeltaPerTick: 6
@@ -525,7 +525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 254487683}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &141492649
@@ -632,6 +632,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d6af4a74da97649aa016e2ce294297, type: 3}
+--- !u!1 &254487683 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8546162174043694085, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
+  m_PrefabInstance: {fileID: 568803943}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &258336075 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5328679800387413174, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
