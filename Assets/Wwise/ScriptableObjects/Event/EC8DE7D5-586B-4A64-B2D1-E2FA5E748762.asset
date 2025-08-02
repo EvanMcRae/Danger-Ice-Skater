@@ -15,5 +15,4 @@ MonoBehaviour:
   objectName: test
   id: 3157003241
   guid: EC8DE7D5-586B-4A64-B2D1-E2FA5E748762
-  AutoBank: {fileID: 0}
   IsInUserDefinedSoundBank: 1
