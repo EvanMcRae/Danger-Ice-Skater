@@ -35,7 +35,7 @@ namespace Waves {
                 currentWave = waveManagerSO.GenerateWave(currentSubWaveCount);
             }
             else {
-                currentWave = waveManagerSO.staticWaves[currentWaveCount];
+                currentWave = waveManagerSO.staticWaves[currentWaveCount + 1];
             }
             currentWaveCount++;
             geb.OnWaveStart.Invoke(currentWaveCount);
