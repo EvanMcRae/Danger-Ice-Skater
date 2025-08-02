@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floatingSpritePrefab: {fileID: 3353007841101867698, guid: 71a77bc55f8cd554496f65b8d525ccdc, type: 3}
-  canvas: {fileID: 3021978165765002293}
+  parent: {fileID: 0}
 --- !u!1 &509377191849114561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1764,6 +1764,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8449904079321713526}
   - {fileID: 1092889462803827402}
   - {fileID: 3770998750678519683}
   - {fileID: 1602600392309418474}
@@ -1771,7 +1772,6 @@ RectTransform:
   - {fileID: 3264063003228341331}
   - {fileID: 2619760564447892373}
   - {fileID: 2466120079908588248}
-  - {fileID: 8449904079321713526}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
