@@ -5,7 +5,13 @@ using System;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class PauseManager : MonoBehaviour
 {
@@ -16,6 +22,15 @@ public class PauseManager : MonoBehaviour
 
     [SerializeField]
     string MainMenuName;
+
+    [SerializeField]
+    public EventSystem eventSystem;
+
+    [SerializeField]
+    public GameObject settingsBackButton;
+
+    [SerializeField]
+    public GameObject settingsButton;
 
     public bool paused;
     private bool menuOpen = false;
@@ -72,12 +87,14 @@ public class PauseManager : MonoBehaviour
     {
         TurnOffMenus();
         Menus[0].SetActive(true);
+        eventSystem.SetSelectedGameObject(settingsButton);
     }
 
     public void Settings()
     {
         TurnOffMenus();
         ActivateMenuWithAnimation(1);
+        eventSystem.SetSelectedGameObject(settingsBackButton);
     }
 
     public void MainMenu()
