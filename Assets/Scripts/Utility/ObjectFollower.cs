@@ -9,6 +9,10 @@ public class ObjectFollower : MonoBehaviour
     {
         if (PauseManager.paused) return;
 
+        if (target.TryGetComponent<PlayerController>(out var player))
+        {
+            if (PlayerController.fallThroughHole && player.transform.position.y < -1.5f) return;
+        }
         transform.position = target.transform.position;
     }
 }
