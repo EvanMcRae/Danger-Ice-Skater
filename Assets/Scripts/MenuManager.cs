@@ -6,6 +6,13 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 public class MenuManager : MonoBehaviour
 {
     [SerializeField]
@@ -15,6 +22,18 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField]
     string NextSceneName;
+
+    [SerializeField]
+    public EventSystem eventSystem;
+
+    [SerializeField]
+    public GameObject instructionsBackButton;
+
+    [SerializeField]
+    public GameObject creditsBackButton;
+
+    [SerializeField]
+    public GameObject playButton;
 
     private void Start()
     {
@@ -39,18 +58,21 @@ public class MenuManager : MonoBehaviour
         TurnOffMenus();
 
         Menus[0].SetActive(true);
+        eventSystem.SetSelectedGameObject(playButton);
     }
 
     public void Credits()
     {
         TurnOffMenus();
         ActivateMenuWithAnimation(1);
+        eventSystem.SetSelectedGameObject(creditsBackButton);
     }
 
     public void Instructions()
     {
         TurnOffMenus();
         ActivateMenuWithAnimation(2);
+        eventSystem.SetSelectedGameObject(instructionsBackButton);
     }
 
     public void QuitGame()

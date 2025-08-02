@@ -3742,6 +3742,10 @@ MonoBehaviour:
   - {fileID: 441516024}
   - {fileID: 871281765}
   NextSceneName: GameScene
+  eventSystem: {fileID: 1570478796}
+  instructionsBackButton: {fileID: 635750831}
+  creditsBackButton: {fileID: 1825603181}
+  playButton: {fileID: 1815594976}
 --- !u!1 &1848573764
 GameObject:
   m_ObjectHideFlags: 0

@@ -377,6 +377,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 104786446}
   m_Mesh: {fileID: -1550514412580984892, guid: 1b9067f067616cb45adef64932931ca8, type: 3}
+--- !u!1 &111449048 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6045652433369435514, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
+  m_PrefabInstance: {fileID: 568803943}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &120337691
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,6 +1260,22 @@ PrefabInstance:
       propertyPath: psh
       value: 
       objectReference: {fileID: 1965001070}
+    - target: {fileID: 8516922417927150815, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
+      propertyPath: eventSystem
+      value: 
+      objectReference: {fileID: 141492648}
+    - target: {fileID: 8516922417927150815, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
+      propertyPath: settingsButton
+      value: 
+      objectReference: {fileID: 111449048}
+    - target: {fileID: 8516922417927150815, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
+      propertyPath: settingsBackButton
+      value: 
+      objectReference: {fileID: 772663253}
+    - target: {fileID: 8516922417927150815, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
+      propertyPath: instructionsBackButton
+      value: 
+      objectReference: {fileID: 772663253}
     - target: {fileID: 8885974368995231455, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1350,6 +1371,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696826985}
   m_Mesh: {fileID: -1550514412580984892, guid: 1b9067f067616cb45adef64932931ca8, type: 3}
+--- !u!1 &772663253 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5710936813729643994, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
+  m_PrefabInstance: {fileID: 568803943}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &854686402
 GameObject:
   m_ObjectHideFlags: 0
