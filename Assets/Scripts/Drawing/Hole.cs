@@ -5,10 +5,10 @@ using Player;
 using UnityEngine;
 using Unity.XR.CoreUtils;
 using Unity.VisualScripting;
+using Enemies;
 
 public class Hole : MonoBehaviour
 {
-    private float m_killHeight = -10;
     private float m_spawnTime;
     private bool m_isDead = false, m_isFalling = false, m_isReplenishing = false;
     [SerializeField] private Material m_maskMat, m_refillMat;
@@ -65,7 +65,7 @@ public class Hole : MonoBehaviour
         if (PauseManager.paused) return;
 
         if (!m_isDead && !m_isReplenishing &&
-            ((!m_isFalling && Time.time > HOLE_LIFETIME + m_spawnTime) || (m_isFalling && transform.position.y < m_killHeight)))
+            ((!m_isFalling && Time.time > HOLE_LIFETIME + m_spawnTime) || (m_isFalling && transform.position.y < GameController.KILL_HEIGHT)))
         {
             if (!m_isFalling && !m_isReplenishing)
             {
@@ -91,11 +91,16 @@ public class Hole : MonoBehaviour
             {
                 PlayerStatsHandler sh = player.GetComponent<PlayerStatsHandler>();
                 if (sh.Damage(2)) geb.OnPlayerDeathByHit.Invoke(sh); // TODO: This feels bad, you should die when you touch water
-                else {
+                else
+                {
                     geb.PlayerFellThroughIce.Invoke(player); //Event invocation.
                     PlayerController.gameOvered = true;
                     player.fallThroughHoleTimer = player.fallThroughHoleTime;
                 }
+            }
+            else if (other.gameObject.TryGetComponent<Enemy>(out var enemy))
+            {
+                enemy.Fall();
             }
         }
     }
