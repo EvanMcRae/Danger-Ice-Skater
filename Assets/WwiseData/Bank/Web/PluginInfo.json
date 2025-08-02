@@ -4,6 +4,13 @@
   "BasePlatform": "Web",
   "PluginLibs": [
    {
+    "LibName": "Wwise Silence",
+    "LibId": "6619138",
+    "Type": "Source",
+    "DLL": "AkSilenceGenerator",
+    "StaticLib": "AkSilenceSource"
+   },
+   {
     "LibName": "Wwise Pitch Shifter",
     "LibId": "8912899",
     "Type": "Effect",
@@ -21,6 +28,6 @@
     "Type": "AudioDevice"
    }
   ],
-  "FileHash": "{7661983F-99A0-B60D-5200-41F888AF08A9}"
+  "FileHash": "{936FE0DF-8D0F-6A57-5FEA-D6D9C27E8422}"
  }
 }

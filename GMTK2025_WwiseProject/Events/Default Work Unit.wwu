@@ -25,6 +25,16 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{25C78767-6925-42C6-BD98-68999D378CD5}" ShortID="1014447691">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="LongSkate" ID="{DC7DFB9E-D900-47A0-BAB2-21F3FB0E120F}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="PlayerSplash" ID="{9C7F0E4A-A25E-429A-AD45-6E5F88EC7A85}">
@@ -49,18 +59,32 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="PlayerGlide" ID="{E0797177-A469-4871-83E2-5C12C55AD17C}">
+							<ChildrenList>
+								<Action Name="" ID="{B8675F7B-5B30-4393-AC7E-9F523B5B82A5}" ShortID="117496139">
+									<PropertyList>
+										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="LongSkate" ID="{DC7DFB9E-D900-47A0-BAB2-21F3FB0E120F}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Enemy" ID="{7F29F9C0-F013-4152-8820-0F6168AB4BAE}" ShortID="265989790">
 					<ChildrenList>
 						<Folder Name="Shark" ID="{CFE5DFBD-95D1-43A7-88C1-92A2B31C95ED}" ShortID="117858914">
 							<ChildrenList>
-								<Event Name="StartChomp" ID="{041933A0-D803-44A4-80A0-3EABFB07A647}">
+								<Event Name="SharkSpawn" ID="{041933A0-D803-44A4-80A0-3EABFB07A647}">
 									<ChildrenList>
 										<Action Name="" ID="{D114C660-FB58-487A-9AA3-A87054947D7A}" ShortID="683508590">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Chomp" ID="{9735D443-A95B-4928-8154-C270014E2B61}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+													<ObjectRef Name="Shark Moving" ID="{5C879BEB-7512-438E-A57B-39260E75FEB4}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -75,6 +99,17 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
+										<Action Name="" ID="{F3E5DB6A-B8F6-4410-885C-65FF18E50178}" ShortID="919007482">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="Delay" Type="Real64" Value="0.07"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Shark Moving" ID="{5C879BEB-7512-438E-A57B-39260E75FEB4}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
 								</Event>
 								<Event Name="EndChomp" ID="{E45E10AF-587C-42B4-A988-B3AE197CF032}">
@@ -85,7 +120,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Chomp" ID="{9735D443-A95B-4928-8154-C270014E2B61}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+													<ObjectRef Name="Chomps" ID="{6449FC62-6D7B-40F8-9F72-5256377BC5AE}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -117,6 +152,17 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="PenguinStep" ID="{246DC4E6-383D-43C5-9A95-72CE83DC405C}">
+									<ChildrenList>
+										<Action Name="" ID="{A2923120-F244-4BFB-BFE8-197AE48246EA}" ShortID="309209213">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="StepsPenguin" ID="{66361FB9-1694-4459-A39F-F7880099095E}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Hockey" ID="{257AF942-7EFA-492A-8E47-058CCED76509}" ShortID="601028921">
@@ -134,8 +180,83 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="HockeyStep" ID="{93D161C4-0F1F-4426-87B4-4C057A1C7988}">
+									<ChildrenList>
+										<Action Name="" ID="{0C50CF3A-7EC3-4D5F-B7CA-C36C2F5142E8}" ShortID="30278357">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="StepsHockey" ID="{59DBDA7B-C554-420A-90B4-F46E92505748}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
+						<Folder Name="Fox" ID="{F522BA2A-FCE4-48A8-A68F-0CF561DA1C1C}" ShortID="631702473">
+							<ChildrenList>
+								<Event Name="FoxFall" ID="{2BAD48DC-A604-489C-92DD-E1B5994DB13A}">
+									<ChildrenList>
+										<Action Name="" ID="{061AED1D-09CE-40C1-9AB0-0CCAEA5C8148}" ShortID="498780014">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Fox Fall" ID="{71FE74CE-AB36-4D4C-AA34-94599BD85464}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="FoxStep" ID="{DB8A65FF-6D9D-4F77-88D3-BBA9FE0CFFD0}">
+									<ChildrenList>
+										<Action Name="" ID="{B10C67ED-41FD-4E0F-9B6F-57A8B64DA0E6}" ShortID="1044472088">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="StepsFox" ID="{180E6A81-03A3-46A9-8634-2AE830C378AB}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="UI" ID="{8F50C178-3D00-4210-AABF-5319FA168BE7}" ShortID="955776463">
+					<ChildrenList>
+						<Event Name="PauseGame" ID="{3E1FF75B-A95C-4AAC-8393-9E03EFB89250}">
+							<ChildrenList>
+								<Action Name="" ID="{7DCC0670-B1E2-47DB-A772-F4E9397C34AB}" ShortID="259650832">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="8"/>
+									</PropertyList>
+									<ReferenceList/>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="ResumeGame" ID="{6EE39B59-5463-4465-AE39-2CF5CFD89D1F}">
+							<ChildrenList>
+								<Action Name="" ID="{AE4B2F0C-7E77-4892-AC1B-EBFDB72481CF}" ShortID="703187481">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="10"/>
+									</PropertyList>
+									<ReferenceList/>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Testbreak" ID="{9FE179F0-9010-49FE-8F27-7F9329BDBB6D}">
+							<ChildrenList>
+								<Action Name="" ID="{8AC0C797-8ED9-49CD-8171-3A6ECBCF98F3}" ShortID="899035104">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="34"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX" ID="{82BD75D9-95EE-495F-88CE-7A658BA55E69}" WorkUnitID="{523CB2DE-352A-4AFA-9D31-03D6E719CF23}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

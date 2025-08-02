@@ -22,6 +22,15 @@
 						</GameParameter>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Enemies" ID="{29D36F8C-3E10-4D14-88A4-D0495C7C29FD}" ShortID="173311868">
+					<ChildrenList>
+						<GameParameter Name="PenguinDashVol" ID="{51EFFE07-2F62-40E7-9AD3-3A8BD411DFD4}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="0"/>
+							</PropertyList>
+						</GameParameter>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

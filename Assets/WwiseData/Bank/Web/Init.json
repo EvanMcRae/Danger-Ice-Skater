@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{1F917771-0BC8-5FB2-DDDC-375859FF4CC9}",
+    "Hash": "{EDA1372F-C80D-338A-C24F-F8204500B340}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -82,6 +82,12 @@
       "GUID": "{1211C1CB-5F06-4FC0-9FA8-2E4402C1AD49}"
      },
      {
+      "Id": "3647101706",
+      "Name": "PenguinDashVol",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Enemies\\PenguinDashVol",
+      "GUID": "{51EFFE07-2F62-40E7-9AD3-3A8BD411DFD4}"
+     },
+     {
       "Id": "3873835272",
       "Name": "soundVolume",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Volume\\soundVolume",
@@ -90,6 +96,6 @@
     ]
    }
   ],
-  "FileHash": "{3557997C-E5CF-0D9E-5E95-062D676A1FCA}"
+  "FileHash": "{36576970-4516-4AB5-59C8-870DE4BB4076}"
  }
 }
