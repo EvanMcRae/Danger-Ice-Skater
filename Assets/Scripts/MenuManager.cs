@@ -34,6 +34,9 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     public GameObject playButton;
 
+    [SerializeField]
+    public GameObject settingsBackButton;
+
     private void Start()
     {
         startPositions = new List<float>(); ///[Menus.Length];
@@ -83,6 +86,14 @@ public class MenuManager : MonoBehaviour
         TurnOffMenus();
         ActivateMenuWithAnimation(2);
         eventSystem.SetSelectedGameObject(instructionsBackButton);
+    }
+
+    public void Settings()
+    {
+        if (!ScreenWipe.over) return;
+        TurnOffMenus();
+        ActivateMenuWithAnimation(3);
+        eventSystem.SetSelectedGameObject(settingsBackButton);
     }
 
     public void QuitGame()
