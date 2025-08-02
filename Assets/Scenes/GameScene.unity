@@ -220,7 +220,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   opened: 0
-  openTime: 1
   open90: 0
 --- !u!1001 &75114753
 PrefabInstance:
@@ -584,7 +583,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   opened: 0
-  openTime: 1
   open90: 0
 --- !u!1 &141492646
 GameObject:
@@ -1978,7 +1976,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   opened: 0
-  openTime: 1
   open90: 0
 --- !u!1001 &918278079
 PrefabInstance:
@@ -2899,7 +2896,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   opened: 0
-  openTime: 1
   open90: 0
 --- !u!1001 &1282175083
 PrefabInstance:
@@ -3658,7 +3654,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   opened: 0
-  openTime: 1
   open90: 0
 --- !u!1 &1500998576
 GameObject:
@@ -4297,7 +4292,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   opened: 0
-  openTime: 1
   open90: 0
 --- !u!1001 &1817499654
 PrefabInstance:
@@ -4489,7 +4483,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   opened: 0
-  openTime: 1
   open90: 0
 --- !u!1 &1960874623
 GameObject:
@@ -4592,7 +4585,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   opened: 0
-  openTime: 1
   open90: 0
 --- !u!114 &1965001070 stripped
 MonoBehaviour:
@@ -4803,8 +4795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   opened: 0
-  openTime: 1
-  open90: 0
+  open90: 1
 --- !u!1 &2146696581
 GameObject:
   m_ObjectHideFlags: 0
@@ -5838,7 +5829,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   opened: 0
-  openTime: 1
   open90: 0
 --- !u!4 &4498894396727450677
 Transform:
