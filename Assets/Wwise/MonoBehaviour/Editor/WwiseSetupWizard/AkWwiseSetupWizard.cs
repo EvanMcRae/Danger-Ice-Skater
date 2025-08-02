@@ -710,7 +710,7 @@ public class WwiseSetupWizard
 #endif
 		var WprojPath = AkUtilities.GetFullPath(UnityEngine.Application.dataPath, settings.WwiseProjectPath);
 #if UNITY_EDITOR_OSX
-		SoundbankPath = AkUtilities.ParseOsxPathFromWinePath(SoundbankPath);
+		SoundbankPath = "Z:" + SoundbankPath;
 #endif
 
 		SoundbankPath = AkUtilities.MakeRelativePath(System.IO.Path.GetDirectoryName(WprojPath), SoundbankPath);

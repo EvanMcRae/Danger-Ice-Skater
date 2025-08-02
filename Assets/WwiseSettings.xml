@@ -1,28 +1,29 @@
-<?xml version='1.0'?>
-<WwiseSettings>
-    <CopySoundBanksAsPreBuildStep>true</CopySoundBanksAsPreBuildStep>
-    <GenerateSoundBanksAsPreBuildStep>false</GenerateSoundBanksAsPreBuildStep>
-    <SoundbankPath>Audio/GeneratedSoundBanks</SoundbankPath>
-    <CreatedPicker>true</CreatedPicker>
-    <CreateWwiseGlobal>true</CreateWwiseGlobal>
-    <CreateWwiseListener>true</CreateWwiseListener>
-    <ObjectReferenceAutoCleanup>true</ObjectReferenceAutoCleanup>
-    <LoadSoundEngineInEditMode>true</LoadSoundEngineInEditMode>
-    <ShowMissingRigidBodyWarning>true</ShowMissingRigidBodyWarning>
-    <ShowSpatialAudioWarningMsg>true</ShowSpatialAudioWarningMsg>
-    <WwiseInstallationPathMac>/Applications/Audiokinetic/Wwise2024.1.6.8842/Wwise.app</WwiseInstallationPathMac>
-    <WwiseInstallationPathWindows></WwiseInstallationPathWindows>
-    <WwiseProjectPath>../../GMTK2025/GMTK2025_WwiseProject/GMTK2025_WwiseProject.wproj</WwiseProjectPath>
-    <UseWaapi>true</UseWaapi>
-    <WaapiPort>8080</WaapiPort>
-    <WaapiIP>127.0.0.1</WaapiIP>
-    <UseGitRepository>true</UseGitRepository>
-    <PackageSource>https://github.com/audiokinetic/WwiseUnityAddressables.git#v24.1.6</PackageSource>
-    <AddressableBankFolder>WwiseData/Bank</AddressableBankFolder>
-    <UseCustomBuildScript>false</UseCustomBuildScript>
-    <AddressableAssetBuilderPath>Assets/AddressableAssetsData/DataBuilders/BuildScriptWwisePacked.asset</AddressableAssetBuilderPath>
-    <AutomaticallyUpdateExternalSourcesPath>false</AutomaticallyUpdateExternalSourcesPath>
-    <ExternalSourcesPath>WwiseData/Bank</ExternalSourcesPath>
-    <XMLTranslatorTimeout>0</XMLTranslatorTimeout>
-    <WaapiTranslatorTimeout>0</WaapiTranslatorTimeout>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WwiseSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CopySoundBanksAsPreBuildStep>true</CopySoundBanksAsPreBuildStep>
+  <GenerateSoundBanksAsPreBuildStep>false</GenerateSoundBanksAsPreBuildStep>
+  <SoundbankPath>Audio/GeneratedSoundBanks</SoundbankPath>
+  <GeneratedSoundbanksPath>WwiseData/Bank</GeneratedSoundbanksPath>
+  <CreatedPicker>true</CreatedPicker>
+  <CreateWwiseGlobal>true</CreateWwiseGlobal>
+  <CreateWwiseListener>true</CreateWwiseListener>
+  <ObjectReferenceAutoCleanup>true</ObjectReferenceAutoCleanup>
+  <LoadSoundEngineInEditMode>true</LoadSoundEngineInEditMode>
+  <ShowMissingRigidBodyWarning>true</ShowMissingRigidBodyWarning>
+  <ShowSpatialAudioWarningMsg>true</ShowSpatialAudioWarningMsg>
+  <WwiseInstallationPathMac />
+  <WwiseInstallationPathWindows>C:\Audiokinetic\Wwise2024.1.5.8803</WwiseInstallationPathWindows>
+  <WwiseProjectPath>../GMTK2025_WwiseProject/GMTK2025_WwiseProject.wproj</WwiseProjectPath>
+  <UseWaapi>true</UseWaapi>
+  <WaapiPort>8080</WaapiPort>
+  <WaapiIP>127.0.0.1</WaapiIP>
+  <UseGitRepository>true</UseGitRepository>
+  <PackageSource>https://github.com/audiokinetic/WwiseUnityAddressables.git#v24.1.5</PackageSource>
+  <AddressableBankFolder>WwiseData/Bank</AddressableBankFolder>
+  <UseCustomBuildScript>false</UseCustomBuildScript>
+  <AddressableAssetBuilderPath>Assets/AddressableAssetsData/DataBuilders\BuildScriptWwisePacked.asset</AddressableAssetBuilderPath>
+  <AutomaticallyUpdateExternalSourcesPath>false</AutomaticallyUpdateExternalSourcesPath>
+  <ExternalSourcesPath>WwiseData/Bank</ExternalSourcesPath>
+  <XMLTranslatorTimeout>0</XMLTranslatorTimeout>
+  <WaapiTranslatorTimeout>0</WaapiTranslatorTimeout>
 </WwiseSettings>
