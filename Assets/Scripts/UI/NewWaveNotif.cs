@@ -7,6 +7,7 @@ public class NewWaveNotif : MonoBehaviour
 
     public void PlayNotif()
     {
+        Debug.Log("Playing notif anim");
         notifAnimation.Play("NewWaveNotifEnter");
     }
 
