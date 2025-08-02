@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_isDead: 0
+  finalTint: {r: 0.1764706, g: 0.29411766, b: 0.5176471, a: 0}
 --- !u!114 &4189805845810146453
 MonoBehaviour:
   m_ObjectHideFlags: 0
