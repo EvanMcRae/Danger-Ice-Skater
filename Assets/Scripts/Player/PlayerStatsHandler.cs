@@ -10,7 +10,7 @@ namespace Player {
 
         public GameEventBroadcaster geb;
 
-        public MeshRenderer mr;
+        public GameObject mesh;
 
         public float invincibilityTimer;
         public float invincibilityTime;
@@ -30,10 +30,10 @@ namespace Player {
             invincibilityTimer = Mathf.Max(invincibilityTimer - Time.deltaTime, 0);
             if (invincibilityTimer > 0) {
                 int temp = (int) (invincibilityTimer * 10);
-                mr.enabled = temp % 2 == 0;
+                mesh.SetActive(temp % 2 == 0);
             }
             else {
-                mr.enabled = true;
+                mesh.SetActive(true);
             }
         }
 
