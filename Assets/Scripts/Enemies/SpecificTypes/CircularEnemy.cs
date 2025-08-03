@@ -58,9 +58,7 @@ namespace Enemies
 
                 if (isAttacking)
                     AttackPlayer();
-                else anim.Play("skate");
             }
-            else if (!m_isDead) anim.Play("idle");
         }
         
         public void CirclePlayer()
@@ -76,6 +74,7 @@ namespace Enemies
             //Dash + Dash cooldown
             if (dashDelay >= dashTime - .01f) {
                 anim.Play("dash");
+                anim.SetTrigger("dashing");
                 Vector3 vectorDiff = player.transform.position - transform.position;
                 vectorDiff.Normalize();
 
