@@ -17,8 +17,6 @@ MonoBehaviour:
     - enemies:
       - enemy: 4
         count: 1
-      - enemy: 1
-        count: 1
       randomEnemyCredits: 0
     - enemies:
       - enemy: 4
