@@ -4972,7 +4972,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &2939634649029205298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5004,6 +5004,7 @@ MonoBehaviour:
   particles: {fileID: 7915522442199613994}
   anim: {fileID: 462644127917268244}
   staminaBar: {fileID: 0}
+  startCutsceneActive: 1
 --- !u!114 &7892994341498651269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5022,6 +5023,7 @@ MonoBehaviour:
   invincibilityTime: 1
   health: 0
   maxHealth: 10
+  waveClearHealAmount: 0
   anim: {fileID: 462644127917268244}
 --- !u!1001 &2959719243466186490
 PrefabInstance:
