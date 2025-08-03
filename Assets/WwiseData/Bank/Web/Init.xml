@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Web" BasePlatform="Web" SchemaVersion="16" SoundBankVersion="154">
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{ACB9A649-FF49-3BF5-819D-0118B60A5F48}">
+		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{B2B8CC25-A3EF-0E18-DD76-016FB241C19D}">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -21,6 +21,7 @@
 				<AuxBus Id="1517463400" Name="Distortion" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Distortion" GUID="{418CD9C0-FA84-41AB-A45E-DF83011CDD82}"/>
 			</AuxBusses>
 			<GameParameters>
+				<GameParameter Id="1763041431" Name="MusicSpeed" ObjectPath="\Game Parameters\Default Work Unit\MusicSpeed" GUID="{0AACEFE7-CCA8-4AB0-9BCB-AD4AEB1B4D0D}"/>
 				<GameParameter Id="2346531308" Name="musicVolume" ObjectPath="\Game Parameters\Default Work Unit\Volume\musicVolume" GUID="{DAF18041-72A2-4215-B1D0-EAE2DB16B628}"/>
 				<GameParameter Id="2886637823" Name="playerVelocity" ObjectPath="\Game Parameters\Default Work Unit\playerVelocity" GUID="{0F28D0E4-ED96-453E-8A56-B0877F9264C5}"/>
 				<GameParameter Id="2918011349" Name="masterVolume" ObjectPath="\Game Parameters\Default Work Unit\Volume\masterVolume" GUID="{1211C1CB-5F06-4FC0-9FA8-2E4402C1AD49}"/>
@@ -32,10 +33,11 @@
 					<Switches>
 						<Switch Id="2607556080" Name="Menu" ObjectPath="\Switches\Default Work Unit\Music\Menu" GUID="{EEBDBBBA-DF30-4E6F-8686-4C63D4972B51}"/>
 						<Switch Id="2782712965" Name="Level" ObjectPath="\Switches\Default Work Unit\Music\Level" GUID="{E65BD47D-CC9E-4A96-B6E1-9D6CD99CAC00}"/>
+						<Switch Id="4158285989" Name="GameOver" ObjectPath="\Switches\Default Work Unit\Music\GameOver" GUID="{3535B191-1CFA-4E27-8179-4EAB12E105B9}"/>
 					</Switches>
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{E9064B31-4B9E-CBC5-014E-C6EEFDED5D0C}</FileHash>
+	<FileHash>{07B4994F-83B5-DA2E-D7A7-12CD418CFE4E}</FileHash>
 </SoundBanksInfo>

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3082789497159342337}
   - component: {fileID: 9024460489902341260}
   - component: {fileID: 547468786114739637}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: CircularEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -234,6 +234,46 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 22136e27491887c4d9a9ff94acec37db, type: 2}
+    - target: {fileID: 3355908863760568564, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759433336699829789, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5052627991300098655, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995126571952079326, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657560127643677590, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887461517444567220, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036213049465896255, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8075368125514703920, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728016010704091974, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114772898675105519, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

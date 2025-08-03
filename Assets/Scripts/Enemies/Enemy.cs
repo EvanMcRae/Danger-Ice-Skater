@@ -18,6 +18,7 @@ namespace Enemies {
         public bool canMove = false;
         float moveForce = 2f;
         public bool movingAwayFromWall = false;
+        
 
 
         public void DestroyEnemy()
@@ -56,6 +57,8 @@ namespace Enemies {
         public void Update()
         {
             if (PauseManager.ShouldNotRun()) return;
+
+            if (transform.position.y <= 0) gameObject.layer = 2;
 
             if (transform.position.y <= GameController.KILL_HEIGHT && !m_isDead)
             {
@@ -129,6 +132,7 @@ namespace Enemies {
         public new void Fall()
         {
             base.Fall();
+            anim.SetTrigger("falling");
             anim.Play("fall");
         }
     }

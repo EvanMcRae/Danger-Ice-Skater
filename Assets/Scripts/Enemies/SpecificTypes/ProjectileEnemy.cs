@@ -17,33 +17,41 @@ namespace Enemies.SpecificTypes {
 
         public GameObject top, bottom, left, right;
 
+        public bool nearPlayer = false;
+
         public new void Start() {
             base.Start();
             projectileTimer = projectileDelayMax;
         }
         public new void Update() {
             if (PauseManager.ShouldNotRun()) return;
-
-            if (canMove && !m_isDead)
+            
+            if (canMove && !m_isDead && !m_waiting)
             {
                 //CheckIfCloseToWall(top.transform.position.z, bottom.transform.position.z, left.transform.position.x, right.transform.position.x);
-                if (!movingAwayFromWall)
+                base.Update();
+
+                //Check if too close to player
+                if (DistanceFromTarget(player.transform.position) <= .5f)
                 {
-                    base.Update();
-                    projectileTimer -= Time.deltaTime;
-                    if (projectileTimer <= 0)
-                    {
-                        Vector3 diff = player.transform.position - transform.position;
-                        diff.Normalize();
-                        Shoot(diff);
-                        projectileTimer = Random.Range(projectileDelayMin, projectileDelayMax);
-                    }
-                    else anim.Play("idle");
+                    nearPlayer = true;
+                }
+                else nearPlayer = false;
+
+                if (nearPlayer) anim.SetTrigger("hittingPlayer");
+
+                projectileTimer -= Time.deltaTime;
+                if (projectileTimer <= 0)
+                {
+                    Vector3 diff = player.transform.position - transform.position;
+                    diff.Normalize();
+                    Shoot(diff);
+                    projectileTimer = Random.Range(projectileDelayMin, projectileDelayMax);
                 }
                 else
                 {
-                    anim.Play("skate");
-                    MoveAwayFromWall();
+                    //anim.Play("idle");
+                    //print("debug");
                 }
             }
             else if (!m_isDead)

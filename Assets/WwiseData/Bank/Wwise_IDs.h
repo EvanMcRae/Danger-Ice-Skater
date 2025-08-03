@@ -36,6 +36,7 @@ namespace AK
         static const AkUniqueID SHARKFALL = 3926006775U;
         static const AkUniqueID SHARKSPAWN = 563965641U;
         static const AkUniqueID STOPMUSIC = 1917263390U;
+        static const AkUniqueID STOPSFX = 3189472150U;
         static const AkUniqueID TEST = 3157003241U;
     } // namespace EVENTS
 
@@ -47,6 +48,7 @@ namespace AK
 
             namespace SWITCH
             {
+                static const AkUniqueID GAMEOVER = 4158285989U;
                 static const AkUniqueID LEVEL = 2782712965U;
                 static const AkUniqueID MENU = 2607556080U;
             } // namespace SWITCH
@@ -57,6 +59,7 @@ namespace AK
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID MASTERVOLUME = 2918011349U;
+        static const AkUniqueID MUSICSPEED = 1763041431U;
         static const AkUniqueID MUSICVOLUME = 2346531308U;
         static const AkUniqueID PENGUINDASHVOL = 3647101706U;
         static const AkUniqueID PLAYERVELOCITY = 2886637823U;
