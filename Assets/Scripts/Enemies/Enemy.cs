@@ -62,6 +62,7 @@ namespace Enemies {
 
             if (transform.position.y <= GameController.KILL_HEIGHT && !m_isDead)
             {
+                WaterSplashParticles.CreateSplashParticles(transform.position.x, transform.position.z);
                 DestroyEnemy();
             }
         }
