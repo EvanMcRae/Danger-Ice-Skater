@@ -5935,11 +5935,8 @@ MonoBehaviour:
   - {fileID: 1844860809}
   - {fileID: 1414987775}
   invalidWaveSpawnPoints: []
-  currentWave:
-    subWaves: []
-    waveLevel: 0
-  currentWaveCount: -1
-  currentSubWaveCount: -1
+  currentWave: -1
+  currentSubWave: -1
 --- !u!114 &1702168235
 MonoBehaviour:
   m_ObjectHideFlags: 0
