@@ -115,6 +115,7 @@ MonoBehaviour:
   anim: {fileID: 6999724777246183788}
   canMove: 1
   movingAwayFromWall: 0
+  fallSFX: 
   player: {fileID: 0}
   rotateTowardsPlayer: 1
   moveTowardsPlayer: 1
