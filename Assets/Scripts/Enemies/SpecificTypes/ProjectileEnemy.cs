@@ -24,27 +24,19 @@ namespace Enemies.SpecificTypes {
         public new void Update() {
             if (PauseManager.ShouldNotRun()) return;
 
-            if (canMove && !m_isDead)
+            if (canMove && !m_isDead && !m_waiting)
             {
                 //CheckIfCloseToWall(top.transform.position.z, bottom.transform.position.z, left.transform.position.x, right.transform.position.x);
-                if (!movingAwayFromWall)
+                base.Update();
+                projectileTimer -= Time.deltaTime;
+                if (projectileTimer <= 0)
                 {
-                    base.Update();
-                    projectileTimer -= Time.deltaTime;
-                    if (projectileTimer <= 0)
-                    {
-                        Vector3 diff = player.transform.position - transform.position;
-                        diff.Normalize();
-                        Shoot(diff);
-                        projectileTimer = Random.Range(projectileDelayMin, projectileDelayMax);
-                    }
-                    else anim.Play("idle");
+                    Vector3 diff = player.transform.position - transform.position;
+                    diff.Normalize();
+                    Shoot(diff);
+                    projectileTimer = Random.Range(projectileDelayMin, projectileDelayMax);
                 }
-                else
-                {
-                    anim.Play("skate");
-                    MoveAwayFromWall();
-                }
+                else anim.Play("idle");
             }
             else if (!m_isDead)
             {
