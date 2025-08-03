@@ -69,6 +69,7 @@ public class introCutscene : MonoBehaviour
                 anim.Play("click");
                 startTimer = true;
                 index += 1;
+                AkUnitySoundEngine.PostEvent("SelectUI", PauseManager.globalWwise);
                 if (index >= dialogue.Length)
                 {
                     gameStarted = true;
