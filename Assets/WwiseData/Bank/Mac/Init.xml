@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="154">
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{56632015-9E1B-3D7D-B25D-66F0CD237888}">
+		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{114743E5-A477-565E-0E03-7A62BDF3A949}">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
+				<ShareSets>
+					<Plugin Id="3900114836" Name="Metal_Hangar" ObjectPath="\Effects\Factory Effects\RoomVerb\Huge Spaces\Metal_Hangar" GUID="{C4A4605C-42EF-476A-B53C-E31C7A442C24}" LibName="Wwise RoomVerb" LibId="7733251"/>
+				</ShareSets>
 				<AudioDevices>
 					<Plugin Id="2317455096" Name="No_Output" ObjectPath="\Audio Devices\Default Work Unit\No_Output" GUID="{139A470B-986A-439E-A063-283FDDE18E42}" LibName="No Output" LibId="11862023"/>
 					<Plugin Id="3859886410" Name="System" ObjectPath="\Audio Devices\Default Work Unit\System" GUID="{EA64E564-E793-4E69-A034-EA9C63BEA441}" LibName="System" LibId="11403271"/>
@@ -17,7 +20,13 @@
 				<Bus Id="3991942870" Name="Music" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music" GUID="{8F4E0BEE-F6EE-413F-AEFF-F5ACA340B076}"/>
 			</Busses>
 			<AuxBusses>
-				<AuxBus Id="348963605" Name="Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Reverb" GUID="{39432060-1A71-40A3-B958-9264FDE9BB75}"/>
+				<AuxBus Id="348963605" Name="Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Reverb" GUID="{39432060-1A71-40A3-B958-9264FDE9BB75}">
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="3900114836"/>
+						</ShareSets>
+					</PluginRefs>
+				</AuxBus>
 				<AuxBus Id="1517463400" Name="Distortion" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Distortion" GUID="{418CD9C0-FA84-41AB-A45E-DF83011CDD82}"/>
 			</AuxBusses>
 			<GameParameters>
@@ -39,5 +48,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{D0F81DF4-EBBB-81D4-5A29-6612EDCAF8E7}</FileHash>
+	<FileHash>{0F2D3501-9F6F-CB47-1B15-0CE4480DE2EE}</FileHash>
 </SoundBanksInfo>

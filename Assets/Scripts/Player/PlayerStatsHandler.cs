@@ -59,7 +59,7 @@ namespace Player {
         }
         
         public void Heal(int amount) {
-            health = Mathf.Max(health + amount, maxHealth);
+            health = Mathf.Min(health + amount, maxHealth);
             hd.Heal(health);
         }
 
@@ -87,7 +87,7 @@ namespace Player {
         }
 
         public void OnWaveClear(int wave) {
-            
+            if (WinLoseUI.lostGame) return;
             Heal(waveClearHealAmount);
         }
     }

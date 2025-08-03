@@ -27,13 +27,11 @@ namespace UI.PlayerUI {
         }
 
         public void Heal(int amount) {
-            for (int i = 0; i < heartImages.Count; i++) {
+            Debug.Log(amount);
+            for (int i = 0; i < amount; i++) {
                 if (!heartImages[i].alive) {
                     heartImages[i].SetAlive(true);
-                    amount--;
                 }
-                
-                if (amount == 0) break;
             }
         }
 

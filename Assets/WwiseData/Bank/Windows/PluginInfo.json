@@ -11,6 +11,27 @@
     "StaticLib": "AkSilenceSource"
    },
    {
+    "LibName": "Wwise Compressor",
+    "LibId": "7077891",
+    "Type": "Effect",
+    "DLL": "AkCompressor",
+    "StaticLib": "AkCompressorFX"
+   },
+   {
+    "LibName": "Wwise RoomVerb",
+    "LibId": "7733251",
+    "Type": "Effect",
+    "DLL": "AkRoomVerb",
+    "StaticLib": "AkRoomVerbFX"
+   },
+   {
+    "LibName": "Wwise Guitar Distortion",
+    "LibId": "8257539",
+    "Type": "Effect",
+    "DLL": "AkGuitarDistortion",
+    "StaticLib": "AkGuitarDistortionFX"
+   },
+   {
     "LibName": "Wwise Pitch Shifter",
     "LibId": "8912899",
     "Type": "Effect",
@@ -28,6 +49,6 @@
     "Type": "AudioDevice"
    }
   ],
-  "FileHash": "{52D67303-4869-EF54-AD2E-F01A5836E0BA}"
+  "FileHash": "{86543682-4D74-0E41-3FEF-ADDB9EBA3454}"
  }
 }
