@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3157003241	test			\Default Work Unit\test	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	283519557	test	C:\Users\evtem\GMTK2025\GMTK2025_WwiseProject\.cache\2E\{2E2C3284-4DEC-965A-7DFD-79D702095BE9}.wem		\Actor-Mixer Hierarchy\Default Work Unit\test		716900
+

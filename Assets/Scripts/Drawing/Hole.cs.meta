@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: cf5cedbf6c05c4e128adae5005550dbb
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_maskMat: {instanceID: 0}
+  - m_meshCollider: {instanceID: 0}
+  - holeRefillVisuals: {fileID: 6450204578810150423, guid: a46cce65fbdeaa442b66bde158159806, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

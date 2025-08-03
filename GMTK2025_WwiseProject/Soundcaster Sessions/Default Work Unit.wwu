@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{62E937C8-5815-4458-9D13-3B8AE8B6BBFC}" SchemaVersion="123">
+	<SoundcasterSessions>
+		<WorkUnit Name="Default Work Unit" ID="{62E937C8-5815-4458-9D13-3B8AE8B6BBFC}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="New Soundcaster Session" ID="{5A195EB6-D5E6-446E-9AD9-D24E1EB55B79}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="EndChomp" ID="{E45E10AF-587C-42B4-A988-B3AE197CF032}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlayerSplash" ID="{9C7F0E4A-A25E-429A-AD45-6E5F88EC7A85}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="LevelMusic" ID="{76504008-ADCB-4B9A-8687-35691F44807B}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
+							<Position X="0" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="SharkFall" ID="{23D73999-01D8-4437-9F7A-739A9FBCFABD}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlayerStep" ID="{164C2E26-B903-4505-BC84-C00A937DA0F9}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="StopMusic" ID="{A56A5860-1D44-4E7C-9DFE-6660E5F55847}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
+							<Position X="1" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="SharkSpawn" ID="{041933A0-D803-44A4-80A0-3EABFB07A647}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlayerGlide" ID="{E0797177-A469-4871-83E2-5C12C55AD17C}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="GameOver" ID="{62315F2F-43DB-4459-B45B-E65EDC2E4F14}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
+							<Position X="2" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="MenuMusic" ID="{1F75F209-D770-4DAE-BF3C-D043CE438AA4}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
+							<Position X="2" Y="3"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="musicVolume" ID="{DAF18041-72A2-4215-B1D0-EAE2DB16B628}"/>
+							<Value>96</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="soundVolume" ID="{DF92366F-4997-4DFD-B8EC-F8899A911A75}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="masterVolume" ID="{1211C1CB-5F06-4FC0-9FA8-2E4402C1AD49}"/>
+							<Value>51.364</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="Menu" ID="{EEBDBBBA-DF30-4E6F-8686-4C63D4972B51}"/>
+					</CurrentSwitchList>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundcasterSessions>
+</WwiseDocument>

@@ -77,3 +77,15 @@ crashlytics-build.properties
 # VSCode
 .vscode/*
 .vs/*
+.vsconfig
+
+# Mac
+mono_crash.*
+.DS_Store
+
+# Wwise files
+.cache
+*.akd
+*.prof
+*.validationcache
+Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset*

@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Web" BasePlatform="Web" SchemaVersion="16" SoundBankVersion="154">
+	<RootPaths>
+		<ProjectRoot>../../../../GMTK2025_WwiseProject</ProjectRoot>
+		<SourceFilesRoot>../../../../GMTK2025_WwiseProject/.cache</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>../../../../GMTK2025_WwiseProject/GeneratedSoundBanks/Web</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{ACB9A649-FF49-3BF5-819D-0118B60A5F48}">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" ObjectPath="\Audio Devices\Default Work Unit\No_Output" GUID="{139A470B-986A-439E-A063-283FDDE18E42}" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" ObjectPath="\Audio Devices\Default Work Unit\System" GUID="{EA64E564-E793-4E69-A034-EA9C63BEA441}" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="393239870" Name="SFX" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX" GUID="{82BD75D9-95EE-495F-88CE-7A658BA55E69}"/>
+				<Bus Id="3803692087" Name="Master Audio Bus" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus" GUID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
+				<Bus Id="3991942870" Name="Music" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music" GUID="{8F4E0BEE-F6EE-413F-AEFF-F5ACA340B076}"/>
+			</Busses>
+			<AuxBusses>
+				<AuxBus Id="348963605" Name="Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Reverb" GUID="{39432060-1A71-40A3-B958-9264FDE9BB75}"/>
+				<AuxBus Id="1517463400" Name="Distortion" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Distortion" GUID="{418CD9C0-FA84-41AB-A45E-DF83011CDD82}"/>
+			</AuxBusses>
+			<GameParameters>
+				<GameParameter Id="2346531308" Name="musicVolume" ObjectPath="\Game Parameters\Default Work Unit\Volume\musicVolume" GUID="{DAF18041-72A2-4215-B1D0-EAE2DB16B628}"/>
+				<GameParameter Id="2886637823" Name="playerVelocity" ObjectPath="\Game Parameters\Default Work Unit\playerVelocity" GUID="{0F28D0E4-ED96-453E-8A56-B0877F9264C5}"/>
+				<GameParameter Id="2918011349" Name="masterVolume" ObjectPath="\Game Parameters\Default Work Unit\Volume\masterVolume" GUID="{1211C1CB-5F06-4FC0-9FA8-2E4402C1AD49}"/>
+				<GameParameter Id="3647101706" Name="PenguinDashVol" ObjectPath="\Game Parameters\Default Work Unit\Enemies\PenguinDashVol" GUID="{51EFFE07-2F62-40E7-9AD3-3A8BD411DFD4}"/>
+				<GameParameter Id="3873835272" Name="soundVolume" ObjectPath="\Game Parameters\Default Work Unit\Volume\soundVolume" GUID="{DF92366F-4997-4DFD-B8EC-F8899A911A75}"/>
+			</GameParameters>
+			<SwitchGroups>
+				<SwitchGroup Id="3991942870" Name="Music" ObjectPath="\Switches\Default Work Unit\Music" GUID="{4359D007-1BF3-4BC6-94F9-9F19C39A6BB8}">
+					<Switches>
+						<Switch Id="2607556080" Name="Menu" ObjectPath="\Switches\Default Work Unit\Music\Menu" GUID="{EEBDBBBA-DF30-4E6F-8686-4C63D4972B51}"/>
+						<Switch Id="2782712965" Name="Level" ObjectPath="\Switches\Default Work Unit\Music\Level" GUID="{E65BD47D-CC9E-4A96-B6E1-9D6CD99CAC00}"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
+		</SoundBank>
+		<SoundBank Id="3161908922" Type="User" GUID="{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}" Language="SFX" Hash="{550723C9-4CE0-EB61-3C43-BB1DAAD86575}">
+			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
+			<ShortName>Main</ShortName>
+			<Path>Main.bnk</Path>
+			<Media>
+				<File Id="11736544" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Puck Hit.wav</ShortName>
+					<CachePath>4E/{4EED532D-DC81-28FD-1599-95006EFE3AC6}.wem</CachePath>
+				</File>
+				<File Id="92250040" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Roar Death .wav</ShortName>
+					<CachePath>EB/{EB80AAE3-0C74-F4AA-22D2-0AEF3A6ABB5F}.wem</CachePath>
+				</File>
+				<File Id="112692613" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Puck Hit_1.wav</ShortName>
+					<CachePath>23/{239A1F25-C7A4-FA87-8922-DD4015B2344B}.wem</CachePath>
+				</File>
+				<File Id="129769630" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Steps\Skate.wav</ShortName>
+					<CachePath>80/{80E78DCF-DF63-FA37-D39B-A4241E5E3622}.wem</CachePath>
+				</File>
+				<File Id="134563642" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Steps\Step_4.wav</ShortName>
+					<CachePath>53/{534391BD-E9D5-EFA4-FF99-F5E72A56DB67}.wem</CachePath>
+				</File>
+				<File Id="179817375" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Hit.wav</ShortName>
+					<CachePath>DB/{DB5465EA-D8A3-0BC0-9A64-5DFD0EC7BC10}.wem</CachePath>
+				</File>
+				<File Id="188607504" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Steps\Skate.wav</ShortName>
+					<CachePath>3C/{3C76FC0B-31EC-5B30-3914-FD285A209AD4}.wem</CachePath>
+				</File>
+				<File Id="210521525" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Steps\Skate.wav</ShortName>
+					<CachePath>B7/{B7272297-31A8-71BC-ABC3-3FCAA1361C91}.wem</CachePath>
+				</File>
+				<File Id="283519557" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Bear Die.wav</ShortName>
+					<CachePath>2E/{2E2C3284-4DEC-965A-7DFD-79D702095BE9}.wem</CachePath>
+				</File>
+				<File Id="293017412" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Steps\Skate.wav</ShortName>
+					<CachePath>F7/{F713DC74-F34F-EE77-408F-F357EE18C0C5}.wem</CachePath>
+				</File>
+				<File Id="295319387" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Steps\Step_6.wav</ShortName>
+					<CachePath>CC/{CC77F7B8-31E0-9341-C5D8-D8E495A401BA}.wem</CachePath>
+				</File>
+				<File Id="323035877" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Steps\Skate.wav</ShortName>
+					<CachePath>A0/{A049082F-D3CF-5A1A-A619-F3E797A8C5CA}.wem</CachePath>
+				</File>
+				<File Id="324096467" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Pengiun Death.wav</ShortName>
+					<CachePath>13/{139013AB-9C06-81A0-C899-B82989AF2A69}.wem</CachePath>
+				</File>
+				<File Id="328313209" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Splash_2.wav</ShortName>
+					<CachePath>8D/{8D360FD2-138C-238A-0A69-C768B0679678}.wem</CachePath>
+				</File>
+				<File Id="333892847" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Puck Hit_3.wav</ShortName>
+					<CachePath>AE/{AE85B1BF-DFFA-4229-50F1-F4D926CA9346}.wem</CachePath>
+				</File>
+				<File Id="368301711" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Steps\Skate.wav</ShortName>
+					<CachePath>F7/{F779C220-226C-A3DB-8AF2-1BDFD3068EA1}.wem</CachePath>
+				</File>
+				<File Id="383303118" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Steps\Step_1.wav</ShortName>
+					<CachePath>81/{818E69ED-22D7-EDAF-B130-4AEC0E86FDFE}.wem</CachePath>
+				</File>
+				<File Id="394496959" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Swings_5.wav</ShortName>
+					<CachePath>B0/{B00C5499-1396-864A-9C2D-2C435229B121}.wem</CachePath>
+				</File>
+				<File Id="408570755" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Puck Hit_2.wav</ShortName>
+					<CachePath>92/{92B0745D-437A-4991-E1FF-608D1AB7B078}.wem</CachePath>
+				</File>
+				<File Id="449719526" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Steps\Skate.wav</ShortName>
+					<CachePath>A0/{A0A913D4-10F9-13AB-DBEB-5501EB74F0EA}.wem</CachePath>
+				</File>
+				<File Id="468795855" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Swings_4.wav</ShortName>
+					<CachePath>CD/{CD02CCB3-A068-D3FB-7E8F-00D266BDE0E5}.wem</CachePath>
+				</File>
+				<File Id="472000575" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Swings.wav</ShortName>
+					<CachePath>89/{89470717-F0AB-609B-0914-9B4097A4110A}.wem</CachePath>
+				</File>
+				<File Id="481543437" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Shark Chomps_3.wav</ShortName>
+					<CachePath>EE/{EE1AFB4E-7884-E07E-BEC1-7711F9005179}.wem</CachePath>
+				</File>
+				<File Id="521776349" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Skate.wav</ShortName>
+					<CachePath>76/{764D2C7A-D76B-0A8E-033C-8B54E65BD550}.wem</CachePath>
+				</File>
+				<File Id="535792127" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>idea 2.wav</ShortName>
+					<CachePath>1B/{1B077267-43A3-65CD-F60B-2F32E4C4AE78}.wem</CachePath>
+				</File>
+				<File Id="589060082" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Swings_6.wav</ShortName>
+					<CachePath>DD/{DD45836E-3A57-C08F-4C4F-1CB2C8135A52}.wem</CachePath>
+				</File>
+				<File Id="600996587" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Steps\Skate.wav</ShortName>
+					<CachePath>9D/{9D8B2D67-215F-DDF2-EA50-85BD83E5C3BA}.wem</CachePath>
+				</File>
+				<File Id="650797169" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Shark Chomps_4.wav</ShortName>
+					<CachePath>D1/{D1428FEF-B827-35FA-537C-EEC4BF8C5F7E}.wem</CachePath>
+				</File>
+				<File Id="661063367" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Splash_5.wav</ShortName>
+					<CachePath>B4/{B41A38BF-1C8E-AC08-02DD-D80EC00418FA}.wem</CachePath>
+				</File>
+				<File Id="713916889" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Swings_2.wav</ShortName>
+					<CachePath>9E/{9E891606-1604-ED4E-3FDF-5DE677A6858C}.wem</CachePath>
+				</File>
+				<File Id="720322715" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Skate.wav</ShortName>
+					<CachePath>05/{05154BC4-673B-8ECA-B5AA-DAB7A8C3E163}.wem</CachePath>
+				</File>
+				<File Id="731922532" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Splash_3.wav</ShortName>
+					<CachePath>4C/{4CA1F719-E762-79EB-891F-10EA9344B992}.wem</CachePath>
+				</File>
+				<File Id="733039566" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Steps\Step_2.wav</ShortName>
+					<CachePath>AE/{AE67AAED-6E7C-E5B8-6B65-253A853EF71A}.wem</CachePath>
+				</File>
+				<File Id="748055230" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Steps\Step_3.wav</ShortName>
+					<CachePath>24/{24256289-2264-EDAD-CFB3-2EDF2A54AE34}.wem</CachePath>
+				</File>
+				<File Id="748822614" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Steps\Skate.wav</ShortName>
+					<CachePath>FD/{FD649C4E-218A-D8C8-F9B5-DB90DE26DA2E}.wem</CachePath>
+				</File>
+				<File Id="759369371" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Swings_1.wav</ShortName>
+					<CachePath>87/{87EEB0D7-5CB2-1702-B605-F701C12F87DD}.wem</CachePath>
+				</File>
+				<File Id="768956991" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Swings_3.wav</ShortName>
+					<CachePath>CD/{CD7E1C47-C73C-9A83-0F3E-49F3C4B2EC47}.wem</CachePath>
+				</File>
+				<File Id="788434638" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Splash_6.wav</ShortName>
+					<CachePath>0E/{0E39659F-64E4-6191-50C6-A1986662F598}.wem</CachePath>
+				</File>
+				<File Id="817391603" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Steps\Step.wav</ShortName>
+					<CachePath>8C/{8C84A7DD-9185-CBDF-F1F3-53228E1DDFEA}.wem</CachePath>
+				</File>
+				<File Id="835039389" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Steps\Step_5.wav</ShortName>
+					<CachePath>1F/{1FBBF64D-0DA1-DBAF-A9E3-0E08EEBEF1EA}.wem</CachePath>
+				</File>
+				<File Id="874117209" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Splash_1.wav</ShortName>
+					<CachePath>EF/{EF1454A7-305F-4525-3459-693E929BAFB0}.wem</CachePath>
+				</File>
+				<File Id="903708407" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Steps\Skate.wav</ShortName>
+					<CachePath>34/{345EC2F2-A3A9-0D49-4A2F-2CFC8D264FEC}.wem</CachePath>
+				</File>
+				<File Id="908641076" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Shark Death.wav</ShortName>
+					<CachePath>BF/{BFF28B8D-B07B-C6E7-EB1E-1A88E273DAAA}.wem</CachePath>
+				</File>
+				<File Id="965355924" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Steps\Skate.wav</ShortName>
+					<CachePath>E1/{E17437F4-3CFF-9EDE-EE3D-251B9F561CFD}.wem</CachePath>
+				</File>
+				<File Id="994630770" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Splash_2.wav</ShortName>
+					<CachePath>D3/{D39769FB-FC8A-39E7-FB1E-6475E3B28D6A}.wem</CachePath>
+				</File>
+				<File Id="1008933578" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Steps\Step_7.wav</ShortName>
+					<CachePath>2E/{2E48F883-A22B-9D74-0DDF-2570790E91B8}.wem</CachePath>
+				</File>
+				<File Id="1063543444" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Steps\Skate.wav</ShortName>
+					<CachePath>AE/{AE47CED7-A43A-C4E0-16C4-449432EBB386}.wem</CachePath>
+				</File>
+			</Media>
+			<Plugins>
+				<Custom>
+					<Plugin Id="515874561" Name="Silence" ObjectPath="\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Shark\Shark Moving\Chomps\New Silence\Silence" GUID="{E226C5FB-A669-4D7A-82F4-E9FE980C4D3A}" Color="8" LibName="Wwise Silence" LibId="6619138"/>
+				</Custom>
+				<ShareSets>
+					<Plugin Id="1237275451" Name="Octave_Up" ObjectPath="\Effects\Factory Effects\Pitch Shifter\Harmonize\Octave_Up" GUID="{A98F423C-EC97-49D8-8698-445CE91F24B7}" LibName="Wwise Pitch Shifter" LibId="8912899"/>
+				</ShareSets>
+			</Plugins>
+			<Events>
+				<Event Id="2458991111" Name="EndChomp" ObjectPath="\Events\Default Work Unit\Enemy\Shark\EndChomp" GUID="{E45E10AF-587C-42B4-A988-B3AE197CF032}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="481543437"/>
+						<MediaRef Id="650797169"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="515874561"/>
+						</Custom>
+					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="348963605" Name="Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Reverb" GUID="{39432060-1A71-40A3-B958-9264FDE9BB75}"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="1495289514" Name="EnemySplash" ObjectPath="\Events\Default Work Unit\Enemy\EnemySplash" GUID="{08B9D194-5769-4574-8E91-61E79994EA04}" DurationType="OneShot" DurationMin="0.7380988" DurationMax="1.1500962">
+					<MediaRefs>
+						<MediaRef Id="328313209"/>
+						<MediaRef Id="874117209"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2594447999" Name="FoxFall" ObjectPath="\Events\Default Work Unit\Enemy\Fox\FoxFall" GUID="{2BAD48DC-A604-489C-92DD-E1B5994DB13A}" DurationType="OneShot" DurationMin="0.2341452" DurationMax="0.2341452">
+					<MediaRefs>
+						<MediaRef Id="92250040"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="348963605" Name="Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Reverb" GUID="{39432060-1A71-40A3-B958-9264FDE9BB75}"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="3020866858" Name="FoxStep" ObjectPath="\Events\Default Work Unit\Enemy\Fox\FoxStep" GUID="{DB8A65FF-6D9D-4F77-88D3-BBA9FE0CFFD0}" DurationType="OneShot" DurationMin="0.31543648" DurationMax="0.342445">
+					<MediaRefs>
+						<MediaRef Id="210521525"/>
+						<MediaRef Id="323035877"/>
+						<MediaRef Id="600996587"/>
+						<MediaRef Id="748822614"/>
+						<MediaRef Id="903708407"/>
+						<MediaRef Id="1063543444"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4158285989" Name="GameOver" ObjectPath="\Events\Default Work Unit\Player\GameOver" GUID="{62315F2F-43DB-4459-B45B-E65EDC2E4F14}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="92250040"/>
+						<MediaRef Id="129769630"/>
+						<MediaRef Id="134563642"/>
+						<MediaRef Id="179817375"/>
+						<MediaRef Id="188607504"/>
+						<MediaRef Id="210521525"/>
+						<MediaRef Id="293017412"/>
+						<MediaRef Id="295319387"/>
+						<MediaRef Id="323035877"/>
+						<MediaRef Id="324096467"/>
+						<MediaRef Id="368301711"/>
+						<MediaRef Id="383303118"/>
+						<MediaRef Id="394496959"/>
+						<MediaRef Id="449719526"/>
+						<MediaRef Id="468795855"/>
+						<MediaRef Id="472000575"/>
+						<MediaRef Id="481543437"/>
+						<MediaRef Id="521776349"/>
+						<MediaRef Id="589060082"/>
+						<MediaRef Id="600996587"/>
+						<MediaRef Id="650797169"/>
+						<MediaRef Id="713916889"/>
+						<MediaRef Id="720322715"/>
+						<MediaRef Id="733039566"/>
+						<MediaRef Id="748055230"/>
+						<MediaRef Id="748822614"/>
+						<MediaRef Id="759369371"/>
+						<MediaRef Id="768956991"/>
+						<MediaRef Id="817391603"/>
+						<MediaRef Id="835039389"/>
+						<MediaRef Id="903708407"/>
+						<MediaRef Id="908641076"/>
+						<MediaRef Id="965355924"/>
+						<MediaRef Id="1008933578"/>
+						<MediaRef Id="1063543444"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="515874561"/>
+						</Custom>
+						<ShareSets>
+							<PluginRef Id="1237275451"/>
+						</ShareSets>
+					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="348963605" Name="Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Reverb" GUID="{39432060-1A71-40A3-B958-9264FDE9BB75}"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="2891959439" Name="HockeyShoot" ObjectPath="\Events\Default Work Unit\Enemy\Hockey\HockeyShoot" GUID="{D602C855-4B10-46C4-8DE8-27CB08BE07CF}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2524064884" Name="HockeyStep" ObjectPath="\Events\Default Work Unit\Enemy\Hockey\HockeyStep" GUID="{93D161C4-0F1F-4426-87B4-4C057A1C7988}" DurationType="OneShot" DurationMin="0.31543648" DurationMax="0.342445">
+					<MediaRefs>
+						<MediaRef Id="210521525"/>
+						<MediaRef Id="323035877"/>
+						<MediaRef Id="600996587"/>
+						<MediaRef Id="748822614"/>
+						<MediaRef Id="903708407"/>
+						<MediaRef Id="1063543444"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="433652520" Name="HockeySwing" ObjectPath="\Events\Default Work Unit\Enemy\Hockey\HockeySwing" GUID="{1FCCBCFA-EBAD-4B0A-B137-548F82F2342B}" DurationType="OneShot" DurationMin="0.21454296" DurationMax="0.26772466">
+					<MediaRefs>
+						<MediaRef Id="394496959"/>
+						<MediaRef Id="468795855"/>
+						<MediaRef Id="472000575"/>
+						<MediaRef Id="589060082"/>
+						<MediaRef Id="713916889"/>
+						<MediaRef Id="759369371"/>
+						<MediaRef Id="768956991"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="348963605" Name="Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Reverb" GUID="{39432060-1A71-40A3-B958-9264FDE9BB75}"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="1774890243" Name="IceSplash" ObjectPath="\Events\Default Work Unit\Player\IceSplash" GUID="{7327E33C-88C0-4FA1-85EA-7BF62C80E027}" DurationType="OneShot" DurationMin="1.167996" DurationMax="1.8969036">
+					<MediaRefs>
+						<MediaRef Id="661063367"/>
+						<MediaRef Id="994630770"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1321655446" Name="LevelMusic" ObjectPath="\Events\Default Work Unit\Music\LevelMusic" GUID="{76504008-ADCB-4B9A-8687-35691F44807B}" DurationType="Infinite">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="3991942870" Id="2782712965" GUID="{E65BD47D-CC9E-4A96-B6E1-9D6CD99CAC00}"/>
+							<MediaRefs>
+								<MediaRef Id="535792127"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+					<ActionSetSwitch>
+						<ActionSetSwitchEntry GroupId="3991942870" Id="2782712965" Name="Level" ObjectPath="\Switches\Default Work Unit\Music\Level" GUID="{E65BD47D-CC9E-4A96-B6E1-9D6CD99CAC00}"/>
+					</ActionSetSwitch>
+				</Event>
+				<Event Id="679636833" Name="MenuMusic" ObjectPath="\Events\Default Work Unit\Music\MenuMusic" GUID="{1F75F209-D770-4DAE-BF3C-D043CE438AA4}" DurationType="Infinite">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="3991942870" Id="2782712965" GUID="{E65BD47D-CC9E-4A96-B6E1-9D6CD99CAC00}"/>
+							<MediaRefs>
+								<MediaRef Id="535792127"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+					<ActionSetSwitch>
+						<ActionSetSwitchEntry GroupId="3991942870" Id="2607556080" Name="Menu" ObjectPath="\Switches\Default Work Unit\Music\Menu" GUID="{EEBDBBBA-DF30-4E6F-8686-4C63D4972B51}"/>
+					</ActionSetSwitch>
+				</Event>
+				<Event Id="1589270263" Name="PauseGame" ObjectPath="\Events\Default Work Unit\UI\PauseGame" GUID="{3E1FF75B-A95C-4AAC-8393-9E03EFB89250}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="4286935516" Name="PenguinFall" ObjectPath="\Events\Default Work Unit\Enemy\Penguin\PenguinFall" GUID="{501EBB5F-3B7C-4B90-9502-27C2B581AD07}" DurationType="OneShot" DurationMin="0.38066658" DurationMax="0.38066658">
+					<MediaRefs>
+						<MediaRef Id="324096467"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="348963605" Name="Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Reverb" GUID="{39432060-1A71-40A3-B958-9264FDE9BB75}"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="230254265" Name="PenguinStep" ObjectPath="\Events\Default Work Unit\Enemy\Penguin\PenguinStep" GUID="{246DC4E6-383D-43C5-9A95-72CE83DC405C}" DurationType="OneShot" DurationMin="0.31543648" DurationMax="0.342445">
+					<MediaRefs>
+						<MediaRef Id="134563642"/>
+						<MediaRef Id="210521525"/>
+						<MediaRef Id="295319387"/>
+						<MediaRef Id="323035877"/>
+						<MediaRef Id="383303118"/>
+						<MediaRef Id="600996587"/>
+						<MediaRef Id="733039566"/>
+						<MediaRef Id="748055230"/>
+						<MediaRef Id="748822614"/>
+						<MediaRef Id="817391603"/>
+						<MediaRef Id="835039389"/>
+						<MediaRef Id="903708407"/>
+						<MediaRef Id="1008933578"/>
+						<MediaRef Id="1063543444"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2683980149" Name="PlayerGlide" ObjectPath="\Events\Default Work Unit\Player\PlayerGlide" GUID="{E0797177-A469-4871-83E2-5C12C55AD17C}" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="720322715"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3537581393" Name="PlayerHurt" ObjectPath="\Events\Default Work Unit\Player\PlayerHurt" GUID="{7C3D97AA-3A44-4578-9D1E-470EE66DCEF7}" DurationType="OneShot" DurationMin="0.12625718" DurationMax="0.24143492">
+					<MediaRefs>
+						<MediaRef Id="11736544"/>
+						<MediaRef Id="112692613"/>
+						<MediaRef Id="333892847"/>
+						<MediaRef Id="408570755"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="972739039" Name="PlayerSplash" ObjectPath="\Events\Default Work Unit\Player\PlayerSplash" GUID="{9C7F0E4A-A25E-429A-AD45-6E5F88EC7A85}" DurationType="OneShot" DurationMin="0.7995664" DurationMax="0.8380544">
+					<MediaRefs>
+						<MediaRef Id="731922532"/>
+						<MediaRef Id="788434638"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="412471812" Name="PlayerStep" ObjectPath="\Events\Default Work Unit\Player\PlayerStep" GUID="{164C2E26-B903-4505-BC84-C00A937DA0F9}" DurationType="OneShot" DurationMin="0.32601926" DurationMax="0.38035583">
+					<MediaRefs>
+						<MediaRef Id="129769630"/>
+						<MediaRef Id="134563642"/>
+						<MediaRef Id="188607504"/>
+						<MediaRef Id="293017412"/>
+						<MediaRef Id="295319387"/>
+						<MediaRef Id="368301711"/>
+						<MediaRef Id="383303118"/>
+						<MediaRef Id="449719526"/>
+						<MediaRef Id="720322715"/>
+						<MediaRef Id="733039566"/>
+						<MediaRef Id="748055230"/>
+						<MediaRef Id="817391603"/>
+						<MediaRef Id="835039389"/>
+						<MediaRef Id="965355924"/>
+						<MediaRef Id="1008933578"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3993562277" Name="PuckHit" ObjectPath="\Events\Default Work Unit\Enemy\Hockey\PuckHit" GUID="{A2FD3928-5C1F-4902-905C-5FEB6C426D17}" DurationType="OneShot" DurationMin="0.21438202" DurationMax="0.21438202">
+					<MediaRefs>
+						<MediaRef Id="179817375"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="348963605" Name="Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Reverb" GUID="{39432060-1A71-40A3-B958-9264FDE9BB75}"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="1133184122" Name="ResumeGame" ObjectPath="\Events\Default Work Unit\UI\ResumeGame" GUID="{6EE39B59-5463-4465-AE39-2CF5CFD89D1F}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3926006775" Name="SharkFall" ObjectPath="\Events\Default Work Unit\Enemy\Shark\SharkFall" GUID="{23D73999-01D8-4437-9F7A-739A9FBCFABD}" DurationType="OneShot" DurationMin="0.39199996" DurationMax="0.39199996">
+					<MediaRefs>
+						<MediaRef Id="481543437"/>
+						<MediaRef Id="521776349"/>
+						<MediaRef Id="650797169"/>
+						<MediaRef Id="908641076"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="515874561"/>
+						</Custom>
+						<ShareSets>
+							<PluginRef Id="1237275451"/>
+						</ShareSets>
+					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="348963605" Name="Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Reverb" GUID="{39432060-1A71-40A3-B958-9264FDE9BB75}"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="563965641" Name="SharkSpawn" ObjectPath="\Events\Default Work Unit\Enemy\Shark\SharkSpawn" GUID="{041933A0-D803-44A4-80A0-3EABFB07A647}" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="481543437"/>
+						<MediaRef Id="521776349"/>
+						<MediaRef Id="650797169"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="515874561"/>
+						</Custom>
+					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="348963605" Name="Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Reverb" GUID="{39432060-1A71-40A3-B958-9264FDE9BB75}"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="1917263390" Name="StopMusic" ObjectPath="\Events\Default Work Unit\Music\StopMusic" GUID="{A56A5860-1D44-4E7C-9DFE-6660E5F55847}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3157003241" Name="test" ObjectPath="\Events\Default Work Unit\test" GUID="{EC8DE7D5-586B-4A64-B2D1-E2FA5E748762}" DurationType="OneShot" DurationMin="4.0635147" DurationMax="4.0635147">
+					<MediaRefs>
+						<MediaRef Id="283519557"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+			<Busses>
+				<Bus Id="393239870" Name="SFX" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX" GUID="{82BD75D9-95EE-495F-88CE-7A658BA55E69}"/>
+				<Bus Id="3803692087" Name="Master Audio Bus" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus" GUID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
+				<Bus Id="3991942870" Name="Music" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music" GUID="{8F4E0BEE-F6EE-413F-AEFF-F5ACA340B076}"/>
+			</Busses>
+			<AuxBusses>
+				<AuxBus Id="348963605" Name="Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Reverb" GUID="{39432060-1A71-40A3-B958-9264FDE9BB75}"/>
+				<AuxBus Id="1517463400" Name="Distortion" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Distortion" GUID="{418CD9C0-FA84-41AB-A45E-DF83011CDD82}"/>
+			</AuxBusses>
+			<GameParameters>
+				<GameParameter Id="2346531308" Name="musicVolume" ObjectPath="\Game Parameters\Default Work Unit\Volume\musicVolume" GUID="{DAF18041-72A2-4215-B1D0-EAE2DB16B628}"/>
+				<GameParameter Id="2886637823" Name="playerVelocity" ObjectPath="\Game Parameters\Default Work Unit\playerVelocity" GUID="{0F28D0E4-ED96-453E-8A56-B0877F9264C5}"/>
+				<GameParameter Id="2918011349" Name="masterVolume" ObjectPath="\Game Parameters\Default Work Unit\Volume\masterVolume" GUID="{1211C1CB-5F06-4FC0-9FA8-2E4402C1AD49}"/>
+				<GameParameter Id="3647101706" Name="PenguinDashVol" ObjectPath="\Game Parameters\Default Work Unit\Enemies\PenguinDashVol" GUID="{51EFFE07-2F62-40E7-9AD3-3A8BD411DFD4}"/>
+				<GameParameter Id="3873835272" Name="soundVolume" ObjectPath="\Game Parameters\Default Work Unit\Volume\soundVolume" GUID="{DF92366F-4997-4DFD-B8EC-F8899A911A75}"/>
+			</GameParameters>
+			<SwitchGroups>
+				<SwitchGroup Id="3991942870" Name="Music" ObjectPath="\Switches\Default Work Unit\Music" GUID="{4359D007-1BF3-4BC6-94F9-9F19C39A6BB8}">
+					<Switches>
+						<Switch Id="2607556080" Name="Menu" ObjectPath="\Switches\Default Work Unit\Music\Menu" GUID="{EEBDBBBA-DF30-4E6F-8686-4C63D4972B51}"/>
+						<Switch Id="2782712965" Name="Level" ObjectPath="\Switches\Default Work Unit\Music\Level" GUID="{E65BD47D-CC9E-4A96-B6E1-9D6CD99CAC00}"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{B2F52A79-300D-D2A6-4C12-D2D8E056BB44}</FileHash>
+</SoundBanksInfo>

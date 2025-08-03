@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{AA9D7DBE-CB2B-45C3-93D7-CBA6863CB875}" SchemaVersion="123">
+	<GameParameters>
+		<WorkUnit Name="Default Work Unit" ID="{AA9D7DBE-CB2B-45C3-93D7-CBA6863CB875}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Volume" ID="{2DC9FE67-70CE-4E13-96D4-198C2C779455}" ShortID="452814688">
+					<ChildrenList>
+						<GameParameter Name="masterVolume" ID="{1211C1CB-5F06-4FC0-9FA8-2E4402C1AD49}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="0"/>
+							</PropertyList>
+						</GameParameter>
+						<GameParameter Name="musicVolume" ID="{DAF18041-72A2-4215-B1D0-EAE2DB16B628}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="0"/>
+							</PropertyList>
+						</GameParameter>
+						<GameParameter Name="soundVolume" ID="{DF92366F-4997-4DFD-B8EC-F8899A911A75}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="0"/>
+							</PropertyList>
+						</GameParameter>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Enemies" ID="{29D36F8C-3E10-4D14-88A4-D0495C7C29FD}" ShortID="173311868">
+					<ChildrenList>
+						<GameParameter Name="PenguinDashVol" ID="{51EFFE07-2F62-40E7-9AD3-3A8BD411DFD4}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="0"/>
+							</PropertyList>
+						</GameParameter>
+					</ChildrenList>
+				</Folder>
+				<GameParameter Name="playerVelocity" ID="{0F28D0E4-ED96-453E-8A56-B0877F9264C5}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>
