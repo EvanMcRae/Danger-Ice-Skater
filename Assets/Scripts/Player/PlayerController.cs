@@ -265,7 +265,7 @@ public class PlayerController : MonoBehaviour
         if (inAir && rb.linearVelocity.y < 0)
         {
             Ray ray = new(transform.position, Vector3.down);
-            if (Physics.Raycast(ray, out RaycastHit hit, 5f, 1 << 7, QueryTriggerInteraction.Ignore))
+            if (Physics.Raycast(ray, out RaycastHit hit, 1f, 1 << 7, QueryTriggerInteraction.Ignore))
             {
                 anim.ResetTrigger("jump");
                 anim.SetTrigger("land");
