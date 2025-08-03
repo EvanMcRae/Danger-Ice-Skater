@@ -3990,7 +3990,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Luke Schultz\r\nAmanuel Seifu\r\nHuang Dawei\r\nBen \"Shadow Volume\"
-    Langsdale\nCrow Witch\t\t\t\t\t\t\t\t\n\rMixamo"
+    Langsdale\nCrow Witch\t\t\t\t\t\t\t\t\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a5df7c564b9db8f4c9f8ab0c987008d7, type: 2}
   m_sharedMaterial: {fileID: 1508208319649647093, guid: a5df7c564b9db8f4c9f8ab0c987008d7, type: 2}
