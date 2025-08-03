@@ -62,6 +62,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 lastPos;
 
     public bool startCutsceneActive = true;
+    public bool startedThisFrame = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -97,7 +98,11 @@ public class PlayerController : MonoBehaviour
         if (PauseManager.ShouldNotRun()) return;
         if (startCutsceneActive) return;
 
-        if (imso.jump.action.WasPressedThisFrame()) Jump();
+        if (startedThisFrame)
+        {
+            startedThisFrame = false;
+        }
+        else if (imso.jump.action.WasPressedThisFrame()) Jump();
 
         dashTimer = Mathf.Max(dashTimer - Time.deltaTime, 0);
 
