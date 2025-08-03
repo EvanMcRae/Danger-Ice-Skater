@@ -61,9 +61,12 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 lastPos;
 
+    public GameObject splashPrefab;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        WaterSplashParticles.splashGameobj = splashPrefab;
         rb = GetComponent<Rigidbody>();
 
         pm = FindAnyObjectByType<PauseManager>();
