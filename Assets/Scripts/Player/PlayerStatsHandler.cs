@@ -55,7 +55,7 @@ namespace Player {
             hd.DealDamage(damage);
             anim.SetTrigger("damaged");
             if (damage > 0 && health != 0) invincibilityTimer = invincibilityTime;
-            if (health == 0) StartCoroutine(KillFromDamage());
+            if (health == 0 && !killed) StartCoroutine(KillFromDamage());
             //KillFromDamage();
             
             return health == 0;
@@ -73,8 +73,11 @@ namespace Player {
 
         public IEnumerator KillFromDamage()
         {
-            AkUnitySoundEngine.PostEvent("PlayerDeath", gameObject);
             anim.SetTrigger("die");
+            if (!killed)
+            {
+                AkUnitySoundEngine.PostEvent("PlayerDeath", gameObject);
+            }
             killed = true;
 
             // Optional delay before invoking the event
