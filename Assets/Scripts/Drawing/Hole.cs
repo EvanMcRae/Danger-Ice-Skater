@@ -108,6 +108,7 @@ public class Hole : MonoBehaviour
                 if (HOLE_LIFETIME + m_spawnTime - Time.time < 0.3f && !m_extendedLife)
                 {
                     m_spawnTime += 0.3f;
+                    m_extendedLife = true;
                 }
             }
             else if (other.gameObject.TryGetComponent<HoleFallable>(out var enemy) || other.gameObject.CompareTag("Enemy")) {
