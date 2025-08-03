@@ -3,6 +3,7 @@ using Input;
 using UnityEngine.UI;
 using TMPro;
 using Game;
+using DG.Tweening;
 
 public class introCutscene : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class introCutscene : MonoBehaviour
     public TMP_Text text;
     public InputManager imso;
     Animator anim;
+    public Tween charTween, textTween, nextTween;
 
     float frame1 = .05f;
     float frame2 = 1f;
@@ -37,7 +39,7 @@ public class introCutscene : MonoBehaviour
     public void Update()
     {
         if (PauseManager.ShouldNotRun()) return;
-        
+
         if (gameStarted)
         {
             if (timer < frame1)
@@ -49,10 +51,7 @@ public class introCutscene : MonoBehaviour
             }
             else if (frame1 <= timer && timer < frame2)
             {
-                charSprite.transform.position = new Vector3(charSprite.transform.position.x, charSprite.transform.position.y - moveSpeed, charSprite.transform.position.z);
-                textBox.transform.position = new Vector3(textBox.transform.position.x, textBox.transform.position.y - moveSpeed, textBox.transform.position.z);
-                nextButton.transform.position = new Vector3(nextButton.transform.position.x, nextButton.transform.position.y - moveSpeed, nextButton.transform.position.z);
-
+                // used to do smth here
             }
             else
             {
@@ -71,8 +70,12 @@ public class introCutscene : MonoBehaviour
                 {
                     gameStarted = true;
                     text.text = "";
+                    player.GetComponent<PlayerController>().startedThisFrame = true;
                     player.GetComponent<PlayerController>().startCutsceneActive = false;
                     gameManager.GetComponent<GameController>().StartController();
+                    charTween = charSprite.transform.DOMoveY(charSprite.transform.position.y - 500, 1f, false);
+                    textTween = textBox.transform.DOMoveY(textBox.transform.position.y - 500, 1f, false);
+                    nextTween = nextButton.transform.DOMoveY(nextButton.transform.position.y - 500, 1f, false);
                 }
                 else
                 {
@@ -88,5 +91,12 @@ public class introCutscene : MonoBehaviour
             }
 
         }
+    }
+
+    void OnDestroy()
+    {
+        DOTween.Kill(textTween);
+        DOTween.Kill(charTween);
+        DOTween.Kill(nextTween);
     }
 }

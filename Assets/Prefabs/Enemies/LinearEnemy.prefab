@@ -389,17 +389,9 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 504450cb21e750c46b6be843f1bf5f1d, type: 2}
-    - target: {fileID: 8916979045543815761, guid: 69ba309777aaeb949b8a7389602f59b0, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8924312143693774172, guid: 69ba309777aaeb949b8a7389602f59b0, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 9088872756827976528, guid: 69ba309777aaeb949b8a7389602f59b0, type: 3}
-      propertyPath: m_Layer
-      value: 9
+    - target: {fileID: 8417361359673230750, guid: 69ba309777aaeb949b8a7389602f59b0, type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[0]'
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
