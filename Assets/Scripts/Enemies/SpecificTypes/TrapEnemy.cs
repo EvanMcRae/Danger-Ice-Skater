@@ -39,24 +39,32 @@ namespace Enemies
         public new void Update()
         {
             if (PauseManager.ShouldNotRun()) return;
-            
-            base.Update();
 
-            CheckIfCloseToWall(top.transform.position.z, bottom.transform.position.z, left.transform.position.x, right.transform.position.x);
-            if (!movingAwayFromWall)
+            if (canMove && !m_isDead && !m_waiting)
             {
+
                 base.Update();
-                trapTimer -= Time.deltaTime;
-                if (trapTimer <= 0)
+
+                CheckIfCloseToWall(top.transform.position.z, bottom.transform.position.z, left.transform.position.x, right.transform.position.x);
+                if (!movingAwayFromWall)
                 {
-                    if (DropTrap()) trapTimer = trapDelay;
-                    else trapTimer = 1;
+                    base.Update();
+                    trapTimer -= Time.deltaTime;
+                    if (trapTimer <= 0)
+                    {
+                        if (DropTrap())
+                        {
+                            trapTimer = trapDelay;
+                            anim.SetTrigger("moving");
+                        }
+                        else trapTimer = 1;
+                    }
                 }
-            }
-            else
-            {
-                anim.Play("skate");
-                MoveAwayFromWall();
+                else
+                {
+                    MoveAwayFromWall();
+                    anim.SetTrigger("moving");
+                }
             }
         }
 
@@ -65,6 +73,8 @@ namespace Enemies
         {
             Vector3 trapDir = new Vector3(Random.value * 2 - 1, 0, Random.value * 2 - 1).normalized;
             if (Physics.Raycast(transform.position, trapDir, 5, ~0)) {
+                anim.SetTrigger("trapping");
+                anim.Play("placeTrap");
                 GameObject trapInst = Instantiate(trap, transform.position + trapDir * 3, Quaternion.LookRotation(trapDir, Vector3.up));
                 trapInst.GetComponent<Rigidbody>().AddForce(dir * (Random.value * 5), ForceMode.Impulse);
                 return true;
