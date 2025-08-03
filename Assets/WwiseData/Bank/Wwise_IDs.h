@@ -27,11 +27,14 @@ namespace AK
         static const AkUniqueID HOCKEYSWING = 433652520U;
         static const AkUniqueID ICESPLASH = 1774890243U;
         static const AkUniqueID LEVELMUSIC = 1321655446U;
+        static const AkUniqueID LIGHTDRUMTRACK = 1807380688U;
         static const AkUniqueID LOOPCOMPLETE = 858221862U;
         static const AkUniqueID MENUMUSIC = 679636833U;
         static const AkUniqueID PAUSEGAME = 1589270263U;
         static const AkUniqueID PENGUINFALL = 4286935516U;
         static const AkUniqueID PENGUINSTEP = 230254265U;
+        static const AkUniqueID PLAYERDASH = 2525052962U;
+        static const AkUniqueID PLAYERDEATH = 1656947812U;
         static const AkUniqueID PLAYERGLIDE = 2683980149U;
         static const AkUniqueID PLAYERHURT = 3537581393U;
         static const AkUniqueID PLAYERJUMP = 4008126242U;

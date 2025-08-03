@@ -18,7 +18,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{114743E5-A477-565E-0E03-7A62BDF3A949}",
+    "Hash": "{366907A1-29F1-77DB-6098-CE2AED970843}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -165,7 +165,7 @@
     "Type": "User",
     "GUID": "{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}",
     "Language": "SFX",
-    "Hash": "{6CB47B0E-0163-56DB-D2F9-2C12F38D1E9A}",
+    "Hash": "{627306F8-21CB-E6BC-14CD-55913A9F6590}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -177,6 +177,14 @@
       "Location": "Memory",
       "ShortName": "Puck Hit.wav",
       "CachePath": "A2/{A27C11A9-0952-FB1B-DDE5-697CB8DFF4D9}.wem"
+     },
+     {
+      "Id": "76503719",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Dash fr.wav",
+      "CachePath": "AA/{AAFD3B45-347F-AFFC-3D48-9C9010FB87C6}.wem"
      },
      {
       "Id": "77639479",
@@ -192,7 +200,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Trap place.wav",
-      "CachePath": "4A/{4A5F007E-02B6-ED24-F1A4-69D3CEF97ABC}.wem"
+      "CachePath": "43/{43A04957-0E02-B674-5777-91FA4C2424EC}.wem"
      },
      {
       "Id": "92250040",
@@ -419,6 +427,14 @@
       "CachePath": "1B/{1B077267-43A3-65CD-F60B-2F32E4C4AE78}.wem"
      },
      {
+      "Id": "561948372",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Player Death.wav",
+      "CachePath": "3D/{3D337DB2-7496-FBF9-AB20-406104F18A9E}.wem"
+     },
+     {
       "Id": "589060082",
       "Language": "SFX",
       "Streaming": "false",
@@ -512,7 +528,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "AfterExplode.wav",
-      "CachePath": "87/{87A3EA33-EAC5-259B-52BE-6910F9861A41}.wem"
+      "CachePath": "02/{0201207B-04C0-778F-1823-2B72ECE9F56A}.wem"
      },
      {
       "Id": "731922532",
@@ -576,7 +592,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Explosion Impact.wav",
-      "CachePath": "10/{10DB38CC-9BC3-CB0C-6BFE-F54D4E1FCEF3}.wem"
+      "CachePath": "FC/{FCD15B0E-EAD6-321A-A6EE-466D99FCBB3F}.wem"
      },
      {
       "Id": "817391603",
@@ -632,7 +648,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Knife.wav",
-      "CachePath": "35/{3575EA59-730A-A4C0-1A4D-5862514A1E7A}.wem"
+      "CachePath": "E7/{E7088D17-B579-F0AD-325A-D54B056D5D30}.wem"
      },
      {
       "Id": "903708407",
@@ -656,7 +672,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Start Game.wav",
-      "CachePath": "B2/{B2BD225F-73DE-91A1-C696-DAD21CCC3D27}.wem"
+      "CachePath": "FF/{FFCA0A5C-EEEA-57DE-16B0-795ABBA0B9E8}.wem"
      },
      {
       "Id": "965355924",
@@ -751,6 +767,14 @@
        "GUID": "{2AFD6FB0-C906-4683-A377-FEEEF72967B0}",
        "LibName": "Wwise Compressor",
        "LibId": "7077891"
+      },
+      {
+       "Id": "3487820010",
+       "Name": "One_Tap_Half_Second",
+       "ObjectPath": "\\Effects\\Factory Effects\\Delay\\One_Tap_Half_Second",
+       "GUID": "{B8FE0D3B-7AAB-4344-89FE-177602B7BF19}",
+       "LibName": "Wwise Delay",
+       "LibId": "6946819"
       },
       {
        "Id": "3900114836",
@@ -891,10 +915,9 @@
       "Name": "GameOver",
       "ObjectPath": "\\Events\\Default Work Unit\\Player\\GameOver",
       "GUID": "{62315F2F-43DB-4459-B45B-E65EDC2E4F14}",
-      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0",
+      "DurationMin": "0.56689495",
+      "DurationMax": "0.56689495",
       "MediaRefs": [
        {
         "Id": "83019132"
@@ -952,6 +975,9 @@
        },
        {
         "Id": "521776349"
+       },
+       {
+        "Id": "561948372"
        },
        {
         "Id": "589060082"
@@ -1026,6 +1052,9 @@
         },
         {
          "Id": "1706684651"
+        },
+        {
+         "Id": "3487820010"
         }
        ]
       },
@@ -1252,6 +1281,25 @@
       ]
      },
      {
+      "Id": "1807380688",
+      "Name": "LightDrumTrack",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\LightDrumTrack",
+      "GUID": "{9A73D1AB-A84D-4264-863A-E4D89246C527}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionSetSwitch": [
+       {
+        "GroupId": "3991942870",
+        "Id": "4158285989",
+        "Name": "GameOver",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Music\\GameOver",
+        "GUID": "{3535B191-1CFA-4E27-8179-4EAB12E105B9}"
+       }
+      ]
+     },
+     {
       "Id": "858221862",
       "Name": "LoopComplete",
       "ObjectPath": "\\Events\\Default Work Unit\\Player\\LoopComplete",
@@ -1417,6 +1465,41 @@
         "Id": "1063543444"
        }
       ]
+     },
+     {
+      "Id": "2525052962",
+      "Name": "PlayerDash",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player\\PlayerDash",
+      "GUID": "{38F0313A-82EF-47E9-BF39-29311A2BA5C1}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.9659411",
+      "DurationMax": "1.9659411",
+      "MediaRefs": [
+       {
+        "Id": "76503719"
+       }
+      ]
+     },
+     {
+      "Id": "1656947812",
+      "Name": "PlayerDeath",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player\\PlayerDeath",
+      "GUID": "{762AFD4E-B3B7-43E3-9AAB-50156EEE95AF}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.56689495",
+      "DurationMax": "0.56689495",
+      "MediaRefs": [
+       {
+        "Id": "561948372"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3487820010"
+        }
+       ]
+      }
      },
      {
       "Id": "2683980149",
@@ -1740,6 +1823,9 @@
         "Id": "11736544"
        },
        {
+        "Id": "76503719"
+       },
+       {
         "Id": "83019132"
        },
        {
@@ -1810,6 +1896,9 @@
        },
        {
         "Id": "521776349"
+       },
+       {
+        "Id": "561948372"
        },
        {
         "Id": "589060082"
@@ -1908,6 +1997,9 @@
         },
         {
          "Id": "3043085106"
+        },
+        {
+         "Id": "3487820010"
         }
        ]
       },
@@ -2101,6 +2193,6 @@
     ]
    }
   ],
-  "FileHash": "{74E57258-8611-4FD9-3D31-28F3D2B2E603}"
+  "FileHash": "{943CF1C4-D090-9A63-F1A9-8454212687CE}"
  }
 }
