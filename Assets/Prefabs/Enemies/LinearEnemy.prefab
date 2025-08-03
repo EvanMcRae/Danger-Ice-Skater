@@ -180,14 +180,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7580190996002900432, guid: 69ba309777aaeb949b8a7389602f59b0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b9f2570d011352648812cdf22603a0d0, type: 2}
+    - target: {fileID: -6547223059409353530, guid: 69ba309777aaeb949b8a7389602f59b0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4e56b883359739541aa233a4b1404f92, type: 2}
+    - target: {fileID: -5546439633771404701, guid: 69ba309777aaeb949b8a7389602f59b0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6bef78937f1e7e847b89f21c2b1c2ad1, type: 2}
+    - target: {fileID: -1526964690268444965, guid: 69ba309777aaeb949b8a7389602f59b0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f398e9272a8e4e642a2a857506c00313, type: 2}
     - target: {fileID: 919132149155446097, guid: 69ba309777aaeb949b8a7389602f59b0, type: 3}
       propertyPath: m_Name
       value: lineenemy_v02
       objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: 69ba309777aaeb949b8a7389602f59b0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c1f5434c98c649442a12c5a54c048c3d, type: 2}
+    - target: {fileID: 2026081558148769356, guid: 69ba309777aaeb949b8a7389602f59b0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d464aaeffa79d0f42988368eef8edfd9, type: 2}
+    - target: {fileID: 4351411106470829699, guid: 69ba309777aaeb949b8a7389602f59b0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 44e784c9c51a690489891df394f1603f, type: 2}
     - target: {fileID: 7208261743932278219, guid: 69ba309777aaeb949b8a7389602f59b0, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.9999999
       objectReference: {fileID: 0}
+    - target: {fileID: 8417361359673230750, guid: 69ba309777aaeb949b8a7389602f59b0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 504450cb21e750c46b6be843f1bf5f1d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

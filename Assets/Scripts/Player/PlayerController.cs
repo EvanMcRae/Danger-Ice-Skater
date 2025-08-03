@@ -131,7 +131,7 @@ public class PlayerController : MonoBehaviour
         float horizontal = imso.xAxis.action.ReadValue<float>();
         float vertical = imso.yAxis.action.ReadValue<float>();
 
-        
+
         anim.SetBool("useGlideAnim", (Vector2.Dot(new Vector2(horizontal, vertical), new Vector2(rb.linearVelocity.x, rb.linearVelocity.z)) > 0 && rb.linearVelocity.magnitude > 10)
                                      || (horizontal == 0 && vertical == 0));
 
@@ -193,7 +193,7 @@ public class PlayerController : MonoBehaviour
         if (!fallThroughHole && new Vector3(rb.linearVelocity.x + horizontal, 0, rb.linearVelocity.z + vertical) != default)
         {
             transform.rotation = Quaternion.LookRotation(new Vector3(rb.linearVelocity.x + horizontal, 0, rb.linearVelocity.z + vertical), Vector3.up);
-           
+
         }
 
 
@@ -211,7 +211,7 @@ public class PlayerController : MonoBehaviour
             anim.transform.localRotation = Quaternion.Euler(0, 0, 0);
             priorVel = new Vector3();
         }
-        
+
 
 
         //Particle system effects
@@ -257,6 +257,17 @@ public class PlayerController : MonoBehaviour
         }
         AkUnitySoundEngine.SetRTPCValue("playerVelocity", 100f * Mathf.Clamp01(horizVel.magnitude / 10f));
         lastPos = currPos;
+
+        if (inAir && rb.linearVelocity.y < 0)
+        {
+            Ray ray = new(transform.position, Vector3.down);
+            if (Physics.Raycast(ray, out RaycastHit hit, 5f, 1 << 7, QueryTriggerInteraction.Ignore))
+            {
+                anim.ResetTrigger("jump");
+                anim.SetTrigger("land");
+                inAir = false;
+            }
+        }
     }
 
     
@@ -265,6 +276,11 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy")) {
             Enemy e = other.gameObject.GetComponent<Enemy>();
             psh.Damage(1);
+
+            if(other.transform.position.y + .5f < transform.position.y)
+            {
+                rb.MovePosition(transform.position + new Vector3(transform.position.x - other.transform.position.x, 0, transform.position.z - other.transform.position.z).normalized + Vector3.down * .5f);
+            }
         }
         else if (other.gameObject.layer == 7) // ice
         {
