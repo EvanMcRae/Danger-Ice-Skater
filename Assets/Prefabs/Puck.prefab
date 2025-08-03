@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 6498693527932761370}
   - component: {fileID: 6295539635694261890}
   - component: {fileID: 7931820931211360379}
+  - component: {fileID: 632672386914328656}
   m_Layer: 0
   m_Name: Puck
   m_TagString: Enemy
@@ -155,10 +156,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyDelay: 5
   destroyOnPlayerCollision: 1
-  deathEvent:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 72ce172c4023c4c478bd7e09188e3f7b, type: 2}
 --- !u!114 &7186248294486830815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +228,35 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 11400000, guid: 72ce172c4023c4c478bd7e09188e3f7b, type: 2}
   useCallbacks: 0
   stopSoundOnDestroy: 0
+  Callbacks: []
+  soundEmitterObject: {fileID: 0}
+  transitionDuration: 0
+  eventIdInternal: 0
+  valueGuidInternal: 
+  m_callbackDataInternal: {fileID: 0}
+--- !u!114 &632672386914328656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7109261927733015708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 235c18613c846440e9133fbbe227ed8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  actionOnEventType: 0
+  curveInterpolation: 4
+  enableActionOnEvent: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b07365c4ea9e94fd8a4a8f3a0c9fe47c, type: 2}
+  useCallbacks: 0
+  stopSoundOnDestroy: 1
   Callbacks: []
   soundEmitterObject: {fileID: 0}
   transitionDuration: 0

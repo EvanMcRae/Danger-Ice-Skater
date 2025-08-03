@@ -11,6 +11,13 @@
     "StaticLib": "AkSilenceSource"
    },
    {
+    "LibName": "Wwise Delay",
+    "LibId": "6946819",
+    "Type": "Effect",
+    "DLL": "AkDelay",
+    "StaticLib": "AkDelayFX"
+   },
+   {
     "LibName": "Wwise Compressor",
     "LibId": "7077891",
     "Type": "Effect",
@@ -49,6 +56,6 @@
     "Type": "AudioDevice"
    }
   ],
-  "FileHash": "{86543682-4D74-0E41-3FEF-ADDB9EBA3454}"
+  "FileHash": "{22084BFF-91CE-7860-4560-DAA17659B6F1}"
  }
 }

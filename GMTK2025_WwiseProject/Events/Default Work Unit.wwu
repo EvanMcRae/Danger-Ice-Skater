@@ -93,6 +93,13 @@
 						</Event>
 						<Event Name="GameOver" ID="{62315F2F-43DB-4459-B45B-E65EDC2E4F14}">
 							<ChildrenList>
+								<Action Name="" ID="{38E632DC-3FAA-4923-849B-4B05BFC3FB25}" ShortID="895564371">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Player Death" ID="{D3C8AC8C-79AA-4B05-91FF-2E90E0D17CFA}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 								<Action Name="" ID="{9283A041-4D56-4271-9853-A6541884AC48}" ShortID="459462532">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="2"/>
@@ -156,6 +163,28 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Knife" ID="{568EEAC7-AE6D-41DA-94C9-D89F1B5A44D1}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayerDeath" ID="{762AFD4E-B3B7-43E3-9AAB-50156EEE95AF}">
+							<ChildrenList>
+								<Action Name="" ID="{A3CBBDA2-19DA-4CB2-B7FD-2302DCF1D56E}" ShortID="510551385">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Player Death" ID="{D3C8AC8C-79AA-4B05-91FF-2E90E0D17CFA}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayerDash" ID="{38F0313A-82EF-47E9-BF39-29311A2BA5C1}">
+							<ChildrenList>
+								<Action Name="" ID="{758644EF-78EC-4A7C-AC05-25A577E639A0}" ShortID="504840875">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Player Dash" ID="{0CACFD2B-2DB3-48A8-828D-10DCC14E8A89}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -541,6 +570,20 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Music Switch" ID="{0770E6A8-DD92-4D4C-B486-93A021533D79}" WorkUnitID="{72CB28CD-56E5-4602-8B82-454C6ACE22C4}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="LightDrumTrack" ID="{9A73D1AB-A84D-4264-863A-E4D89246C527}">
+							<ChildrenList>
+								<Action Name="" ID="{114E4675-6C5F-428E-B403-47FC4ACD9EAB}" ShortID="488018871">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="23"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="GameOver" ID="{3535B191-1CFA-4E27-8179-4EAB12E105B9}" WorkUnitID="{96F1DF7E-81D2-4F50-9F39-99A2E5D279BB}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
