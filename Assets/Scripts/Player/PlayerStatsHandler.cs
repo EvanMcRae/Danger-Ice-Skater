@@ -25,6 +25,8 @@ namespace Player {
         [SerializeField]
         public Animator anim;
 
+        public bool killed = false;
+
         public void Start() {
             health = maxHealth;
             hd.UpdateMaxHealth(maxHealth);
@@ -71,7 +73,8 @@ namespace Player {
         public IEnumerator KillFromDamage()
         {
             anim.SetTrigger("die");
-            
+            killed = true;
+
             // Optional delay before invoking the event
             yield return new WaitForSeconds(1.5f); // adjust as needed
 

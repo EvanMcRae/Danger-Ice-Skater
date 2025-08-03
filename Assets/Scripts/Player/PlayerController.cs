@@ -137,6 +137,11 @@ public class PlayerController : MonoBehaviour
         {
             fallThroughHoleTimer -= Time.deltaTime;
         }
+
+        if(psh.killed)
+        {
+            rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+        }
     }
 
     void FixedUpdate()
