@@ -1,4 +1,5 @@
 using Enemies;
+using Enemies.SpecificTypes;
 using Input;
 using Player;
 using UnityEngine;
@@ -66,6 +67,10 @@ public class PlayerController : MonoBehaviour
 
     public GameObject splashPrefab;
 
+    public Image staminabarImage;
+    public Sprite happyImage;
+    public Sprite mehImage;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -121,11 +126,21 @@ public class PlayerController : MonoBehaviour
         if (staminaBar != null)
         {
             staminaBar.value = dashTimer;
+
+            if (dashTimer <= 0)
+                staminabarImage.sprite = happyImage;
+            else
+                staminabarImage.sprite = mehImage;
         }
 
         if (fallThroughHole)
         {
             fallThroughHoleTimer -= Time.deltaTime;
+        }
+
+        if(psh.killed)
+        {
+            rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
         }
     }
 
@@ -285,7 +300,7 @@ public class PlayerController : MonoBehaviour
             Enemy e = other.gameObject.GetComponent<Enemy>();
             psh.Damage(1);
 
-            if(other.transform.position.y + .5f < transform.position.y)
+            if(!other.gameObject.TryGetComponent(out LandMineDestroy l) && !other.gameObject.TryGetComponent(out Puck p) && other.transform.position.y + .5f < transform.position.y)
             {
                 rb.MovePosition(transform.position + new Vector3(transform.position.x - other.transform.position.x, 0, transform.position.z - other.transform.position.z).normalized + Vector3.down * .5f);
             }
@@ -328,6 +343,7 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(Vector3.up * dashForce, ForceMode.Impulse);
         anim.SetTrigger("jump");
         anim.ResetTrigger("land");
+        AkUnitySoundEngine.PostEvent("PlayerJump", gameObject);
         inAir = true;
         pauseBankingTimerStart = Time.time;
     }

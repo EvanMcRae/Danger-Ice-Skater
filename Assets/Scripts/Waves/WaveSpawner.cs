@@ -60,8 +60,7 @@ namespace Waves {
                 return false; //All sub-waves cleared!
             }
             currentSubWaveCount++;
-            if (spawnEnemies) SpawnSubWave();
-            geb.OnSubWaveStart.Invoke(currentWaveCount, currentSubWaveCount);
+            if (spawnEnemies) SpawnSubWave(); 
             return true;
         }
 
@@ -72,6 +71,8 @@ namespace Waves {
             Debug.Log("Spawning sub wave " + currentSubWaveCount);
             Wave wave = currentWave;
             SubWave subWave = wave.subWaves[currentSubWaveCount];
+            
+            
 
             bool valid = subWave.IsSubWaveInSize(validWaveSpawnPoints.Count); //NOTE THIS WORKS BECAUSE ALL ENEMIES SHOULD BE DEAD (and all spawn points valid) FOR THIS TO BE CALLED!
             if (!valid) {
@@ -103,6 +104,8 @@ namespace Waves {
                 validWaveSpawnPoints.Add(spawnPoint);
             }
             invalidWaveSpawnPoints.Clear();
+            
+            geb.OnSubWaveStart.Invoke(currentWaveCount, currentSubWaveCount);
         }
 
         /// <summary>

@@ -15,7 +15,7 @@ public class introCutscene : MonoBehaviour
     public Tween charTween, textTween, nextTween;
 
     float frame1 = .05f;
-    float frame2 = 1f;
+    float frame2 = 2f;
     float timer = 0f;
     float moveSpeed = 2f;
 
@@ -29,6 +29,9 @@ public class introCutscene : MonoBehaviour
                           "Ill skate in circles to cut holes in the ice.",
                           "Then the creatures will fall right in!"};
     int index = 0;
+    public Image PlayerImage;
+    public Sprite happyImage;
+    public Sprite mehImage;
 
     public void Start()
     {
@@ -73,14 +76,18 @@ public class introCutscene : MonoBehaviour
                     player.GetComponent<PlayerController>().startedThisFrame = true;
                     player.GetComponent<PlayerController>().startCutsceneActive = false;
                     gameManager.GetComponent<GameController>().StartController();
-                    charTween = charSprite.transform.DOMoveY(charSprite.transform.position.y - 500, 1f, false);
-                    textTween = textBox.transform.DOMoveY(textBox.transform.position.y - 500, 1f, false);
-                    nextTween = nextButton.transform.DOMoveY(nextButton.transform.position.y - 500, 1f, false);
+                    charTween = charSprite.transform.DOMoveY(charSprite.transform.position.y - 2000, 2f, false);
+                    textTween = textBox.transform.DOMoveY(textBox.transform.position.y - 2000, 2f, false);
+                    nextTween = nextButton.transform.DOMoveY(nextButton.transform.position.y - 2000, 2f, false);
                     AkUnitySoundEngine.PostEvent("LevelMusic", PauseManager.globalWwise);
                 }
                 else
                 {
                     text.text = dialogue[index];
+                    if (index < 2)
+                        PlayerImage.sprite = mehImage;
+                    else
+                        PlayerImage.sprite = happyImage;
                 }
             }
             if (startTimer) timer1 += Time.deltaTime;

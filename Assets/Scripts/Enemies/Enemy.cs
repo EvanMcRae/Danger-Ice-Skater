@@ -30,6 +30,7 @@ namespace Enemies {
 
             EnemyDied();
             FloatingTextManager.instance.ShowFloatingSprite(fallPos);
+            AkUnitySoundEngine.PostEvent("PointScore", PauseManager.globalWwise);
 
             Destroy(gameObject);
         }
@@ -48,7 +49,7 @@ namespace Enemies {
             SetCanMove(false); //Starting value false
             EnemySpawned();
             //anim = gameObject.GetComponent<Animator>(); //Commented out so that this can be set in inspector, hopefully this doesnt break anything
-            m_waiting = false; //TODO: change to true when implemented with waves
+            //m_waiting = false; //TODO: change to true when implemented with waves
             rb = GetComponent<Rigidbody>();
             if (!rb)
             {
@@ -137,7 +138,8 @@ namespace Enemies {
             base.Fall();
             anim.SetTrigger("falling");
             anim.Play("fall");
-            AkUnitySoundEngine.PostEvent(fallSFX, gameObject);
+            if (fallSFX != "")
+                AkUnitySoundEngine.PostEvent(fallSFX, gameObject);
         }
     }
 }

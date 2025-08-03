@@ -24,6 +24,7 @@ namespace Enemies
             rotateTowardsPlayer = true;
             rangeDelay = rangeTime; dashDelay = dashTime;
             circleForce = minCircleForce;
+            AkUnitySoundEngine.PostEvent("SharkSpawn", gameObject);
         }
         public new void Update()
         {
@@ -61,19 +62,20 @@ namespace Enemies
                     AttackPlayer();
             }
         }
-        
+
         public void CirclePlayer()
         {
             //Add force in the direction perpendicular to the movement direction
             //If it always tries to face the player, just always add force to the right or left
-            if(clockwise) rb.AddForce(transform.right * -circleForce, ForceMode.Force);
+            if (clockwise) rb.AddForce(transform.right * -circleForce, ForceMode.Force);
             else rb.AddForce(transform.right * circleForce, ForceMode.Force);
         }
 
         public void AttackPlayer()
         {
             //Dash + Dash cooldown
-            if (dashDelay >= dashTime - .01f) {
+            if (dashDelay >= dashTime - .01f)
+            {
                 anim.Play("dash");
                 anim.SetTrigger("dashing");
                 Vector3 vectorDiff = player.transform.position - transform.position;
@@ -81,7 +83,7 @@ namespace Enemies
 
                 rb.AddForce(vectorDiff * dashForce, ForceMode.Impulse);
             }
-            else if(dashDelay >= dashTime - 3f) moveTowardsPlayer = false;
+            else if (dashDelay >= dashTime - 3f) moveTowardsPlayer = false;
 
             //Reset variables
             if (dashDelay <= 0f)
