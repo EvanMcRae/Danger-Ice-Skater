@@ -162,6 +162,7 @@ public class PlayerController : MonoBehaviour
 
         if (fallThroughHole)
         {
+            anim.SetBool("fall", true);
             horizontal = 0;
             vertical = 0;
 
@@ -198,6 +199,7 @@ public class PlayerController : MonoBehaviour
                 rb.useGravity = true;
                 rb.excludeLayers = 0;
                 rb.linearDamping = 1;
+                anim.SetBool("fall",false);
             }
 
         }
