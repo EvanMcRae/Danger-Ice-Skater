@@ -26,8 +26,6 @@ namespace Waves {
         /// </summary>
         public int currentSubWaveCount = -1;
 
-        public static System.Action WaveStarted;
-
         
         /// <summary>
         ///     Progresses the spawner to the next wave. Does not do additional checks.
@@ -46,9 +44,6 @@ namespace Waves {
                 Debug.Log("This wave didn't have any subwaves... What?");
                 return false; //No subwaves?
             }
-            
-            Debug.Log("Next wave!" + currentWaveCount);
-            WaveStarted?.Invoke();
 
             currentSubWaveCount = -1;
             return true;
@@ -66,6 +61,7 @@ namespace Waves {
             }
             currentSubWaveCount++;
             if (spawnEnemies) SpawnSubWave();
+            geb.OnSubWaveStart.Invoke(currentWaveCount, currentSubWaveCount);
             return true;
         }
 
