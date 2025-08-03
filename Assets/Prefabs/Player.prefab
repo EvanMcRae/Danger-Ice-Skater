@@ -4987,6 +4987,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   imso: {fileID: 11400000, guid: 3839af05cfba756429ff20761423c8fa, type: 2}
+  psp: {fileID: 278123576953388537}
   pm: {fileID: 0}
   psh: {fileID: 7892994341498651269}
   acceleration: 12
@@ -5002,6 +5003,7 @@ MonoBehaviour:
   arenaFloor: {fileID: 0}
   particles: {fileID: 7915522442199613994}
   anim: {fileID: 462644127917268244}
+  staminaBar: {fileID: 0}
 --- !u!114 &7892994341498651269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5016,7 +5018,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hd: {fileID: 0}
   geb: {fileID: 11400000, guid: f8714c97c5f2ac84fa1762773bdaad01, type: 2}
-  mr: {fileID: 3378056549392829005}
   invincibilityTimer: 0
   invincibilityTime: 1
   health: 0
@@ -5137,6 +5138,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
       insertIndex: -1
       addedObject: {fileID: 462644127917268244}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 278123576953388537}
   m_SourcePrefab: {fileID: 100100000, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
 --- !u!1 &2725347555813467051 stripped
 GameObject:
@@ -5165,6 +5169,36 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &278123576953388537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2725347555813467051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d828db6ec1edb442d8970c594e2e5dc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StepEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 8f426bdf0db174bc4bb983112e9ee6e9, type: 2}
+  GlideEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b07365c4ea9e94fd8a4a8f3a0c9fe47c, type: 2}
+  HurtEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 66298570cd54140f7aabda8a42f947d2, type: 2}
+  SplashEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 5f9d0276a051d4dda9796b5dfbc14d6d, type: 2}
+  playerController: {fileID: 2939634649029205298}
+  isGliding: 0
 --- !u!4 &3357910182021429521 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
