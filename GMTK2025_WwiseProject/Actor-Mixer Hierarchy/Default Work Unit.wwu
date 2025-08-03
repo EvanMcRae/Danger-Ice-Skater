@@ -2595,9 +2595,20 @@
 							<ChildrenList>
 								<Sound Name="Pengiun Death" ID="{E4C03D64-5DD9-462A-BD4F-8EA20D8A41AC}" ShortID="771581877">
 									<PropertyList>
+										<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>3</Value>
+											</ValueList>
+										</Property>
 										<Property Name="Pitch" Type="int32">
 											<ValueList>
 												<Value>-430</Value>
+											</ValueList>
+										</Property>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
 											</ValueList>
 										</Property>
 										<Property Name="Volume" Type="Real64">
