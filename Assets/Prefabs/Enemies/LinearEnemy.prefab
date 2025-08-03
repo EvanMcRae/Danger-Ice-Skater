@@ -114,6 +114,7 @@ MonoBehaviour:
   m_waiting: 1
   anim: {fileID: 6999724777246183788}
   canMove: 1
+  movingAwayFromWall: 0
   player: {fileID: 0}
   rotateTowardsPlayer: 1
   moveTowardsPlayer: 1
@@ -220,6 +221,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 504450cb21e750c46b6be843f1bf5f1d, type: 2}
+    - target: {fileID: 8417361359673230750, guid: 69ba309777aaeb949b8a7389602f59b0, type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[0]'
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

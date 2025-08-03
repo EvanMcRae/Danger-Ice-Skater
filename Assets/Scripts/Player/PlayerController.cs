@@ -59,7 +59,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     Slider staminaBar;
 
-    private Vector3 lastPos;
+    private Vector2 lastPos;
+
+    public bool startCutsceneActive = true;
+    public bool startedThisFrame = false;
 
     public GameObject splashPrefab;
 
@@ -96,8 +99,13 @@ public class PlayerController : MonoBehaviour
         }
 
         if (PauseManager.ShouldNotRun()) return;
+        if (startCutsceneActive) return;
 
-        if (imso.jump.action.WasPressedThisFrame()) Jump();
+        if (startedThisFrame)
+        {
+            startedThisFrame = false;
+        }
+        else if (imso.jump.action.WasPressedThisFrame()) Jump();
 
         dashTimer = Mathf.Max(dashTimer - Time.deltaTime, 0);
 
@@ -124,6 +132,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         if (PauseManager.ShouldNotRun()) return;
+        if (startCutsceneActive) return;
 
         //make the player move
         //modified by rigidbody's Linear Dampening
@@ -242,10 +251,9 @@ public class PlayerController : MonoBehaviour
 
         priorVel = (4 * priorVel + rb.linearVelocity) / 5;
 
-        Vector3 currPos = transform.position;
-        currPos.y = 0;
+        Vector2 currPos = new(transform.position.x, transform.position.z);
         Vector2 horizVel = (currPos - lastPos) / Time.fixedDeltaTime;
-        if (horizVel.magnitude >= 0.05f)
+        if (horizVel.magnitude >= 0.8f)
         {
             anim.SetBool("isMoving", true);
         }
@@ -260,7 +268,7 @@ public class PlayerController : MonoBehaviour
         if (inAir && rb.linearVelocity.y < 0)
         {
             Ray ray = new(transform.position, Vector3.down);
-            if (Physics.Raycast(ray, out RaycastHit hit, 5f, 1 << 7, QueryTriggerInteraction.Ignore))
+            if (Physics.Raycast(ray, out RaycastHit hit, 1f, 1 << 7, QueryTriggerInteraction.Ignore))
             {
                 anim.ResetTrigger("jump");
                 anim.SetTrigger("land");

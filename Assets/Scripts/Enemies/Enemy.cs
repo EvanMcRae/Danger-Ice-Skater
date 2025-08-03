@@ -78,7 +78,7 @@ namespace Enemies {
         {
             Vector3 vectorDiff = centerOfRink.transform.position - transform.position;
             vectorDiff.Normalize();
-            rb.AddForce(vectorDiff * moveForce, ForceMode.Force);
+            rb.AddForce(vectorDiff * moveForce * 10, ForceMode.Force);
         }
         public void CheckIfCloseToWall(float top, float bottom, float left, float right)
         {
@@ -88,7 +88,10 @@ namespace Enemies {
             {
                 movingAwayFromWall = true;
             }
-            else movingAwayFromWall = false;
+            else
+            {
+                movingAwayFromWall = false;
+            }
         }
 
         /// <summary>
