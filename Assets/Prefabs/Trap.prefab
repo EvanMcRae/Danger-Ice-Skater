@@ -90,6 +90,7 @@ MonoBehaviour:
   destroyDelay: 10
   destroyOnPlayerCollision: 1
   explosion: {fileID: 6426180357193102234, guid: 3fe7db536d477b7489607998ae0e5bf4, type: 3}
+  trapModelPosition: {fileID: 4375717696352497767}
 --- !u!1001 &1991228160394743491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -230,5 +231,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.005270561, y: 0.00527056, z: 0.000891141}
-  m_Center: {x: -9.313226e-10, y: 2.3283059e-10, z: 0.00044574926}
+  m_Size: {x: 0.0041650156, y: 0.0041687, z: 0.00089114107}
+  m_Center: {x: -0.00001769729, y: -0.00007725164, z: 0.0004457493}
