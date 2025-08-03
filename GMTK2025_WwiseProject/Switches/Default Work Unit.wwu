@@ -3,7 +3,12 @@
 	<Switches>
 		<WorkUnit Name="Default Work Unit" ID="{96F1DF7E-81D2-4F50-9F39-99A2E5D279BB}" PersistMode="Standalone">
 			<ChildrenList>
-				<Folder Name="Enemies" ID="{8D8A7D05-81CD-4574-8FCD-904D19BBC4CE}" ShortID="619450519"/>
+				<SwitchGroup Name="Music" ID="{4359D007-1BF3-4BC6-94F9-9F19C39A6BB8}">
+					<ChildrenList>
+						<Switch Name="Level" ID="{E65BD47D-CC9E-4A96-B6E1-9D6CD99CAC00}"/>
+						<Switch Name="Menu" ID="{EEBDBBBA-DF30-4E6F-8686-4C63D4972B51}"/>
+					</ChildrenList>
+				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</Switches>

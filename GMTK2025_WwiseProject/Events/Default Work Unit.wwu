@@ -73,6 +73,54 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="IceSplash" ID="{7327E33C-88C0-4FA1-85EA-7BF62C80E027}">
+							<ChildrenList>
+								<Action Name="" ID="{45969CB1-2AB3-44CB-838B-B84A0314F6C5}" ShortID="921789810">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Ice Splash" ID="{7B5BEC7F-C591-4DD9-A47A-3E43AB19F3F6}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="GameOver" ID="{62315F2F-43DB-4459-B45B-E65EDC2E4F14}">
+							<ChildrenList>
+								<Action Name="" ID="{6E3BA86A-A93F-4ED9-9234-FC8AB2A652AB}" ShortID="349836090">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music Switch" ID="{0770E6A8-DD92-4D4C-B486-93A021533D79}" WorkUnitID="{72CB28CD-56E5-4602-8B82-454C6ACE22C4}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{9283A041-4D56-4271-9853-A6541884AC48}" ShortID="459462532">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Enemy" ID="{00A5B2A1-9A90-40C7-8F66-FAD97043EB35}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{F5CECE5C-41C1-41E5-BEF1-5367F372D26A}" ShortID="19108075">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Skates" ID="{78C948E0-F56D-4521-822D-BD83A7631CC3}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Enemy" ID="{7F29F9C0-F013-4152-8820-0F6168AB4BAE}" ShortID="265989790">
@@ -242,6 +290,86 @@
 										<Property Name="Scope" Type="int16" Value="1"/>
 									</PropertyList>
 									<ReferenceList/>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Music" ID="{89A48D77-5781-4CC1-85B8-F99B2C01F525}" ShortID="1058658174">
+					<ChildrenList>
+						<Event Name="LevelMusic" ID="{76504008-ADCB-4B9A-8687-35691F44807B}">
+							<ChildrenList>
+								<Action Name="" ID="{25D66511-28E3-4A07-82FD-7DE5F158F56F}" ShortID="197994508">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music Switch" ID="{0770E6A8-DD92-4D4C-B486-93A021533D79}" WorkUnitID="{72CB28CD-56E5-4602-8B82-454C6ACE22C4}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{6B263DBB-B1FB-4284-B81F-FB551489A8D3}" ShortID="837161414">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="23"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Level" ID="{E65BD47D-CC9E-4A96-B6E1-9D6CD99CAC00}" WorkUnitID="{96F1DF7E-81D2-4F50-9F39-99A2E5D279BB}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{3F6EDA37-13A8-43A6-AF36-B9F1564C3968}" ShortID="624980043">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music Switch" ID="{0770E6A8-DD92-4D4C-B486-93A021533D79}" WorkUnitID="{72CB28CD-56E5-4602-8B82-454C6ACE22C4}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="StopMusic" ID="{A56A5860-1D44-4E7C-9DFE-6660E5F55847}">
+							<ChildrenList>
+								<Action Name="" ID="{F383A8A9-B56E-472F-B7A7-8ABE2BF61179}" ShortID="213487441">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music Switch" ID="{0770E6A8-DD92-4D4C-B486-93A021533D79}" WorkUnitID="{72CB28CD-56E5-4602-8B82-454C6ACE22C4}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="MenuMusic" ID="{1F75F209-D770-4DAE-BF3C-D043CE438AA4}">
+							<ChildrenList>
+								<Action Name="" ID="{D5FC20AF-C015-4A14-8FEE-9EE08911686B}" ShortID="395138077">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music Switch" ID="{0770E6A8-DD92-4D4C-B486-93A021533D79}" WorkUnitID="{72CB28CD-56E5-4602-8B82-454C6ACE22C4}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{9E2A9C01-7C5F-4740-A403-FC5151610342}" ShortID="21502706">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="23"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Menu" ID="{EEBDBBBA-DF30-4E6F-8686-4C63D4972B51}" WorkUnitID="{96F1DF7E-81D2-4F50-9F39-99A2E5D279BB}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{04A56498-35B1-41D0-8CF5-ACAA45B62DEB}" ShortID="770806976">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music Switch" ID="{0770E6A8-DD92-4D4C-B486-93A021533D79}" WorkUnitID="{72CB28CD-56E5-4602-8B82-454C6ACE22C4}"/>
+										</Reference>
+									</ReferenceList>
 								</Action>
 							</ChildrenList>
 						</Event>

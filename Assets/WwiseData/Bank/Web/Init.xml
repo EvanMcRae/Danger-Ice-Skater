@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Web" BasePlatform="Web" SchemaVersion="16" SoundBankVersion="154">
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{79560EEE-66BA-159B-CA2F-9FA788190F45}">
+		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{ACB9A649-FF49-3BF5-819D-0118B60A5F48}">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -27,7 +27,15 @@
 				<GameParameter Id="3647101706" Name="PenguinDashVol" ObjectPath="\Game Parameters\Default Work Unit\Enemies\PenguinDashVol" GUID="{51EFFE07-2F62-40E7-9AD3-3A8BD411DFD4}"/>
 				<GameParameter Id="3873835272" Name="soundVolume" ObjectPath="\Game Parameters\Default Work Unit\Volume\soundVolume" GUID="{DF92366F-4997-4DFD-B8EC-F8899A911A75}"/>
 			</GameParameters>
+			<SwitchGroups>
+				<SwitchGroup Id="3991942870" Name="Music" ObjectPath="\Switches\Default Work Unit\Music" GUID="{4359D007-1BF3-4BC6-94F9-9F19C39A6BB8}">
+					<Switches>
+						<Switch Id="2607556080" Name="Menu" ObjectPath="\Switches\Default Work Unit\Music\Menu" GUID="{EEBDBBBA-DF30-4E6F-8686-4C63D4972B51}"/>
+						<Switch Id="2782712965" Name="Level" ObjectPath="\Switches\Default Work Unit\Music\Level" GUID="{E65BD47D-CC9E-4A96-B6E1-9D6CD99CAC00}"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{D978BFAB-E5FD-9224-78A2-016C819E43D7}</FileHash>
+	<FileHash>{E9064B31-4B9E-CBC5-014E-C6EEFDED5D0C}</FileHash>
 </SoundBanksInfo>
