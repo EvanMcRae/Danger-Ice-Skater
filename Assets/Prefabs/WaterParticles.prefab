@@ -223,8 +223,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.15294118, g: 0.18431373, b: 0.33333334, a: 1}
-      maxColor: {r: 0.40150696, g: 0.46182, b: 0.63522005, a: 1}
+      minColor: {r: 0.15294118, g: 0.18431373, b: 0.33333334, a: 0.7490196}
+      maxColor: {r: 0.40150696, g: 0.46182, b: 0.63522005, a: 0.23529412}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1427,8 +1427,8 @@ ParticleSystem:
         m_NumAlphaKeys: 2
   UVModule:
     serializedVersion: 2
-    enabled: 0
-    mode: 0
+    enabled: 1
+    mode: 1
     timeMode: 0
     fps: 30
     frameOverTime:
@@ -1546,7 +1546,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 0}
+    - sprite: {fileID: -2413806693520163455, guid: 726488f83e6002a47a612ee4cafeaac0, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -4868,7 +4868,7 @@ ParticleSystemRenderer:
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
-  m_SortingFudge: 0
+  m_SortingFudge: -15.3
   m_NormalDirection: 1
   m_ShadowBias: 0
   m_RenderAlignment: 0
@@ -4904,4 +4904,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 207664a148768784289e6886ab3acc7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splashPrefab: {fileID: 7540800791336708385}

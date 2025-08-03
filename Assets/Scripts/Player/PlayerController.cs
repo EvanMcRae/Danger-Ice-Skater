@@ -167,6 +167,7 @@ public class PlayerController : MonoBehaviour
                 {
                     psp.RunSplashSound();
                     fallThroughHoleDamaged = true;
+                    WaterSplashParticles.CreateSplashParticles(transform.position.x, transform.position.z);
                     psh.Damage(2);
                 }
                 rb.useGravity = false;

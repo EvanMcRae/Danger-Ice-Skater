@@ -22,6 +22,6 @@ public class WaterSplashParticles : MonoBehaviour
 
     public static void CreateSplashParticles(float xPos, float zPos)
     {
-        Instantiate(splashGameobj, new Vector3(xPos, -3.28f, zPos), new Quaternion());
+        Instantiate(splashGameobj, new Vector3(xPos, -3.28f, zPos), Quaternion.Euler(-90,0,90));
     }
 }
