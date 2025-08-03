@@ -9,10 +9,14 @@ public class ObjectFollower : MonoBehaviour
     {
         if (PauseManager.ShouldNotRun()) return;
 
+        Vector3 targetPos = target.transform.position;
         if (target.TryGetComponent<PlayerController>(out var player))
         {
-            if (PlayerController.fallThroughHole && player.transform.position.y < -1.5f) return;
+            if (PlayerController.fallThroughHole && player.transform.position.y < -1.5f)
+            {
+                targetPos.y = transform.position.y;
+            }
         }
-        transform.position = target.transform.position;
+        transform.position = targetPos;
     }
 }
