@@ -966,6 +966,11 @@
 						</RandomSequenceContainer>
 						<Sound Name="Jump" ID="{1DAB512B-BEE9-4461-BCA2-91F083A77036}" ShortID="577028386">
 							<PropertyList>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>12</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Pitch" Type="int32">
 									<ValueList>
 										<Value>-420</Value>

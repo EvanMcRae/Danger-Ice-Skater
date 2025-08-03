@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="154">
 	<SoundBanks>
-		<SoundBank Id="3161908922" Type="User" GUID="{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}" Language="SFX" Hash="{141122B4-C0EA-69AE-36CE-9623581403BA}">
+		<SoundBank Id="3161908922" Type="User" GUID="{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}" Language="SFX" Hash="{ED10F700-AD59-DA6F-9351-DAEEFE8EC78D}">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -125,6 +125,10 @@
 				<File Id="650797169" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Shark Chomps_4.wav</ShortName>
 					<CachePath>D1/{D1428FEF-B827-35FA-537C-EEC4BF8C5F7E}.wem</CachePath>
+				</File>
+				<File Id="651667884" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Jump.wav</ShortName>
+					<CachePath>F4/{F4F3A054-38B2-9131-253F-8B3FCF012866}.wem</CachePath>
 				</File>
 				<File Id="661063367" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Splash_5.wav</ShortName>
@@ -427,6 +431,11 @@
 						<MediaRef Id="408570755"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="4008126242" Name="PlayerJump" ObjectPath="\Events\Default Work Unit\Player\PlayerJump" GUID="{40ACA375-B5BA-4B8C-A9FE-A89ED8091A35}" DurationType="OneShot" DurationMin="0.18604985" DurationMax="0.21682371">
+					<MediaRefs>
+						<MediaRef Id="651667884"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="972739039" Name="PlayerSplash" ObjectPath="\Events\Default Work Unit\Player\PlayerSplash" GUID="{9C7F0E4A-A25E-429A-AD45-6E5F88EC7A85}" DurationType="OneShot" DurationMin="0.7995664" DurationMax="0.8380544">
 					<MediaRefs>
 						<MediaRef Id="731922532"/>
@@ -528,6 +537,7 @@
 						<MediaRef Id="589060082"/>
 						<MediaRef Id="600996587"/>
 						<MediaRef Id="650797169"/>
+						<MediaRef Id="651667884"/>
 						<MediaRef Id="661063367"/>
 						<MediaRef Id="713916889"/>
 						<MediaRef Id="720322715"/>
@@ -594,5 +604,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{7A987BCD-83C6-E3F5-40B9-0EE7727248B1}</FileHash>
+	<FileHash>{7FF752BF-DB63-05B6-7703-66D81AA1AB29}</FileHash>
 </SoundBanksInfo>
