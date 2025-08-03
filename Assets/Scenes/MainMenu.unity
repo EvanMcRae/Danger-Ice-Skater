@@ -3008,8 +3008,10 @@ MonoBehaviour:
 
     Press A to Jump
 
-    Press RT to Dash (limited
-    by stamina bar)'
+    Press RT to Dash
+
+    Press
+    Start to Pause'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a5df7c564b9db8f4c9f8ab0c987008d7, type: 2}
   m_sharedMaterial: {fileID: 1508208319649647093, guid: a5df7c564b9db8f4c9f8ab0c987008d7, type: 2}
@@ -6001,8 +6003,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\rWASD to move\nPress Space to Jump\nPress Shift to Dash (limited by stamina
-    bar)\r"
+  m_text: "\rWASD to move\nPress Space to Jump\nPress Shift to Dash\nPress Escape
+    to Pause\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a5df7c564b9db8f4c9f8ab0c987008d7, type: 2}
   m_sharedMaterial: {fileID: 1508208319649647093, guid: a5df7c564b9db8f4c9f8ab0c987008d7, type: 2}
