@@ -183,6 +183,28 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="PointScore" ID="{C1A9D683-9E86-4B1F-B3DE-B2F2D26FF22C}">
+							<ChildrenList>
+								<Action Name="" ID="{3775D471-B584-484D-B9D5-532756AD6BA0}" ShortID="625243289">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Point Score" ID="{6B07EBF1-0CF5-4B28-85F2-738BE763830C}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Pickup" ID="{694A28E5-4760-44C0-A71B-6F7338C0538A}">
+							<ChildrenList>
+								<Action Name="" ID="{32D56D8B-2EE0-424C-8C27-82742D2929B6}" ShortID="449052681">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Point ScorePickup" ID="{EA8415D5-919E-4191-A3B2-BB65F9C5407F}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Enemy" ID="{7F29F9C0-F013-4152-8820-0F6168AB4BAE}" ShortID="265989790">
@@ -296,6 +318,17 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="StepsHockey" ID="{59DBDA7B-C554-420A-90B4-F46E92505748}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="PuckGlide" ID="{7D4F2260-1999-4FDC-A067-10DA73E951BD}">
+									<ChildrenList>
+										<Action Name="" ID="{957C9D8F-7F3B-4B00-B5DD-62F615422C0D}" ShortID="292916383">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PuckGlide" ID="{454F714F-90A0-464D-81C6-BA68797BD5B2}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -603,17 +636,6 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Gate Open" ID="{F91B3967-4F7D-436F-9F68-A02604F1EBC7}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="PointScore" ID="{C1A9D683-9E86-4B1F-B3DE-B2F2D26FF22C}">
-							<ChildrenList>
-								<Action Name="" ID="{3775D471-B584-484D-B9D5-532756AD6BA0}" ShortID="625243289">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Point Score" ID="{A98190DD-12CE-4CE1-B694-2A1EAE1F034B}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
