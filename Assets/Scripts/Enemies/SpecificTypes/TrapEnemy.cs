@@ -80,6 +80,7 @@ namespace Enemies
                 anim.Play("placeTrap");
                 
                 GameObject trapInst = Instantiate(trap, transform.position +trapDir * 3 - new Vector3(0, 1.5f, 0), Quaternion.LookRotation(trapDir, Vector3.up));
+                AkUnitySoundEngine.PostEvent("TrapSet", gameObject);
                 trapInst.GetComponent<Rigidbody>().AddForce(dir * (Random.value * 5), ForceMode.Impulse);
                 return true;
             }

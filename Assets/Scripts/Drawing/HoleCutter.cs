@@ -157,6 +157,7 @@ public class HoleCutter : MonoBehaviour
             PopulateMesh(newCutout, mesh, true);
             Cutouts.Add(newCutout);
             Holes.Add(newHole);
+            AkUnitySoundEngine.PostEvent("LoopComplete", player.gameObject);
         }
         else
         {

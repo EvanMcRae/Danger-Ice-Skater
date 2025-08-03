@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Web" BasePlatform="Web" SchemaVersion="16" SoundBankVersion="154">
 	<SoundBanks>
-		<SoundBank Id="3161908922" Type="User" GUID="{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}" Language="SFX" Hash="{6CB47B0E-0163-56DB-D2F9-2C12F38D1E9A}">
+		<SoundBank Id="3161908922" Type="User" GUID="{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}" Language="SFX" Hash="{627306F8-21CB-E6BC-14CD-55913A9F6590}">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -10,13 +10,17 @@
 					<ShortName>Puck Hit.wav</ShortName>
 					<CachePath>A2/{A27C11A9-0952-FB1B-DDE5-697CB8DFF4D9}.wem</CachePath>
 				</File>
+				<File Id="76503719" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Dash fr.wav</ShortName>
+					<CachePath>AA/{AAFD3B45-347F-AFFC-3D48-9C9010FB87C6}.wem</CachePath>
+				</File>
 				<File Id="77639479" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Back.wav</ShortName>
 					<CachePath>33/{330060C5-E3E1-5D5A-8470-432882CFB78C}.wem</CachePath>
 				</File>
 				<File Id="83019132" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Trap place.wav</ShortName>
-					<CachePath>4A/{4A5F007E-02B6-ED24-F1A4-69D3CEF97ABC}.wem</CachePath>
+					<CachePath>43/{43A04957-0E02-B674-5777-91FA4C2424EC}.wem</CachePath>
 				</File>
 				<File Id="92250040" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Roar Death .wav</ShortName>
@@ -130,6 +134,10 @@
 					<ShortName>idea 2.wav</ShortName>
 					<CachePath>1B/{1B077267-43A3-65CD-F60B-2F32E4C4AE78}.wem</CachePath>
 				</File>
+				<File Id="561948372" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Player Death.wav</ShortName>
+					<CachePath>3D/{3D337DB2-7496-FBF9-AB20-406104F18A9E}.wem</CachePath>
+				</File>
 				<File Id="589060082" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Swings_6.wav</ShortName>
 					<CachePath>DD/{DD45836E-3A57-C08F-4C4F-1CB2C8135A52}.wem</CachePath>
@@ -176,7 +184,7 @@
 				</File>
 				<File Id="722765083" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AfterExplode.wav</ShortName>
-					<CachePath>87/{87A3EA33-EAC5-259B-52BE-6910F9861A41}.wem</CachePath>
+					<CachePath>02/{0201207B-04C0-778F-1823-2B72ECE9F56A}.wem</CachePath>
 				</File>
 				<File Id="731922532" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Splash_3.wav</ShortName>
@@ -208,7 +216,7 @@
 				</File>
 				<File Id="789933527" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Explosion Impact.wav</ShortName>
-					<CachePath>10/{10DB38CC-9BC3-CB0C-6BFE-F54D4E1FCEF3}.wem</CachePath>
+					<CachePath>FC/{FCD15B0E-EAD6-321A-A6EE-466D99FCBB3F}.wem</CachePath>
 				</File>
 				<File Id="817391603" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Steps\Step.wav</ShortName>
@@ -236,7 +244,7 @@
 				</File>
 				<File Id="885123215" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Knife.wav</ShortName>
-					<CachePath>35/{3575EA59-730A-A4C0-1A4D-5862514A1E7A}.wem</CachePath>
+					<CachePath>E7/{E7088D17-B579-F0AD-325A-D54B056D5D30}.wem</CachePath>
 				</File>
 				<File Id="903708407" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Steps\Skate.wav</ShortName>
@@ -248,7 +256,7 @@
 				</File>
 				<File Id="957178055" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Start Game.wav</ShortName>
-					<CachePath>B2/{B2BD225F-73DE-91A1-C696-DAD21CCC3D27}.wem</CachePath>
+					<CachePath>FF/{FFCA0A5C-EEEA-57DE-16B0-795ABBA0B9E8}.wem</CachePath>
 				</File>
 				<File Id="965355924" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Steps\Skate.wav</ShortName>
@@ -284,6 +292,7 @@
 					<Plugin Id="1237275451" Name="Octave_Up" ObjectPath="\Effects\Factory Effects\Pitch Shifter\Harmonize\Octave_Up" GUID="{A98F423C-EC97-49D8-8698-445CE91F24B7}" LibName="Wwise Pitch Shifter" LibId="8912899"/>
 					<Plugin Id="1706684651" Name="Plate_Medium" ObjectPath="\Effects\Factory Effects\RoomVerb\Plates\Plate_Medium" GUID="{33384D0C-6ACB-4E3D-AC82-73AAB3AE1CA5}" LibName="Wwise RoomVerb" LibId="7733251"/>
 					<Plugin Id="3043085106" Name="High_Impact" ObjectPath="\Effects\Factory Effects\Compressor\High_Impact" GUID="{2AFD6FB0-C906-4683-A377-FEEEF72967B0}" LibName="Wwise Compressor" LibId="7077891"/>
+					<Plugin Id="3487820010" Name="One_Tap_Half_Second" ObjectPath="\Effects\Factory Effects\Delay\One_Tap_Half_Second" GUID="{B8FE0D3B-7AAB-4344-89FE-177602B7BF19}" LibName="Wwise Delay" LibId="6946819"/>
 					<Plugin Id="3900114836" Name="Metal_Hangar" ObjectPath="\Effects\Factory Effects\RoomVerb\Huge Spaces\Metal_Hangar" GUID="{C4A4605C-42EF-476A-B53C-E31C7A442C24}" LibName="Wwise RoomVerb" LibId="7733251"/>
 				</ShareSets>
 			</Plugins>
@@ -334,7 +343,7 @@
 						<MediaRef Id="1063543444"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="4158285989" Name="GameOver" ObjectPath="\Events\Default Work Unit\Player\GameOver" GUID="{62315F2F-43DB-4459-B45B-E65EDC2E4F14}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+				<Event Id="4158285989" Name="GameOver" ObjectPath="\Events\Default Work Unit\Player\GameOver" GUID="{62315F2F-43DB-4459-B45B-E65EDC2E4F14}" DurationType="OneShot" DurationMin="0.56689495" DurationMax="0.56689495">
 					<MediaRefs>
 						<MediaRef Id="83019132"/>
 						<MediaRef Id="92250040"/>
@@ -355,6 +364,7 @@
 						<MediaRef Id="472000575"/>
 						<MediaRef Id="481543437"/>
 						<MediaRef Id="521776349"/>
+						<MediaRef Id="561948372"/>
 						<MediaRef Id="589060082"/>
 						<MediaRef Id="600996587"/>
 						<MediaRef Id="650797169"/>
@@ -383,6 +393,7 @@
 						<ShareSets>
 							<PluginRef Id="1237275451"/>
 							<PluginRef Id="1706684651"/>
+							<PluginRef Id="3487820010"/>
 						</ShareSets>
 					</PluginRefs>
 					<AuxBusRefs>
@@ -464,6 +475,11 @@
 						<ActionSetSwitchEntry GroupId="3991942870" Id="2782712965" Name="Level" ObjectPath="\Switches\Default Work Unit\Music\Level" GUID="{E65BD47D-CC9E-4A96-B6E1-9D6CD99CAC00}"/>
 					</ActionSetSwitch>
 				</Event>
+				<Event Id="1807380688" Name="LightDrumTrack" ObjectPath="\Events\Default Work Unit\Music\LightDrumTrack" GUID="{9A73D1AB-A84D-4264-863A-E4D89246C527}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetSwitch>
+						<ActionSetSwitchEntry GroupId="3991942870" Id="4158285989" Name="GameOver" ObjectPath="\Switches\Default Work Unit\Music\GameOver" GUID="{3535B191-1CFA-4E27-8179-4EAB12E105B9}"/>
+					</ActionSetSwitch>
+				</Event>
 				<Event Id="858221862" Name="LoopComplete" ObjectPath="\Events\Default Work Unit\Player\LoopComplete" GUID="{89065F99-E474-44D7-BB99-2BC9E08B331F}" DurationType="OneShot" DurationMin="0.2860225" DurationMax="0.2860225">
 					<MediaRefs>
 						<MediaRef Id="885123215"/>
@@ -526,6 +542,21 @@
 						<MediaRef Id="1008933578"/>
 						<MediaRef Id="1063543444"/>
 					</MediaRefs>
+				</Event>
+				<Event Id="2525052962" Name="PlayerDash" ObjectPath="\Events\Default Work Unit\Player\PlayerDash" GUID="{38F0313A-82EF-47E9-BF39-29311A2BA5C1}" DurationType="OneShot" DurationMin="1.9659411" DurationMax="1.9659411">
+					<MediaRefs>
+						<MediaRef Id="76503719"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1656947812" Name="PlayerDeath" ObjectPath="\Events\Default Work Unit\Player\PlayerDeath" GUID="{762AFD4E-B3B7-43E3-9AAB-50156EEE95AF}" DurationType="OneShot" DurationMin="0.56689495" DurationMax="0.56689495">
+					<MediaRefs>
+						<MediaRef Id="561948372"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="3487820010"/>
+						</ShareSets>
+					</PluginRefs>
 				</Event>
 				<Event Id="2683980149" Name="PlayerGlide" ObjectPath="\Events\Default Work Unit\Player\PlayerGlide" GUID="{E0797177-A469-4871-83E2-5C12C55AD17C}" DurationType="Infinite">
 					<MediaRefs>
@@ -647,6 +678,7 @@
 				<Event Id="3189472150" Name="StopSFX" ObjectPath="\Events\Default Work Unit\Utility\StopSFX" GUID="{8E5C8332-3E46-4982-9676-C79380634E61}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<MediaRefs>
 						<MediaRef Id="11736544"/>
+						<MediaRef Id="76503719"/>
 						<MediaRef Id="83019132"/>
 						<MediaRef Id="92250040"/>
 						<MediaRef Id="112692613"/>
@@ -671,6 +703,7 @@
 						<MediaRef Id="472000575"/>
 						<MediaRef Id="481543437"/>
 						<MediaRef Id="521776349"/>
+						<MediaRef Id="561948372"/>
 						<MediaRef Id="589060082"/>
 						<MediaRef Id="600996587"/>
 						<MediaRef Id="650797169"/>
@@ -707,6 +740,7 @@
 							<PluginRef Id="1237275451"/>
 							<PluginRef Id="1706684651"/>
 							<PluginRef Id="3043085106"/>
+							<PluginRef Id="3487820010"/>
 						</ShareSets>
 					</PluginRefs>
 					<AuxBusRefs>
@@ -776,5 +810,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{FB9E1B33-6A18-4431-0E4B-5B695C228DE9}</FileHash>
+	<FileHash>{272D032D-EDEA-DFE6-3F5D-F8FDD2515A53}</FileHash>
 </SoundBanksInfo>

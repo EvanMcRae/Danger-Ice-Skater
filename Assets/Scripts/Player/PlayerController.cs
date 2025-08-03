@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
             (imso.xAxis.action.IsPressed() || imso.yAxis.action.IsPressed()) &&
             dashTimer <= 0)
         {
-
+            AkUnitySoundEngine.PostEvent("PlayerDash", gameObject);
             Dash();
             dashTimer = dashCooldown;
         }
