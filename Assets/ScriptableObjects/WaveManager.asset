@@ -15,15 +15,15 @@ MonoBehaviour:
   staticWaves:
   - subWaves:
     - enemies:
-      - enemy: 4
+      - enemy: 3
         count: 1
       randomEnemyCredits: 0
     - enemies:
-      - enemy: 4
+      - enemy: 3
         count: 3
       randomEnemyCredits: 0
     - enemies:
-      - enemy: 4
+      - enemy: 3
         count: 5
       randomEnemyCredits: 0
     waveLevel: 0
