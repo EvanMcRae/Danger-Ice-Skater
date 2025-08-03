@@ -11,14 +11,14 @@
   <LoadSoundEngineInEditMode>true</LoadSoundEngineInEditMode>
   <ShowMissingRigidBodyWarning>true</ShowMissingRigidBodyWarning>
   <ShowSpatialAudioWarningMsg>true</ShowSpatialAudioWarningMsg>
-  <WwiseInstallationPathMac />
+  <WwiseInstallationPathMac>/Applications/Audiokinetic/Wwise2024.1.5.8803/Wwise.app</WwiseInstallationPathMac>
   <WwiseInstallationPathWindows>C:\Audiokinetic\Wwise2024.1.5.8803</WwiseInstallationPathWindows>
   <WwiseProjectPath>../GMTK2025_WwiseProject/GMTK2025_WwiseProject.wproj</WwiseProjectPath>
   <UseWaapi>true</UseWaapi>
   <WaapiPort>8080</WaapiPort>
   <WaapiIP>127.0.0.1</WaapiIP>
   <UseGitRepository>true</UseGitRepository>
-  <PackageSource>https://github.com/danielambrits/WwiseUnityAddressables.git</PackageSource>
+  <PackageSource>https://github.com/danielambrits/WwiseUnityAddressables</PackageSource>
   <AddressableBankFolder>WwiseData/Bank</AddressableBankFolder>
   <UseCustomBuildScript>false</UseCustomBuildScript>
   <AddressableAssetBuilderPath>Assets/AddressableAssetsData/DataBuilders\BuildScriptWwisePacked.asset</AddressableAssetBuilderPath>
