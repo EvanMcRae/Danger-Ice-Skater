@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3082789497159342337}
   - component: {fileID: 9024460489902341260}
   - component: {fileID: 547468786114739637}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: CircularEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -158,6 +158,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5740877495279518487}
     m_Modifications:
+    - target: {fileID: -9004204934633985419, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.98583794
@@ -218,22 +222,114 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 90a9d7496afa6284081cc95ec2ecc443, type: 2}
+    - target: {fileID: -6514247508213409846, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -6143901064014034105, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -5630636528068280358, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -5598095150299715278, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -4850656631223933474, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -4606671804208021914, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -2572214935944666025, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: -2319008919943744451, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: fc1ffa1c3b53231458aecece8d1f505d, type: 2}
+    - target: {fileID: -1010688296913781445, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 635547659545568360, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 659323809993793620, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
       propertyPath: m_Name
       value: CirclingEnemy_v1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1630794972795428178, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 44fd137c4f308d14db4190e79a4598f2, type: 2}
+    - target: {fileID: 1803294444508550996, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000409405754791802, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2321523695958950486, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 22136e27491887c4d9a9ff94acec37db, type: 2}
+    - target: {fileID: 3355908863760568564, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759433336699829789, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5052627991300098655, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995126571952079326, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657560127643677590, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887461517444567220, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036213049465896255, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8075368125514703920, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728016010704091974, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114772898675105519, guid: a82182cac77d54148bc932bb3f9abd43, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
