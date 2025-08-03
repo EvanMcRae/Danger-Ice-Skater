@@ -577,7 +577,7 @@ MonoBehaviour:
   - {fileID: 3870809219970303358}
   MainMenuName: MainMenu
   eventSystem: {fileID: 0}
-  settingsBackButton: {fileID: 0}
+  settingsBackButton: {fileID: 2175020989602951423}
   settingsButton: {fileID: 0}
   playButton: {fileID: 0}
   WwiseGlobal: {fileID: 0}
@@ -4126,6 +4126,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbe16298ec320114f8e4d01c4e0b9948, type: 3}
+--- !u!1 &2175020989602951423 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1749460081485349593, guid: bbe16298ec320114f8e4d01c4e0b9948, type: 3}
+  m_PrefabInstance: {fileID: 461740716241220134}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3870809219970303358 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3737863197001480024, guid: bbe16298ec320114f8e4d01c4e0b9948, type: 3}
