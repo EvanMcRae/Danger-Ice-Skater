@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe82430d29cb44398a570531387cf861, type: 3}
+  m_Name: A2FD3928-5C1F-4902-905C-5FEB6C426D17
+  m_EditorClassIdentifier: 
+  objectName: PuckHit
+  id: 3993562277
+  guid: A2FD3928-5C1F-4902-905C-5FEB6C426D17
+  AutoBank: {fileID: 0}
+  IsInUserDefinedSoundBank: 1
