@@ -6411,9 +6411,9 @@ MonoBehaviour:
   NextSceneName: GameScene
   eventSystem: {fileID: 1570478796}
   instructionsBackButton: {fileID: 635750831}
-  creditsBackButton: {fileID: 0}
+  creditsBackButton: {fileID: 580142980}
   playButton: {fileID: 1815594976}
-  settingsBackButton: {fileID: 0}
+  settingsBackButton: {fileID: 2871532907071529331}
 --- !u!1 &1848573764
 GameObject:
   m_ObjectHideFlags: 0
@@ -7130,6 +7130,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbe16298ec320114f8e4d01c4e0b9948, type: 3}
+--- !u!1 &2871532907071529331 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8031077474670571054, guid: bbe16298ec320114f8e4d01c4e0b9948, type: 3}
+  m_PrefabInstance: {fileID: 2871532907071529330}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
