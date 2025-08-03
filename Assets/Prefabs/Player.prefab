@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2615875566065738063}
   - component: {fileID: 7915522442199613994}
   - component: {fileID: 6761563646186460707}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 798460305124830244}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: -0.4752, z: 0}
+  m_LocalPosition: {x: 0, y: -0.539, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -116,7 +116,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -169,7 +169,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.69759256
+      scalar: 5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -287,7 +287,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -751,7 +751,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 2
+      value: 0.1
       mode: 0
       spread: 0
       speed:
@@ -870,7 +870,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 12.165884
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -976,7 +976,7 @@ ParticleSystem:
     m_BurstCount: 0
     m_Bursts: []
   SizeModule:
-    enabled: 1
+    enabled: 0
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -987,21 +987,21 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 1
+          value: 0
           inSlope: 0
-          outSlope: 0
+          outSlope: 1
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 0
-          inSlope: -0.99941814
-          outSlope: -0.99941814
+          value: 1
+          inSlope: 1
+          outSlope: 0
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.16080785
+          inWeight: 0.33333334
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -1300,7 +1300,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 1
+    enabled: 0
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -1309,7 +1309,7 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 0}
+        key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1333,7 +1333,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_ColorSpace: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
@@ -1368,15 +1368,15 @@ ParticleSystem:
         m_NumAlphaKeys: 2
   UVModule:
     serializedVersion: 2
-    enabled: 1
+    enabled: 0
     mode: 0
     timeMode: 0
     fps: 30
     frameOverTime:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 1
       scalar: 0.9999
-      minScalar: 0.125
+      minScalar: 0.9999
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1479,9 +1479,9 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     speedRange: {x: 0, y: 1}
-    tilesX: 8
+    tilesX: 1
     tilesY: 1
-    animationType: 1
+    animationType: 0
     rowIndex: 0
     cycles: 1
     uvChannelMask: -1
@@ -4770,7 +4770,7 @@ ParticleSystemRenderer:
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
+  m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
@@ -4780,7 +4780,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 76f4528d66b9942038b4ebfe32017f83, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4800,7 +4800,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -4848,10 +4848,7 @@ GameObject:
   - component: {fileID: 3083590689317668306}
   - component: {fileID: 2939634649029205298}
   - component: {fileID: 7892994341498651269}
-  - component: {fileID: 1108291025541415912}
-  - component: {fileID: 4072698214067470984}
-  - component: {fileID: 5779184792864636470}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -4868,7 +4865,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.1802, z: 1}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2615875566065738063}
@@ -4988,9 +4985,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdc8f32285eaff44ab77cd0f5a515e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 3083590689317668306}
+  rb: {fileID: 0}
   imso: {fileID: 11400000, guid: 3839af05cfba756429ff20761423c8fa, type: 2}
-  psp: {fileID: 1314777808695799775}
+  psp: {fileID: 278123576953388537}
   pm: {fileID: 0}
   psh: {fileID: 7892994341498651269}
   acceleration: 12
@@ -4999,7 +4996,7 @@ MonoBehaviour:
   dashForce: 10
   dashCooldown: 1
   dashTimer: 0
-  respawnHeight: 1
+  respawnHeight: 3
   fallThroughHoleTimer: 0
   fallThroughHoleTime: 0.5
   fallThroughHoleDamaged: 0
@@ -5026,60 +5023,6 @@ MonoBehaviour:
   health: 0
   maxHealth: 10
   anim: {fileID: 462644127917268244}
---- !u!114 &1108291025541415912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5554373441892825148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdcc7dbaf13d2464b89c3a2c24898ea4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_listeners:
-    initialListenerList:
-    - {fileID: 4072698214067470984}
-    useDefaultListeners: 1
-  isEnvironmentAware: 1
-  isStaticObject: 0
-  usePositionOffsetData: 0
-  m_positionOffsetData:
-    KeepMe: 1
-    positionOffset: {x: 0, y: 0, z: 0}
-  scalingFactor: 1
-  m_posOffsetData: {fileID: 0}
-  listenerMask: 1
---- !u!114 &4072698214067470984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5554373441892825148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e25f1b967dce4685aa81b5b608f38a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isDefaultListener: 1
-  bOverrideScalingFactor: 0
-  scalingFactor: -1
-  listenerId: 0
---- !u!114 &5779184792864636470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5554373441892825148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ae78c7bd4d404f57bfb70db2b4e405b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Collider: {fileID: 0}
 --- !u!1001 &2959719243466186490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5132,10 +5075,62 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7823293702887809713, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 77f02c2581966544898d6d9c45b087a2, type: 2}
+    - target: {fileID: -7580190996002900432, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7c2ad81d4b66aad49950af685b8730d7, type: 2}
+    - target: {fileID: -6126564370839708100, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4c726b2013aabb04bb30aab67d43a2ab, type: 2}
+    - target: {fileID: -4396642182433536433, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a83cf9803d09294478b6a07d7eee8b3d, type: 2}
+    - target: {fileID: -2233317144233345849, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a16ea99c96abbaf4abe6b81867f01ad2, type: 2}
+    - target: {fileID: 875084729758238397, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 686e1a1efdd5bc648905f256ff615002, type: 2}
     - target: {fileID: 919132149155446097, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
       propertyPath: m_Name
       value: ice_skater
       objectReference: {fileID: 0}
+    - target: {fileID: 933541660496308226, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 84f5279db32e64f4e86aef3f3a15c0c4, type: 2}
+    - target: {fileID: 1567107424331199580, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f74af5fdc71201847b0dd9a2b7e60389, type: 2}
+    - target: {fileID: 3632515415894740815, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f74af5fdc71201847b0dd9a2b7e60389, type: 2}
+    - target: {fileID: 5074512353664290214, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 90d3d9982185bde47a46ea00f3b01182, type: 2}
+    - target: {fileID: 5797384429611982230, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f74af5fdc71201847b0dd9a2b7e60389, type: 2}
+    - target: {fileID: 6095549738645645947, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ce0e138f352d12c44b8f5acbd2d647c2, type: 2}
+    - target: {fileID: 8417361359673230750, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 86289e75f3e9b114eb8d8475dec3f398, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5145,7 +5140,7 @@ PrefabInstance:
       addedObject: {fileID: 462644127917268244}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1314777808695799775}
+      addedObject: {fileID: 278123576953388537}
   m_SourcePrefab: {fileID: 100100000, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
 --- !u!1 &2725347555813467051 stripped
 GameObject:
@@ -5174,7 +5169,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1314777808695799775
+--- !u!114 &278123576953388537
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
