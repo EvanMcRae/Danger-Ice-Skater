@@ -92,6 +92,7 @@ public class PauseManager : MonoBehaviour
 
     public void TopPauseMenu()
     {
+        PlayerPrefs.Save();
         TurnOffMenus();
         Menus[0].SetActive(true);
         eventSystem.SetSelectedGameObject(settingsButton);

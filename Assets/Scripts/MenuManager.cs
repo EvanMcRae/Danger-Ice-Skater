@@ -36,6 +36,7 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField]
     public GameObject settingsBackButton;
+    private bool settingsOpen;
 
     private void Start()
     {
@@ -94,6 +95,7 @@ public class MenuManager : MonoBehaviour
         TurnOffMenus();
         ActivateMenuWithAnimation(3);
         eventSystem.SetSelectedGameObject(settingsBackButton);
+        settingsOpen = true;
     }
 
     public void QuitGame()
@@ -115,6 +117,11 @@ public class MenuManager : MonoBehaviour
 
     private void TurnOffMenus()
     {
+        if (settingsOpen)
+        {
+            PlayerPrefs.Save();
+            settingsOpen = false;
+        }
         foreach (GameObject menu in Menus)
         {
             if (menu != Menus[0])
