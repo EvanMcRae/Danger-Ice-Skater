@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     Slider staminaBar;
 
-    private Vector3 lastPos;
+    private Vector2 lastPos;
 
     public bool startCutsceneActive = true;
 
@@ -243,10 +243,9 @@ public class PlayerController : MonoBehaviour
 
         priorVel = (4 * priorVel + rb.linearVelocity) / 5;
 
-        Vector3 currPos = transform.position;
-        currPos.y = 0;
+        Vector2 currPos = new(transform.position.x, transform.position.z);
         Vector2 horizVel = (currPos - lastPos) / Time.fixedDeltaTime;
-        if (horizVel.magnitude >= 0.05f)
+        if (horizVel.magnitude >= 0.8f)
         {
             anim.SetBool("isMoving", true);
         }
