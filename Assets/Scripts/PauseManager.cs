@@ -96,6 +96,7 @@ public class PauseManager : MonoBehaviour
     {
         TurnOffMenus(1);
         ActivateMenuWithAnimation(1);
+        menuOpen = true;
         eventSystem.SetSelectedGameObject(settingsBackButton);
     }
 
