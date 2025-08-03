@@ -17,9 +17,13 @@ namespace AK
         static const AkUniqueID ENEMYSPLASH = 1495289514U;
         static const AkUniqueID FOXFALL = 2594447999U;
         static const AkUniqueID FOXSTEP = 3020866858U;
+        static const AkUniqueID GAMEOVER = 4158285989U;
         static const AkUniqueID HOCKEYSHOOT = 2891959439U;
         static const AkUniqueID HOCKEYSTEP = 2524064884U;
         static const AkUniqueID HOCKEYSWING = 433652520U;
+        static const AkUniqueID ICESPLASH = 1774890243U;
+        static const AkUniqueID LEVELMUSIC = 1321655446U;
+        static const AkUniqueID MENUMUSIC = 679636833U;
         static const AkUniqueID PAUSEGAME = 1589270263U;
         static const AkUniqueID PENGUINFALL = 4286935516U;
         static const AkUniqueID PENGUINSTEP = 230254265U;
@@ -31,8 +35,24 @@ namespace AK
         static const AkUniqueID RESUMEGAME = 1133184122U;
         static const AkUniqueID SHARKFALL = 3926006775U;
         static const AkUniqueID SHARKSPAWN = 563965641U;
+        static const AkUniqueID STOPMUSIC = 1917263390U;
         static const AkUniqueID TEST = 3157003241U;
     } // namespace EVENTS
+
+    namespace SWITCHES
+    {
+        namespace MUSIC
+        {
+            static const AkUniqueID GROUP = 3991942870U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID LEVEL = 2782712965U;
+                static const AkUniqueID MENU = 2607556080U;
+            } // namespace SWITCH
+        } // namespace MUSIC
+
+    } // namespace SWITCHES
 
     namespace GAME_PARAMETERS
     {

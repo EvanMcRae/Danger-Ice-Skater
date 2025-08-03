@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}",
     "Language": "SFX",
-    "Hash": "{7296CA5B-D2BE-4CC9-4E0F-9B8E595F39DB}",
+    "Hash": "{550723C9-4CE0-EB61-3C43-BB1DAAD86575}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -21,7 +21,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Puck Hit.wav",
-      "CachePath": "33/{33B4372C-560B-FB90-8BC9-EAD1EF914296}.wem"
+      "CachePath": "4E/{4EED532D-DC81-28FD-1599-95006EFE3AC6}.wem"
      },
      {
       "Id": "92250040",
@@ -29,7 +29,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Roar Death .wav",
-      "CachePath": "50/{50F8A7F9-F1E5-DEBA-B912-0FEC0DA43029}.wem"
+      "CachePath": "EB/{EB80AAE3-0C74-F4AA-22D2-0AEF3A6ABB5F}.wem"
      },
      {
       "Id": "112692613",
@@ -37,7 +37,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Puck Hit_1.wav",
-      "CachePath": "B8/{B8B22060-E66C-8882-A7F4-29D99096ACC1}.wem"
+      "CachePath": "23/{239A1F25-C7A4-FA87-8922-DD4015B2344B}.wem"
      },
      {
       "Id": "129769630",
@@ -45,7 +45,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Steps\\Skate.wav",
-      "CachePath": "72/{7296F7E7-9ACB-576A-4C84-67C207E24675}.wem"
+      "CachePath": "80/{80E78DCF-DF63-FA37-D39B-A4241E5E3622}.wem"
      },
      {
       "Id": "134563642",
@@ -53,7 +53,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Steps\\Step_4.wav",
-      "CachePath": "63/{63B81F11-03CF-D91C-4EF0-896AEE89EFD5}.wem"
+      "CachePath": "53/{534391BD-E9D5-EFA4-FF99-F5E72A56DB67}.wem"
      },
      {
       "Id": "179817375",
@@ -61,7 +61,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Hit.wav",
-      "CachePath": "59/{5964A458-E8FD-DC78-0470-828647D8C75B}.wem"
+      "CachePath": "DB/{DB5465EA-D8A3-0BC0-9A64-5DFD0EC7BC10}.wem"
      },
      {
       "Id": "188607504",
@@ -69,7 +69,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Steps\\Skate.wav",
-      "CachePath": "D3/{D35A5FB2-587A-871E-ADD5-6BCE7EB3081E}.wem"
+      "CachePath": "3C/{3C76FC0B-31EC-5B30-3914-FD285A209AD4}.wem"
      },
      {
       "Id": "210521525",
@@ -77,7 +77,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Steps\\Skate.wav",
-      "CachePath": "2C/{2C21470B-F4DE-6399-DEEE-156DA6516A25}.wem"
+      "CachePath": "B7/{B7272297-31A8-71BC-ABC3-3FCAA1361C91}.wem"
      },
      {
       "Id": "283519557",
@@ -93,7 +93,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Steps\\Skate.wav",
-      "CachePath": "13/{1370D99F-0F08-4C46-292D-9144D855502F}.wem"
+      "CachePath": "F7/{F713DC74-F34F-EE77-408F-F357EE18C0C5}.wem"
      },
      {
       "Id": "295319387",
@@ -101,7 +101,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Steps\\Step_6.wav",
-      "CachePath": "7C/{7C5D1858-CFF0-BCDE-F282-9A9E3875ADA1}.wem"
+      "CachePath": "CC/{CC77F7B8-31E0-9341-C5D8-D8E495A401BA}.wem"
      },
      {
       "Id": "323035877",
@@ -109,7 +109,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Steps\\Skate.wav",
-      "CachePath": "36/{36034B43-F370-442E-1BC8-37B0B0696300}.wem"
+      "CachePath": "A0/{A049082F-D3CF-5A1A-A619-F3E797A8C5CA}.wem"
      },
      {
       "Id": "324096467",
@@ -117,7 +117,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Pengiun Death.wav",
-      "CachePath": "80/{8014FA45-FC8B-7BB9-16D8-86F9F179A55C}.wem"
+      "CachePath": "13/{139013AB-9C06-81A0-C899-B82989AF2A69}.wem"
      },
      {
       "Id": "328313209",
@@ -125,7 +125,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Splash_2.wav",
-      "CachePath": "AE/{AECC55ED-506B-1A0D-8CD0-CEC21596CC6E}.wem"
+      "CachePath": "8D/{8D360FD2-138C-238A-0A69-C768B0679678}.wem"
      },
      {
       "Id": "333892847",
@@ -133,7 +133,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Puck Hit_3.wav",
-      "CachePath": "34/{347E29DD-E917-8E36-51E0-A82B70C3A0B5}.wem"
+      "CachePath": "AE/{AE85B1BF-DFFA-4229-50F1-F4D926CA9346}.wem"
      },
      {
       "Id": "368301711",
@@ -141,7 +141,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Steps\\Skate.wav",
-      "CachePath": "64/{64DE0FDC-FC82-E70B-8753-A4694FD06214}.wem"
+      "CachePath": "F7/{F779C220-226C-A3DB-8AF2-1BDFD3068EA1}.wem"
      },
      {
       "Id": "383303118",
@@ -149,7 +149,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Steps\\Step_1.wav",
-      "CachePath": "0A/{0AF11F87-B211-21E4-7F80-69CBD3FEF4FC}.wem"
+      "CachePath": "81/{818E69ED-22D7-EDAF-B130-4AEC0E86FDFE}.wem"
      },
      {
       "Id": "394496959",
@@ -165,7 +165,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Puck Hit_2.wav",
-      "CachePath": "35/{356F9E72-3B04-CA94-8664-5D0C006A534E}.wem"
+      "CachePath": "92/{92B0745D-437A-4991-E1FF-608D1AB7B078}.wem"
      },
      {
       "Id": "449719526",
@@ -173,7 +173,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Steps\\Skate.wav",
-      "CachePath": "7F/{7F789D5D-5B37-1F62-AA97-60D9EB27BB1A}.wem"
+      "CachePath": "A0/{A0A913D4-10F9-13AB-DBEB-5501EB74F0EA}.wem"
      },
      {
       "Id": "468795855",
@@ -197,7 +197,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Shark Chomps_3.wav",
-      "CachePath": "0F/{0FBC6EC9-850D-29FD-99ED-D16CB0AA644A}.wem"
+      "CachePath": "EE/{EE1AFB4E-7884-E07E-BEC1-7711F9005179}.wem"
      },
      {
       "Id": "521776349",
@@ -206,6 +206,14 @@
       "Location": "Memory",
       "ShortName": "Skate.wav",
       "CachePath": "76/{764D2C7A-D76B-0A8E-033C-8B54E65BD550}.wem"
+     },
+     {
+      "Id": "535792127",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "idea 2.wav",
+      "CachePath": "1B/{1B077267-43A3-65CD-F60B-2F32E4C4AE78}.wem"
      },
      {
       "Id": "589060082",
@@ -221,7 +229,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Steps\\Skate.wav",
-      "CachePath": "C6/{C6EDDB4C-0A53-3E2D-B0C9-042E260258C6}.wem"
+      "CachePath": "9D/{9D8B2D67-215F-DDF2-EA50-85BD83E5C3BA}.wem"
      },
      {
       "Id": "650797169",
@@ -229,7 +237,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Shark Chomps_4.wav",
-      "CachePath": "43/{43501F9F-16E8-7033-02FC-B0C428CC6D55}.wem"
+      "CachePath": "D1/{D1428FEF-B827-35FA-537C-EEC4BF8C5F7E}.wem"
      },
      {
       "Id": "661063367",
@@ -237,7 +245,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Splash_5.wav",
-      "CachePath": "83/{83563AA8-927B-CE0A-ACF6-31D03AC77E34}.wem"
+      "CachePath": "B4/{B41A38BF-1C8E-AC08-02DD-D80EC00418FA}.wem"
      },
      {
       "Id": "713916889",
@@ -253,7 +261,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Skate.wav",
-      "CachePath": "E5/{E5764773-FAFD-D5F1-5D23-3B124B7C9E26}.wem"
+      "CachePath": "05/{05154BC4-673B-8ECA-B5AA-DAB7A8C3E163}.wem"
      },
      {
       "Id": "731922532",
@@ -261,7 +269,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Splash_3.wav",
-      "CachePath": "C5/{C59E0B15-8CBD-1332-2A05-E4E5591435AE}.wem"
+      "CachePath": "4C/{4CA1F719-E762-79EB-891F-10EA9344B992}.wem"
      },
      {
       "Id": "733039566",
@@ -269,7 +277,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Steps\\Step_2.wav",
-      "CachePath": "91/{91385B06-5946-6CA0-D83B-8559C4CAAF96}.wem"
+      "CachePath": "AE/{AE67AAED-6E7C-E5B8-6B65-253A853EF71A}.wem"
      },
      {
       "Id": "748055230",
@@ -277,7 +285,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Steps\\Step_3.wav",
-      "CachePath": "AC/{ACD53E8B-FACD-5112-B495-01A983BCBDB7}.wem"
+      "CachePath": "24/{24256289-2264-EDAD-CFB3-2EDF2A54AE34}.wem"
      },
      {
       "Id": "748822614",
@@ -285,7 +293,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Steps\\Skate.wav",
-      "CachePath": "DC/{DCA6C2C5-4BF7-72E4-78F3-72746E8166FD}.wem"
+      "CachePath": "FD/{FD649C4E-218A-D8C8-F9B5-DB90DE26DA2E}.wem"
      },
      {
       "Id": "759369371",
@@ -309,7 +317,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Splash_6.wav",
-      "CachePath": "01/{0139EC74-631F-4C75-7B7D-B3425CA30791}.wem"
+      "CachePath": "0E/{0E39659F-64E4-6191-50C6-A1986662F598}.wem"
      },
      {
       "Id": "817391603",
@@ -317,7 +325,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Steps\\Step.wav",
-      "CachePath": "B6/{B6FF8C41-BF51-B239-3F0A-53022A78BCE6}.wem"
+      "CachePath": "8C/{8C84A7DD-9185-CBDF-F1F3-53228E1DDFEA}.wem"
      },
      {
       "Id": "835039389",
@@ -325,7 +333,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Steps\\Step_5.wav",
-      "CachePath": "D2/{D233C4F4-6761-619D-B9F9-D6C80DEE9587}.wem"
+      "CachePath": "1F/{1FBBF64D-0DA1-DBAF-A9E3-0E08EEBEF1EA}.wem"
      },
      {
       "Id": "874117209",
@@ -333,7 +341,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Splash_1.wav",
-      "CachePath": "21/{218C9BF4-E22C-6740-329B-F96E0DE3383F}.wem"
+      "CachePath": "EF/{EF1454A7-305F-4525-3459-693E929BAFB0}.wem"
      },
      {
       "Id": "903708407",
@@ -341,7 +349,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Steps\\Skate.wav",
-      "CachePath": "07/{079EDB46-816F-8FF1-A619-2ECE6B947ED9}.wem"
+      "CachePath": "34/{345EC2F2-A3A9-0D49-4A2F-2CFC8D264FEC}.wem"
      },
      {
       "Id": "908641076",
@@ -349,7 +357,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Shark Death.wav",
-      "CachePath": "98/{9829F16D-A181-D3A9-F8D8-E97E801B7A30}.wem"
+      "CachePath": "BF/{BFF28B8D-B07B-C6E7-EB1E-1A88E273DAAA}.wem"
      },
      {
       "Id": "965355924",
@@ -357,7 +365,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Steps\\Skate.wav",
-      "CachePath": "16/{166E964D-D4B9-9AB7-B061-89506602A07C}.wem"
+      "CachePath": "E1/{E17437F4-3CFF-9EDE-EE3D-251B9F561CFD}.wem"
      },
      {
       "Id": "994630770",
@@ -365,7 +373,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Splash_2.wav",
-      "CachePath": "1A/{1A9B7068-2AA6-935D-9176-7C1C5CAB693F}.wem"
+      "CachePath": "D3/{D39769FB-FC8A-39E7-FB1E-6475E3B28D6A}.wem"
      },
      {
       "Id": "1008933578",
@@ -373,7 +381,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Steps\\Step_7.wav",
-      "CachePath": "7C/{7C696B0C-808E-EAD4-EA3B-40E3F0717D63}.wem"
+      "CachePath": "2E/{2E48F883-A22B-9D74-0DDF-2570790E91B8}.wem"
      },
      {
       "Id": "1063543444",
@@ -381,7 +389,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Steps\\Skate.wav",
-      "CachePath": "19/{1974DEA3-214E-CD8A-59DC-1D1CD48FE1B8}.wem"
+      "CachePath": "AE/{AE47CED7-A43A-C4E0-16C4-449432EBB386}.wem"
      }
     ],
     "Plugins": {
@@ -510,6 +518,143 @@
       ]
      },
      {
+      "Id": "4158285989",
+      "Name": "GameOver",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player\\GameOver",
+      "GUID": "{62315F2F-43DB-4459-B45B-E65EDC2E4F14}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "MediaRefs": [
+       {
+        "Id": "92250040"
+       },
+       {
+        "Id": "129769630"
+       },
+       {
+        "Id": "134563642"
+       },
+       {
+        "Id": "179817375"
+       },
+       {
+        "Id": "188607504"
+       },
+       {
+        "Id": "210521525"
+       },
+       {
+        "Id": "293017412"
+       },
+       {
+        "Id": "295319387"
+       },
+       {
+        "Id": "323035877"
+       },
+       {
+        "Id": "324096467"
+       },
+       {
+        "Id": "368301711"
+       },
+       {
+        "Id": "383303118"
+       },
+       {
+        "Id": "394496959"
+       },
+       {
+        "Id": "449719526"
+       },
+       {
+        "Id": "468795855"
+       },
+       {
+        "Id": "472000575"
+       },
+       {
+        "Id": "481543437"
+       },
+       {
+        "Id": "521776349"
+       },
+       {
+        "Id": "589060082"
+       },
+       {
+        "Id": "600996587"
+       },
+       {
+        "Id": "650797169"
+       },
+       {
+        "Id": "713916889"
+       },
+       {
+        "Id": "720322715"
+       },
+       {
+        "Id": "733039566"
+       },
+       {
+        "Id": "748055230"
+       },
+       {
+        "Id": "748822614"
+       },
+       {
+        "Id": "759369371"
+       },
+       {
+        "Id": "768956991"
+       },
+       {
+        "Id": "817391603"
+       },
+       {
+        "Id": "835039389"
+       },
+       {
+        "Id": "903708407"
+       },
+       {
+        "Id": "908641076"
+       },
+       {
+        "Id": "965355924"
+       },
+       {
+        "Id": "1008933578"
+       },
+       {
+        "Id": "1063543444"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "515874561"
+        }
+       ],
+       "ShareSets": [
+        {
+         "Id": "1237275451"
+        }
+       ]
+      },
+      "AuxBusRefs": [
+       {
+        "Id": "348963605",
+        "Name": "Reverb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
+        "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
+       }
+      ]
+     },
+     {
       "Id": "2891959439",
       "Name": "HockeyShoot",
       "ObjectPath": "\\Events\\Default Work Unit\\Enemy\\Hockey\\HockeyShoot",
@@ -585,6 +730,85 @@
         "Name": "Reverb",
         "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
         "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
+       }
+      ]
+     },
+     {
+      "Id": "1774890243",
+      "Name": "IceSplash",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player\\IceSplash",
+      "GUID": "{7327E33C-88C0-4FA1-85EA-7BF62C80E027}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.167996",
+      "DurationMax": "1.8969036",
+      "MediaRefs": [
+       {
+        "Id": "661063367"
+       },
+       {
+        "Id": "994630770"
+       }
+      ]
+     },
+     {
+      "Id": "1321655446",
+      "Name": "LevelMusic",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\LevelMusic",
+      "GUID": "{76504008-ADCB-4B9A-8687-35691F44807B}",
+      "DurationType": "Infinite",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3991942870",
+         "Id": "2782712965",
+         "GUID": "{E65BD47D-CC9E-4A96-B6E1-9D6CD99CAC00}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "535792127"
+         }
+        ]
+       }
+      ],
+      "ActionSetSwitch": [
+       {
+        "GroupId": "3991942870",
+        "Id": "2782712965",
+        "Name": "Level",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Music\\Level",
+        "GUID": "{E65BD47D-CC9E-4A96-B6E1-9D6CD99CAC00}"
+       }
+      ]
+     },
+     {
+      "Id": "679636833",
+      "Name": "MenuMusic",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\MenuMusic",
+      "GUID": "{1F75F209-D770-4DAE-BF3C-D043CE438AA4}",
+      "DurationType": "Infinite",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3991942870",
+         "Id": "2782712965",
+         "GUID": "{E65BD47D-CC9E-4A96-B6E1-9D6CD99CAC00}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "535792127"
+         }
+        ]
+       }
+      ],
+      "ActionSetSwitch": [
+       {
+        "GroupId": "3991942870",
+        "Id": "2607556080",
+        "Name": "Menu",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Music\\Menu",
+        "GUID": "{EEBDBBBA-DF30-4E6F-8686-4C63D4972B51}"
        }
       ]
      },
@@ -890,6 +1114,16 @@
       ]
      },
      {
+      "Id": "1917263390",
+      "Name": "StopMusic",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\StopMusic",
+      "GUID": "{A56A5860-1D44-4E7C-9DFE-6660E5F55847}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
       "Id": "3157003241",
       "Name": "test",
       "ObjectPath": "\\Events\\Default Work Unit\\test",
@@ -969,9 +1203,31 @@
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Volume\\soundVolume",
       "GUID": "{DF92366F-4997-4DFD-B8EC-F8899A911A75}"
      }
+    ],
+    "SwitchGroups": [
+     {
+      "Id": "3991942870",
+      "Name": "Music",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Music",
+      "GUID": "{4359D007-1BF3-4BC6-94F9-9F19C39A6BB8}",
+      "Switches": [
+       {
+        "Id": "2607556080",
+        "Name": "Menu",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Music\\Menu",
+        "GUID": "{EEBDBBBA-DF30-4E6F-8686-4C63D4972B51}"
+       },
+       {
+        "Id": "2782712965",
+        "Name": "Level",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Music\\Level",
+        "GUID": "{E65BD47D-CC9E-4A96-B6E1-9D6CD99CAC00}"
+       }
+      ]
+     }
     ]
    }
   ],
-  "FileHash": "{01C836FE-14DB-2B93-8D35-AD14BB071F99}"
+  "FileHash": "{9EC270A8-AFE6-B635-3100-CBAD8118E692}"
  }
 }

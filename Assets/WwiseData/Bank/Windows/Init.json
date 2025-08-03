@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{FC6F315D-C33D-31A3-5F66-154C12F8286B}",
+    "Hash": "{A20802DF-6668-8DBF-57E1-28729CA4051D}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -99,9 +99,31 @@
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Volume\\soundVolume",
       "GUID": "{DF92366F-4997-4DFD-B8EC-F8899A911A75}"
      }
+    ],
+    "SwitchGroups": [
+     {
+      "Id": "3991942870",
+      "Name": "Music",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Music",
+      "GUID": "{4359D007-1BF3-4BC6-94F9-9F19C39A6BB8}",
+      "Switches": [
+       {
+        "Id": "2607556080",
+        "Name": "Menu",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Music\\Menu",
+        "GUID": "{EEBDBBBA-DF30-4E6F-8686-4C63D4972B51}"
+       },
+       {
+        "Id": "2782712965",
+        "Name": "Level",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Music\\Level",
+        "GUID": "{E65BD47D-CC9E-4A96-B6E1-9D6CD99CAC00}"
+       }
+      ]
+     }
     ]
    }
   ],
-  "FileHash": "{537875DD-9301-A7F7-64EB-DD3A8241E8DF}"
+  "FileHash": "{5F09557C-F2BA-BDCE-2646-14D302615E3C}"
  }
 }
