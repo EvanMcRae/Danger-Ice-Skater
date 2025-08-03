@@ -131,6 +131,7 @@ namespace Enemies {
         public new void Fall()
         {
             base.Fall();
+            anim.SetTrigger("falling");
             anim.Play("fall");
         }
     }
