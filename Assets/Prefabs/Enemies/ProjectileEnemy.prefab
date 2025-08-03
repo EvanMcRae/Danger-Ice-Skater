@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1275697822901526314}
   - component: {fileID: 6887986620278232493}
   - component: {fileID: 3220353305595372029}
+  - component: {fileID: 8541666367479956467}
   m_Layer: 9
   m_Name: ProjectileEnemy
   m_TagString: Enemy
@@ -117,6 +118,7 @@ MonoBehaviour:
   anim: {fileID: 3220353305595372029}
   canMove: 1
   movingAwayFromWall: 0
+  fallSFX: 
   player: {fileID: 0}
   rotateTowardsPlayer: 1
   move: 1
@@ -135,6 +137,7 @@ MonoBehaviour:
   bottom: {fileID: 4181598979052106995, guid: 713714fe92ac179438d194766b496803, type: 3}
   left: {fileID: 1200431927587874057, guid: ce921efd55de7744b9de381e046dce67, type: 3}
   right: {fileID: 5217411336105476837, guid: 5d7f351db512fc64f80a55cc0755676d, type: 3}
+  nearPlayer: 0
 --- !u!95 &3220353305595372029
 Animator:
   serializedVersion: 7
@@ -157,6 +160,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8541666367479956467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4117237134799207521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c262fe1b58a245d7a808848fcd56c46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepSound: HockeyStep
 --- !u!1 &8634687285915628041
 GameObject:
   m_ObjectHideFlags: 0

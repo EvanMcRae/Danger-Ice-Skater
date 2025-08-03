@@ -29,6 +29,9 @@ public class introCutscene : MonoBehaviour
                           "Ill skate in circles to cut holes in the ice.",
                           "Then the creatures will fall right in!"};
     int index = 0;
+    public Image PlayerImage;
+    public Sprite happyImage;
+    public Sprite mehImage;
 
     public void Start()
     {
@@ -81,6 +84,10 @@ public class introCutscene : MonoBehaviour
                 else
                 {
                     text.text = dialogue[index];
+                    if (index < 2)
+                        PlayerImage.sprite = mehImage;
+                    else
+                        PlayerImage.sprite = happyImage;
                 }
             }
             if (startTimer) timer1 += Time.deltaTime;
