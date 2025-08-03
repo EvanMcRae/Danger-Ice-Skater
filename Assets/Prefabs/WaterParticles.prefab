@@ -223,8 +223,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.15294118, g: 0.18431373, b: 0.33333334, a: 0.7490196}
-      maxColor: {r: 0.40150696, g: 0.46182, b: 0.63522005, a: 0.23529412}
+      minColor: {r: 0.15294118, g: 0.18431373, b: 0.33333334, a: 0.96862745}
+      maxColor: {r: 0.40150696, g: 0.46182, b: 0.63522005, a: 0.7882353}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1546,7 +1546,16 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: -2413806693520163455, guid: 726488f83e6002a47a612ee4cafeaac0, type: 3}
+    - sprite: {fileID: 207741402, guid: 10c560ed74cb7bb44b13c48f1f967ab6, type: 3}
+    - sprite: {fileID: -1977500197, guid: 10c560ed74cb7bb44b13c48f1f967ab6, type: 3}
+    - sprite: {fileID: 1491063722, guid: 10c560ed74cb7bb44b13c48f1f967ab6, type: 3}
+    - sprite: {fileID: -63494922, guid: 10c560ed74cb7bb44b13c48f1f967ab6, type: 3}
+    - sprite: {fileID: 1130613846, guid: 10c560ed74cb7bb44b13c48f1f967ab6, type: 3}
+    - sprite: {fileID: -1186738359, guid: 10c560ed74cb7bb44b13c48f1f967ab6, type: 3}
+    - sprite: {fileID: -1186738359, guid: 10c560ed74cb7bb44b13c48f1f967ab6, type: 3}
+    - sprite: {fileID: -1186738359, guid: 10c560ed74cb7bb44b13c48f1f967ab6, type: 3}
+    - sprite: {fileID: -1186738359, guid: 10c560ed74cb7bb44b13c48f1f967ab6, type: 3}
+    - sprite: {fileID: -1186738359, guid: 10c560ed74cb7bb44b13c48f1f967ab6, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
