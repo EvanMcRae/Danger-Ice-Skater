@@ -63,7 +63,7 @@ public class Hole : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PauseManager.paused) return;
+        if (PauseManager.ShouldNotRun()) return;
 
         if (!m_isDead && !m_isReplenishing &&
             ((!m_isFalling && Time.time > HOLE_LIFETIME + m_spawnTime) || (m_isFalling && transform.position.y < GameController.KILL_HEIGHT * 2)))
@@ -108,6 +108,7 @@ public class Hole : MonoBehaviour
                 if (HOLE_LIFETIME + m_spawnTime - Time.time < 0.3f && !m_extendedLife)
                 {
                     m_spawnTime += 0.3f;
+                    m_extendedLife = true;
                 }
             }
             else if (other.gameObject.TryGetComponent<HoleFallable>(out var enemy) || other.gameObject.CompareTag("Enemy")) {

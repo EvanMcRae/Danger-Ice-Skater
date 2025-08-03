@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using Enemies;
+using UI.PlayerUI;
 using UnityEngine;
 using Waves;
 
 namespace Game {
-    public class GameController : MonoBehaviour {
+    public class GameController : MonoBehaviour
+    {
 
         public GameEventBroadcaster gameEventBroadcaster;
         public WaveSpawner waveSpawner;
@@ -20,34 +22,40 @@ namespace Game {
 
         public int score;
 
-        public void Start() {
+        public void Start()
+        {
             waveDelayTimer = timeBetweenWaves;
             waveStateHandler.StartGame();
             score = 0;
         }
-        
-        
-        
+
+
+
         /*
          * Event handlers:
          */
-        public void OnEnable() {
+        public void OnEnable()
+        {
             gameEventBroadcaster.OnEnemySend.AddListener(OnEnemySend);
             gameEventBroadcaster.OnEnemyDeath.AddListener(OnEnemyDeath);
         }
 
-        public void OnDisable() {
+        public void OnDisable()
+        {
             gameEventBroadcaster.OnEnemySend.RemoveListener(OnEnemySend);
             gameEventBroadcaster.OnEnemyDeath.RemoveListener(OnEnemyDeath);
         }
-        
-        private void OnEnemySend(Enemy e) {
+
+        private void OnEnemySend(Enemy e)
+        {
             enemyList.Add(e);
         }
 
-        private void OnEnemyDeath(Enemy e) {
+        private void OnEnemyDeath(Enemy e)
+        {
             bool removed = enemyList.Remove(e);
-            if (!removed) {
+            if (!removed)
+            {
                 Debug.LogError("Enemy that died was untracked by game. Enemy: " + e + " died.");
             }
 

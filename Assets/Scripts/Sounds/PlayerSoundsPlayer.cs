@@ -9,21 +9,23 @@ public class PlayerSoundsPlayer : MonoBehaviour
 
     public void RunStepSound()
     {
-        if (PauseManager.paused) return;
+        if (PauseManager.ShouldNotRun()) return;
         if (isGliding) return;
+        if (!playerController.isTouchingGround || PlayerController.fallThroughHole || playerController.psh.invincibilityTimer > 0) return;
         StepEvent?.Post(playerController.gameObject);
     }
     public void RunGlideSound()
     {
-        if (PauseManager.paused) return;
+        if (PauseManager.ShouldNotRun()) return;
+        if (!playerController.isTouchingGround || PlayerController.fallThroughHole || isGliding) return;
         isGliding = true;
         GlideEvent?.Post(playerController.gameObject);
     }
 
     public void RunHurtSound()
     {
-        if (PauseManager.paused) return;
-        if (playerController.isTouchingGround)
+        if (PauseManager.ShouldNotRun()) return;
+        if (playerController.isTouchingGround && !isGliding)
         {
             RunGlideSound();
         }
@@ -32,7 +34,7 @@ public class PlayerSoundsPlayer : MonoBehaviour
 
     public void RunSplashSound()
     {
-        if (PauseManager.paused) return;
+        if (PauseManager.ShouldNotRun()) return;
         SplashEvent?.Post(playerController.gameObject);
     }
 }

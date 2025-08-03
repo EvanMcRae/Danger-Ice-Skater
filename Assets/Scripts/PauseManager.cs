@@ -12,6 +12,9 @@ using UnityEngine.UI;
 using UnityEditor;
 #endif
 
+using UI.PlayerUI;
+
+
 public class PauseManager : MonoBehaviour
 {
     [SerializeField]
@@ -147,5 +150,10 @@ public class PauseManager : MonoBehaviour
     private void OnDestroy()
     {
         DOTween.KillAll();
+    }
+
+    public static bool ShouldNotRun()
+    {
+        return paused || WinLoseUI.lostGame;
     }
 }

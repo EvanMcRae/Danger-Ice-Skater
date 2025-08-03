@@ -1150,7 +1150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2473681040653148434, guid: ce1359b76518a234b915b4445d75603b, type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 0.76861894
       objectReference: {fileID: 0}
     - target: {fileID: 2473681040653148434, guid: ce1359b76518a234b915b4445d75603b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1174,7 +1174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2473681040653148434, guid: ce1359b76518a234b915b4445d75603b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 932.35
+      value: -179.99988
       objectReference: {fileID: 0}
     - target: {fileID: 2473681040653148434, guid: ce1359b76518a234b915b4445d75603b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1186,7 +1186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2473681040653148434, guid: ce1359b76518a234b915b4445d75603b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -204.81334
+      value: -254.70837
       objectReference: {fileID: 0}
     - target: {fileID: 2473681040653148434, guid: ce1359b76518a234b915b4445d75603b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1206,11 +1206,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2473681040653148434, guid: ce1359b76518a234b915b4445d75603b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -534.7272
+      value: -249.23413
       objectReference: {fileID: 0}
     - target: {fileID: 2473681040653148434, guid: ce1359b76518a234b915b4445d75603b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -404.92877
+      value: -3137.3513
       objectReference: {fileID: 0}
     - target: {fileID: 2473681040653148434, guid: ce1359b76518a234b915b4445d75603b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2247,6 +2247,7 @@ GameObject:
   - component: {fileID: 806712144}
   - component: {fileID: 806712143}
   - component: {fileID: 806712145}
+  - component: {fileID: 806712146}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -2306,6 +2307,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed39f2b237e573f4f85990bb5d1440ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InitBank: {fileID: 11400000, guid: a033be40b5ddc4c459a94681c150c22d, type: 2}
+--- !u!114 &806712146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806712142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7f342b9ec1ea4eff984bee80cb0f4c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: ae8d9d44
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f4a66d522ad99714599909d160795086, type: 2}
+  decodeBank: 0
+  overrideLoadSetting: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!1 &871281765
 GameObject:
   m_ObjectHideFlags: 0

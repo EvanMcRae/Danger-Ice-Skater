@@ -52,7 +52,7 @@ namespace Enemies {
 
         public void Update()
         {
-            if (PauseManager.paused) return;
+            if (PauseManager.ShouldNotRun()) return;
 
             if (transform.position.y <= GameController.KILL_HEIGHT && !m_isDead)
             {

@@ -23,7 +23,7 @@ public class Cutout : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PauseManager.paused) return;
+        if (PauseManager.ShouldNotRun()) return;
 
         m_matBlock.SetColor("_Tint_Colour", m_tint);
         m_matBlock.SetFloat("_Dissolve_Progress", m_dissolveProgress);

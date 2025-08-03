@@ -15,7 +15,10 @@ namespace UI.PlayerUI {
         public RectTransform diePanel;
         public TMP_Text scoreText;
 
-        public void ToMainMenu() {
+        public static bool lostGame;
+
+        public void ToMainMenu()
+        {
             ScreenWipe.current.WipeIn();
             ScreenWipe.current.PostWipe += GoToMainMenu;
         }
@@ -25,6 +28,7 @@ namespace UI.PlayerUI {
             ScreenWipe.current.PostWipe -= GoToMainMenu;
             SceneManager.LoadScene("MainMenu");
             Time.timeScale = 1;
+            lostGame = false;
         }
 
         public void Restart()
@@ -38,6 +42,7 @@ namespace UI.PlayerUI {
             ScreenWipe.current.PostWipe -= ToRestart;
             SceneManager.LoadScene("GameScene");
             Time.timeScale = 1;
+            lostGame = false;
         }
 
 
@@ -51,6 +56,7 @@ namespace UI.PlayerUI {
         {
             diePanel.gameObject.SetActive(true);
             Time.timeScale = 0;
+
             Cursor.visible = true;
             EventSystem.current.SetSelectedGameObject(menuButton);
         }

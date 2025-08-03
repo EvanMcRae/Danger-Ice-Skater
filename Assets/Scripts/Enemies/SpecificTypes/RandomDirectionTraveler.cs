@@ -25,7 +25,7 @@ namespace Enemies.SpecificTypes {
         }
 
         public new void Update() {
-            if (PauseManager.paused) return;
+            if (PauseManager.ShouldNotRun()) return;
             
             base.Update();
             
@@ -43,7 +43,7 @@ namespace Enemies.SpecificTypes {
         }
 
         public void FixedUpdate() {
-            if (PauseManager.paused) return;
+            if (PauseManager.ShouldNotRun()) return;
             
             if (move) {
                 rb.AddForce(dir * moveForce, ForceMode.Force);
