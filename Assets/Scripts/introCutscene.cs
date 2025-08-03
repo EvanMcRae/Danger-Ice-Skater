@@ -37,6 +37,8 @@ public class introCutscene : MonoBehaviour
     {
         text.text = dialogue[index];
         anim = nextButton.GetComponent<Animator>();
+
+        AkUnitySoundEngine.PostEvent("LightDrumTrack", PauseManager.globalWwise);
     }
 
     public void Update()
