@@ -16,13 +16,11 @@ MonoBehaviour:
   - subWaves:
     - enemies:
       - enemy: 4
-        count: 2
+        count: 1
       randomEnemyCredits: 0
     - enemies:
       - enemy: 4
         count: 3
-      - enemy: 0
-        count: 1
       randomEnemyCredits: 0
     - enemies:
       - enemy: 4
