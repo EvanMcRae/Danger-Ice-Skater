@@ -75,14 +75,6 @@ public class PauseManager : MonoBehaviour
             TurnOffMenus();
             return;
         }
-        foreach (GameObject menu in Menus)
-        {
-            //this jank makes sure submenus don't stay on screen
-            if (menu != Menus[0])
-            {
-                menu.transform.position = new Vector3(menu.transform.position.x, -Screen.height, menu.transform.position.z);
-            }
-        }
         Time.timeScale = 1;
         Menus[0].SetActive(false);
         paused = false;
@@ -100,7 +92,7 @@ public class PauseManager : MonoBehaviour
 
     public void Settings()
     {
-        TurnOffMenus();
+        TurnOffMenus(1);
         ActivateMenuWithAnimation(1);
         eventSystem.SetSelectedGameObject(settingsBackButton);
     }
@@ -118,21 +110,30 @@ public class PauseManager : MonoBehaviour
         SceneManager.LoadScene(MainMenuName);
     }
 
-    private void TurnOffMenus()
+    private void TurnOffMenus(int excludeMenu = -1)
     {
         if (mySequence != null && mySequence.active)
             DOTween.KillAll();
 
-        foreach (GameObject menu in Menus)
+        for (int index = 0; index < Menus.Length; index++)
         {
+            GameObject menu = Menus[index];
             if (menu != Menus[0])
             {
                 float startPos = menu.transform.position.y;
 
                 DG.Tweening.Sequence mySequence = DOTween.Sequence();
                 mySequence.Append(menu.transform.DOMoveY(-Screen.height, .4f));
-                mySequence.Append(menu.transform.DOMoveY(startPos, 0f));
-                menu.SetActive(false);
+                mySequence.SetUpdate(true);
+
+                if (index != excludeMenu)
+                {
+                    mySequence.OnComplete(() =>
+                    {
+                        menu.transform.DOMoveY(startPos, 0f).SetUpdate(true);
+                        menu.SetActive(false);
+                    });
+                }
             }
         }
         menuOpen = false;
@@ -146,11 +147,14 @@ public class PauseManager : MonoBehaviour
         menu.GetComponent<RectTransform>().localScale = Vector3.one;
 
         float startPos = Menus[index].transform.position.y;// startPositions[index];
+        Vector3 pos = Menus[index].transform.position;
+        pos.y = -Screen.height;
+        Menus[index].transform.position = pos;
 
         DG.Tweening.Sequence mySequence = DOTween.Sequence();
-        mySequence.Append(menu.transform.DOMoveY(-Screen.height + 50, 0f));
         mySequence.Append(menu.transform.DOMoveY(startPos + 50, .4f));
         mySequence.Append(menu.transform.DOMoveY(startPos, .5f));
+        mySequence.SetUpdate(true);
     }
 
     private void OnDestroy()
