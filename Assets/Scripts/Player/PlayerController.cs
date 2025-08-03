@@ -55,6 +55,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     Slider staminaBar;
 
+    private Vector3 lastPos;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -63,10 +65,12 @@ public class PlayerController : MonoBehaviour
         pm = FindAnyObjectByType<PauseManager>();
         fallThroughHole = false;
 
-        if(staminaBar != null)
+        if (staminaBar != null)
         {
             staminaBar.maxValue = dashCooldown;
         }
+        lastPos = transform.position;
+        lastPos.y = 0;
     }
 
     // Update is called once per frame
@@ -99,7 +103,7 @@ public class PlayerController : MonoBehaviour
             dashTimer = dashCooldown;
         }
 
-        if(staminaBar != null)
+        if (staminaBar != null)
         {
             staminaBar.value = dashTimer;
         }
@@ -108,18 +112,6 @@ public class PlayerController : MonoBehaviour
         {
             fallThroughHoleTimer -= Time.deltaTime;
         }
-
-        Vector2 horizVel = new(rb.linearVelocity.x, rb.linearVelocity.z);
-        if (horizVel.magnitude >= 0.8f)
-        {
-            anim.SetBool("isMoving", true);
-        }
-        else
-        {
-            anim.SetBool("isMoving", false);
-            psp.isGliding = false;
-        }
-        AkUnitySoundEngine.SetRTPCValue("playerVelocity", 100f * Mathf.Clamp01(horizVel.magnitude / 11.5f));
     }
 
     void FixedUpdate()
@@ -219,6 +211,22 @@ public class PlayerController : MonoBehaviour
 
         anim.SetBool("isInputting", horizontal != 0 || vertical != 0);
         if (horizontal != 0 || vertical != 0) psp.isGliding = false;
+
+        Vector3 currPos = transform.position;
+        currPos.y = 0;
+        Vector2 horizVel = (currPos - lastPos) / Time.fixedDeltaTime;
+        Debug.Log(horizVel.magnitude);
+        if (horizVel.magnitude >= 0.8f)
+        {
+            anim.SetBool("isMoving", true);
+        }
+        else
+        {
+            anim.SetBool("isMoving", false);
+            psp.isGliding = false;
+        }
+        AkUnitySoundEngine.SetRTPCValue("playerVelocity", 100f * Mathf.Clamp01(horizVel.magnitude / 11.5f));
+        lastPos = currPos;
     }
 
     
