@@ -19,6 +19,8 @@ namespace UI.PlayerUI {
 
         public void ToMainMenu()
         {
+            if (!ScreenWipe.over) return;
+            AkUnitySoundEngine.PostEvent("BackUI", PauseManager.globalWwise);
             ScreenWipe.current.WipeIn();
             ScreenWipe.current.PostWipe += GoToMainMenu;
         }
@@ -33,6 +35,8 @@ namespace UI.PlayerUI {
 
         public void Restart()
         {
+            if (!ScreenWipe.over) return;
+            AkUnitySoundEngine.PostEvent("SelectUI", PauseManager.globalWwise);
             ScreenWipe.current.WipeIn();
             ScreenWipe.current.PostWipe += ToRestart;
         }
