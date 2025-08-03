@@ -23,11 +23,11 @@ public class introCutscene : MonoBehaviour
     bool startTimer = false;
 
     public bool gameStarted = false;
-    string[] dialogue = { "Sheesh, who let all of these creatures into the rink?!",
-                          "I cant skate around in peace with all this commotion.",
+    string[] dialogue = { "Sheesh, who let all of these weirdos into the rink?!",
+                          "I cant skate in peace when theres this much Danger around.",
                           "Hmmm... I know!",
                           "Ill skate in circles to cut holes in the ice.",
-                          "Then the creatures will fall right in!"};
+                          "Then the Danger will fall right in!"};
     int index = 0;
 
     public void Start()
