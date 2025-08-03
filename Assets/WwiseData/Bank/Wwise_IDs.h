@@ -29,6 +29,7 @@ namespace AK
         static const AkUniqueID PENGUINSTEP = 230254265U;
         static const AkUniqueID PLAYERGLIDE = 2683980149U;
         static const AkUniqueID PLAYERHURT = 3537581393U;
+        static const AkUniqueID PLAYERJUMP = 4008126242U;
         static const AkUniqueID PLAYERSPLASH = 972739039U;
         static const AkUniqueID PLAYERSTEP = 412471812U;
         static const AkUniqueID PUCKHIT = 3993562277U;

@@ -59,6 +59,9 @@ namespace UI.PlayerUI {
 
             Cursor.visible = true;
             EventSystem.current.SetSelectedGameObject(menuButton);
+
+            lostGame = true;
+            AkUnitySoundEngine.PostEvent("GameOver", PauseManager.globalWwise);
         }
 
         public void ScoreIncrease(int newScore)

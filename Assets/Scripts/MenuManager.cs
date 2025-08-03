@@ -111,7 +111,7 @@ public class MenuManager : MonoBehaviour
     {
         ScreenWipe.current.PostWipe -= ActuallyQuitGame;
 #if UNITY_EDITOR
-            EditorApplication.isPlaying = false;
+        EditorApplication.isPlaying = false;
 #else
             Application.Quit();
 #endif

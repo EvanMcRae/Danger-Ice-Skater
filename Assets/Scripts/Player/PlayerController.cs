@@ -1,4 +1,5 @@
 using Enemies;
+using Enemies.SpecificTypes;
 using Input;
 using Player;
 using UnityEngine;
@@ -285,7 +286,7 @@ public class PlayerController : MonoBehaviour
             Enemy e = other.gameObject.GetComponent<Enemy>();
             psh.Damage(1);
 
-            if(other.transform.position.y + .5f < transform.position.y)
+            if(!other.gameObject.TryGetComponent(out LandMineDestroy l) && !other.gameObject.TryGetComponent(out Puck p) && other.transform.position.y + .5f < transform.position.y)
             {
                 rb.MovePosition(transform.position + new Vector3(transform.position.x - other.transform.position.x, 0, transform.position.z - other.transform.position.z).normalized + Vector3.down * .5f);
             }

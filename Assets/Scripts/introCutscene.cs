@@ -76,6 +76,10 @@ public class introCutscene : MonoBehaviour
                     charTween = charSprite.transform.DOMoveY(charSprite.transform.position.y - 2000, 2f, false);
                     textTween = textBox.transform.DOMoveY(textBox.transform.position.y - 2000, 2f, false);
                     nextTween = nextButton.transform.DOMoveY(nextButton.transform.position.y - 2000, 2f, false);
+                    charTween = charSprite.transform.DOMoveY(charSprite.transform.position.y - 500, 1f, false);
+                    textTween = textBox.transform.DOMoveY(textBox.transform.position.y - 500, 1f, false);
+                    nextTween = nextButton.transform.DOMoveY(nextButton.transform.position.y - 500, 1f, false);
+                    AkUnitySoundEngine.PostEvent("LevelMusic", PauseManager.globalWwise);
                 }
                 else
                 {
