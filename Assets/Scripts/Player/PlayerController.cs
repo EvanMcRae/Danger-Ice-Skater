@@ -261,6 +261,11 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy")) {
             Enemy e = other.gameObject.GetComponent<Enemy>();
             psh.Damage(1);
+
+            if(other.transform.position.y + .5f < transform.position.y)
+            {
+                rb.MovePosition(transform.position + new Vector3(transform.position.x - other.transform.position.x, 0, transform.position.z - other.transform.position.z).normalized + Vector3.down * .5f);
+            }
         }
         else if (other.gameObject.layer == 7) // ice
         {
