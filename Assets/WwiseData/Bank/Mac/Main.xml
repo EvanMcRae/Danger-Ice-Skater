@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="154">
 	<SoundBanks>
-		<SoundBank Id="3161908922" Type="User" GUID="{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}" Language="SFX" Hash="{550723C9-4CE0-EB61-3C43-BB1DAAD86575}">
+		<SoundBank Id="3161908922" Type="User" GUID="{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}" Language="SFX" Hash="{054E1A51-9011-7011-2C8A-E3DBD2A4FFE5}">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -303,20 +303,7 @@
 						<MediaRef Id="1063543444"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="433652520" Name="HockeySwing" ObjectPath="\Events\Default Work Unit\Enemy\Hockey\HockeySwing" GUID="{1FCCBCFA-EBAD-4B0A-B137-548F82F2342B}" DurationType="OneShot" DurationMin="0.21454296" DurationMax="0.26772466">
-					<MediaRefs>
-						<MediaRef Id="394496959"/>
-						<MediaRef Id="468795855"/>
-						<MediaRef Id="472000575"/>
-						<MediaRef Id="589060082"/>
-						<MediaRef Id="713916889"/>
-						<MediaRef Id="759369371"/>
-						<MediaRef Id="768956991"/>
-					</MediaRefs>
-					<AuxBusRefs>
-						<AuxBusRef Id="348963605" Name="Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Reverb" GUID="{39432060-1A71-40A3-B958-9264FDE9BB75}"/>
-					</AuxBusRefs>
-				</Event>
+				<Event Id="433652520" Name="HockeySwing" ObjectPath="\Events\Default Work Unit\Enemy\Hockey\HockeySwing" GUID="{1FCCBCFA-EBAD-4B0A-B137-548F82F2342B}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="1774890243" Name="IceSplash" ObjectPath="\Events\Default Work Unit\Player\IceSplash" GUID="{7327E33C-88C0-4FA1-85EA-7BF62C80E027}" DurationType="OneShot" DurationMin="1.167996" DurationMax="1.8969036">
 					<MediaRefs>
 						<MediaRef Id="661063367"/>
@@ -349,7 +336,11 @@
 						<ActionSetSwitchEntry GroupId="3991942870" Id="2607556080" Name="Menu" ObjectPath="\Switches\Default Work Unit\Music\Menu" GUID="{EEBDBBBA-DF30-4E6F-8686-4C63D4972B51}"/>
 					</ActionSetSwitch>
 				</Event>
-				<Event Id="1589270263" Name="PauseGame" ObjectPath="\Events\Default Work Unit\UI\PauseGame" GUID="{3E1FF75B-A95C-4AAC-8393-9E03EFB89250}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1589270263" Name="PauseGame" ObjectPath="\Events\Default Work Unit\Utility\PauseGame" GUID="{3E1FF75B-A95C-4AAC-8393-9E03EFB89250}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="720322715"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="4286935516" Name="PenguinFall" ObjectPath="\Events\Default Work Unit\Enemy\Penguin\PenguinFall" GUID="{501EBB5F-3B7C-4B90-9502-27C2B581AD07}" DurationType="OneShot" DurationMin="0.38066658" DurationMax="0.38066658">
 					<MediaRefs>
 						<MediaRef Id="324096467"/>
@@ -422,7 +413,11 @@
 						<AuxBusRef Id="348963605" Name="Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Reverb" GUID="{39432060-1A71-40A3-B958-9264FDE9BB75}"/>
 					</AuxBusRefs>
 				</Event>
-				<Event Id="1133184122" Name="ResumeGame" ObjectPath="\Events\Default Work Unit\UI\ResumeGame" GUID="{6EE39B59-5463-4465-AE39-2CF5CFD89D1F}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1133184122" Name="ResumeGame" ObjectPath="\Events\Default Work Unit\Utility\ResumeGame" GUID="{6EE39B59-5463-4465-AE39-2CF5CFD89D1F}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="720322715"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3926006775" Name="SharkFall" ObjectPath="\Events\Default Work Unit\Enemy\Shark\SharkFall" GUID="{23D73999-01D8-4437-9F7A-739A9FBCFABD}" DurationType="OneShot" DurationMin="0.39199996" DurationMax="0.39199996">
 					<MediaRefs>
 						<MediaRef Id="481543437"/>
@@ -458,6 +453,66 @@
 					</AuxBusRefs>
 				</Event>
 				<Event Id="1917263390" Name="StopMusic" ObjectPath="\Events\Default Work Unit\Music\StopMusic" GUID="{A56A5860-1D44-4E7C-9DFE-6660E5F55847}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3189472150" Name="StopSFX" ObjectPath="\Events\Default Work Unit\Utility\StopSFX" GUID="{8E5C8332-3E46-4982-9676-C79380634E61}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="11736544"/>
+						<MediaRef Id="92250040"/>
+						<MediaRef Id="112692613"/>
+						<MediaRef Id="129769630"/>
+						<MediaRef Id="134563642"/>
+						<MediaRef Id="179817375"/>
+						<MediaRef Id="188607504"/>
+						<MediaRef Id="210521525"/>
+						<MediaRef Id="293017412"/>
+						<MediaRef Id="295319387"/>
+						<MediaRef Id="323035877"/>
+						<MediaRef Id="324096467"/>
+						<MediaRef Id="328313209"/>
+						<MediaRef Id="333892847"/>
+						<MediaRef Id="368301711"/>
+						<MediaRef Id="383303118"/>
+						<MediaRef Id="394496959"/>
+						<MediaRef Id="408570755"/>
+						<MediaRef Id="449719526"/>
+						<MediaRef Id="468795855"/>
+						<MediaRef Id="472000575"/>
+						<MediaRef Id="481543437"/>
+						<MediaRef Id="521776349"/>
+						<MediaRef Id="589060082"/>
+						<MediaRef Id="600996587"/>
+						<MediaRef Id="650797169"/>
+						<MediaRef Id="661063367"/>
+						<MediaRef Id="713916889"/>
+						<MediaRef Id="720322715"/>
+						<MediaRef Id="731922532"/>
+						<MediaRef Id="733039566"/>
+						<MediaRef Id="748055230"/>
+						<MediaRef Id="748822614"/>
+						<MediaRef Id="759369371"/>
+						<MediaRef Id="768956991"/>
+						<MediaRef Id="788434638"/>
+						<MediaRef Id="817391603"/>
+						<MediaRef Id="835039389"/>
+						<MediaRef Id="874117209"/>
+						<MediaRef Id="903708407"/>
+						<MediaRef Id="908641076"/>
+						<MediaRef Id="965355924"/>
+						<MediaRef Id="994630770"/>
+						<MediaRef Id="1008933578"/>
+						<MediaRef Id="1063543444"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="515874561"/>
+						</Custom>
+						<ShareSets>
+							<PluginRef Id="1237275451"/>
+						</ShareSets>
+					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="348963605" Name="Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Reverb" GUID="{39432060-1A71-40A3-B958-9264FDE9BB75}"/>
+					</AuxBusRefs>
+				</Event>
 				<Event Id="3157003241" Name="test" ObjectPath="\Events\Default Work Unit\test" GUID="{EC8DE7D5-586B-4A64-B2D1-E2FA5E748762}" DurationType="OneShot" DurationMin="4.0635147" DurationMax="4.0635147">
 					<MediaRefs>
 						<MediaRef Id="283519557"/>
@@ -490,5 +545,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{DEF76C69-C523-19AF-B91D-E0A5C623D2C9}</FileHash>
+	<FileHash>{19B85447-73F3-0EB8-AC1C-C41BE1CDCE50}</FileHash>
 </SoundBanksInfo>

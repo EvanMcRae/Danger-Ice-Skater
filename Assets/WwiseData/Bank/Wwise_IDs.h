@@ -36,6 +36,7 @@ namespace AK
         static const AkUniqueID SHARKFALL = 3926006775U;
         static const AkUniqueID SHARKSPAWN = 563965641U;
         static const AkUniqueID STOPMUSIC = 1917263390U;
+        static const AkUniqueID STOPSFX = 3189472150U;
         static const AkUniqueID TEST = 3157003241U;
     } // namespace EVENTS
 

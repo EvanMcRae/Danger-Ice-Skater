@@ -5,10 +5,10 @@ Event	ID	Name			Wwise Object Path	Notes
 	563965641	SharkSpawn			\Default Work Unit\Enemy\Shark\SharkSpawn	
 	679636833	MenuMusic			\Default Work Unit\Music\MenuMusic	
 	972739039	PlayerSplash			\Default Work Unit\Player\PlayerSplash	
-	1133184122	ResumeGame			\Default Work Unit\UI\ResumeGame	
+	1133184122	ResumeGame			\Default Work Unit\Utility\ResumeGame	
 	1321655446	LevelMusic			\Default Work Unit\Music\LevelMusic	
 	1495289514	EnemySplash			\Default Work Unit\Enemy\EnemySplash	
-	1589270263	PauseGame			\Default Work Unit\UI\PauseGame	
+	1589270263	PauseGame			\Default Work Unit\Utility\PauseGame	
 	1774890243	IceSplash			\Default Work Unit\Player\IceSplash	
 	1917263390	StopMusic			\Default Work Unit\Music\StopMusic	
 	2458991111	EndChomp			\Default Work Unit\Enemy\Shark\EndChomp	
@@ -18,6 +18,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2891959439	HockeyShoot			\Default Work Unit\Enemy\Hockey\HockeyShoot	
 	3020866858	FoxStep			\Default Work Unit\Enemy\Fox\FoxStep	
 	3157003241	test			\Default Work Unit\test	
+	3189472150	StopSFX			\Default Work Unit\Utility\StopSFX	
 	3537581393	PlayerHurt			\Default Work Unit\Player\PlayerHurt	
 	3926006775	SharkFall			\Default Work Unit\Enemy\Shark\SharkFall	
 	3993562277	PuckHit			\Default Work Unit\Enemy\Hockey\PuckHit	

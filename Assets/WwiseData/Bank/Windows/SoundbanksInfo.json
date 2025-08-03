@@ -136,7 +136,7 @@
     "Type": "User",
     "GUID": "{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}",
     "Language": "SFX",
-    "Hash": "{550723C9-4CE0-EB61-3C43-BB1DAAD86575}",
+    "Hash": "{054E1A51-9011-7011-2C8A-E3DBD2A4FFE5}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -824,40 +824,10 @@
       "Name": "HockeySwing",
       "ObjectPath": "\\Events\\Default Work Unit\\Enemy\\Hockey\\HockeySwing",
       "GUID": "{1FCCBCFA-EBAD-4B0A-B137-548F82F2342B}",
+      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0.21454296",
-      "DurationMax": "0.26772466",
-      "MediaRefs": [
-       {
-        "Id": "394496959"
-       },
-       {
-        "Id": "468795855"
-       },
-       {
-        "Id": "472000575"
-       },
-       {
-        "Id": "589060082"
-       },
-       {
-        "Id": "713916889"
-       },
-       {
-        "Id": "759369371"
-       },
-       {
-        "Id": "768956991"
-       }
-      ],
-      "AuxBusRefs": [
-       {
-        "Id": "348963605",
-        "Name": "Reverb",
-        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
-        "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
-       }
-      ]
+      "DurationMin": "0",
+      "DurationMax": "0"
      },
      {
       "Id": "1774890243",
@@ -941,12 +911,17 @@
      {
       "Id": "1589270263",
       "Name": "PauseGame",
-      "ObjectPath": "\\Events\\Default Work Unit\\UI\\PauseGame",
+      "ObjectPath": "\\Events\\Default Work Unit\\Utility\\PauseGame",
       "GUID": "{3E1FF75B-A95C-4AAC-8393-9E03EFB89250}",
       "MaxAttenuation": "0",
       "DurationType": "OneShot",
       "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMax": "0",
+      "MediaRefs": [
+       {
+        "Id": "720322715"
+       }
+      ]
      },
      {
       "Id": "4286935516",
@@ -1156,12 +1131,17 @@
      {
       "Id": "1133184122",
       "Name": "ResumeGame",
-      "ObjectPath": "\\Events\\Default Work Unit\\UI\\ResumeGame",
+      "ObjectPath": "\\Events\\Default Work Unit\\Utility\\ResumeGame",
       "GUID": "{6EE39B59-5463-4465-AE39-2CF5CFD89D1F}",
       "MaxAttenuation": "0",
       "DurationType": "OneShot",
       "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMax": "0",
+      "MediaRefs": [
+       {
+        "Id": "720322715"
+       }
+      ]
      },
      {
       "Id": "3926006775",
@@ -1248,6 +1228,173 @@
       "DurationType": "OneShot",
       "DurationMin": "0",
       "DurationMax": "0"
+     },
+     {
+      "Id": "3189472150",
+      "Name": "StopSFX",
+      "ObjectPath": "\\Events\\Default Work Unit\\Utility\\StopSFX",
+      "GUID": "{8E5C8332-3E46-4982-9676-C79380634E61}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "MediaRefs": [
+       {
+        "Id": "11736544"
+       },
+       {
+        "Id": "92250040"
+       },
+       {
+        "Id": "112692613"
+       },
+       {
+        "Id": "129769630"
+       },
+       {
+        "Id": "134563642"
+       },
+       {
+        "Id": "179817375"
+       },
+       {
+        "Id": "188607504"
+       },
+       {
+        "Id": "210521525"
+       },
+       {
+        "Id": "293017412"
+       },
+       {
+        "Id": "295319387"
+       },
+       {
+        "Id": "323035877"
+       },
+       {
+        "Id": "324096467"
+       },
+       {
+        "Id": "328313209"
+       },
+       {
+        "Id": "333892847"
+       },
+       {
+        "Id": "368301711"
+       },
+       {
+        "Id": "383303118"
+       },
+       {
+        "Id": "394496959"
+       },
+       {
+        "Id": "408570755"
+       },
+       {
+        "Id": "449719526"
+       },
+       {
+        "Id": "468795855"
+       },
+       {
+        "Id": "472000575"
+       },
+       {
+        "Id": "481543437"
+       },
+       {
+        "Id": "521776349"
+       },
+       {
+        "Id": "589060082"
+       },
+       {
+        "Id": "600996587"
+       },
+       {
+        "Id": "650797169"
+       },
+       {
+        "Id": "661063367"
+       },
+       {
+        "Id": "713916889"
+       },
+       {
+        "Id": "720322715"
+       },
+       {
+        "Id": "731922532"
+       },
+       {
+        "Id": "733039566"
+       },
+       {
+        "Id": "748055230"
+       },
+       {
+        "Id": "748822614"
+       },
+       {
+        "Id": "759369371"
+       },
+       {
+        "Id": "768956991"
+       },
+       {
+        "Id": "788434638"
+       },
+       {
+        "Id": "817391603"
+       },
+       {
+        "Id": "835039389"
+       },
+       {
+        "Id": "874117209"
+       },
+       {
+        "Id": "903708407"
+       },
+       {
+        "Id": "908641076"
+       },
+       {
+        "Id": "965355924"
+       },
+       {
+        "Id": "994630770"
+       },
+       {
+        "Id": "1008933578"
+       },
+       {
+        "Id": "1063543444"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "515874561"
+        }
+       ],
+       "ShareSets": [
+        {
+         "Id": "1237275451"
+        }
+       ]
+      },
+      "AuxBusRefs": [
+       {
+        "Id": "348963605",
+        "Name": "Reverb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
+        "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
+       }
+      ]
      },
      {
       "Id": "3157003241",
@@ -1354,6 +1501,6 @@
     ]
    }
   ],
-  "FileHash": "{DE93B5D5-6730-B940-6FE5-C8CE55D86DC9}"
+  "FileHash": "{692404B2-5F19-69D9-9A0B-C19D0715943B}"
  }
 }

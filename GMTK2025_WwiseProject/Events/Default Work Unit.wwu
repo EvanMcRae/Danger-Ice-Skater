@@ -269,7 +269,7 @@
 						</Folder>
 					</ChildrenList>
 				</Folder>
-				<Folder Name="UI" ID="{8F50C178-3D00-4210-AABF-5319FA168BE7}" ShortID="955776463">
+				<Folder Name="Utility" ID="{8F50C178-3D00-4210-AABF-5319FA168BE7}" ShortID="955776463">
 					<ChildrenList>
 						<Event Name="PauseGame" ID="{3E1FF75B-A95C-4AAC-8393-9E03EFB89250}">
 							<ChildrenList>
@@ -279,6 +279,17 @@
 										<Property Name="Scope" Type="int16" Value="1"/>
 									</PropertyList>
 									<ReferenceList/>
+								</Action>
+								<Action Name="" ID="{427F7733-E0C4-4692-B4C0-F99AA3C89BB4}" ShortID="26093031">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="12"/>
+										<Property Name="Volume" Type="Real64" Value="-96"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="LongSkate" ID="{DC7DFB9E-D900-47A0-BAB2-21F3FB0E120F}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
 								</Action>
 							</ChildrenList>
 						</Event>
@@ -290,6 +301,53 @@
 										<Property Name="Scope" Type="int16" Value="1"/>
 									</PropertyList>
 									<ReferenceList/>
+								</Action>
+								<Action Name="" ID="{BA260CDD-C790-4470-BD47-419E2898F69C}" ShortID="593779521">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="16"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="LongSkate" ID="{DC7DFB9E-D900-47A0-BAB2-21F3FB0E120F}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="StopSFX" ID="{8E5C8332-3E46-4982-9676-C79380634E61}">
+							<ChildrenList>
+								<Action Name="" ID="{97ED97CF-439A-4CD6-8AA0-CC4143E16B4D}" ShortID="790174670">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Enemy" ID="{00A5B2A1-9A90-40C7-8F66-FAD97043EB35}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{509EEA7B-1FDA-4665-84D3-5A7F5263C68B}" ShortID="531471459">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Player" ID="{7F6625A6-1464-4DC9-AF41-DC5EDF5E5CA0}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{26C7A420-F00B-46B5-9389-229C92594452}" ShortID="323140867">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Splashes" ID="{12A8AFB4-B27C-4749-9900-B862296E0322}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
 								</Action>
 							</ChildrenList>
 						</Event>
