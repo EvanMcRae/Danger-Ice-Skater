@@ -7,6 +7,7 @@ public class LandMineDestroy : MonoBehaviour
     public bool destroyOnPlayerCollision;
     private float time;
     public GameObject explosion;
+    public GameObject trapModelPosition;
 
     public void Start()
     {
@@ -31,6 +32,11 @@ public class LandMineDestroy : MonoBehaviour
         {
             Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(gameObject);
+
+            Vector3 dir = other.transform.position - trapModelPosition.transform.position;
+            Vector3 dirFixed = new Vector3(dir.x, 0f, dir.z);
+            dirFixed.Normalize();
+            other.gameObject.GetComponent<Rigidbody>().AddForce(dirFixed * 10, ForceMode.Impulse);
         }
     }
 }
