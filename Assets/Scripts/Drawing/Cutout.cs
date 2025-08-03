@@ -11,6 +11,7 @@ public class Cutout : MonoBehaviour
     private MaterialPropertyBlock m_matBlock;
     private MeshRenderer m_meshRenderer;
     private Tween m_tintTween, m_dissolveTween;
+    private bool m_playedSound = false;
 
     public void Start()
     {
@@ -28,6 +29,12 @@ public class Cutout : MonoBehaviour
         m_matBlock.SetColor("_Tint_Colour", m_tint);
         m_matBlock.SetFloat("_Dissolve_Progress", m_dissolveProgress);
         m_meshRenderer.SetPropertyBlock(m_matBlock);
+
+        if (transform.position.y < GameController.KILL_HEIGHT && !m_playedSound)
+        {
+            m_playedSound = true;
+            AkUnitySoundEngine.PostEvent("IceSplash", gameObject);
+        }
 
         if (transform.position.y < GameController.KILL_HEIGHT * 2 && !m_isDead)
         {
