@@ -148,7 +148,7 @@
     "Type": "User",
     "GUID": "{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}",
     "Language": "SFX",
-    "Hash": "{141122B4-C0EA-69AE-36CE-9623581403BA}",
+    "Hash": "{ED10F700-AD59-DA6F-9351-DAEEFE8EC78D}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -392,6 +392,14 @@
       "Location": "Memory",
       "ShortName": "Shark Chomps_4.wav",
       "CachePath": "D1/{D1428FEF-B827-35FA-537C-EEC4BF8C5F7E}.wem"
+     },
+     {
+      "Id": "651667884",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Jump.wav",
+      "CachePath": "F4/{F4F3A054-38B2-9131-253F-8B3FCF012866}.wem"
      },
      {
       "Id": "661063367",
@@ -1151,6 +1159,20 @@
       ]
      },
      {
+      "Id": "4008126242",
+      "Name": "PlayerJump",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player\\PlayerJump",
+      "GUID": "{40ACA375-B5BA-4B8C-A9FE-A89ED8091A35}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.18604985",
+      "DurationMax": "0.21682371",
+      "MediaRefs": [
+       {
+        "Id": "651667884"
+       }
+      ]
+     },
+     {
       "Id": "972739039",
       "Name": "PlayerSplash",
       "ObjectPath": "\\Events\\Default Work Unit\\Player\\PlayerSplash",
@@ -1435,6 +1457,9 @@
         "Id": "650797169"
        },
        {
+        "Id": "651667884"
+       },
+       {
         "Id": "661063367"
        },
        {
@@ -1630,6 +1655,6 @@
     ]
    }
   ],
-  "FileHash": "{F165C2D3-7297-CD4E-79C7-B20E994D6ADA}"
+  "FileHash": "{43DED4F9-2ED7-79CF-A497-A22B26B86CED}"
  }
 }

@@ -40,6 +40,15 @@
 					</ReferenceList>
 					<ChildrenList>
 						<ActorMixer Name="Skates" ID="{78C948E0-F56D-4521-822D-BD83A7631CC3}" ShortID="852291264">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{9BA073BC-2EE3-423C-9556-F42D8975A32D}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F62DD1B7-89B4-49E7-AB90-FDF7CE87B720}"/>
@@ -52,6 +61,13 @@
 								<BlendContainer Name="Steps" ID="{7AC52866-D5DB-4682-99B3-2AEFC8D332B9}" ShortID="481306390">
 									<PropertyList>
 										<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{ADF12786-EB12-43F8-896E-F3844E4CBF29}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -708,6 +724,11 @@
 									<ValueList>
 										<Value>-300</Value>
 									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{AB4A1085-A177-42EA-9B99-951172D7E721}"/>
+										</ModifierInfo>
+									</ModifierList>
 								</Property>
 							</PropertyList>
 							<ReferenceList>
@@ -943,6 +964,61 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
+						<Sound Name="Jump" ID="{1DAB512B-BEE9-4461-BCA2-91F083A77036}" ShortID="577028386">
+							<PropertyList>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>12</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-420</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{66925F2E-2195-4380-B44D-31371A8376B8}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="165"/>
+													<Property Name="Min" Type="Real64" Value="-100"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F62DD1B7-89B4-49E7-AB90-FDF7CE87B720}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{523CB2DE-352A-4AFA-9D31-03D6E719CF23}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Jump" ID="{BABF5981-7F0D-48F7-AD38-81BFA93303A3}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.072710299463866"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.160568530926121"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Jump.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="651667884"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Jump" ID="{BABF5981-7F0D-48F7-AD38-81BFA93303A3}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="Splashes" ID="{12A8AFB4-B27C-4749-9900-B862296E0322}" ShortID="728721398">

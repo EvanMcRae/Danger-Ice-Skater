@@ -132,6 +132,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="PlayerJump" ID="{40ACA375-B5BA-4B8C-A9FE-A89ED8091A35}">
+							<ChildrenList>
+								<Action Name="" ID="{AF5CE798-CC14-4D52-86F9-498AD848E423}" ShortID="734968197">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Jump" ID="{1DAB512B-BEE9-4461-BCA2-91F083A77036}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Enemy" ID="{7F29F9C0-F013-4152-8820-0F6168AB4BAE}" ShortID="265989790">
@@ -373,6 +384,7 @@
 										<Property Name="ActionType" Type="int16" Value="2"/>
 										<Property Name="FadeOutCurve" Type="int16" Value="6"/>
 										<Property Name="FadeTime" Type="Real64" Value="1.5"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
@@ -384,6 +396,7 @@
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="38"/>
 										<Property Name="GameParameterValue" Type="Real64" Value="1"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
@@ -420,6 +433,7 @@
 								<Action Name="" ID="{F383A8A9-B56E-472F-B7A7-8ABE2BF61179}" ShortID="213487441">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
@@ -436,6 +450,7 @@
 										<Property Name="ActionType" Type="int16" Value="2"/>
 										<Property Name="FadeOutCurve" Type="int16" Value="6"/>
 										<Property Name="FadeTime" Type="Real64" Value="1.5"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
@@ -459,6 +474,7 @@
 										<Property Name="ActionType" Type="int16" Value="38"/>
 										<Property Name="Delay" Type="Real64" Value="1.5"/>
 										<Property Name="GameParameterValue" Type="Real64" Value="1"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">

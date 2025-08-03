@@ -65,11 +65,11 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="soundVolume" ID="{DF92366F-4997-4DFD-B8EC-F8899A911A75}"/>
-							<Value>100</Value>
+							<Value>50</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="masterVolume" ID="{1211C1CB-5F06-4FC0-9FA8-2E4402C1AD49}"/>
-							<Value>51.364</Value>
+							<Value>50</Value>
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>
