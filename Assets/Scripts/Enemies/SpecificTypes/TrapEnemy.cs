@@ -66,6 +66,7 @@ namespace Enemies
                     MoveAwayFromWall();
                     anim.SetTrigger("moving");
                 }
+                transform.LookAt(new Vector3(transform.position.x + rb.linearVelocity.x, transform.position.y, transform.position.z + rb.linearVelocity.z));
             }
         }
 
