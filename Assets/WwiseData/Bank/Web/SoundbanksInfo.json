@@ -18,7 +18,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{ACB9A649-FF49-3BF5-819D-0118B60A5F48}",
+    "Hash": "{B2B8CC25-A3EF-0E18-DD76-016FB241C19D}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -78,6 +78,12 @@
     ],
     "GameParameters": [
      {
+      "Id": "1763041431",
+      "Name": "MusicSpeed",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\MusicSpeed",
+      "GUID": "{0AACEFE7-CCA8-4AB0-9BCB-AD4AEB1B4D0D}"
+     },
+     {
       "Id": "2346531308",
       "Name": "musicVolume",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Volume\\musicVolume",
@@ -126,6 +132,12 @@
         "Name": "Level",
         "ObjectPath": "\\Switches\\Default Work Unit\\Music\\Level",
         "GUID": "{E65BD47D-CC9E-4A96-B6E1-9D6CD99CAC00}"
+       },
+       {
+        "Id": "4158285989",
+        "Name": "GameOver",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Music\\GameOver",
+        "GUID": "{3535B191-1CFA-4E27-8179-4EAB12E105B9}"
        }
       ]
      }
@@ -136,7 +148,7 @@
     "Type": "User",
     "GUID": "{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}",
     "Language": "SFX",
-    "Hash": "{550723C9-4CE0-EB61-3C43-BB1DAAD86575}",
+    "Hash": "{141122B4-C0EA-69AE-36CE-9623581403BA}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -156,6 +168,14 @@
       "Location": "Memory",
       "ShortName": "Roar Death .wav",
       "CachePath": "EB/{EB80AAE3-0C74-F4AA-22D2-0AEF3A6ABB5F}.wem"
+     },
+     {
+      "Id": "111674717",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Level track drums.wav",
+      "CachePath": "08/{08F40A80-B77C-A86C-F9FA-2FA8A04D332C}.wem"
      },
      {
       "Id": "112692613",
@@ -358,6 +378,14 @@
       "CachePath": "9D/{9D8B2D67-215F-DDF2-EA50-85BD83E5C3BA}.wem"
      },
      {
+      "Id": "650199349",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Game Over drums 129.wav",
+      "CachePath": "46/{463312B4-BBEB-5AC2-2F5F-46E6015B1DBA}.wem"
+     },
+     {
       "Id": "650797169",
       "Language": "SFX",
       "Streaming": "false",
@@ -462,6 +490,14 @@
       "CachePath": "1F/{1FBBF64D-0DA1-DBAF-A9E3-0E08EEBEF1EA}.wem"
      },
      {
+      "Id": "841818543",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Level track bass.wav",
+      "CachePath": "7D/{7D0DE6D4-FCC8-6A29-B4C4-ECBD55083BFF}.wem"
+     },
+     {
       "Id": "874117209",
       "Language": "SFX",
       "Streaming": "false",
@@ -508,6 +544,14 @@
       "Location": "Memory",
       "ShortName": "Steps\\Step_7.wav",
       "CachePath": "2E/{2E48F883-A22B-9D74-0DDF-2570790E91B8}.wem"
+     },
+     {
+      "Id": "1022245192",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Level track pad.wav",
+      "CachePath": "F5/{F589AB41-B992-B74C-BB87-4B8AEC706291}.wem"
      },
      {
       "Id": "1063543444",
@@ -778,6 +822,15 @@
         "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
         "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
        }
+      ],
+      "ActionSetSwitch": [
+       {
+        "GroupId": "3991942870",
+        "Id": "4158285989",
+        "Name": "GameOver",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Music\\GameOver",
+        "GUID": "{3535B191-1CFA-4E27-8179-4EAB12E105B9}"
+       }
       ]
      },
      {
@@ -824,40 +877,10 @@
       "Name": "HockeySwing",
       "ObjectPath": "\\Events\\Default Work Unit\\Enemy\\Hockey\\HockeySwing",
       "GUID": "{1FCCBCFA-EBAD-4B0A-B137-548F82F2342B}",
+      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0.21454296",
-      "DurationMax": "0.26772466",
-      "MediaRefs": [
-       {
-        "Id": "394496959"
-       },
-       {
-        "Id": "468795855"
-       },
-       {
-        "Id": "472000575"
-       },
-       {
-        "Id": "589060082"
-       },
-       {
-        "Id": "713916889"
-       },
-       {
-        "Id": "759369371"
-       },
-       {
-        "Id": "768956991"
-       }
-      ],
-      "AuxBusRefs": [
-       {
-        "Id": "348963605",
-        "Name": "Reverb",
-        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
-        "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
-       }
-      ]
+      "DurationMin": "0",
+      "DurationMax": "0"
      },
      {
       "Id": "1774890243",
@@ -895,6 +918,38 @@
           "Id": "535792127"
          }
         ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3991942870",
+         "Id": "4158285989",
+         "GUID": "{3535B191-1CFA-4E27-8179-4EAB12E105B9}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "650199349"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3991942870",
+         "Id": "2607556080",
+         "GUID": "{EEBDBBBA-DF30-4E6F-8686-4C63D4972B51}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "111674717"
+         },
+         {
+          "Id": "841818543"
+         },
+         {
+          "Id": "1022245192"
+         }
+        ]
        }
       ],
       "ActionSetSwitch": [
@@ -926,6 +981,38 @@
           "Id": "535792127"
          }
         ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3991942870",
+         "Id": "4158285989",
+         "GUID": "{3535B191-1CFA-4E27-8179-4EAB12E105B9}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "650199349"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3991942870",
+         "Id": "2607556080",
+         "GUID": "{EEBDBBBA-DF30-4E6F-8686-4C63D4972B51}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "111674717"
+         },
+         {
+          "Id": "841818543"
+         },
+         {
+          "Id": "1022245192"
+         }
+        ]
        }
       ],
       "ActionSetSwitch": [
@@ -941,12 +1028,17 @@
      {
       "Id": "1589270263",
       "Name": "PauseGame",
-      "ObjectPath": "\\Events\\Default Work Unit\\UI\\PauseGame",
+      "ObjectPath": "\\Events\\Default Work Unit\\Utility\\PauseGame",
       "GUID": "{3E1FF75B-A95C-4AAC-8393-9E03EFB89250}",
       "MaxAttenuation": "0",
       "DurationType": "OneShot",
       "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMax": "0",
+      "MediaRefs": [
+       {
+        "Id": "720322715"
+       }
+      ]
      },
      {
       "Id": "4286935516",
@@ -1156,12 +1248,17 @@
      {
       "Id": "1133184122",
       "Name": "ResumeGame",
-      "ObjectPath": "\\Events\\Default Work Unit\\UI\\ResumeGame",
+      "ObjectPath": "\\Events\\Default Work Unit\\Utility\\ResumeGame",
       "GUID": "{6EE39B59-5463-4465-AE39-2CF5CFD89D1F}",
       "MaxAttenuation": "0",
       "DurationType": "OneShot",
       "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMax": "0",
+      "MediaRefs": [
+       {
+        "Id": "720322715"
+       }
+      ]
      },
      {
       "Id": "3926006775",
@@ -1250,6 +1347,173 @@
       "DurationMax": "0"
      },
      {
+      "Id": "3189472150",
+      "Name": "StopSFX",
+      "ObjectPath": "\\Events\\Default Work Unit\\Utility\\StopSFX",
+      "GUID": "{8E5C8332-3E46-4982-9676-C79380634E61}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "MediaRefs": [
+       {
+        "Id": "11736544"
+       },
+       {
+        "Id": "92250040"
+       },
+       {
+        "Id": "112692613"
+       },
+       {
+        "Id": "129769630"
+       },
+       {
+        "Id": "134563642"
+       },
+       {
+        "Id": "179817375"
+       },
+       {
+        "Id": "188607504"
+       },
+       {
+        "Id": "210521525"
+       },
+       {
+        "Id": "293017412"
+       },
+       {
+        "Id": "295319387"
+       },
+       {
+        "Id": "323035877"
+       },
+       {
+        "Id": "324096467"
+       },
+       {
+        "Id": "328313209"
+       },
+       {
+        "Id": "333892847"
+       },
+       {
+        "Id": "368301711"
+       },
+       {
+        "Id": "383303118"
+       },
+       {
+        "Id": "394496959"
+       },
+       {
+        "Id": "408570755"
+       },
+       {
+        "Id": "449719526"
+       },
+       {
+        "Id": "468795855"
+       },
+       {
+        "Id": "472000575"
+       },
+       {
+        "Id": "481543437"
+       },
+       {
+        "Id": "521776349"
+       },
+       {
+        "Id": "589060082"
+       },
+       {
+        "Id": "600996587"
+       },
+       {
+        "Id": "650797169"
+       },
+       {
+        "Id": "661063367"
+       },
+       {
+        "Id": "713916889"
+       },
+       {
+        "Id": "720322715"
+       },
+       {
+        "Id": "731922532"
+       },
+       {
+        "Id": "733039566"
+       },
+       {
+        "Id": "748055230"
+       },
+       {
+        "Id": "748822614"
+       },
+       {
+        "Id": "759369371"
+       },
+       {
+        "Id": "768956991"
+       },
+       {
+        "Id": "788434638"
+       },
+       {
+        "Id": "817391603"
+       },
+       {
+        "Id": "835039389"
+       },
+       {
+        "Id": "874117209"
+       },
+       {
+        "Id": "903708407"
+       },
+       {
+        "Id": "908641076"
+       },
+       {
+        "Id": "965355924"
+       },
+       {
+        "Id": "994630770"
+       },
+       {
+        "Id": "1008933578"
+       },
+       {
+        "Id": "1063543444"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "515874561"
+        }
+       ],
+       "ShareSets": [
+        {
+         "Id": "1237275451"
+        }
+       ]
+      },
+      "AuxBusRefs": [
+       {
+        "Id": "348963605",
+        "Name": "Reverb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
+        "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
+       }
+      ]
+     },
+     {
       "Id": "3157003241",
       "Name": "test",
       "ObjectPath": "\\Events\\Default Work Unit\\test",
@@ -1300,6 +1564,12 @@
     ],
     "GameParameters": [
      {
+      "Id": "1763041431",
+      "Name": "MusicSpeed",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\MusicSpeed",
+      "GUID": "{0AACEFE7-CCA8-4AB0-9BCB-AD4AEB1B4D0D}"
+     },
+     {
       "Id": "2346531308",
       "Name": "musicVolume",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Volume\\musicVolume",
@@ -1348,12 +1618,18 @@
         "Name": "Level",
         "ObjectPath": "\\Switches\\Default Work Unit\\Music\\Level",
         "GUID": "{E65BD47D-CC9E-4A96-B6E1-9D6CD99CAC00}"
+       },
+       {
+        "Id": "4158285989",
+        "Name": "GameOver",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Music\\GameOver",
+        "GUID": "{3535B191-1CFA-4E27-8179-4EAB12E105B9}"
        }
       ]
      }
     ]
    }
   ],
-  "FileHash": "{04468D2A-6FAE-F9E2-D56C-5D11CD701835}"
+  "FileHash": "{F165C2D3-7297-CD4E-79C7-B20E994D6ADA}"
  }
 }
