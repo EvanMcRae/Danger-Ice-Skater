@@ -907,9 +907,9 @@ MonoBehaviour:
   - {fileID: 3870809219970303358}
   MainMenuName: MainMenu
   eventSystem: {fileID: 0}
-  settingsBackButton: {fileID: 0}
-  settingsButton: {fileID: 0}
-  playButton: {fileID: 0}
+  settingsBackButton: {fileID: 7574052735616883720}
+  settingsButton: {fileID: 6045652433369435514}
+  playButton: {fileID: 8546162174043694085}
   WwiseGlobal: {fileID: 0}
 --- !u!1 &1398416552894804379
 GameObject:
@@ -6216,5 +6216,10 @@ GameObject:
 --- !u!224 &6936420393891307716 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7362104618069709538, guid: bbe16298ec320114f8e4d01c4e0b9948, type: 3}
+  m_PrefabInstance: {fileID: 461740716241220134}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7574052735616883720 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8031077474670571054, guid: bbe16298ec320114f8e4d01c4e0b9948, type: 3}
   m_PrefabInstance: {fileID: 461740716241220134}
   m_PrefabAsset: {fileID: 0}
