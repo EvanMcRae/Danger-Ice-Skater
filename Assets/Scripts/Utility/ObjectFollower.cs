@@ -7,7 +7,7 @@ public class ObjectFollower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PauseManager.paused) return;
+        if (PauseManager.ShouldNotRun()) return;
 
         if (target.TryGetComponent<PlayerController>(out var player))
         {

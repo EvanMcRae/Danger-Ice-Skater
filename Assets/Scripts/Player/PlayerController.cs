@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (PauseManager.paused) return;
+        if (PauseManager.ShouldNotRun()) return;
 
         if (imso.jump.action.WasPressedThisFrame()) Jump();
 
@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (PauseManager.paused) return;
+        if (PauseManager.ShouldNotRun()) return;
 
         //make the player move
         //modified by rigidbody's Linear Dampening
@@ -215,7 +215,6 @@ public class PlayerController : MonoBehaviour
         Vector3 currPos = transform.position;
         currPos.y = 0;
         Vector2 horizVel = (currPos - lastPos) / Time.fixedDeltaTime;
-        Debug.Log(horizVel.magnitude);
         if (horizVel.magnitude >= 0.1f)
         {
             anim.SetBool("isMoving", true);

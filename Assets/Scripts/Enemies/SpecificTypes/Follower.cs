@@ -20,7 +20,7 @@ namespace Enemies {
         }
 
         public new void Update() {
-            if (PauseManager.paused) return;
+            if (PauseManager.ShouldNotRun()) return;
 
             base.Update();
             if (rotateTowardsPlayer) {
@@ -30,7 +30,7 @@ namespace Enemies {
         }
 
         public void FixedUpdate() {
-            if (PauseManager.paused) return;
+            if (PauseManager.ShouldNotRun()) return;
 
             Vector3 vectorDiff = player.transform.position - transform.position;
             vectorDiff.Normalize();

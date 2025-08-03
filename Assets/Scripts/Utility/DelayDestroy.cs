@@ -11,7 +11,7 @@ namespace Utility {
         }
 
         public void Update() {
-            if (PauseManager.paused) return;
+            if (PauseManager.ShouldNotRun()) return;
 
             destroyDelay -= Time.deltaTime;
             if (destroyDelay <= 0) {
