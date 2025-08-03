@@ -73,9 +73,9 @@ public class introCutscene : MonoBehaviour
                     player.GetComponent<PlayerController>().startedThisFrame = true;
                     player.GetComponent<PlayerController>().startCutsceneActive = false;
                     gameManager.GetComponent<GameController>().StartController();
-                    charTween = charSprite.transform.DOMoveY(charSprite.transform.position.y - 500, 1f, false);
-                    textTween = textBox.transform.DOMoveY(textBox.transform.position.y - 500, 1f, false);
-                    nextTween = nextButton.transform.DOMoveY(nextButton.transform.position.y - 500, 1f, false);
+                    charTween = charSprite.transform.DOMoveY(charSprite.transform.position.y - 2000, 1f, false);
+                    textTween = textBox.transform.DOMoveY(textBox.transform.position.y - 2000, 1f, false);
+                    nextTween = nextButton.transform.DOMoveY(nextButton.transform.position.y - 2000, 1f, false);
                 }
                 else
                 {

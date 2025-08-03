@@ -165,7 +165,7 @@
                 {
                     "name": "negative",
                     "id": "179bb51e-cba3-4910-87fb-1d691a114458",
-                    "path": "<Gamepad>/leftStick/down",
+                    "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -176,7 +176,7 @@
                 {
                     "name": "positive",
                     "id": "7f5e552d-008b-468e-bb99-0fcd7f1d251f",
-                    "path": "<Gamepad>/leftStick/up",
+                    "path": "<Gamepad>/leftStick/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -242,7 +242,7 @@
                 {
                     "name": "",
                     "id": "9c19a4d1-6413-4441-8180-3d837195d6cd",
-                    "path": "<Keyboard>/escape",
+                    "path": "<Keyboard>/tab",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",

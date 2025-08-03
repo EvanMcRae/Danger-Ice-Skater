@@ -51,7 +51,7 @@ public class PauseManager : MonoBehaviour
             startPositions.Add(menu.transform.position.y);
             if (menu != Menus[0])
             {
-                menu.transform.DOMoveY(-Screen.height, 0f);
+                menu.transform.DOMoveY(-MenuManager.screenHeight, 0f);
             }
         }
         Cursor.visible = false;
@@ -80,7 +80,7 @@ public class PauseManager : MonoBehaviour
             //this jank makes sure submenus don't stay on screen
             if (menu != Menus[0])
             {
-                menu.transform.position = new Vector3(menu.transform.position.x, -Screen.height, menu.transform.position.z);
+                menu.transform.position = new Vector3(menu.transform.position.x, -MenuManager.screenHeight, menu.transform.position.z);
             }
         }
         Time.timeScale = 1;
@@ -127,7 +127,7 @@ public class PauseManager : MonoBehaviour
         {
             if (menu != Menus[0])
             {
-                menu.transform.DOMoveY(-Screen.height, .4f).SetUpdate(true);
+                menu.transform.DOMoveY(-MenuManager.screenHeight, .4f).SetUpdate(true);
             }
         }
         menuOpen = false;

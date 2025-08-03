@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using TMPro;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -37,6 +39,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     public GameObject settingsBackButton;
     private bool settingsOpen;
+    public static int screenHeight = 720;
+    public TextMeshProUGUI texttest;
 
     private void Start()
     {
@@ -46,7 +50,8 @@ public class MenuManager : MonoBehaviour
             startPositions.Add(menu.transform.position.y);
             if (menu != Menus[0])
             {
-                menu.transform.DOMoveY(-Screen.height, 0f);
+                Debug.Log(Screen.height);
+                menu.transform.DOMoveY(-screenHeight, 0f);
             }
         }
     }
@@ -126,8 +131,9 @@ public class MenuManager : MonoBehaviour
         {
             if (menu != Menus[0])
             {
+                texttest.text = Screen.height + " ";
                 //menu.SetActive(false);
-                menu.transform.DOMoveY(-Screen.height, .4f);
+                menu.transform.DOMoveY(-1080, .4f);
             }
         }
     }

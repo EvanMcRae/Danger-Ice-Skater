@@ -22,9 +22,6 @@ public class SettingsManager : MonoBehaviour
 
     private void Start()
     {
-        fullscreen = PlayerPrefs.GetInt("fullscreen", fullscreen);
-        fullscreenToggle.isOn = fullscreen == 1;
-        toggleFullscreen();
         vsync = PlayerPrefs.GetInt("vsync", vsync);
         VSyncToggle.isOn = vsync == 1;
         toggleVSync();
@@ -40,13 +37,6 @@ public class SettingsManager : MonoBehaviour
         loadedSettings = true;
         transform.parent.gameObject.SetActive(false);
 
-    }
-
-    public void toggleFullscreen()
-    {
-        Screen.SetResolution(Display.main.systemWidth, (int)(9 / 16f * Display.main.systemWidth), fullscreenToggle.isOn);
-        fullscreen = fullscreenToggle.isOn ? 1 : 0;
-        PlayerPrefs.SetInt("fullscreen", fullscreen);
     }
 
     public void toggleVSync()
