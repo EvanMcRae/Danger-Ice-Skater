@@ -24,9 +24,9 @@ namespace Enemies.SpecificTypes {
         public new void Update() {
             if (PauseManager.ShouldNotRun()) return;
 
-            if (!m_waiting && !m_isDead)
+            if (canMove && !m_isDead)
             {
-                CheckIfCloseToWall(top.transform.position.z, bottom.transform.position.z, left.transform.position.x, right.transform.position.x);
+                //CheckIfCloseToWall(top.transform.position.z, bottom.transform.position.z, left.transform.position.x, right.transform.position.x);
                 if (!movingAwayFromWall)
                 {
                     base.Update();

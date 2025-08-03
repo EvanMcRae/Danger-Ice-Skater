@@ -22,14 +22,19 @@ namespace Game {
 
         public int score;
 
-        public void Start()
+        //public void Start()
+        //{
+        //    waveDelayTimer = timeBetweenWaves;
+        //    waveStateHandler.StartGame();
+        //    score = 0;
+        //}
+
+        public void StartController()
         {
             waveDelayTimer = timeBetweenWaves;
             waveStateHandler.StartGame();
             score = 0;
         }
-
-
 
         /*
          * Event handlers:
