@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameEventBroadcaster: {fileID: 11400000, guid: f8714c97c5f2ac84fa1762773bdaad01, type: 2}
   rb: {fileID: 3082789497159342337}
+  centerOfRink: {fileID: 8868064442905718845, guid: 4c8211cdddd733d4292ef888ad377143, type: 3}
   m_isDead: 0
   m_waiting: 0
   anim: {fileID: 547468786114739637}
