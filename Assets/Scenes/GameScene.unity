@@ -3885,7 +3885,7 @@ MonoBehaviour:
   pickupPrefab: {fileID: 4902833555605924268, guid: 0b842cb152d424941ade6ed4a944a862, type: 3}
   center: {x: 0, y: 0, z: 0}
   size: {x: 10, y: 10}
-  spawnHeight: 0.3
+  spawnHeight: -3
 --- !u!4 &871613994
 Transform:
   m_ObjectHideFlags: 0
