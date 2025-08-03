@@ -51,7 +51,7 @@ public class PauseManager : MonoBehaviour
             startPositions.Add(menu.transform.position.y);
             if (menu != Menus[0])
             {
-                menu.transform.DOMoveY(-Screen.height, 0f);
+                //menu.transform.DOMoveY(-Screen.height, 0f);
             }
         }
         Cursor.visible = false;
@@ -127,7 +127,12 @@ public class PauseManager : MonoBehaviour
         {
             if (menu != Menus[0])
             {
-                menu.transform.DOMoveY(-Screen.height, .4f).SetUpdate(true);
+                float startPos = menu.transform.position.y;
+
+                DG.Tweening.Sequence mySequence = DOTween.Sequence();
+                mySequence.Append(menu.transform.DOMoveY(-Screen.height, .4f));
+                mySequence.Append(menu.transform.DOMoveY(startPos, 0f));
+                menu.SetActive(false);
             }
         }
         menuOpen = false;
@@ -140,12 +145,12 @@ public class PauseManager : MonoBehaviour
 
         menu.GetComponent<RectTransform>().localScale = Vector3.one;
 
-        float startPos = startPositions[index];
+        float startPos = Menus[index].transform.position.y;// startPositions[index];
 
-        mySequence = DOTween.Sequence().SetUpdate(true);
+        DG.Tweening.Sequence mySequence = DOTween.Sequence();
+        mySequence.Append(menu.transform.DOMoveY(-Screen.height + 50, 0f));
         mySequence.Append(menu.transform.DOMoveY(startPos + 50, .4f));
         mySequence.Append(menu.transform.DOMoveY(startPos, .5f));
-        menuOpen = true;
     }
 
     private void OnDestroy()
