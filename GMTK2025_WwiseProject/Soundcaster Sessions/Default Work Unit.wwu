@@ -45,11 +45,23 @@
 							<ObjectRef Name="MenuMusic" ID="{1F75F209-D770-4DAE-BF3C-D043CE438AA4}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
 							<Position X="2" Y="3"/>
 						</Module>
+						<Module>
+							<ObjectRef Name="PauseGame" ID="{3E1FF75B-A95C-4AAC-8393-9E03EFB89250}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="ResumeGame" ID="{6EE39B59-5463-4465-AE39-2CF5CFD89D1F}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
+							<Position X="4" Y="0"/>
+						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
 							<GameParameterRef Name="musicVolume" ID="{DAF18041-72A2-4215-B1D0-EAE2DB16B628}"/>
-							<Value>96</Value>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="MusicSpeed" ID="{0AACEFE7-CCA8-4AB0-9BCB-AD4AEB1B4D0D}"/>
+							<Value>1</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="soundVolume" ID="{DF92366F-4997-4DFD-B8EC-F8899A911A75}"/>
@@ -62,7 +74,7 @@
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>
 					<CurrentSwitchList ShowAll="true">
-						<CurrentSwitchRef Name="Menu" ID="{EEBDBBBA-DF30-4E6F-8686-4C63D4972B51}"/>
+						<CurrentSwitchRef Name="GameOver" ID="{3535B191-1CFA-4E27-8179-4EAB12E105B9}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>
