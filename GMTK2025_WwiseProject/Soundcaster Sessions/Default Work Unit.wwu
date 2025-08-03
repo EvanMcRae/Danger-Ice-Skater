@@ -50,8 +50,24 @@
 							<Position X="3" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="BackUI" ID="{16FD41C1-73D2-4024-8584-8EFCC6139BD3}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
+							<Position X="3" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="SelectUI" ID="{DF932278-9B4B-403C-AACB-25C0447FFB70}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
+							<Position X="3" Y="3"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="ResumeGame" ID="{6EE39B59-5463-4465-AE39-2CF5CFD89D1F}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
 							<Position X="4" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="HighlightUI" ID="{D831C8AA-E4CD-40E8-AACD-8C66071C22F6}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
+							<Position X="4" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="StartGameUI" ID="{7E779D16-E9A6-46B5-A9B3-AAA4450E8F21}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
+							<Position X="4" Y="3"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
@@ -74,7 +90,7 @@
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>
 					<CurrentSwitchList ShowAll="true">
-						<CurrentSwitchRef Name="GameOver" ID="{3535B191-1CFA-4E27-8179-4EAB12E105B9}"/>
+						<CurrentSwitchRef Name="Menu" ID="{EEBDBBBA-DF30-4E6F-8686-4C63D4972B51}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>

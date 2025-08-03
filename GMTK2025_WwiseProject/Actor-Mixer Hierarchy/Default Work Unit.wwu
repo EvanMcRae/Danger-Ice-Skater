@@ -3902,8 +3902,10 @@
 				</ActorMixer>
 				<ActorMixer Name="World" ID="{D18A96AA-609E-49BA-8F0F-9FCC8AE27EFA}" ShortID="1053169204">
 					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
 						<Property Name="Color" Type="int16" Value="12"/>
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="85"/>
 						<Property Name="UserAuxSendVolume0" Type="Real64">
 							<ValueList>
 								<Value>3</Value>
@@ -4103,6 +4105,192 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Point Score" ID="{A98190DD-12CE-4CE1-B694-2A1EAE1F034B}" ShortID="18540736">
+							<PropertyList>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>16</Value>
+									</ValueList>
+								</Property>
+								<Property Name="MakeUpGain" Type="Real64">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
+								<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F62DD1B7-89B4-49E7-AB90-FDF7CE87B720}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{523CB2DE-352A-4AFA-9D31-03D6E719CF23}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Point Score" ID="{6B07EBF1-0CF5-4B28-85F2-738BE763830C}" ShortID="970566712">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F62DD1B7-89B4-49E7-AB90-FDF7CE87B720}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{523CB2DE-352A-4AFA-9D31-03D6E719CF23}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Point Score" ID="{F7180B69-21E4-4FF4-B087-DBE2250E0275}">
+											<Language>SFX</Language>
+											<AudioFile>Point Score.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="984296191"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Point Score" ID="{F7180B69-21E4-4FF4-B087-DBE2250E0275}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Point Score_1" ID="{EA8415D5-919E-4191-A3B2-BB65F9C5407F}" ShortID="270410212">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F62DD1B7-89B4-49E7-AB90-FDF7CE87B720}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{523CB2DE-352A-4AFA-9D31-03D6E719CF23}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Point Score_1" ID="{93B310B3-2A51-4B2F-A8CE-A80056869B87}">
+											<Language>SFX</Language>
+											<AudioFile>Point Score_1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="603071773"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Point Score_1" ID="{93B310B3-2A51-4B2F-A8CE-A80056869B87}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+					</ChildrenList>
+				</ActorMixer>
+				<ActorMixer Name="UI" ID="{C1A7F448-2F89-4E2D-8A18-93EC9A6BFAAD}" ShortID="121650484">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="26"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F62DD1B7-89B4-49E7-AB90-FDF7CE87B720}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{523CB2DE-352A-4AFA-9D31-03D6E719CF23}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Back" ID="{FDF00204-5B43-402E-A6A2-D9A4D5E2CC4D}" ShortID="389253859">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F62DD1B7-89B4-49E7-AB90-FDF7CE87B720}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{523CB2DE-352A-4AFA-9D31-03D6E719CF23}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Back" ID="{5AEEFB4B-CC2B-44FB-90F1-C52352085DD4}">
+									<Language>SFX</Language>
+									<AudioFile>Back.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="77639479"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Back" ID="{5AEEFB4B-CC2B-44FB-90F1-C52352085DD4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Highlight" ID="{8D9D496D-18AB-455C-B517-27FB5D27BC3C}" ShortID="147806575">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F62DD1B7-89B4-49E7-AB90-FDF7CE87B720}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{523CB2DE-352A-4AFA-9D31-03D6E719CF23}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Highlight" ID="{D7D9D27B-9535-4940-B284-FC29736B9565}">
+									<Language>SFX</Language>
+									<AudioFile>Highlight.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="305725709"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Highlight" ID="{D7D9D27B-9535-4940-B284-FC29736B9565}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Select" ID="{540C7CB3-CC49-459D-803D-67D9C26EA253}" ShortID="626859873">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F62DD1B7-89B4-49E7-AB90-FDF7CE87B720}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{523CB2DE-352A-4AFA-9D31-03D6E719CF23}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Select" ID="{5771FA88-967F-4F54-A4B4-EEB1F57A1F32}">
+									<Language>SFX</Language>
+									<AudioFile>Select.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="826476561"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Select" ID="{5771FA88-967F-4F54-A4B4-EEB1F57A1F32}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Start Game" ID="{BD605CEA-DD20-40BD-A446-A8E4B0911B25}" ShortID="257154480">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F62DD1B7-89B4-49E7-AB90-FDF7CE87B720}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{523CB2DE-352A-4AFA-9D31-03D6E719CF23}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Start Game" ID="{78408DD7-6171-4A72-9FB2-191A11F03BCD}">
+									<PropertyList>
+										<Property Name="LoopBegin" Type="Real64" Value="0"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.745920639780524"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Start Game.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="957178055"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Start Game" ID="{78408DD7-6171-4A72-9FB2-191A11F03BCD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</ActorMixer>
 			</ChildrenList>
