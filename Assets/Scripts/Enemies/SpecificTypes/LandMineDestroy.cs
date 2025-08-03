@@ -30,7 +30,8 @@ public class LandMineDestroy : MonoBehaviour
         if (!destroyOnPlayerCollision) return;
         if (other.gameObject.CompareTag("Player") && destroyDelay > 0)
         {
-            Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
+            GameObject explode = Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
+            AkUnitySoundEngine.PostEvent("TrapExplode", explode);
             Destroy(gameObject);
 
             Vector3 dir = other.transform.position - trapModelPosition.transform.position;

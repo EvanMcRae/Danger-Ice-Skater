@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}",
     "Language": "SFX",
-    "Hash": "{E39A247B-30A1-9C23-1F56-C3F357651C25}",
+    "Hash": "{6CB47B0E-0163-56DB-D2F9-2C12F38D1E9A}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -30,6 +30,14 @@
       "Location": "Memory",
       "ShortName": "Back.wav",
       "CachePath": "33/{330060C5-E3E1-5D5A-8470-432882CFB78C}.wem"
+     },
+     {
+      "Id": "83019132",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Trap place.wav",
+      "CachePath": "4A/{4A5F007E-02B6-ED24-F1A4-69D3CEF97ABC}.wem"
      },
      {
       "Id": "92250040",
@@ -344,6 +352,14 @@
       "CachePath": "05/{05154BC4-673B-8ECA-B5AA-DAB7A8C3E163}.wem"
      },
      {
+      "Id": "722765083",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "AfterExplode.wav",
+      "CachePath": "87/{87A3EA33-EAC5-259B-52BE-6910F9861A41}.wem"
+     },
+     {
       "Id": "731922532",
       "Language": "SFX",
       "Streaming": "false",
@@ -400,6 +416,14 @@
       "CachePath": "0E/{0E39659F-64E4-6191-50C6-A1986662F598}.wem"
      },
      {
+      "Id": "789933527",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Explosion Impact.wav",
+      "CachePath": "10/{10DB38CC-9BC3-CB0C-6BFE-F54D4E1FCEF3}.wem"
+     },
+     {
       "Id": "817391603",
       "Language": "SFX",
       "Streaming": "false",
@@ -446,6 +470,14 @@
       "Location": "Memory",
       "ShortName": "Gates Close.wav",
       "CachePath": "62/{62C473CA-36CA-DCE4-3563-F031DE5B3E21}.wem"
+     },
+     {
+      "Id": "885123215",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Knife.wav",
+      "CachePath": "35/{3575EA59-730A-A4C0-1A4D-5862514A1E7A}.wem"
      },
      {
       "Id": "903708407",
@@ -548,6 +580,14 @@
        "GUID": "{A98F423C-EC97-49D8-8698-445CE91F24B7}",
        "LibName": "Wwise Pitch Shifter",
        "LibId": "8912899"
+      },
+      {
+       "Id": "1706684651",
+       "Name": "Plate_Medium",
+       "ObjectPath": "\\Effects\\Factory Effects\\RoomVerb\\Plates\\Plate_Medium",
+       "GUID": "{33384D0C-6ACB-4E3D-AC82-73AAB3AE1CA5}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
       },
       {
        "Id": "3043085106",
@@ -702,6 +742,9 @@
       "DurationMax": "0",
       "MediaRefs": [
        {
+        "Id": "83019132"
+       },
+       {
         "Id": "92250040"
        },
        {
@@ -738,6 +781,9 @@
         "Id": "394496959"
        },
        {
+        "Id": "418491581"
+       },
+       {
         "Id": "449719526"
        },
        {
@@ -768,6 +814,9 @@
         "Id": "720322715"
        },
        {
+        "Id": "722765083"
+       },
+       {
         "Id": "733039566"
        },
        {
@@ -783,10 +832,16 @@
         "Id": "768956991"
        },
        {
+        "Id": "789933527"
+       },
+       {
         "Id": "817391603"
        },
        {
         "Id": "835039389"
+       },
+       {
+        "Id": "885123215"
        },
        {
         "Id": "903708407"
@@ -813,6 +868,9 @@
        "ShareSets": [
         {
          "Id": "1237275451"
+        },
+        {
+         "Id": "1706684651"
         }
        ]
       },
@@ -1035,6 +1093,20 @@
         "Name": "Level",
         "ObjectPath": "\\Switches\\Default Work Unit\\Music\\Level",
         "GUID": "{E65BD47D-CC9E-4A96-B6E1-9D6CD99CAC00}"
+       }
+      ]
+     },
+     {
+      "Id": "858221862",
+      "Name": "LoopComplete",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player\\LoopComplete",
+      "GUID": "{89065F99-E474-44D7-BB99-2BC9E08B331F}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.2860225",
+      "DurationMax": "0.2860225",
+      "MediaRefs": [
+       {
+        "Id": "885123215"
        }
       ]
      },
@@ -1513,6 +1585,9 @@
         "Id": "11736544"
        },
        {
+        "Id": "83019132"
+       },
+       {
         "Id": "92250040"
        },
        {
@@ -1564,6 +1639,9 @@
         "Id": "408570755"
        },
        {
+        "Id": "418491581"
+       },
+       {
         "Id": "449719526"
        },
        {
@@ -1600,6 +1678,9 @@
         "Id": "720322715"
        },
        {
+        "Id": "722765083"
+       },
+       {
         "Id": "731922532"
        },
        {
@@ -1621,6 +1702,9 @@
         "Id": "788434638"
        },
        {
+        "Id": "789933527"
+       },
+       {
         "Id": "817391603"
        },
        {
@@ -1628,6 +1712,9 @@
        },
        {
         "Id": "874117209"
+       },
+       {
+        "Id": "885123215"
        },
        {
         "Id": "903708407"
@@ -1662,6 +1749,9 @@
          "Id": "1237275451"
         },
         {
+         "Id": "1706684651"
+        },
+        {
          "Id": "3043085106"
         }
        ]
@@ -1686,6 +1776,63 @@
       "MediaRefs": [
        {
         "Id": "283519557"
+       }
+      ]
+     },
+     {
+      "Id": "2669509775",
+      "Name": "TrapExplode",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enemy\\Fox\\TrapExplode",
+      "GUID": "{64F62B54-52AC-43DE-BFF6-8BB8D3772A86}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.1063749",
+      "DurationMax": "1.1063749",
+      "MediaRefs": [
+       {
+        "Id": "722765083"
+       },
+       {
+        "Id": "789933527"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "1706684651"
+        }
+       ]
+      },
+      "AuxBusRefs": [
+       {
+        "Id": "348963605",
+        "Name": "Reverb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
+        "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
+       }
+      ]
+     },
+     {
+      "Id": "39526936",
+      "Name": "TrapSet",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enemy\\Fox\\TrapSet",
+      "GUID": "{5C8343C1-E429-43BB-890D-777923375395}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.15285975",
+      "DurationMax": "0.15285975",
+      "MediaRefs": [
+       {
+        "Id": "83019132"
+       },
+       {
+        "Id": "418491581"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "348963605",
+        "Name": "Reverb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
+        "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
        }
       ]
      }
@@ -1799,6 +1946,6 @@
     ]
    }
   ],
-  "FileHash": "{2466CD67-DA48-9816-359E-BE7712022AA5}"
+  "FileHash": "{91BF0F13-3327-62B2-5FE4-524AD89AD47D}"
  }
 }

@@ -32,13 +32,12 @@ namespace Enemies.SpecificTypes {
                     moveTowardsPlayer = true;
                     dashDelay = Random.Range(dashTimerMin, dashTimerMax);
                 }
-                else anim.Play("skate");
             }
-            else if (!m_isDead) anim.Play("idle");
         }
 
         public void Dash() {
             anim.Play("dash");
+            anim.SetTrigger("dashing");
             Vector3 vectorDiff = player.transform.position - transform.position;
             vectorDiff.Normalize();
             rb.AddForce(vectorDiff * dashForce, ForceMode.Impulse);

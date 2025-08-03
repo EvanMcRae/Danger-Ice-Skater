@@ -711,6 +711,44 @@
 										<ActiveSource Name="Skate" ID="{44933A70-BDFC-4E30-A7B0-899B7078AA5D}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
+								<Sound Name="Knife" ID="{568EEAC7-AE6D-41DA-94C9-D89F1B5A44D1}" ShortID="574948610">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F62DD1B7-89B4-49E7-AB90-FDF7CE87B720}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{523CB2DE-352A-4AFA-9D31-03D6E719CF23}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Knife" ID="{9A9D1175-0BD9-4E06-B747-F48F4832AADB}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0216079777526696"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.164186480157637"/>
+												<Property Name="FadeOutShape" Type="int16" Value="6"/>
+												<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.904730182391562"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.19075269428051"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Knife.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="885123215"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Knife" ID="{9A9D1175-0BD9-4E06-B747-F48F4832AADB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 						</ActorMixer>
 						<RandomSequenceContainer Name="Player Damage" ID="{530DF690-3A13-481A-9CF7-21751382B45D}" ShortID="873109435">
@@ -1531,6 +1569,11 @@
 					<PropertyList>
 						<Property Name="Color" Type="int16" Value="8"/>
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
+						<Property Name="UserAuxSendVolume0" Type="Real64">
+							<ValueList>
+								<Value>-24</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -3421,6 +3464,214 @@
 												</Sound>
 											</ChildrenList>
 										</RandomSequenceContainer>
+									</ChildrenList>
+								</BlendContainer>
+								<Sound Name="AfterExplode" ID="{4AA4ED9F-BFFA-432E-801B-04B24B1BABFA}" ShortID="648430494">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>18</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-7</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F62DD1B7-89B4-49E7-AB90-FDF7CE87B720}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{523CB2DE-352A-4AFA-9D31-03D6E719CF23}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="AfterExplode" ID="{8864E0BA-C9C7-416E-A31E-4E1B454B6727}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.458944823010688"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.906374888577492"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>AfterExplode.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="722765083"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="AfterExplode" ID="{8864E0BA-C9C7-416E-A31E-4E1B454B6727}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Explosion" ID="{3BC17394-8D85-4DFB-A58C-60A2AF055619}" ShortID="1051351889">
+									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>35</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>11</Value>
+											</ValueList>
+										</Property>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>-15</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F62DD1B7-89B4-49E7-AB90-FDF7CE87B720}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{523CB2DE-352A-4AFA-9D31-03D6E719CF23}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Explosion Impact" ID="{390700F4-1EC3-4058-AD3D-D18A202CE296}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.074023358550111"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.304318251817123"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.723783937487218"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Explosion Impact.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="789933527"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Effects">
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{079C7A8F-7638-4892-80A3-D05926863778}" ShortID="907811742">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+																<ObjectRef Name="Plate_Medium" ID="{33384D0C-6ACB-4E3D-AC82-73AAB3AE1CA5}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{845B67A3-08CD-4750-94D6-71E3A69903A6}" ShortID="1186743">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="iZotope Trash Distortion" CompanyID="259" PluginID="3" PluginType="3">
+																<ObjectRef Name="Distttt" ID="{F8D11A3E-B9AA-448F-9B54-AF2ACA362129}" WorkUnitID="{D19B53B9-BCDC-49DB-B722-469B61A2B45B}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+									<ActiveSourceList>
+										<ActiveSource Name="Explosion Impact" ID="{390700F4-1EC3-4058-AD3D-D18A202CE296}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<BlendContainer Name="Trap Set" ID="{36B98CAA-B305-461C-97E0-86D29DDB7934}" ShortID="1019368478">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F62DD1B7-89B4-49E7-AB90-FDF7CE87B720}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{523CB2DE-352A-4AFA-9D31-03D6E719CF23}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Trap Set 2" ID="{3ADBD575-FAAA-4B67-9147-F28FE99F240E}" ShortID="193231328">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>1180</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Weight" Type="Real64">
+													<ValueList>
+														<Value>44</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F62DD1B7-89B4-49E7-AB90-FDF7CE87B720}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{82BD75D9-95EE-495F-88CE-7A658BA55E69}" WorkUnitID="{523CB2DE-352A-4AFA-9D31-03D6E719CF23}"/>
+												</Reference>
+												<Reference Name="UserAuxSend0">
+													<ObjectRef Name="Reverb" ID="{39432060-1A71-40A3-B958-9264FDE9BB75}" WorkUnitID="{523CB2DE-352A-4AFA-9D31-03D6E719CF23}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Gates Open" ID="{316E7EF6-1AC9-475F-977E-4B31E3CA4DF2}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.113986534181409"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.105365703865168"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Gates Open.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="418491581"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Gates Open" ID="{316E7EF6-1AC9-475F-977E-4B31E3CA4DF2}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Trap Set" ID="{455AA173-54BF-4745-9D4A-B728EA4BC025}" ShortID="289310447">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F62DD1B7-89B4-49E7-AB90-FDF7CE87B720}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{82BD75D9-95EE-495F-88CE-7A658BA55E69}" WorkUnitID="{523CB2DE-352A-4AFA-9D31-03D6E719CF23}"/>
+												</Reference>
+												<Reference Name="UserAuxSend0">
+													<ObjectRef Name="Reverb" ID="{39432060-1A71-40A3-B958-9264FDE9BB75}" WorkUnitID="{523CB2DE-352A-4AFA-9D31-03D6E719CF23}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Trap place" ID="{26585DC4-ADAD-4DEC-86FA-1FB9EC44AF3C}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0600033035429608"/>
+														<Property Name="FadeOutShape" Type="int16" Value="2"/>
+														<Property Name="LoopBegin" Type="Real64" Value="0"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Trap place.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="83019132"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Trap place" ID="{26585DC4-ADAD-4DEC-86FA-1FB9EC44AF3C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
 								</BlendContainer>
 							</ChildrenList>
