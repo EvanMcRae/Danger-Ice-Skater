@@ -71,20 +71,22 @@ namespace Enemies
         //Seeks a target spot to drop a trap
         public bool DropTrap()
         {
+            //Vector3 trapPos = transform.position + transform.forward * 2;
+            //trapPos.y -= .5f;
             Vector3 trapDir = new Vector3(Random.value * 2 - 1, 0, Random.value * 2 - 1).normalized;
-            if (Physics.Raycast(transform.position, trapDir, 5, ~0)) {
+            if (!Physics.Raycast(transform.position, trapDir, 5, ~0)) {
                 anim.SetTrigger("trapping");
                 anim.Play("placeTrap");
-                GameObject trapInst = Instantiate(trap, transform.position + trapDir * 3, Quaternion.LookRotation(trapDir, Vector3.up));
+
+                trapDir.y -= 1.5f;
+                
+                GameObject trapInst = Instantiate(trap, transform.position +trapDir * 3, Quaternion.LookRotation(trapDir, Vector3.up));
                 trapInst.GetComponent<Rigidbody>().AddForce(dir * (Random.value * 5), ForceMode.Impulse);
                 return true;
             }
             return false;
         }
-
         
-
-
         /*
         //Skates around aimlessly
         //Adds a little impulse in a random direction for idleDelay/idleTime seconds
