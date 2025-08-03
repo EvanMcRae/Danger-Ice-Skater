@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}",
     "Language": "SFX",
-    "Hash": "{627306F8-21CB-E6BC-14CD-55913A9F6590}",
+    "Hash": "{A1A02483-0966-9C08-8A93-86AB1D14E049}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -760,9 +760,10 @@
       "Name": "GameOver",
       "ObjectPath": "\\Events\\Default Work Unit\\Player\\GameOver",
       "GUID": "{62315F2F-43DB-4459-B45B-E65EDC2E4F14}",
+      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0.56689495",
-      "DurationMax": "0.56689495",
+      "DurationMin": "0",
+      "DurationMax": "0",
       "MediaRefs": [
        {
         "Id": "83019132"
@@ -820,9 +821,6 @@
        },
        {
         "Id": "521776349"
-       },
-       {
-        "Id": "561948372"
        },
        {
         "Id": "589060082"
@@ -897,9 +895,6 @@
         },
         {
          "Id": "1706684651"
-        },
-        {
-         "Id": "3487820010"
         }
        ]
       },
@@ -2038,6 +2033,6 @@
     ]
    }
   ],
-  "FileHash": "{A7239CC6-D01F-73A4-E13C-1BEDA32FA835}"
+  "FileHash": "{92DA2511-8E59-7205-7304-628AD2047184}"
  }
 }
