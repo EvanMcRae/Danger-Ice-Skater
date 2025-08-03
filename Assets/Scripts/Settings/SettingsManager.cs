@@ -24,15 +24,23 @@ public class SettingsManager : MonoBehaviour
     {
         fullscreen = PlayerPrefs.GetInt("fullscreen", fullscreen);
         fullscreenToggle.isOn = fullscreen == 1;
-        toggleFullscreen();
+        Screen.SetResolution(Display.main.systemWidth, (int)(9 / 16f * Display.main.systemWidth), fullscreenToggle.isOn);
+
         vsync = PlayerPrefs.GetInt("vsync", vsync);
         VSyncToggle.isOn = vsync == 1;
-        toggleVSync();
+        if (VSyncToggle.isOn)
+        {
+            QualitySettings.vSyncCount = 1;
+        }
+        else
+        {
+            QualitySettings.vSyncCount = 0;
+        }
 
         masterVolume.value = PlayerPrefs.GetFloat("masterVolume", masterVolumeVal);
         musicVolume.value = PlayerPrefs.GetFloat("musicVolume", musicVolumeVal);
         effectVolume.value = PlayerPrefs.GetFloat("soundVolume", effectVolumeVal);
-
+        
         changeEffectVolume();
         changeMasterVolume();
         changeMusicVolume();
@@ -44,6 +52,7 @@ public class SettingsManager : MonoBehaviour
 
     public void toggleFullscreen()
     {
+        AkUnitySoundEngine.PostEvent("SelectUI", PauseManager.globalWwise);
         Screen.SetResolution(Display.main.systemWidth, (int)(9 / 16f * Display.main.systemWidth), fullscreenToggle.isOn);
         fullscreen = fullscreenToggle.isOn ? 1 : 0;
         PlayerPrefs.SetInt("fullscreen", fullscreen);
@@ -51,6 +60,7 @@ public class SettingsManager : MonoBehaviour
 
     public void toggleVSync()
     {
+        AkUnitySoundEngine.PostEvent("SelectUI", PauseManager.globalWwise);
         if (VSyncToggle.isOn)
         {
             QualitySettings.vSyncCount = 1;
