@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2615875566065738063}
   - component: {fileID: 7915522442199613994}
   - component: {fileID: 6761563646186460707}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 798460305124830244}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: -0.539, z: 0}
+  m_LocalPosition: {x: 0, y: -0.4752, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -116,7 +116,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.25
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -287,7 +287,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 0.25
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -751,7 +751,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.1
+      value: 2
       mode: 0
       spread: 0
       speed:
@@ -870,7 +870,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 0
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -976,7 +976,7 @@ ParticleSystem:
     m_BurstCount: 0
     m_Bursts: []
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -1300,7 +1300,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 0
+    enabled: 1
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -1309,7 +1309,7 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key1: {r: 1, g: 1, b: 1, a: 0}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1333,7 +1333,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_ColorSpace: -1
+        m_ColorSpace: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
@@ -4780,7 +4780,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4800,7 +4800,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -4848,7 +4848,10 @@ GameObject:
   - component: {fileID: 3083590689317668306}
   - component: {fileID: 2939634649029205298}
   - component: {fileID: 7892994341498651269}
-  m_Layer: 2
+  - component: {fileID: 1108291025541415912}
+  - component: {fileID: 4072698214067470984}
+  - component: {fileID: 5779184792864636470}
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -4985,8 +4988,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdc8f32285eaff44ab77cd0f5a515e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rb: {fileID: 3083590689317668306}
   imso: {fileID: 11400000, guid: 3839af05cfba756429ff20761423c8fa, type: 2}
+  psp: {fileID: 1314777808695799775}
   pm: {fileID: 0}
   psh: {fileID: 7892994341498651269}
   acceleration: 12
@@ -4995,13 +4999,14 @@ MonoBehaviour:
   dashForce: 10
   dashCooldown: 1
   dashTimer: 0
-  respawnHeight: 3
+  respawnHeight: 1
   fallThroughHoleTimer: 0
   fallThroughHoleTime: 0.5
   fallThroughHoleDamaged: 0
   arenaFloor: {fileID: 0}
   particles: {fileID: 7915522442199613994}
   anim: {fileID: 462644127917268244}
+  staminaBar: {fileID: 0}
 --- !u!114 &7892994341498651269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5016,12 +5021,66 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hd: {fileID: 0}
   geb: {fileID: 11400000, guid: f8714c97c5f2ac84fa1762773bdaad01, type: 2}
-  mr: {fileID: 3378056549392829005}
+  mesh: {fileID: 2725347555813467051}
   invincibilityTimer: 0
   invincibilityTime: 1
   health: 0
   maxHealth: 10
   anim: {fileID: 462644127917268244}
+--- !u!114 &1108291025541415912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5554373441892825148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdcc7dbaf13d2464b89c3a2c24898ea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList:
+    - {fileID: 4072698214067470984}
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  usePositionOffsetData: 0
+  m_positionOffsetData:
+    KeepMe: 1
+    positionOffset: {x: 0, y: 0, z: 0}
+  scalingFactor: 1
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
+--- !u!114 &4072698214067470984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5554373441892825148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e25f1b967dce4685aa81b5b608f38a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDefaultListener: 1
+  bOverrideScalingFactor: 0
+  scalingFactor: -1
+  listenerId: 0
+--- !u!114 &5779184792864636470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5554373441892825148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae78c7bd4d404f57bfb70db2b4e405b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Collider: {fileID: 0}
 --- !u!1001 &2959719243466186490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5085,6 +5144,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
       insertIndex: -1
       addedObject: {fileID: 462644127917268244}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1314777808695799775}
   m_SourcePrefab: {fileID: 100100000, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
 --- !u!1 &2725347555813467051 stripped
 GameObject:
@@ -5113,6 +5175,36 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1314777808695799775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2725347555813467051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d828db6ec1edb442d8970c594e2e5dc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StepEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 8f426bdf0db174bc4bb983112e9ee6e9, type: 2}
+  GlideEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b07365c4ea9e94fd8a4a8f3a0c9fe47c, type: 2}
+  HurtEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 66298570cd54140f7aabda8a42f947d2, type: 2}
+  SplashEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 5f9d0276a051d4dda9796b5dfbc14d6d, type: 2}
+  playerController: {fileID: 2939634649029205298}
+  isGliding: 0
 --- !u!4 &3357910182021429521 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 104a8c8f7b3546048b5a83ffe8b6f819, type: 3}
