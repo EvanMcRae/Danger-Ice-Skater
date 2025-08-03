@@ -11,6 +11,7 @@ namespace Enemies.SpecificTypes {
         public new void Start() {
             base.Start();
             dashDelay = Random.Range(dashTimerMin, dashTimerMax);
+            fallSFX = "PengiunFall";
         }
 
         public new void Update() {

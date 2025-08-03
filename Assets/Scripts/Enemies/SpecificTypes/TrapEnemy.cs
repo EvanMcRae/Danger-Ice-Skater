@@ -29,6 +29,7 @@ namespace Enemies
         {
             base.Start();
             trapTimer = 3;
+            fallSFX = "FoxFall";
             //a
             /*
             idleDelay = idleTime;
