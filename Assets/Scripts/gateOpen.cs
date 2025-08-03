@@ -46,7 +46,7 @@ public class gateOpen : MonoBehaviour
     {
         if (open90)
         {
-            if (transform.localEulerAngles.y > 0)
+            if (transform.localEulerAngles.y > 0 && !(transform.localEulerAngles.y >= 358))
                 transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y - openAmount, transform.localEulerAngles.z);
             else
             {
