@@ -18,6 +18,10 @@
 							<Position X="0" Y="3"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="LightDrumTrack" ID="{9A73D1AB-A84D-4264-863A-E4D89246C527}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
+							<Position X="0" Y="4"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="SharkFall" ID="{23D73999-01D8-4437-9F7A-739A9FBCFABD}" WorkUnitID="{D3FCFAEC-031F-4890-9FB6-30109917D5DE}"/>
 							<Position X="1" Y="0"/>
 						</Module>
