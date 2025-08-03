@@ -160,6 +160,7 @@ MonoBehaviour:
   m_waiting: 0
   anim: {fileID: 1996957714703517974}
   canMove: 1
+  movingAwayFromWall: 0
   player: {fileID: 0}
   rotateTowardsPlayer: 1
   moveTowardsPlayer: 1
