@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}",
     "Language": "SFX",
-    "Hash": "{ED10F700-AD59-DA6F-9351-DAEEFE8EC78D}",
+    "Hash": "{AA5D8103-3850-4FB2-C056-C81B403F18F8}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -21,7 +21,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Puck Hit.wav",
-      "CachePath": "4E/{4EED532D-DC81-28FD-1599-95006EFE3AC6}.wem"
+      "CachePath": "F7/{F751E252-73AE-1544-5BA1-26E39CDD594F}.wem"
      },
      {
       "Id": "92250040",
@@ -69,7 +69,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Hit.wav",
-      "CachePath": "DB/{DB5465EA-D8A3-0BC0-9A64-5DFD0EC7BC10}.wem"
+      "CachePath": "E3/{E3806391-6EA4-30C9-FF0A-39DF5059EC0B}.wem"
      },
      {
       "Id": "188607504",
@@ -141,7 +141,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Puck Hit_3.wav",
-      "CachePath": "AE/{AE85B1BF-DFFA-4229-50F1-F4D926CA9346}.wem"
+      "CachePath": "97/{97884F10-C01E-C0E5-0295-A9D9D0BF00AA}.wem"
      },
      {
       "Id": "368301711",
@@ -173,7 +173,15 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Puck Hit_2.wav",
-      "CachePath": "92/{92B0745D-437A-4991-E1FF-608D1AB7B078}.wem"
+      "CachePath": "ED/{EDEBD405-FEF2-9ABD-1B9C-AF50F4108B99}.wem"
+     },
+     {
+      "Id": "418491581",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Gates Open.wav",
+      "CachePath": "6F/{6FDE3C03-626D-DFE9-5DF2-C17F44F0DE39}.wem"
      },
      {
       "Id": "449719526",
@@ -182,6 +190,14 @@
       "Location": "Memory",
       "ShortName": "Steps\\Skate.wav",
       "CachePath": "A0/{A0A913D4-10F9-13AB-DBEB-5501EB74F0EA}.wem"
+     },
+     {
+      "Id": "458340810",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Gates Close_1.wav",
+      "CachePath": "5C/{5CD680E3-AB13-A069-B340-ED8A84002E8C}.wem"
      },
      {
       "Id": "468795855",
@@ -240,6 +256,22 @@
       "CachePath": "9D/{9D8B2D67-215F-DDF2-EA50-85BD83E5C3BA}.wem"
      },
      {
+      "Id": "604233743",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Gates Open_1.wav",
+      "CachePath": "8B/{8B9A50FE-D0AA-A408-C8E5-3BDA02FA941C}.wem"
+     },
+     {
+      "Id": "635828352",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Gates Open_2.wav",
+      "CachePath": "F8/{F8E85C41-959B-0070-74B7-92C0EA536C4E}.wem"
+     },
+     {
       "Id": "650199349",
       "Language": "SFX",
       "Streaming": "false",
@@ -261,7 +293,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Jump.wav",
-      "CachePath": "F4/{F4F3A054-38B2-9131-253F-8B3FCF012866}.wem"
+      "CachePath": "F1/{F1CB8F6C-F96D-B159-CFBD-DD7E37230C8C}.wem"
      },
      {
       "Id": "661063367",
@@ -376,6 +408,14 @@
       "CachePath": "EF/{EF1454A7-305F-4525-3459-693E929BAFB0}.wem"
      },
      {
+      "Id": "881327621",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Gates Close.wav",
+      "CachePath": "62/{62C473CA-36CA-DCE4-3563-F031DE5B3E21}.wem"
+     },
+     {
       "Id": "903708407",
       "Language": "SFX",
       "Streaming": "false",
@@ -435,6 +475,14 @@
     "Plugins": {
      "Custom": [
       {
+       "Id": "484627007",
+       "Name": "Guitar Distortion (Custom)",
+       "ObjectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\Player\\Player Damage\\[Effect Slot [1]: (Guitar Distortion)]\\Guitar Distortion (Custom)",
+       "GUID": "{2F686C44-4869-40E6-A223-4FFBFF0C1827}",
+       "LibName": "Wwise Guitar Distortion",
+       "LibId": "8257539"
+      },
+      {
        "Id": "515874561",
        "Name": "Silence",
        "ObjectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\Enemy\\Shark\\Shark Moving\\Chomps\\New Silence\\Silence",
@@ -452,6 +500,22 @@
        "GUID": "{A98F423C-EC97-49D8-8698-445CE91F24B7}",
        "LibName": "Wwise Pitch Shifter",
        "LibId": "8912899"
+      },
+      {
+       "Id": "3043085106",
+       "Name": "High_Impact",
+       "ObjectPath": "\\Effects\\Factory Effects\\Compressor\\High_Impact",
+       "GUID": "{2AFD6FB0-C906-4683-A377-FEEEF72967B0}",
+       "LibName": "Wwise Compressor",
+       "LibId": "7077891"
+      },
+      {
+       "Id": "3900114836",
+       "Name": "Metal_Hangar",
+       "ObjectPath": "\\Effects\\Factory Effects\\RoomVerb\\Huge Spaces\\Metal_Hangar",
+       "GUID": "{C4A4605C-42EF-476A-B53C-E31C7A442C24}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
       }
      ]
     },
@@ -503,6 +567,14 @@
        },
        {
         "Id": "874117209"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "348963605",
+        "Name": "Reverb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
+        "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
        }
       ]
      },
@@ -575,9 +647,6 @@
        },
        {
         "Id": "134563642"
-       },
-       {
-        "Id": "179817375"
        },
        {
         "Id": "188607504"
@@ -704,6 +773,59 @@
       ]
      },
      {
+      "Id": "2710739141",
+      "Name": "GatesClose",
+      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\GatesClose",
+      "GUID": "{3727DE08-56A4-40B0-94DF-4DDB59EE1B36}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.23535073",
+      "DurationMax": "0.28095227",
+      "MediaRefs": [
+       {
+        "Id": "458340810"
+       },
+       {
+        "Id": "881327621"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "348963605",
+        "Name": "Reverb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
+        "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
+       }
+      ]
+     },
+     {
+      "Id": "722180175",
+      "Name": "GatesOpen",
+      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\GatesOpen",
+      "GUID": "{65CC14F7-9D5D-4BAB-8932-8F2AA204200A}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.27955556",
+      "DurationMax": "0.30418274",
+      "MediaRefs": [
+       {
+        "Id": "418491581"
+       },
+       {
+        "Id": "604233743"
+       },
+       {
+        "Id": "635828352"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "348963605",
+        "Name": "Reverb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
+        "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
+       }
+      ]
+     },
+     {
       "Id": "2891959439",
       "Name": "HockeyShoot",
       "ObjectPath": "\\Events\\Default Work Unit\\Enemy\\Hockey\\HockeyShoot",
@@ -766,6 +888,14 @@
        },
        {
         "Id": "994630770"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "348963605",
+        "Name": "Reverb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
+        "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
        }
       ]
      },
@@ -1003,8 +1133,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Player\\PlayerHurt",
       "GUID": "{7C3D97AA-3A44-4578-9D1E-470EE66DCEF7}",
       "DurationType": "OneShot",
-      "DurationMin": "0.12625718",
-      "DurationMax": "0.24143492",
+      "DurationMin": "0.20400344",
+      "DurationMax": "0.25931624",
       "MediaRefs": [
        {
         "Id": "11736544"
@@ -1013,12 +1143,27 @@
         "Id": "112692613"
        },
        {
+        "Id": "179817375"
+       },
+       {
         "Id": "333892847"
        },
        {
         "Id": "408570755"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "484627007"
+        }
+       ],
+       "ShareSets": [
+        {
+         "Id": "3043085106"
+        }
+       ]
+      }
      },
      {
       "Id": "4008126242",
@@ -1048,6 +1193,14 @@
        },
        {
         "Id": "788434638"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "348963605",
+        "Name": "Reverb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
+        "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
        }
       ]
      },
@@ -1113,19 +1266,11 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Enemy\\Hockey\\PuckHit",
       "GUID": "{A2FD3928-5C1F-4902-905C-5FEB6C426D17}",
       "DurationType": "OneShot",
-      "DurationMin": "0.21438202",
-      "DurationMax": "0.21438202",
+      "DurationMin": "0.20400344",
+      "DurationMax": "0.20400344",
       "MediaRefs": [
        {
         "Id": "179817375"
-       }
-      ],
-      "AuxBusRefs": [
-       {
-        "Id": "348963605",
-        "Name": "Reverb",
-        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
-        "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
        }
       ]
      },
@@ -1382,12 +1527,18 @@
       "PluginRefs": {
        "Custom": [
         {
+         "Id": "484627007"
+        },
+        {
          "Id": "515874561"
         }
        ],
        "ShareSets": [
         {
          "Id": "1237275451"
+        },
+        {
+         "Id": "3043085106"
         }
        ]
       },
@@ -1440,7 +1591,14 @@
       "Id": "348963605",
       "Name": "Reverb",
       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
-      "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
+      "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3900114836"
+        }
+       ]
+      }
      },
      {
       "Id": "1517463400",
@@ -1517,6 +1675,6 @@
     ]
    }
   ],
-  "FileHash": "{D71B510C-ADC6-47CE-455A-F069CEC408DE}"
+  "FileHash": "{E9771F3B-3001-6DD3-D148-9E59A99D12C0}"
  }
 }

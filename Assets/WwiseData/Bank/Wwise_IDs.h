@@ -18,6 +18,8 @@ namespace AK
         static const AkUniqueID FOXFALL = 2594447999U;
         static const AkUniqueID FOXSTEP = 3020866858U;
         static const AkUniqueID GAMEOVER = 4158285989U;
+        static const AkUniqueID GATESCLOSE = 2710739141U;
+        static const AkUniqueID GATESOPEN = 722180175U;
         static const AkUniqueID HOCKEYSHOOT = 2891959439U;
         static const AkUniqueID HOCKEYSTEP = 2524064884U;
         static const AkUniqueID HOCKEYSWING = 433652520U;
