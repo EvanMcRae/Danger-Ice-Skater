@@ -5006,6 +5006,7 @@ MonoBehaviour:
   arenaFloor: {fileID: 0}
   particles: {fileID: 7915522442199613994}
   anim: {fileID: 462644127917268244}
+  staminaBar: {fileID: 0}
 --- !u!114 &7892994341498651269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5020,7 +5021,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hd: {fileID: 0}
   geb: {fileID: 11400000, guid: f8714c97c5f2ac84fa1762773bdaad01, type: 2}
-  mr: {fileID: 3378056549392829005}
+  mesh: {fileID: 2725347555813467051}
   invincibilityTimer: 0
   invincibilityTime: 1
   health: 0
