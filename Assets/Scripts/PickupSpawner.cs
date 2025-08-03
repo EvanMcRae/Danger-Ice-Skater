@@ -37,7 +37,7 @@ public class PickupSpawner : MonoBehaviour
 
     private IEnumerator SpawnLoop()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(10);
         while (true)
         {
             SpawnTwoPickups();
