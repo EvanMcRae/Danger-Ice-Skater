@@ -1949,11 +1949,7 @@
 							<ChildrenList>
 								<Effect Name="Octave_Up" ID="{A98F423C-EC97-49D8-8698-445CE91F24B7}" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
 									<PropertyList>
-										<Property Name="DelayTime" Type="Real32" Value="54"/>
 										<Property Name="DryLevel" Type="Real32" Value="0"/>
-										<Property Name="FilterFrequency" Type="Real32" Value="2136"/>
-										<Property Name="FilterGain" Type="Real32" Value="1"/>
-										<Property Name="FilterType" Type="int32" Value="3"/>
 										<Property Name="Pitch" Type="Real32" Value="1200"/>
 									</PropertyList>
 								</Effect>

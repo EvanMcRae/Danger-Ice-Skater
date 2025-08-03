@@ -8,8 +8,7 @@ public class NewWaveNotif : MonoBehaviour
     public void PlayNotif()
     {
         Debug.Log("Playing notif anim");
-        if (notifAnimation != null && notifAnimation.gameObject.activeInHierarchy)
-            notifAnimation.Play("NewWaveNotifEnter");
+        notifAnimation.Play("NewWaveNotifEnter");
     }
 
     private void Start()

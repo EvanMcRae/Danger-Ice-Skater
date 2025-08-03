@@ -1,16 +1,5 @@
-Game Parameter	ID	Name			Wwise Object Path	Notes
-	2346531308	musicVolume			\Default Work Unit\Volume\musicVolume	
-	2918011349	masterVolume			\Default Work Unit\Volume\masterVolume	
-	3873835272	soundVolume			\Default Work Unit\Volume\soundVolume	
-
 Audio Bus	ID	Name			Wwise Object Path	Notes
-	393239870	SFX			\Default Work Unit\Master Audio Bus\SFX	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
-	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
-
-Auxiliary Bus	ID	Name			Wwise Object Path	Notes
-	348963605	Reverb			\Default Work Unit\Master Audio Bus\SFX\Reverb	
-	1517463400	Distortion			\Default Work Unit\Master Audio Bus\SFX\Distortion	
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			

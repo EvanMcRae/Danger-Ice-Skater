@@ -38,7 +38,7 @@ namespace Enemies.SpecificTypes {
                 }
             }
             if (rotateTowardsPlayer) {
-                transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z), Vector3.up);
+                transform.LookAt(player.transform);
             }
         }
 

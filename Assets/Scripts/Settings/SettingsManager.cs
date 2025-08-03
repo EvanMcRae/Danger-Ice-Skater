@@ -14,44 +14,20 @@ public class SettingsManager : MonoBehaviour
     public Slider masterVolume;
     public Slider musicVolume;
     public Slider effectVolume;
-    public static bool loadedSettings = false;
 
     private void Start()
     {
-        if (!loadedSettings)
-        {
-            int i = PlayerPrefs.GetInt("firstLoaded");
-            if (i == 0)
-            {
-                PlayerPrefs.SetInt("firstLoaded", 1);
-                PlayerPrefs.SetFloat("masterVolume", 1);
-                PlayerPrefs.SetFloat("musicVolume", 0.5f);
-                PlayerPrefs.SetFloat("soundVolume", 0.5f);
-                PlayerPrefs.SetInt("vsync", 1);
-                PlayerPrefs.SetInt("fullscreen", 1);
-            }
-
-            fullscreenToggle.isOn = PlayerPrefs.GetInt("fullscreen") == 1;
-            toggleFullscreen();
-            VSyncToggle.isOn = PlayerPrefs.GetInt("vsync") == 1;
-            toggleVSync();
-
-            masterVolume.value = PlayerPrefs.GetFloat("masterVolume");
-            musicVolume.value = PlayerPrefs.GetFloat("musicVolume");
-            effectVolume.value = PlayerPrefs.GetFloat("soundVolume");
-
-            AkUnitySoundEngine.SetRTPCValue("masterVolume", 100 * PlayerPrefs.GetFloat("masterVolume"));
-            AkUnitySoundEngine.SetRTPCValue("musicVolume", 100 * PlayerPrefs.GetFloat("musicVolume"));
-            AkUnitySoundEngine.SetRTPCValue("soundVolume", 100 * PlayerPrefs.GetFloat("soundVolume"));
-
-            loadedSettings = true;
-            transform.parent.gameObject.SetActive(false);
-        }
+        fullscreenToggle.SetIsOnWithoutNotify(Screen.fullScreen);
+        VSyncToggle.SetIsOnWithoutNotify(QualitySettings.vSyncCount == 1);
     }
+    //PlayerPrefs.Save();//???
 
     public void toggleFullscreen()
     {
+        //Screen.fullScreen = fullscreenToggle.isOn;
+        //Screen.SetResolution(900, 900, fullscreenToggle.isOn);
         Screen.SetResolution(Display.main.systemWidth, (int)(9 / 16f * Display.main.systemWidth), fullscreenToggle.isOn);
+        //PlayerPrefs.SetString("fullscreen", fullscreenToggle.isOn.ToString());
     }
 
     public void toggleVSync()
@@ -70,18 +46,19 @@ public class SettingsManager : MonoBehaviour
 
     public void changeMasterVolume()
     {
-        PlayerPrefs.SetFloat("masterVolume", masterVolume.value);
-        AkUnitySoundEngine.SetRTPCValue("masterVolume", 100 * PlayerPrefs.GetFloat("masterVolume"));
+
+        AkUnitySoundEngine.SetRTPCValue("masterVolume", masterVolume.value);
+        PlayerPrefs.SetFloat("volume", masterVolume.value);
     }
 
     public void changeMusicVolume()
     {
-        PlayerPrefs.SetFloat("musicVolume", musicVolume.value);
-        AkUnitySoundEngine.SetRTPCValue("musicVolume", 100 * PlayerPrefs.GetFloat("musicVolume"));
+        AkUnitySoundEngine.SetRTPCValue("masterVolume", musicVolume.value);
+        PlayerPrefs.SetFloat("volume", musicVolume.value);
     }
     public void changeEffectVolume()
     {
-        PlayerPrefs.SetFloat("soundVolume", effectVolume.value);
-        AkUnitySoundEngine.SetRTPCValue("soundVolume", 100 * PlayerPrefs.GetFloat("soundVolume"));
+        AkUnitySoundEngine.SetRTPCValue("soundVolume", effectVolume.value);
+        PlayerPrefs.SetFloat("volume", effectVolume.value);
     }
 }

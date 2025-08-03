@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{D19B53B9-BCDC-49DB-B722-469B61A2B45B}" SchemaVersion="123">
 	<Effects>
-		<WorkUnit Name="Default Work Unit" ID="{D19B53B9-BCDC-49DB-B722-469B61A2B45B}" PersistMode="Standalone">
-			<ChildrenList>
-				<Effect Name="Distttt" ID="{F8D11A3E-B9AA-448F-9B54-AF2ACA362129}" PluginName="iZotope Trash Distortion" CompanyID="259" PluginID="3" PluginType="3">
-					<PropertyList>
-						<Property Name="Distortion1InputGain" Type="Real32" Value="1"/>
-						<Property Name="Distortion1Mix" Type="Real32" Value="85"/>
-						<Property Name="Distortion1OutputGain" Type="Real32" Value="-5"/>
-						<Property Name="Distortion1Overdrive" Type="Real32" Value="6.5"/>
-						<Property Name="Distortion1Trash" Type="Real32" Value="0.7"/>
-						<Property Name="Distortion1Type" Type="int32" Value="1"/>
-						<Property Name="Distortion2InputGain" Type="Real32" Value="2"/>
-						<Property Name="Distortion2Mix" Type="Real32" Value="74"/>
-						<Property Name="Distortion2OutputGain" Type="Real32" Value="-4"/>
-						<Property Name="Distortion2Overdrive" Type="Real32" Value="4.5"/>
-						<Property Name="Distortion2Type" Type="int32" Value="30"/>
-					</PropertyList>
-				</Effect>
-			</ChildrenList>
-		</WorkUnit>
+		<WorkUnit Name="Default Work Unit" ID="{D19B53B9-BCDC-49DB-B722-469B61A2B45B}" PersistMode="Standalone"/>
 	</Effects>
 </WwiseDocument>

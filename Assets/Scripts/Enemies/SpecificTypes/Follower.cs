@@ -24,8 +24,7 @@ namespace Enemies {
 
             base.Update();
             if (rotateTowardsPlayer) {
-                transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z), Vector3.up);
-                //transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z);
+                transform.LookAt(player.transform);
             }
         }
 

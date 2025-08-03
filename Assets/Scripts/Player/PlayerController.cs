@@ -3,13 +3,11 @@ using Input;
 using Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody rb;
     public InputManager imso;
-    public PlayerSoundsPlayer psp;
 
     [SerializeField]
     PauseManager pm;
@@ -52,9 +50,6 @@ public class PlayerController : MonoBehaviour
 
     private bool inAir = false;
 
-    [SerializeField]
-    Slider staminaBar;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -62,11 +57,6 @@ public class PlayerController : MonoBehaviour
 
         pm = FindAnyObjectByType<PauseManager>();
         fallThroughHole = false;
-
-        if(staminaBar != null)
-        {
-            staminaBar.maxValue = dashCooldown;
-        }
     }
 
     // Update is called once per frame
@@ -99,11 +89,6 @@ public class PlayerController : MonoBehaviour
             dashTimer = dashCooldown;
         }
 
-        if(staminaBar != null)
-        {
-            staminaBar.value = dashTimer;
-        }
-
         if (fallThroughHole)
         {
             fallThroughHoleTimer -= Time.deltaTime;
@@ -117,9 +102,8 @@ public class PlayerController : MonoBehaviour
         else
         {
             anim.SetBool("isMoving", false);
-            psp.isGliding = false;
         }
-        AkUnitySoundEngine.SetRTPCValue("playerVelocity", 100f * Mathf.Clamp01(horizVel.magnitude / 11.5f));
+        AkUnitySoundEngine.SetRTPCValue("playerVelocity", horizVel.magnitude);
     }
 
     void FixedUpdate()
@@ -130,6 +114,8 @@ public class PlayerController : MonoBehaviour
         //modified by rigidbody's Linear Dampening
         float horizontal = imso.xAxis.action.ReadValue<float>();
         float vertical = imso.yAxis.action.ReadValue<float>();
+
+        anim.SetBool("isInputting", horizontal != 0 || vertical != 0);
 
         if (fallThroughHole)
         {
@@ -151,7 +137,6 @@ public class PlayerController : MonoBehaviour
             {
                 if (!fallThroughHoleDamaged)
                 {
-                    psp.RunSplashSound();
                     fallThroughHoleDamaged = true;
                     psh.Damage(2);
                 }
@@ -171,7 +156,7 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-
+        
 
         if (rb.linearVelocity.x > 0 && horizontal < 0 || rb.linearVelocity.x < 0 && horizontal > 0)
         {
@@ -192,14 +177,14 @@ public class PlayerController : MonoBehaviour
 
         //Particle system effects
         ParticleSystem.MainModule particleMain = particles.main;
-        particleMain.startSpeed = rb.linearVelocity.magnitude / 10;
+        particleMain.startSpeed = rb.linearVelocity.magnitude/10;
         ParticleSystem.EmissionModule particleEmmission = particles.emission;
-        particleEmmission.rateOverTime = Mathf.Pow(rb.linearVelocity.magnitude / 2, 2);
+        particleEmmission.rateOverTime = Mathf.Pow(rb.linearVelocity.magnitude/2,2);
         if (isTouchingGround && !particles.isPlaying)
         {
             particles.Play();
         }
-        if (!isTouchingGround)
+        if(!isTouchingGround)
         {
             particles.Stop();
         }
@@ -210,15 +195,12 @@ public class PlayerController : MonoBehaviour
         // Debug.Log(moveDir);
         rb.AddForce(moveDir);
 
-
-        if (transform.position.y < arenaFloor.transform.position.y)
+        
+        if(transform.position.y < arenaFloor.transform.position.y)
         {
             rb.linearDamping = 4;
             rb.useGravity = false;
         }
-
-        anim.SetBool("isInputting", horizontal != 0 || vertical != 0);
-        if (horizontal != 0 || vertical != 0) psp.isGliding = false;
     }
 
     

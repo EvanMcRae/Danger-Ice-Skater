@@ -13,35 +13,8 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID ENDCHOMP = 2458991111U;
-        static const AkUniqueID ENEMYSPLASH = 1495289514U;
-        static const AkUniqueID FOXFALL = 2594447999U;
-        static const AkUniqueID FOXSTEP = 3020866858U;
-        static const AkUniqueID HOCKEYSHOOT = 2891959439U;
-        static const AkUniqueID HOCKEYSTEP = 2524064884U;
-        static const AkUniqueID HOCKEYSWING = 433652520U;
-        static const AkUniqueID PAUSEGAME = 1589270263U;
-        static const AkUniqueID PENGUINFALL = 4286935516U;
-        static const AkUniqueID PENGUINSTEP = 230254265U;
-        static const AkUniqueID PLAYERGLIDE = 2683980149U;
-        static const AkUniqueID PLAYERHURT = 3537581393U;
-        static const AkUniqueID PLAYERSPLASH = 972739039U;
-        static const AkUniqueID PLAYERSTEP = 412471812U;
-        static const AkUniqueID PUCKHIT = 3993562277U;
-        static const AkUniqueID RESUMEGAME = 1133184122U;
-        static const AkUniqueID SHARKFALL = 3926006775U;
-        static const AkUniqueID SHARKSPAWN = 563965641U;
         static const AkUniqueID TEST = 3157003241U;
     } // namespace EVENTS
-
-    namespace GAME_PARAMETERS
-    {
-        static const AkUniqueID MASTERVOLUME = 2918011349U;
-        static const AkUniqueID MUSICVOLUME = 2346531308U;
-        static const AkUniqueID PENGUINDASHVOL = 3647101706U;
-        static const AkUniqueID PLAYERVELOCITY = 2886637823U;
-        static const AkUniqueID SOUNDVOLUME = 3873835272U;
-    } // namespace GAME_PARAMETERS
 
     namespace BANKS
     {
@@ -52,15 +25,7 @@ namespace AK
     namespace BUSSES
     {
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
-        static const AkUniqueID MUSIC = 3991942870U;
-        static const AkUniqueID SFX = 393239870U;
     } // namespace BUSSES
-
-    namespace AUX_BUSSES
-    {
-        static const AkUniqueID DISTORTION = 1517463400U;
-        static const AkUniqueID REVERB = 348963605U;
-    } // namespace AUX_BUSSES
 
     namespace AUDIO_DEVICES
     {
