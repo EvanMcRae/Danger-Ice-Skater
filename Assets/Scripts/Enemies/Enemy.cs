@@ -8,6 +8,7 @@ namespace Enemies {
         public GameEventBroadcaster gameEventBroadcaster;
 
         public Rigidbody rb;
+        public GameObject centerOfRink;
 
         public bool m_isDead = false;
         public bool m_waiting; //default to true
@@ -15,6 +16,7 @@ namespace Enemies {
         public Animator anim;
 
         public bool canMove = false;
+        float moveForce = 2f;
         
 
         public void DestroyEnemy()
@@ -66,6 +68,15 @@ namespace Enemies {
             Vector2 targetLoc = new Vector2(target.x, target.z);
             //print(Vector2.Distance(enemyLoc, targetLoc)); //Debug
             return Vector2.Distance(enemyLoc, targetLoc);
+        }
+
+        //Ensures that enemies that don't follow the player can't linger next to the wall
+        //Moves towards the center of the rink
+        public void MoveAwayFromWall()
+        {
+            Vector3 vectorDiff = centerOfRink.transform.position - transform.position;
+            vectorDiff.Normalize();
+            rb.AddForce(vectorDiff * moveForce, ForceMode.Force);
         }
 
         /// <summary>

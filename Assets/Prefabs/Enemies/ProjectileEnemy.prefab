@@ -153,8 +153,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3b2828e3e84977894fae8c78c7a7cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fallPos: {x: 0, y: 0, z: 0}
   gameEventBroadcaster: {fileID: 11400000, guid: f8714c97c5f2ac84fa1762773bdaad01, type: 2}
   rb: {fileID: 1275697822901526314}
+  centerOfRink: {fileID: 8868064442905718845, guid: 4c8211cdddd733d4292ef888ad377143, type: 3}
   m_isDead: 0
   m_waiting: 0
   anim: {fileID: 3220353305595372029}
@@ -162,7 +164,6 @@ MonoBehaviour:
   player: {fileID: 0}
   rotateTowardsPlayer: 1
   move: 1
-  runDistance: 10
   pushPlayerOnCollision: 1
   pushForce: 2
   dir: {x: 0, y: 0, z: 0}

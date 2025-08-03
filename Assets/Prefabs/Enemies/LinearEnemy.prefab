@@ -106,8 +106,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f956c924f781b54586953943aa8beec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fallPos: {x: 0, y: 0, z: 0}
   gameEventBroadcaster: {fileID: 11400000, guid: f8714c97c5f2ac84fa1762773bdaad01, type: 2}
   rb: {fileID: 2865376438257044195}
+  centerOfRink: {fileID: 8868064442905718845, guid: 4c8211cdddd733d4292ef888ad377143, type: 3}
   m_isDead: 0
   m_waiting: 1
   anim: {fileID: 6999724777246183788}
