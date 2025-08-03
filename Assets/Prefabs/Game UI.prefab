@@ -1377,6 +1377,7 @@ GameObject:
   - component: {fileID: 3846483745304660345}
   - component: {fileID: 3708762792113254612}
   - component: {fileID: 3630939260610534961}
+  - component: {fileID: 6427599003118733763}
   m_Layer: 5
   m_Name: MainMenu Button
   m_TagString: Untagged
@@ -1499,6 +1500,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6427599003118733763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090272697106746423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79219abd6765e4ef6b14a41c6b9492df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2112213384297889669
 GameObject:
   m_ObjectHideFlags: 0
@@ -4252,6 +4265,7 @@ GameObject:
   - component: {fileID: 8435871793376400249}
   - component: {fileID: 2002741905575825580}
   - component: {fileID: 1635261793699114907}
+  - component: {fileID: 3150510953894722276}
   m_Layer: 5
   m_Name: Restart Button
   m_TagString: Untagged
@@ -4374,6 +4388,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3150510953894722276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7339493033030473904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79219abd6765e4ef6b14a41c6b9492df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7911113043825738878
 GameObject:
   m_ObjectHideFlags: 0
