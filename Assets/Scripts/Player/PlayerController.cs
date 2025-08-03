@@ -50,6 +50,11 @@ public class PlayerController : MonoBehaviour
 
     private bool inAir = false;
 
+    Vector3 priorVel;
+
+    private float pauseBankingTimerLen = .2f;
+    private float pauseBankingTimerStart = 0;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -115,7 +120,14 @@ public class PlayerController : MonoBehaviour
         float horizontal = imso.xAxis.action.ReadValue<float>();
         float vertical = imso.yAxis.action.ReadValue<float>();
 
-        anim.SetBool("isInputting", horizontal != 0 || vertical != 0);
+
+        
+        anim.SetBool("useGlideAnim", (Vector2.Dot(new Vector2(horizontal, vertical), new Vector2(rb.linearVelocity.x, rb.linearVelocity.z)) > 0 && rb.linearVelocity.magnitude > 10)
+                                     || (horizontal == 0 && vertical == 0));
+
+        Debug.Log("Velocity:" + rb.linearVelocity.magnitude);
+
+        
 
         if (fallThroughHole)
         {
@@ -172,7 +184,25 @@ public class PlayerController : MonoBehaviour
         if (!fallThroughHole && new Vector3(rb.linearVelocity.x + horizontal, 0, rb.linearVelocity.z + vertical) != default)
         {
             transform.rotation = Quaternion.LookRotation(new Vector3(rb.linearVelocity.x + horizontal, 0, rb.linearVelocity.z + vertical), Vector3.up);
+           
         }
+
+
+        if ((anim.GetCurrentAnimatorStateInfo(0).IsName("Glide") || anim.GetCurrentAnimatorStateInfo(0).IsName("Skate")) && pauseBankingTimerStart + pauseBankingTimerLen < Time.time)
+        {
+            //Rotate player to lean into turns
+            //float bankingAmount = Mathf.Sin(Vector2.SignedAngle(new Vector2(rb.linearVelocity.x, rb.linearVelocity.z), new Vector2(horizontal, vertical)) * Mathf.Deg2Rad);
+            float bankingAmount = Mathf.Sin(Vector2.SignedAngle(new Vector2(rb.linearVelocity.x, rb.linearVelocity.z), new Vector2(priorVel.x, priorVel.z)) * Mathf.Deg2Rad);
+
+            //anim.transform.localRotation = Quaternion.Euler(0, 0, Mathf.Clamp(bankingAmount * -200 * (rb.linearVelocity.magnitude/11), -45, 45));
+            anim.transform.localRotation = Quaternion.Euler(0, 0, -Mathf.Clamp(bankingAmount * Mathf.Pow(rb.linearVelocity.magnitude, 2) * 1.5f, -45, 45));
+        }
+        else
+        {
+            anim.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            priorVel = new Vector3();
+        }
+        
 
 
         //Particle system effects
@@ -201,6 +231,9 @@ public class PlayerController : MonoBehaviour
             rb.linearDamping = 4;
             rb.useGravity = false;
         }
+
+        priorVel = (4 * priorVel + rb.linearVelocity) / 5;
+
     }
 
     
@@ -221,6 +254,8 @@ public class PlayerController : MonoBehaviour
                 anim.SetTrigger("land");
             }
         }
+        priorVel = rb.linearVelocity;
+        pauseBankingTimerStart = Time.time;
     }
 
     private void OnCollisionExit(Collision other)
@@ -236,6 +271,7 @@ public class PlayerController : MonoBehaviour
         Vector3 dir = new Vector3(imso.xAxis.action.ReadValue<float>(), 0, imso.yAxis.action.ReadValue<float>());
         rb.linearVelocity = Vector3.zero;
         rb.AddForce(dir * dashForce, ForceMode.Impulse);
+        priorVel = rb.linearVelocity;
     }
 
     public void Jump() {
@@ -246,5 +282,6 @@ public class PlayerController : MonoBehaviour
         anim.SetTrigger("jump");
         anim.ResetTrigger("land");
         inAir = true;
+        pauseBankingTimerStart = Time.time;
     }
 }
