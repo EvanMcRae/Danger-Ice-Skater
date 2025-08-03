@@ -3,6 +3,7 @@ using Input;
 using Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -51,6 +52,9 @@ public class PlayerController : MonoBehaviour
 
     private bool inAir = false;
 
+    [SerializeField]
+    Slider staminaBar;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -58,6 +62,11 @@ public class PlayerController : MonoBehaviour
 
         pm = FindAnyObjectByType<PauseManager>();
         fallThroughHole = false;
+
+        if(staminaBar != null)
+        {
+            staminaBar.maxValue = dashCooldown;
+        }
     }
 
     // Update is called once per frame
@@ -88,6 +97,11 @@ public class PlayerController : MonoBehaviour
 
             Dash();
             dashTimer = dashCooldown;
+        }
+
+        if(staminaBar != null)
+        {
+            staminaBar.value = dashTimer;
         }
 
         if (fallThroughHole)
