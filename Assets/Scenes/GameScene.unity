@@ -3594,6 +3594,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 677440834}
     - target: {fileID: 8516922417927150815, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
+      propertyPath: WwiseGlobal
+      value: 
+      objectReference: {fileID: 355807174}
+    - target: {fileID: 8516922417927150815, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
       propertyPath: eventSystem
       value: 
       objectReference: {fileID: 141492648}
@@ -3601,10 +3605,6 @@ PrefabInstance:
       propertyPath: settingsButton
       value: 
       objectReference: {fileID: 426053247}
-    - target: {fileID: 8516922417927150815, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
-      propertyPath: settingsBackButton
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 9093763895506934714, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
