@@ -31,8 +31,10 @@ Switch Group	ID	Name			Wwise Object Path	Notes
 Switch	ID	Name	Switch Group			Notes
 	2607556080	Menu	Music			
 	2782712965	Level	Music			
+	4158285989	GameOver	Music			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
+	1763041431	MusicSpeed			\Default Work Unit\MusicSpeed	
 	2346531308	musicVolume			\Default Work Unit\Volume\musicVolume	
 	2886637823	playerVelocity			\Default Work Unit\playerVelocity	
 	2918011349	masterVolume			\Default Work Unit\Volume\masterVolume	
@@ -57,6 +59,7 @@ Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	11736544	Player Hurt	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\4E\{4EED532D-DC81-28FD-1599-95006EFE3AC6}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Player Damage\Player Hurt		17588
 	92250040	Fox Fall	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\EB\{EB80AAE3-0C74-F4AA-22D2-0AEF3A6ABB5F}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Fox\Fox Fall		90180
+	111674717	Level track drums	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\08\{08F40A80-B77C-A86C-F9FA-2FA8A04D332C}.wem		\Interactive Music Hierarchy\Default Work Unit\Music Switch\Menu Theme\Menu Theme\Level track drums		5504064
 	112692613	Player Hurt_01	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\23\{239A1F25-C7A4-FA87-8922-DD4015B2344B}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Player Damage\Player Hurt_01		9460
 	129769630	Skate_04	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\80\{80E78DCF-DF63-FA37-D39B-A4241E5E3622}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Skates\Steps\Skate\Skate_04		31248
 	134563642	Step_4	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\53\{534391BD-E9D5-EFA4-FF99-F5E72A56DB67}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Skates\Steps\Step\Step_4		10708
@@ -82,6 +85,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	535792127	idea 2	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\1B\{1B077267-43A3-65CD-F60B-2F32E4C4AE78}.wem		\Interactive Music Hierarchy\Default Work Unit\Music Switch\Level Theme\Level Theme\idea 2		4908664
 	589060082	Swings_6	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\DD\{DD45836E-3A57-C08F-4C4F-1CB2C8135A52}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Hockey\Hockey Swing\Swings_6		14272
 	600996587	Skate_02	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\9D\{9D8B2D67-215F-DDF2-EA50-85BD83E5C3BA}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Hockey\StepsHockey\Skate\Skate_02		44832
+	650199349	Game Over drums 129	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\46\{463312B4-BBEB-5AC2-2F5F-46E6015B1DBA}.wem		\Interactive Music Hierarchy\Default Work Unit\Music Switch\Game Over\Game Over drums 129\Game Over drums 129		5251072
 	650797169	Shark Chomps_4	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\D1\{D1428FEF-B827-35FA-537C-EEC4BF8C5F7E}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Shark\Shark Moving\Chomps\Chomp\Shark Chomps_4		20096
 	661063367	Splash_5	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\B4\{B41A38BF-1C8E-AC08-02DD-D80EC00418FA}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Splashes\Ice Splash\Splash_5		119428
 	713916889	Swings_2	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\9E\{9E891606-1604-ED4E-3FDF-5DE677A6858C}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Hockey\Hockey Swing\Swings_2		17786
@@ -95,11 +99,13 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	788434638	Splash_6	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\0E\{0E39659F-64E4-6191-50C6-A1986662F598}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Splashes\Player Splash\Splash_6		124308
 	817391603	Step	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\8C\{8C84A7DD-9185-CBDF-F1F3-53228E1DDFEA}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Skates\Steps\Step\Step		10720
 	835039389	Step_5	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\1F\{1FBBF64D-0DA1-DBAF-A9E3-0E08EEBEF1EA}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Skates\Steps\Step\Step_5		11246
+	841818543	Level track bass	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\7D\{7D0DE6D4-FCC8-6A29-B4C4-ECBD55083BFF}.wem		\Interactive Music Hierarchy\Default Work Unit\Music Switch\Menu Theme\Menu Theme\Level track bass		5292096
 	874117209	Splash_1	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\EF\{EF1454A7-305F-4525-3459-693E929BAFB0}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Splashes\Enemy Splash\Splash_1		202972
 	903708407	Skate_01	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\34\{345EC2F2-A3A9-0D49-4A2F-2CFC8D264FEC}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Hockey\StepsHockey\Skate\Skate_01		42566
 	908641076	Shark Fall	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\BF\{BFF28B8D-B07B-C6E7-EB1E-1A88E273DAAA}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Shark\Shark Fall		69244
 	965355924	Skate_05	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\E1\{E17437F4-3CFF-9EDE-EE3D-251B9F561CFD}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Skates\Steps\Skate\Skate_05		30048
 	994630770	Splash_2	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\D3\{D39769FB-FC8A-39E7-FB1E-6475E3B28D6A}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Splashes\Ice Splash\Splash_2		116396
 	1008933578	Step_7	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\2E\{2E48F883-A22B-9D74-0DDF-2570790E91B8}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Penguin\StepsPenguin\Step\Step_7		10056
+	1022245192	Level track pad	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\F5\{F589AB41-B992-B74C-BB87-4B8AEC706291}.wem		\Interactive Music Hierarchy\Default Work Unit\Music Switch\Menu Theme\Menu Theme\Level track pad		6552640
 	1063543444	Skate_03	Y:\Desktop\Github\GMTK2025\GMTK2025_WwiseProject\.cache\AE\{AE47CED7-A43A-C4E0-16C4-449432EBB386}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Penguin\StepsPenguin\Skate\Skate_03		41302
 

@@ -48,6 +48,7 @@ namespace AK
 
             namespace SWITCH
             {
+                static const AkUniqueID GAMEOVER = 4158285989U;
                 static const AkUniqueID LEVEL = 2782712965U;
                 static const AkUniqueID MENU = 2607556080U;
             } // namespace SWITCH
@@ -58,6 +59,7 @@ namespace AK
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID MASTERVOLUME = 2918011349U;
+        static const AkUniqueID MUSICSPEED = 1763041431U;
         static const AkUniqueID MUSICVOLUME = 2346531308U;
         static const AkUniqueID PENGUINDASHVOL = 3647101706U;
         static const AkUniqueID PLAYERVELOCITY = 2886637823U;
