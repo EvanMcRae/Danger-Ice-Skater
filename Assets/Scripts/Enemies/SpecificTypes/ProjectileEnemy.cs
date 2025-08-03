@@ -14,7 +14,9 @@ namespace Enemies.SpecificTypes {
         public GameObject puck;
 
         public float forceScalar;
-        
+
+        public GameObject top, bottom, left, right;
+
         public new void Start() {
             base.Start();
             projectileTimer = projectileDelayMax;
@@ -24,21 +26,29 @@ namespace Enemies.SpecificTypes {
 
             if (!m_waiting && !m_isDead)
             {
-                base.Update();
-                projectileTimer -= Time.deltaTime;
-                if (projectileTimer <= 0)
+                CheckIfCloseToWall(top.transform.position.z, bottom.transform.position.z, left.transform.position.x, right.transform.position.x);
+                if (!movingAwayFromWall)
                 {
-                    Vector3 diff = player.transform.position - transform.position;
-                    diff.Normalize();
-                    Shoot(diff);
-                    projectileTimer = Random.Range(projectileDelayMin, projectileDelayMax);
+                    base.Update();
+                    projectileTimer -= Time.deltaTime;
+                    if (projectileTimer <= 0)
+                    {
+                        Vector3 diff = player.transform.position - transform.position;
+                        diff.Normalize();
+                        Shoot(diff);
+                        projectileTimer = Random.Range(projectileDelayMin, projectileDelayMax);
+                    }
+                    else anim.Play("idle");
                 }
-                else anim.Play("idle");
+                else
+                {
+                    anim.Play("skate");
+                    MoveAwayFromWall();
+                }
             }
             else if (!m_isDead)
             {
                 anim.Play("idle");
-                print("HELP!!!");
             }
         }
 

@@ -13,7 +13,9 @@ namespace Enemies
 
         private float trapTimer;
         public float trapDelay;
-        
+
+        public GameObject top, bottom, left, right;
+
         /*
         float idleDelay;
         public float cooldownDelay;
@@ -37,13 +39,22 @@ namespace Enemies
         public new void Update()
         {
             if (PauseManager.paused) return;
-            
-            base.Update();
 
-            trapTimer -= Time.deltaTime;
-            if (trapTimer <= 0) {
-                if (DropTrap()) trapTimer = trapDelay;
-                else trapTimer = 1;
+            CheckIfCloseToWall(top.transform.position.z, bottom.transform.position.z, left.transform.position.x, right.transform.position.x);
+            if (!movingAwayFromWall)
+            {
+                base.Update();
+                trapTimer -= Time.deltaTime;
+                if (trapTimer <= 0)
+                {
+                    if (DropTrap()) trapTimer = trapDelay;
+                    else trapTimer = 1;
+                }
+            }
+            else
+            {
+                anim.Play("skate");
+                MoveAwayFromWall();
             }
         }
 
@@ -58,6 +69,9 @@ namespace Enemies
             }
             return false;
         }
+
+        
+
 
         /*
         //Skates around aimlessly

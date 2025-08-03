@@ -175,6 +175,10 @@ MonoBehaviour:
   projectileSpawnPosition: {fileID: 8634687285915628041}
   puck: {fileID: 7109261927733015708, guid: 80d28e5bfe2ca90478103bec00e6e6bb, type: 3}
   forceScalar: 10
+  top: {fileID: 5555507983655616263, guid: 965bc5578e78fd849b0104a1c27ff0bd, type: 3}
+  bottom: {fileID: 4181598979052106995, guid: 713714fe92ac179438d194766b496803, type: 3}
+  left: {fileID: 1200431927587874057, guid: ce921efd55de7744b9de381e046dce67, type: 3}
+  right: {fileID: 5217411336105476837, guid: 5d7f351db512fc64f80a55cc0755676d, type: 3}
 --- !u!95 &3220353305595372029
 Animator:
   serializedVersion: 7

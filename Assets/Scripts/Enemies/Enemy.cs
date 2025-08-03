@@ -17,7 +17,8 @@ namespace Enemies {
 
         public bool canMove = false;
         float moveForce = 2f;
-        
+        public bool movingAwayFromWall = false;
+
 
         public void DestroyEnemy()
         {
@@ -77,6 +78,16 @@ namespace Enemies {
             Vector3 vectorDiff = centerOfRink.transform.position - transform.position;
             vectorDiff.Normalize();
             rb.AddForce(vectorDiff * moveForce, ForceMode.Force);
+        }
+        public void CheckIfCloseToWall(float top, float bottom, float left, float right)
+        {
+            float margin = 3f;
+            if (transform.position.x <= left + margin || transform.position.x >= right - margin ||
+                transform.position.z >= top - margin || transform.position.z <= bottom + margin)
+            {
+                movingAwayFromWall = true;
+            }
+            else movingAwayFromWall = false;
         }
 
         /// <summary>
