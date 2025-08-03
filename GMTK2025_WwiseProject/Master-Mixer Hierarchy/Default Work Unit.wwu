@@ -12,7 +12,23 @@
 					<ChildrenList>
 						<Bus Name="SFX" ID="{82BD75D9-95EE-495F-88CE-7A658BA55E69}">
 							<ChildrenList>
-								<AuxBus Name="Reverb" ID="{39432060-1A71-40A3-B958-9264FDE9BB75}"/>
+								<AuxBus Name="Reverb" ID="{39432060-1A71-40A3-B958-9264FDE9BB75}">
+									<ObjectLists>
+										<ObjectList Name="Effects">
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{6E865EA7-E2B8-411D-9FB6-2E7F36FF5872}" ShortID="35158094">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+																<ObjectRef Name="Metal_Hangar" ID="{C4A4605C-42EF-476A-B53C-E31C7A442C24}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AuxBus>
 								<AuxBus Name="Distortion" ID="{418CD9C0-FA84-41AB-A45E-DF83011CDD82}"/>
 							</ChildrenList>
 							<ObjectLists>

@@ -10,11 +10,21 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{DADFC7D3-1C2A-1FDA-B23C-7EF62963816A}",
+    "Hash": "{98F0BD97-B4B8-7FFD-8CA5-521983D6C632}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
     "Plugins": {
+     "ShareSets": [
+      {
+       "Id": "3900114836",
+       "Name": "Metal_Hangar",
+       "ObjectPath": "\\Effects\\Factory Effects\\RoomVerb\\Huge Spaces\\Metal_Hangar",
+       "GUID": "{C4A4605C-42EF-476A-B53C-E31C7A442C24}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
+      }
+     ],
      "AudioDevices": [
       {
        "Id": "2317455096",
@@ -59,7 +69,14 @@
       "Id": "348963605",
       "Name": "Reverb",
       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
-      "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
+      "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3900114836"
+        }
+       ]
+      }
      },
      {
       "Id": "1517463400",
@@ -136,6 +153,6 @@
     ]
    }
   ],
-  "FileHash": "{3E5D3A37-48F8-88CE-6556-36450FE16C68}"
+  "FileHash": "{0A35C657-7D18-A68D-A3EF-1FD2C526025A}"
  }
 }
