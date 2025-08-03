@@ -55,7 +55,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" GUID="{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}" Language="SFX" Hash="{627306F8-21CB-E6BC-14CD-55913A9F6590}">
+		<SoundBank Id="3161908922" Type="User" GUID="{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}" Language="SFX" Hash="{A1A02483-0966-9C08-8A93-86AB1D14E049}">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -397,7 +397,7 @@
 						<MediaRef Id="1063543444"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="4158285989" Name="GameOver" ObjectPath="\Events\Default Work Unit\Player\GameOver" GUID="{62315F2F-43DB-4459-B45B-E65EDC2E4F14}" DurationType="OneShot" DurationMin="0.56689495" DurationMax="0.56689495">
+				<Event Id="4158285989" Name="GameOver" ObjectPath="\Events\Default Work Unit\Player\GameOver" GUID="{62315F2F-43DB-4459-B45B-E65EDC2E4F14}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<MediaRefs>
 						<MediaRef Id="83019132"/>
 						<MediaRef Id="92250040"/>
@@ -418,7 +418,6 @@
 						<MediaRef Id="472000575"/>
 						<MediaRef Id="481543437"/>
 						<MediaRef Id="521776349"/>
-						<MediaRef Id="561948372"/>
 						<MediaRef Id="589060082"/>
 						<MediaRef Id="600996587"/>
 						<MediaRef Id="650797169"/>
@@ -447,7 +446,6 @@
 						<ShareSets>
 							<PluginRef Id="1237275451"/>
 							<PluginRef Id="1706684651"/>
-							<PluginRef Id="3487820010"/>
 						</ShareSets>
 					</PluginRefs>
 					<AuxBusRefs>
@@ -864,5 +862,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{B7EEACA2-6FD9-9099-7987-62FB4D59D8AE}</FileHash>
+	<FileHash>{17E56805-078B-83E9-68FA-4EA3DB022549}</FileHash>
 </SoundBanksInfo>

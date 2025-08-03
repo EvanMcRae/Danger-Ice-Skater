@@ -93,13 +93,6 @@
 						</Event>
 						<Event Name="GameOver" ID="{62315F2F-43DB-4459-B45B-E65EDC2E4F14}">
 							<ChildrenList>
-								<Action Name="" ID="{38E632DC-3FAA-4923-849B-4B05BFC3FB25}" ShortID="895564371">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Player Death" ID="{D3C8AC8C-79AA-4B05-91FF-2E90E0D17CFA}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
 								<Action Name="" ID="{9283A041-4D56-4271-9853-A6541884AC48}" ShortID="459462532">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="2"/>
