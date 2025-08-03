@@ -48,8 +48,7 @@ namespace Enemies {
         {
             SetCanMove(false); //Starting value false
             EnemySpawned();
-            //anim = gameObject.GetComponent<Animator>(); //Commented out so that this can be set in inspector, hopefully this doesnt break anything
-            //m_waiting = false; //TODO: change to true when implemented with waves
+            //anim = gameObject.GetComponent<Animator>(); //Commented out so that this can be set in inspector, hopefully this doesnt break anything 
             rb = GetComponent<Rigidbody>();
             if (!rb)
             {
@@ -129,6 +128,7 @@ namespace Enemies {
         public void SetCanMove(bool newValue)
         {
             canMove = newValue;
+            m_waiting = !newValue;
             if (newValue) rb.constraints = RigidbodyConstraints.FreezeRotation;
             else rb.constraints = RigidbodyConstraints.FreezeAll;
         }
