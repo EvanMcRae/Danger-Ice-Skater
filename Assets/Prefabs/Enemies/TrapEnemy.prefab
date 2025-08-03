@@ -152,8 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b7e3fe3174755f489bbac917698d23f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fallPos: {x: 0, y: 0, z: 0}
   gameEventBroadcaster: {fileID: 11400000, guid: f8714c97c5f2ac84fa1762773bdaad01, type: 2}
   rb: {fileID: 2537937922704579174}
+  centerOfRink: {fileID: 8868064442905718845, guid: 4c8211cdddd733d4292ef888ad377143, type: 3}
   m_isDead: 0
   m_waiting: 0
   anim: {fileID: 6028884704192459635}
@@ -172,6 +174,10 @@ MonoBehaviour:
   idleCooldown: 0.01
   trap: {fileID: 3176648040938010380, guid: 477a1fa50904d5045938a911394703a3, type: 3}
   trapDelay: 5
+  top: {fileID: 5555507983655616263, guid: 965bc5578e78fd849b0104a1c27ff0bd, type: 3}
+  bottom: {fileID: 4181598979052106995, guid: 713714fe92ac179438d194766b496803, type: 3}
+  left: {fileID: 1200431927587874057, guid: ce921efd55de7744b9de381e046dce67, type: 3}
+  right: {fileID: 5217411336105476837, guid: 5d7f351db512fc64f80a55cc0755676d, type: 3}
 --- !u!95 &6028884704192459635
 Animator:
   serializedVersion: 7

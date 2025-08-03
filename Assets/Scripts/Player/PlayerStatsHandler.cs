@@ -1,3 +1,4 @@
+using System;
 using Game;
 using UI.PlayerUI;
 using UnityEngine;
@@ -16,6 +17,8 @@ namespace Player {
         
         public int health; //Int because it's a hits based health system.=
         public int maxHealth;
+
+        public int waveClearHealAmount;
 
         private SkinnedMeshRenderer[] meshes;
 
@@ -56,8 +59,8 @@ namespace Player {
         }
         
         public void Heal(int amount) {
-            health = Mathf.Min(health + amount, maxHealth);
-            hd.Heal(amount);
+            health = Mathf.Max(health + amount, maxHealth);
+            hd.Heal(health);
         }
 
         //public void KillFromDamage() {
@@ -75,6 +78,17 @@ namespace Player {
             geb.OnPlayerDeathByHit.Invoke(this);
         }
 
+        public void OnEnable() {
+            geb.OnWaveClear.AddListener(OnWaveClear);
+        }
 
+        public void OnDisable() {
+            geb.OnWaveClear.RemoveListener(OnWaveClear);
+        }
+
+        public void OnWaveClear(int wave) {
+            
+            Heal(waveClearHealAmount);
+        }
     }
 }
