@@ -78,7 +78,7 @@ public class MenuManager : MonoBehaviour
     public void Credits()
     {
         if (!ScreenWipe.over) return;
-        TurnOffMenus();
+        TurnOffMenus(1);
         ActivateMenuWithAnimation(1);
         eventSystem.SetSelectedGameObject(creditsBackButton);
     }
@@ -86,7 +86,7 @@ public class MenuManager : MonoBehaviour
     public void Instructions()
     {
         if (!ScreenWipe.over) return;
-        TurnOffMenus();
+        TurnOffMenus(2);
         ActivateMenuWithAnimation(2);
         eventSystem.SetSelectedGameObject(instructionsBackButton);
     }
@@ -94,7 +94,7 @@ public class MenuManager : MonoBehaviour
     public void Settings()
     {
         if (!ScreenWipe.over) return;
-        TurnOffMenus();
+        TurnOffMenus(3);
         ActivateMenuWithAnimation(3);
         eventSystem.SetSelectedGameObject(settingsBackButton);
         settingsOpen = true;
@@ -117,15 +117,16 @@ public class MenuManager : MonoBehaviour
 #endif
     }
 
-    private void TurnOffMenus()
+    private void TurnOffMenus(int excludeMenu = -1)
     {
         if (settingsOpen)
         {
             PlayerPrefs.Save();
             settingsOpen = false;
         }
-        foreach (GameObject menu in Menus)
+        for (int index = 0; index < Menus.Length; index++)
         {
+            GameObject menu = Menus[index];
             if (menu != Menus[0])
             {
                 float startPos = menu.transform.position.y;
@@ -134,12 +135,17 @@ public class MenuManager : MonoBehaviour
                 DG.Tweening.Sequence mySequence = DOTween.Sequence();
                 mySequence.Append(menu.transform.DOMoveY(-Screen.height, .4f));
 
-                mySequence.OnComplete(() =>
+                if (index != excludeMenu)
                 {
-                    menu.transform.DOMoveY(startPos, 0f);
-                    menu.SetActive(false);
-                });
+                    mySequence.OnComplete(() =>
+                    {
+                        menu.transform.DOMoveY(startPos, 0f);
+                        menu.SetActive(false);
+                    });
+                }
+
             }
+
         }
     }
 
@@ -150,9 +156,11 @@ public class MenuManager : MonoBehaviour
         menu.SetActive(true);
 
         float startPos = Menus[index].transform.position.y;// startPositions[index];
+        Vector3 pos = Menus[index].transform.position;
+        pos.y = -Screen.height;
+        Menus[index].transform.position = pos;
 
         DG.Tweening.Sequence mySequence = DOTween.Sequence();
-        mySequence.Append(menu.transform.DOMoveY(-Screen.height + 50, 0f));
         mySequence.Append(menu.transform.DOMoveY(startPos + 50, .4f));
         mySequence.Append(menu.transform.DOMoveY(startPos, .5f));
     }
