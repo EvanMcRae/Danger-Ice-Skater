@@ -15,7 +15,7 @@ public class introCutscene : MonoBehaviour
     public Tween charTween, textTween, nextTween;
 
     float frame1 = .05f;
-    float frame2 = 1f;
+    float frame2 = 2f;
     float timer = 0f;
     float moveSpeed = 2f;
 
@@ -73,9 +73,9 @@ public class introCutscene : MonoBehaviour
                     player.GetComponent<PlayerController>().startedThisFrame = true;
                     player.GetComponent<PlayerController>().startCutsceneActive = false;
                     gameManager.GetComponent<GameController>().StartController();
-                    charTween = charSprite.transform.DOMoveY(charSprite.transform.position.y - 2000, 1f, false);
-                    textTween = textBox.transform.DOMoveY(textBox.transform.position.y - 2000, 1f, false);
-                    nextTween = nextButton.transform.DOMoveY(nextButton.transform.position.y - 2000, 1f, false);
+                    charTween = charSprite.transform.DOMoveY(charSprite.transform.position.y - 2000, 2f, false);
+                    textTween = textBox.transform.DOMoveY(textBox.transform.position.y - 2000, 2f, false);
+                    nextTween = nextButton.transform.DOMoveY(nextButton.transform.position.y - 2000, 2f, false);
                 }
                 else
                 {
