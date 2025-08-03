@@ -27,6 +27,7 @@ namespace AK
         static const AkUniqueID HOCKEYSWING = 433652520U;
         static const AkUniqueID ICESPLASH = 1774890243U;
         static const AkUniqueID LEVELMUSIC = 1321655446U;
+        static const AkUniqueID LOOPCOMPLETE = 858221862U;
         static const AkUniqueID MENUMUSIC = 679636833U;
         static const AkUniqueID PAUSEGAME = 1589270263U;
         static const AkUniqueID PENGUINFALL = 4286935516U;
@@ -46,6 +47,8 @@ namespace AK
         static const AkUniqueID STOPMUSIC = 1917263390U;
         static const AkUniqueID STOPSFX = 3189472150U;
         static const AkUniqueID TEST = 3157003241U;
+        static const AkUniqueID TRAPEXPLODE = 2669509775U;
+        static const AkUniqueID TRAPSET = 39526936U;
     } // namespace EVENTS
 
     namespace SWITCHES

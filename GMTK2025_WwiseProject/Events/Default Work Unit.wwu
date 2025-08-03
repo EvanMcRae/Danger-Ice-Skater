@@ -150,6 +150,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="LoopComplete" ID="{89065F99-E474-44D7-BB99-2BC9E08B331F}">
+							<ChildrenList>
+								<Action Name="" ID="{DDDAADCC-51D1-4140-BDED-6E0F34488A6A}" ShortID="279221575">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Knife" ID="{568EEAC7-AE6D-41DA-94C9-D89F1B5A44D1}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Enemy" ID="{7F29F9C0-F013-4152-8820-0F6168AB4BAE}" ShortID="265989790">
@@ -289,6 +300,38 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="StepsFox" ID="{180E6A81-03A3-46A9-8634-2AE830C378AB}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="TrapSet" ID="{5C8343C1-E429-43BB-890D-777923375395}">
+									<ChildrenList>
+										<Action Name="" ID="{A0231F5B-3D1F-4511-A90F-0E306AB6984B}" ShortID="1020926125">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Trap Set" ID="{36B98CAA-B305-461C-97E0-86D29DDB7934}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="TrapExplode" ID="{64F62B54-52AC-43DE-BFF6-8BB8D3772A86}">
+									<ChildrenList>
+										<Action Name="" ID="{558E607A-BA3A-40E9-9AF2-9A1978D708F3}" ShortID="690765199">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Explosion" ID="{3BC17394-8D85-4DFB-A58C-60A2AF055619}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{90C8AF0D-53EC-4A78-B0C7-CE0BC755F3AC}" ShortID="84436435">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="AfterExplode" ID="{4AA4ED9F-BFFA-432E-801B-04B24B1BABFA}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
