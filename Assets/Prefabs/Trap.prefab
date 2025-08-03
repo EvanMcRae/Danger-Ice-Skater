@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8119377090681299312}
   - component: {fileID: 8971799842400549310}
-  - component: {fileID: 1345049046568571989}
   - component: {fileID: 8465897924980159152}
+  - component: {fileID: 7381498639134674281}
   m_Layer: 0
   m_Name: Trap
   m_TagString: Enemy
@@ -62,20 +62,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &1345049046568571989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3176648040938010380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 962ee5eb600a4b888cf7d8ff370d5870, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyDelay: 10
-  destroyOnPlayerCollision: 1
 --- !u!114 &8465897924980159152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,6 +75,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallPos: {x: 0, y: 0, z: 0}
+--- !u!114 &7381498639134674281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3176648040938010380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e708f90ef13010b44b0673116f536e96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyDelay: 10
+  destroyOnPlayerCollision: 1
+  explosion: {fileID: 6426180357193102234, guid: 3fe7db536d477b7489607998ae0e5bf4, type: 3}
 --- !u!1001 &1991228160394743491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -151,15 +152,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 4916643f002b40348a589f8eaeff3fd6, type: 2}
     - target: {fileID: -565046874843543007, guid: 72ff6a434e349ce48845ec2fd1d90bde, type: 3}
       propertyPath: m_LocalScale.x
-      value: 500
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: -565046874843543007, guid: 72ff6a434e349ce48845ec2fd1d90bde, type: 3}
       propertyPath: m_LocalScale.y
-      value: 500
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: -565046874843543007, guid: 72ff6a434e349ce48845ec2fd1d90bde, type: 3}
       propertyPath: m_LocalScale.z
-      value: 500
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: -565046874843543007, guid: 72ff6a434e349ce48845ec2fd1d90bde, type: 3}
       propertyPath: m_LocalPosition.x
