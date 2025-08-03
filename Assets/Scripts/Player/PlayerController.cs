@@ -338,6 +338,7 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(Vector3.up * dashForce, ForceMode.Impulse);
         anim.SetTrigger("jump");
         anim.ResetTrigger("land");
+        AkUnitySoundEngine.PostEvent("PlayerJump", gameObject);
         inAir = true;
         pauseBankingTimerStart = Time.time;
     }

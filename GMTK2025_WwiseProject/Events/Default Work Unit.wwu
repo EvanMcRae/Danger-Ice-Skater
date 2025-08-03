@@ -529,6 +529,75 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="PointScore" ID="{C1A9D683-9E86-4B1F-B3DE-B2F2D26FF22C}">
+							<ChildrenList>
+								<Action Name="" ID="{3775D471-B584-484D-B9D5-532756AD6BA0}" ShortID="625243289">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Point Score" ID="{A98190DD-12CE-4CE1-B694-2A1EAE1F034B}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="UI" ID="{8260F55A-C898-4F8C-8692-741708744CAB}" ShortID="766127454">
+					<ChildrenList>
+						<Event Name="StartGameUI" ID="{7E779D16-E9A6-46B5-A9B3-AAA4450E8F21}">
+							<ChildrenList>
+								<Action Name="" ID="{CB7E598F-9626-43FA-A4B0-7A50D2CC6728}" ShortID="53076592">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Start Game" ID="{BD605CEA-DD20-40BD-A446-A8E4B0911B25}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{16A362C3-CF8A-4231-896A-A4CEEABBD610}" ShortID="954584430">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="16"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="LongSkate" ID="{DC7DFB9E-D900-47A0-BAB2-21F3FB0E120F}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="BackUI" ID="{16FD41C1-73D2-4024-8584-8EFCC6139BD3}">
+							<ChildrenList>
+								<Action Name="" ID="{8A45F400-91FB-4853-8199-163FF2FDFDCA}" ShortID="334222270">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Back" ID="{FDF00204-5B43-402E-A6A2-D9A4D5E2CC4D}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="SelectUI" ID="{DF932278-9B4B-403C-AACB-25C0447FFB70}">
+							<ChildrenList>
+								<Action Name="" ID="{300E1163-2AEE-4CAA-ABBE-DE31B4B3C539}" ShortID="524685274">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Select" ID="{540C7CB3-CC49-459D-803D-67D9C26EA253}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="HighlightUI" ID="{D831C8AA-E4CD-40E8-AACD-8C66071C22F6}">
+							<ChildrenList>
+								<Action Name="" ID="{C83A2DC4-E479-4180-9DDE-64B97E27AD31}" ShortID="602561354">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Highlight" ID="{8D9D496D-18AB-455C-B517-27FB5D27BC3C}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
