@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2861377633217104663
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 752999265802035934}
+  - component: {fileID: 3513926589644694369}
+  - component: {fileID: 969415127634746062}
+  - component: {fileID: 949978130161595324}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &752999265802035934
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861377633217104663}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3513926589644694369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861377633217104663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 288b3099220d4f5b904887c264d9e847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEventBroadcaster: {fileID: 11400000, guid: f8714c97c5f2ac84fa1762773bdaad01, type: 2}
+  waveSpawner: {fileID: 969415127634746062}
+  waveStateHandler: {fileID: 949978130161595324}
+  enemyList: []
+  timeBetweenWaves: 5
+  waveDelayTimer: 0
+  tickDelay: 1
+  score: 0
+--- !u!114 &969415127634746062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861377633217104663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d35217ae2f7441b4b449a50f61011409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyTypeManager: {fileID: 11400000, guid: 0981b7ed99cb7f1439d28cb8d896121a, type: 2}
+  waveManagerSO: {fileID: 11400000, guid: 7d0ae3bb436f6e14caee43a21c38f8f8, type: 2}
+  geb: {fileID: 11400000, guid: f8714c97c5f2ac84fa1762773bdaad01, type: 2}
+  validWaveSpawnPoints:
+  - {fileID: 4353078379752015275, guid: 0c9a3c26e0ea73040b198218248ffbf3, type: 3}
+  - {fileID: 3385622247854119713, guid: fd6bbebf6515c024aa039215b2cc0d7e, type: 3}
+  - {fileID: 2676201783843006915, guid: 441a6bc5e7d7b584e87b779945c0c737, type: 3}
+  - {fileID: 5519552679790814286, guid: e776516067a471148bccb89e70b336ec, type: 3}
+  - {fileID: 4332363504778352328, guid: c46205e0a53fb684b8399b70e6375264, type: 3}
+  - {fileID: 6390905361379049008, guid: 6306e60ba08a63a4f86a22838abfb23f, type: 3}
+  - {fileID: 1749999942894350570, guid: d48d4e16c8b2aff43848c1af4f1ff962, type: 3}
+  - {fileID: 690588030133353563, guid: b71f439fa9a9bcd40886d3661611e30a, type: 3}
+  invalidWaveSpawnPoints: []
+  currentWave:
+    subWaves: []
+    waveLevel: 0
+  currentWaveCount: -1
+  currentSubWaveCount: -1
+--- !u!114 &949978130161595324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861377633217104663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ae194cc79a9437b8214782b5d5fc37b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gc: {fileID: 3513926589644694369}
+  ws: {fileID: 969415127634746062}
+  initialWaveDelayTimer: 5
+  tickTimer: 0
+  spawnWaveTimer: 0
+  finalSubwave: 0
