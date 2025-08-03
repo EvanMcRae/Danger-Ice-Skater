@@ -224,8 +224,11 @@ MonoBehaviour:
   geb: {fileID: 0}
   validWaveSpawnPoints: []
   invalidWaveSpawnPoints: []
-  currentWave: -1
-  currentSubWave: -1
+  currentWave:
+    subWaves: []
+    waveLevel: 0
+  currentWaveCount: -1
+  currentSubWaveCount: -1
 --- !u!4 &755430699
 Transform:
   m_ObjectHideFlags: 0
