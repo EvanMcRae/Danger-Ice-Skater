@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
             (imso.xAxis.action.IsPressed() || imso.yAxis.action.IsPressed()) &&
             dashTimer <= 0)
         {
-
+            AkUnitySoundEngine.PostEvent("PlayerDash", gameObject);
             Dash();
             dashTimer = dashCooldown;
         }
@@ -136,6 +136,11 @@ public class PlayerController : MonoBehaviour
         if (fallThroughHole)
         {
             fallThroughHoleTimer -= Time.deltaTime;
+        }
+
+        if(psh.killed)
+        {
+            rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
         }
     }
 

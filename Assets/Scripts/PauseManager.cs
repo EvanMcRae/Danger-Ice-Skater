@@ -88,6 +88,7 @@ public class PauseManager : MonoBehaviour
     {
         PlayerPrefs.Save();
         TurnOffMenus();
+        AkUnitySoundEngine.PostEvent("BackUI", WwiseGlobal);
         Menus[0].SetActive(true);
         eventSystem.SetSelectedGameObject(settingsButton);
     }

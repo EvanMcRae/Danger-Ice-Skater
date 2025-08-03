@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6997527728695768682}
   - component: {fileID: 2653554567446249674}
+  - component: {fileID: 8046560300439181185}
   m_Layer: 5
   m_Name: Main Volume Slider
   m_TagString: Untagged
@@ -103,6 +104,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8046560300439181185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542020629328135460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79219abd6765e4ef6b14a41c6b9492df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &709699795454223851
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,6 +162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8435023026609737026}
   - component: {fileID: 6909746263704068251}
+  - component: {fileID: 3249407429342571181}
   m_Layer: 5
   m_Name: 'V-Sync Toggle '
   m_TagString: Untagged
@@ -237,6 +251,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 1
+--- !u!114 &3249407429342571181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772941954605410393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79219abd6765e4ef6b14a41c6b9492df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &799757531376159904
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,6 +309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2601353870359854074}
   - component: {fileID: 3491364865757405832}
+  - component: {fileID: 148249034103472181}
   m_Layer: 5
   m_Name: Music Slider
   m_TagString: Untagged
@@ -376,6 +403,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &148249034103472181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221648214134619515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79219abd6765e4ef6b14a41c6b9492df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1384742043924300662
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,6 +842,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3755401024538766136}
   - component: {fileID: 2100470415331148147}
+  - component: {fileID: 4569924875876333061}
   m_Layer: 5
   m_Name: Effects Slider
   m_TagString: Untagged
@@ -896,6 +936,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4569924875876333061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3090020142797772550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79219abd6765e4ef6b14a41c6b9492df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3098432728798621842
 GameObject:
   m_ObjectHideFlags: 0
@@ -2633,6 +2685,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7999273446010334542}
   - component: {fileID: 2304164739314012453}
+  - component: {fileID: 5521498207538446002}
   m_Layer: 5
   m_Name: FullScreen Toggle
   m_TagString: Untagged
@@ -2721,6 +2774,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 1
+--- !u!114 &5521498207538446002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7609004023004175079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79219abd6765e4ef6b14a41c6b9492df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8031077474670571054
 GameObject:
   m_ObjectHideFlags: 0

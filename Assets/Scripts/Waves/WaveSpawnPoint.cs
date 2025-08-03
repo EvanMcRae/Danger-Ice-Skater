@@ -27,6 +27,7 @@ namespace Waves {
             thisEnemy.transform.LookAt(relativeDirection.transform);
             thisEnemy.SetCanMove(false);
             thisEnemy.rb.detectCollisions = false;
+            thisEnemy.m_waiting = true;
         }
 
         public void SendEnemy() {
@@ -36,6 +37,7 @@ namespace Waves {
             thisEnemy.rb.AddForce(dir * forceScalar, ForceMode.Impulse);
             thisEnemy.rb.detectCollisions = true;
             thisEnemy.EnemySent();
+            thisEnemy.m_waiting = false;
             thisEnemy = null;
 
             //Open gate animation

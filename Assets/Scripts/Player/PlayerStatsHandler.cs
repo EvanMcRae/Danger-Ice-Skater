@@ -25,6 +25,8 @@ namespace Player {
         [SerializeField]
         public Animator anim;
 
+        public bool killed = false;
+
         public void Start() {
             health = maxHealth;
             hd.UpdateMaxHealth(maxHealth);
@@ -55,6 +57,7 @@ namespace Player {
             if (damage > 0 && health != 0) invincibilityTimer = invincibilityTime;
             if (health == 0) StartCoroutine(KillFromDamage());
             //KillFromDamage();
+            
             return health == 0;
         }
         
@@ -70,8 +73,10 @@ namespace Player {
 
         public IEnumerator KillFromDamage()
         {
+            AkUnitySoundEngine.PostEvent("PlayerDeath", gameObject);
             anim.SetTrigger("die");
-            
+            killed = true;
+
             // Optional delay before invoking the event
             yield return new WaitForSeconds(1.5f); // adjust as needed
 

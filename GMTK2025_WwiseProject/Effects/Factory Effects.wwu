@@ -1158,21 +1158,25 @@
 							<ChildrenList>
 								<Effect Name="Plate_Medium" ID="{33384D0C-6ACB-4E3D-AC82-73AAB3AE1CA5}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
 									<PropertyList>
-										<Property Name="DecayTime" Type="Real32" Value="1.9"/>
-										<Property Name="Density" Type="Real32" Value="60"/>
-										<Property Name="Diffusion" Type="Real32" Value="74"/>
-										<Property Name="ERLevel" Type="Real32" Value="-22"/>
+										<Property Name="DecayTime" Type="Real32" Value="0.7"/>
+										<Property Name="Density" Type="Real32" Value="82"/>
+										<Property Name="Diffusion" Type="Real32" Value="38"/>
+										<Property Name="DryLevel" Type="Real32" Value="-0.3"/>
+										<Property Name="ERLevel" Type="Real32" Value="-10"/>
 										<Property Name="ERPattern" Type="int32" Value="19"/>
+										<Property Name="EnableToneControls" Type="bool" Value="True"/>
 										<Property Name="Filter1Freq" Type="Real32" Value="590"/>
 										<Property Name="Filter1Gain" Type="Real32" Value="-2.5"/>
-										<Property Name="Filter2Freq" Type="Real32" Value="780"/>
+										<Property Name="Filter2Freq" Type="Real32" Value="2640"/>
+										<Property Name="Filter2Gain" Type="Real32" Value="-15.5"/>
 										<Property Name="HFDamping" Type="Real32" Value="3.05"/>
-										<Property Name="PreDelay" Type="Real32" Value="20"/>
-										<Property Name="Quality" Type="int32" Value="10"/>
-										<Property Name="ReverbLevel" Type="Real32" Value="-22"/>
+										<Property Name="InputLFELevel" Type="Real32" Value="-26.3"/>
+										<Property Name="PreDelay" Type="Real32" Value="0"/>
+										<Property Name="Quality" Type="int32" Value="6"/>
+										<Property Name="ReverbLevel" Type="Real32" Value="-17"/>
 										<Property Name="RoomShape" Type="Real32" Value="0"/>
 										<Property Name="RoomSize" Type="Real32" Value="27"/>
-										<Property Name="StereoWidth" Type="Real32" Value="165"/>
+										<Property Name="StereoWidth" Type="Real32" Value="0"/>
 									</PropertyList>
 								</Effect>
 								<Effect Name="Plate_Small" ID="{5681977F-CD7F-4D09-AA58-118BEFA48C8C}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
