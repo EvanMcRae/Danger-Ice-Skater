@@ -11,7 +11,7 @@ public class PlayerSoundsPlayer : MonoBehaviour
     {
         if (PauseManager.ShouldNotRun()) return;
         if (isGliding) return;
-        if (!playerController.isTouchingGround || PlayerController.fallThroughHole) return;
+        if (!playerController.isTouchingGround || PlayerController.fallThroughHole || playerController.psh.invincibilityTimer > 0) return;
         StepEvent?.Post(playerController.gameObject);
     }
     public void RunGlideSound()
@@ -25,7 +25,7 @@ public class PlayerSoundsPlayer : MonoBehaviour
     public void RunHurtSound()
     {
         if (PauseManager.ShouldNotRun()) return;
-        if (playerController.isTouchingGround)
+        if (playerController.isTouchingGround && !isGliding)
         {
             RunGlideSound();
         }
