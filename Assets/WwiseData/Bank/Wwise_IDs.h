@@ -33,6 +33,7 @@ namespace AK
         static const AkUniqueID PAUSEGAME = 1589270263U;
         static const AkUniqueID PENGUINFALL = 4286935516U;
         static const AkUniqueID PENGUINSTEP = 230254265U;
+        static const AkUniqueID PICKUP = 3978245845U;
         static const AkUniqueID PLAYERDASH = 2525052962U;
         static const AkUniqueID PLAYERDEATH = 1656947812U;
         static const AkUniqueID PLAYERGLIDE = 2683980149U;
@@ -41,6 +42,7 @@ namespace AK
         static const AkUniqueID PLAYERSPLASH = 972739039U;
         static const AkUniqueID PLAYERSTEP = 412471812U;
         static const AkUniqueID POINTSCORE = 2720783881U;
+        static const AkUniqueID PUCKGLIDE = 2478589141U;
         static const AkUniqueID PUCKHIT = 3993562277U;
         static const AkUniqueID RESUMEGAME = 1133184122U;
         static const AkUniqueID SELECTUI = 632323847U;
