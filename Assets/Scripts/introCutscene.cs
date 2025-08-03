@@ -2,6 +2,7 @@ using UnityEngine;
 using Input;
 using UnityEngine.UI;
 using TMPro;
+using Game;
 
 public class introCutscene : MonoBehaviour
 {
@@ -39,6 +40,7 @@ public class introCutscene : MonoBehaviour
         if (gameStarted)
         {
             player.GetComponent<PlayerController>().startCutsceneActive = false;
+            gameManager.GetComponent<GameController>().StartController();
             //Instantiate(gameManager);
             Destroy(gameObject);
         }
