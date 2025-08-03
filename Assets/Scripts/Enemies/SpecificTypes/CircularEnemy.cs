@@ -56,6 +56,10 @@ namespace Enemies
                 {
                     circleForce = minCircleForce;
                     rangeDelay = rangeTime;
+                    if (!isAttacking)
+                    {
+                        anim.Play("idle");
+                    }
                 }
 
                 if (isAttacking)
@@ -69,6 +73,10 @@ namespace Enemies
             //If it always tries to face the player, just always add force to the right or left
             if (clockwise) rb.AddForce(transform.right * -circleForce, ForceMode.Force);
             else rb.AddForce(transform.right * circleForce, ForceMode.Force);
+            if (!isAttacking)
+            {
+                anim.Play("skate");
+            }
         }
 
         public void AttackPlayer()
