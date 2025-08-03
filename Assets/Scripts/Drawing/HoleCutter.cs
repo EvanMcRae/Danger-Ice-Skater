@@ -20,7 +20,7 @@ public class HoleCutter : MonoBehaviour
     public const float LOOP_ALLOWANCE = 1f;
     public const int MIN_POINTS = 8;
     public const float RESOLUTION = 0.1f;
-    public const int MAX_POINTS = 200;
+    public const int MAX_POINTS = 300;
     public const int MIN_POINTS_FOR_HOLE = 25;
     private LineRenderer lineRenderer;
     private Vector3 lastPos;
