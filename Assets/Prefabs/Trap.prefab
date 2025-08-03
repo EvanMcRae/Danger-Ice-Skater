@@ -90,6 +90,7 @@ MonoBehaviour:
   destroyDelay: 10
   destroyOnPlayerCollision: 1
   explosion: {fileID: 6426180357193102234, guid: 3fe7db536d477b7489607998ae0e5bf4, type: 3}
+  trapModelPosition: {fileID: 4375717696352497767}
 --- !u!1001 &1991228160394743491
 PrefabInstance:
   m_ObjectHideFlags: 0

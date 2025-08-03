@@ -77,10 +77,8 @@ namespace Enemies
             if (!Physics.Raycast(transform.position, trapDir, 5, ~0)) {
                 anim.SetTrigger("trapping");
                 anim.Play("placeTrap");
-
-                trapDir.y -= 1.5f;
                 
-                GameObject trapInst = Instantiate(trap, transform.position +trapDir * 3, Quaternion.LookRotation(trapDir, Vector3.up));
+                GameObject trapInst = Instantiate(trap, transform.position +trapDir * 3 - new Vector3(0, 1.5f, 0), Quaternion.LookRotation(trapDir, Vector3.up));
                 trapInst.GetComponent<Rigidbody>().AddForce(dir * (Random.value * 5), ForceMode.Impulse);
                 return true;
             }
