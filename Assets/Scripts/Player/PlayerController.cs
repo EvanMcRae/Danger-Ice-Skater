@@ -61,6 +61,8 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 lastPos;
 
+    public bool startCutsceneActive = true;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -93,6 +95,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (PauseManager.ShouldNotRun()) return;
+        if (startCutsceneActive) return;
 
         if (imso.jump.action.WasPressedThisFrame()) Jump();
 
@@ -121,6 +124,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         if (PauseManager.ShouldNotRun()) return;
+        if (startCutsceneActive) return;
 
         //make the player move
         //modified by rigidbody's Linear Dampening
