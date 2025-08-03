@@ -216,7 +216,7 @@ public class PlayerController : MonoBehaviour
         currPos.y = 0;
         Vector2 horizVel = (currPos - lastPos) / Time.fixedDeltaTime;
         Debug.Log(horizVel.magnitude);
-        if (horizVel.magnitude >= 0.8f)
+        if (horizVel.magnitude >= 0.1f)
         {
             anim.SetBool("isMoving", true);
         }
