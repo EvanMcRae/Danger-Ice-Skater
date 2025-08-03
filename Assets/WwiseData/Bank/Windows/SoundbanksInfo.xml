@@ -55,14 +55,18 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" GUID="{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}" Language="SFX" Hash="{AA5D8103-3850-4FB2-C056-C81B403F18F8}">
+		<SoundBank Id="3161908922" Type="User" GUID="{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}" Language="SFX" Hash="{E39A247B-30A1-9C23-1F56-C3F357651C25}">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
 				<File Id="11736544" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Puck Hit.wav</ShortName>
-					<CachePath>F7/{F751E252-73AE-1544-5BA1-26E39CDD594F}.wem</CachePath>
+					<CachePath>A2/{A27C11A9-0952-FB1B-DDE5-697CB8DFF4D9}.wem</CachePath>
+				</File>
+				<File Id="77639479" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Back.wav</ShortName>
+					<CachePath>33/{330060C5-E3E1-5D5A-8470-432882CFB78C}.wem</CachePath>
 				</File>
 				<File Id="92250040" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Roar Death .wav</ShortName>
@@ -86,7 +90,7 @@
 				</File>
 				<File Id="179817375" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hit.wav</ShortName>
-					<CachePath>E3/{E3806391-6EA4-30C9-FF0A-39DF5059EC0B}.wem</CachePath>
+					<CachePath>4C/{4C2CC5E4-11A0-7FAA-A7AA-2D110EBA0370}.wem</CachePath>
 				</File>
 				<File Id="188607504" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Steps\Skate.wav</ShortName>
@@ -108,6 +112,10 @@
 					<ShortName>Steps\Step_6.wav</ShortName>
 					<CachePath>CC/{CC77F7B8-31E0-9341-C5D8-D8E495A401BA}.wem</CachePath>
 				</File>
+				<File Id="305725709" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Highlight.wav</ShortName>
+					<CachePath>9F/{9F5CEAA7-859D-CB07-F6BC-8B02BEEA6892}.wem</CachePath>
+				</File>
 				<File Id="323035877" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Steps\Skate.wav</ShortName>
 					<CachePath>A0/{A049082F-D3CF-5A1A-A619-F3E797A8C5CA}.wem</CachePath>
@@ -122,7 +130,7 @@
 				</File>
 				<File Id="333892847" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Puck Hit_3.wav</ShortName>
-					<CachePath>97/{97884F10-C01E-C0E5-0295-A9D9D0BF00AA}.wem</CachePath>
+					<CachePath>55/{553A8B98-1481-092E-A7F4-9AA84F60E930}.wem</CachePath>
 				</File>
 				<File Id="368301711" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Steps\Skate.wav</ShortName>
@@ -138,7 +146,7 @@
 				</File>
 				<File Id="408570755" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Puck Hit_2.wav</ShortName>
-					<CachePath>ED/{EDEBD405-FEF2-9ABD-1B9C-AF50F4108B99}.wem</CachePath>
+					<CachePath>37/{37A8D2C3-679A-6B2F-575C-8438D4AB5BAC}.wem</CachePath>
 				</File>
 				<File Id="418491581" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Gates Open.wav</ShortName>
@@ -179,6 +187,10 @@
 				<File Id="600996587" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Steps\Skate.wav</ShortName>
 					<CachePath>9D/{9D8B2D67-215F-DDF2-EA50-85BD83E5C3BA}.wem</CachePath>
+				</File>
+				<File Id="603071773" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Point Score_1.wav</ShortName>
+					<CachePath>9E/{9E525996-91B1-500A-76AE-88F68FF4F2BC}.wem</CachePath>
 				</File>
 				<File Id="604233743" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Gates Open_1.wav</ShortName>
@@ -244,6 +256,10 @@
 					<ShortName>Steps\Step.wav</ShortName>
 					<CachePath>8C/{8C84A7DD-9185-CBDF-F1F3-53228E1DDFEA}.wem</CachePath>
 				</File>
+				<File Id="826476561" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Select.wav</ShortName>
+					<CachePath>84/{840A2946-A0D6-3CFF-1A20-E83E4B6D2759}.wem</CachePath>
+				</File>
 				<File Id="835039389" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Steps\Step_5.wav</ShortName>
 					<CachePath>1F/{1FBBF64D-0DA1-DBAF-A9E3-0E08EEBEF1EA}.wem</CachePath>
@@ -268,9 +284,17 @@
 					<ShortName>Shark Death.wav</ShortName>
 					<CachePath>BF/{BFF28B8D-B07B-C6E7-EB1E-1A88E273DAAA}.wem</CachePath>
 				</File>
+				<File Id="957178055" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Start Game.wav</ShortName>
+					<CachePath>B2/{B2BD225F-73DE-91A1-C696-DAD21CCC3D27}.wem</CachePath>
+				</File>
 				<File Id="965355924" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Steps\Skate.wav</ShortName>
 					<CachePath>E1/{E17437F4-3CFF-9EDE-EE3D-251B9F561CFD}.wem</CachePath>
+				</File>
+				<File Id="984296191" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Point Score.wav</ShortName>
+					<CachePath>F5/{F553F4D0-3C7A-0B61-F48E-8557E739A196}.wem</CachePath>
 				</File>
 				<File Id="994630770" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Splash_2.wav</ShortName>
@@ -301,6 +325,11 @@
 				</ShareSets>
 			</Plugins>
 			<Events>
+				<Event Id="1389236414" Name="BackUI" ObjectPath="\Events\Default Work Unit\UI\BackUI" GUID="{16FD41C1-73D2-4024-8584-8EFCC6139BD3}" DurationType="OneShot" DurationMin="2" DurationMax="2">
+					<MediaRefs>
+						<MediaRef Id="77639479"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2458991111" Name="EndChomp" ObjectPath="\Events\Default Work Unit\Enemy\Shark\EndChomp" GUID="{E45E10AF-587C-42B4-A988-B3AE197CF032}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<MediaRefs>
 						<MediaRef Id="481543437"/>
@@ -412,6 +441,11 @@
 					<AuxBusRefs>
 						<AuxBusRef Id="348963605" Name="Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Reverb" GUID="{39432060-1A71-40A3-B958-9264FDE9BB75}"/>
 					</AuxBusRefs>
+				</Event>
+				<Event Id="2850027953" Name="HighlightUI" ObjectPath="\Events\Default Work Unit\UI\HighlightUI" GUID="{D831C8AA-E4CD-40E8-AACD-8C66071C22F6}" DurationType="OneShot" DurationMin="2" DurationMax="2">
+					<MediaRefs>
+						<MediaRef Id="305725709"/>
+					</MediaRefs>
 				</Event>
 				<Event Id="2891959439" Name="HockeyShoot" ObjectPath="\Events\Default Work Unit\Enemy\Hockey\HockeyShoot" GUID="{D602C855-4B10-46C4-8DE8-27CB08BE07CF}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2524064884" Name="HockeyStep" ObjectPath="\Events\Default Work Unit\Enemy\Hockey\HockeyStep" GUID="{93D161C4-0F1F-4426-87B4-4C057A1C7988}" DurationType="OneShot" DurationMin="0.31543648" DurationMax="0.342445">
@@ -574,6 +608,12 @@
 						<MediaRef Id="1008933578"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2720783881" Name="PointScore" ObjectPath="\Events\Default Work Unit\Environment\PointScore" GUID="{C1A9D683-9E86-4B1F-B3DE-B2F2D26FF22C}" DurationType="OneShot" DurationMin="2" DurationMax="2">
+					<MediaRefs>
+						<MediaRef Id="603071773"/>
+						<MediaRef Id="984296191"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3993562277" Name="PuckHit" ObjectPath="\Events\Default Work Unit\Enemy\Hockey\PuckHit" GUID="{A2FD3928-5C1F-4902-905C-5FEB6C426D17}" DurationType="OneShot" DurationMin="0.20400344" DurationMax="0.20400344">
 					<MediaRefs>
 						<MediaRef Id="179817375"/>
@@ -582,6 +622,11 @@
 				<Event Id="1133184122" Name="ResumeGame" ObjectPath="\Events\Default Work Unit\Utility\ResumeGame" GUID="{6EE39B59-5463-4465-AE39-2CF5CFD89D1F}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<MediaRefs>
 						<MediaRef Id="720322715"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="632323847" Name="SelectUI" ObjectPath="\Events\Default Work Unit\UI\SelectUI" GUID="{DF932278-9B4B-403C-AACB-25C0447FFB70}" DurationType="OneShot" DurationMin="2" DurationMax="2">
+					<MediaRefs>
+						<MediaRef Id="826476561"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3926006775" Name="SharkFall" ObjectPath="\Events\Default Work Unit\Enemy\Shark\SharkFall" GUID="{23D73999-01D8-4437-9F7A-739A9FBCFABD}" DurationType="OneShot" DurationMin="0.39199996" DurationMax="0.39199996">
@@ -617,6 +662,12 @@
 					<AuxBusRefs>
 						<AuxBusRef Id="348963605" Name="Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Reverb" GUID="{39432060-1A71-40A3-B958-9264FDE9BB75}"/>
 					</AuxBusRefs>
+				</Event>
+				<Event Id="1524436335" Name="StartGameUI" ObjectPath="\Events\Default Work Unit\UI\StartGameUI" GUID="{7E779D16-E9A6-46B5-A9B3-AAA4450E8F21}" DurationType="OneShot" DurationMin="0.74592066" DurationMax="0.74592066">
+					<MediaRefs>
+						<MediaRef Id="720322715"/>
+						<MediaRef Id="957178055"/>
+					</MediaRefs>
 				</Event>
 				<Event Id="1917263390" Name="StopMusic" ObjectPath="\Events\Default Work Unit\Music\StopMusic" GUID="{A56A5860-1D44-4E7C-9DFE-6660E5F55847}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3189472150" Name="StopSFX" ObjectPath="\Events\Default Work Unit\Utility\StopSFX" GUID="{8E5C8332-3E46-4982-9676-C79380634E61}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
@@ -722,5 +773,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{147381A1-E658-13B3-18A5-AE375BF6A54F}</FileHash>
+	<FileHash>{83000EAC-6637-658B-A91F-8B0ABFF89FAC}</FileHash>
 </SoundBanksInfo>
