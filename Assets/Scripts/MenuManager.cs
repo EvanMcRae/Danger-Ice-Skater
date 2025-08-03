@@ -39,6 +39,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     public GameObject settingsBackButton;
     private bool settingsOpen;
+    public GameObject WwiseGlobal;
 
     private void Start()
     {
@@ -51,11 +52,13 @@ public class MenuManager : MonoBehaviour
             //    menu.transform.DOMoveY(-Screen.height, 0f);
             //}
         }
+        PauseManager.globalWwise = WwiseGlobal;
     }
 
     public void StartGame()
     {
         if (!ScreenWipe.over) return;
+        AkUnitySoundEngine.PostEvent("StartGameUI", PauseManager.globalWwise);
         ScreenWipe.current.WipeIn();
         ScreenWipe.current.PostWipe += EnterGameScene;
     }
@@ -103,6 +106,7 @@ public class MenuManager : MonoBehaviour
     public void QuitGame()
     {
         if (!ScreenWipe.over) return;
+        AkUnitySoundEngine.PostEvent("BacKUI", PauseManager.globalWwise);
         ScreenWipe.current.WipeIn();
         ScreenWipe.current.PostWipe += ActuallyQuitGame;
     }
@@ -119,11 +123,14 @@ public class MenuManager : MonoBehaviour
 
     private void TurnOffMenus(int excludeMenu = -1)
     {
+        if (excludeMenu == -1)
+            AkUnitySoundEngine.PostEvent("BackUI", PauseManager.globalWwise);
+
         if (settingsOpen)
-        {
-            PlayerPrefs.Save();
-            settingsOpen = false;
-        }
+            {
+                PlayerPrefs.Save();
+                settingsOpen = false;
+            }
         for (int index = 0; index < Menus.Length; index++)
         {
             GameObject menu = Menus[index];
@@ -151,6 +158,8 @@ public class MenuManager : MonoBehaviour
 
     private void ActivateMenuWithAnimation(int index)
     {
+        AkUnitySoundEngine.PostEvent("SelectUI", PauseManager.globalWwise);
+
         GameObject menu = Menus[index];
         menu.GetComponent<RectTransform>().localScale = Vector3.one;
         menu.SetActive(true);

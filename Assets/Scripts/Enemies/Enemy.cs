@@ -30,6 +30,7 @@ namespace Enemies {
 
             EnemyDied();
             FloatingTextManager.instance.ShowFloatingSprite(fallPos);
+            AkUnitySoundEngine.PostEvent("PointScore", PauseManager.globalWwise);
 
             Destroy(gameObject);
         }
