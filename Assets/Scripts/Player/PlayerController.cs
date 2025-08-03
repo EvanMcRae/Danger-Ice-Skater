@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     public Rigidbody rb;
     public InputManager imso;
+    public PlayerSoundsPlayer psp;
 
     [SerializeField]
     PauseManager pm;
@@ -51,8 +52,14 @@ public class PlayerController : MonoBehaviour
 
     private bool inAir = false;
 
+    Vector3 priorVel;
+
+    private float pauseBankingTimerLen = .2f;
+    private float pauseBankingTimerStart = 0;
     [SerializeField]
     Slider staminaBar;
+
+    private Vector3 lastPos;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -62,10 +69,12 @@ public class PlayerController : MonoBehaviour
         pm = FindAnyObjectByType<PauseManager>();
         fallThroughHole = false;
 
-        if(staminaBar != null)
+        if (staminaBar != null)
         {
             staminaBar.maxValue = dashCooldown;
         }
+        lastPos = transform.position;
+        lastPos.y = 0;
     }
 
     // Update is called once per frame
@@ -83,7 +92,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (PauseManager.paused) return;
+        if (PauseManager.ShouldNotRun()) return;
 
         if (imso.jump.action.WasPressedThisFrame()) Jump();
 
@@ -98,7 +107,7 @@ public class PlayerController : MonoBehaviour
             dashTimer = dashCooldown;
         }
 
-        if(staminaBar != null)
+        if (staminaBar != null)
         {
             staminaBar.value = dashTimer;
         }
@@ -107,29 +116,22 @@ public class PlayerController : MonoBehaviour
         {
             fallThroughHoleTimer -= Time.deltaTime;
         }
-
-        Vector2 horizVel = new(rb.linearVelocity.x, rb.linearVelocity.z);
-        if (horizVel.magnitude >= 0.8f)
-        {
-            anim.SetBool("isMoving", true);
-        }
-        else
-        {
-            anim.SetBool("isMoving", false);
-        }
-        AkUnitySoundEngine.SetRTPCValue("playerVelocity", horizVel.magnitude);
     }
 
     void FixedUpdate()
     {
-        if (PauseManager.paused) return;
+        if (PauseManager.ShouldNotRun()) return;
 
         //make the player move
         //modified by rigidbody's Linear Dampening
         float horizontal = imso.xAxis.action.ReadValue<float>();
         float vertical = imso.yAxis.action.ReadValue<float>();
 
-        anim.SetBool("isInputting", horizontal != 0 || vertical != 0);
+        
+        anim.SetBool("useGlideAnim", (Vector2.Dot(new Vector2(horizontal, vertical), new Vector2(rb.linearVelocity.x, rb.linearVelocity.z)) > 0 && rb.linearVelocity.magnitude > 10)
+                                     || (horizontal == 0 && vertical == 0));
+
+        if (!anim.GetBool("useGlideAnim")) psp.isGliding = false;
 
         if (fallThroughHole)
         {
@@ -151,6 +153,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (!fallThroughHoleDamaged)
                 {
+                    psp.RunSplashSound();
                     fallThroughHoleDamaged = true;
                     psh.Damage(2);
                 }
@@ -170,7 +173,7 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-        
+
 
         if (rb.linearVelocity.x > 0 && horizontal < 0 || rb.linearVelocity.x < 0 && horizontal > 0)
         {
@@ -186,19 +189,37 @@ public class PlayerController : MonoBehaviour
         if (!fallThroughHole && new Vector3(rb.linearVelocity.x + horizontal, 0, rb.linearVelocity.z + vertical) != default)
         {
             transform.rotation = Quaternion.LookRotation(new Vector3(rb.linearVelocity.x + horizontal, 0, rb.linearVelocity.z + vertical), Vector3.up);
+           
         }
+
+
+        if ((anim.GetCurrentAnimatorStateInfo(0).IsName("Glide") || anim.GetCurrentAnimatorStateInfo(0).IsName("Skate")) && pauseBankingTimerStart + pauseBankingTimerLen < Time.time)
+        {
+            //Rotate player to lean into turns
+            //float bankingAmount = Mathf.Sin(Vector2.SignedAngle(new Vector2(rb.linearVelocity.x, rb.linearVelocity.z), new Vector2(horizontal, vertical)) * Mathf.Deg2Rad);
+            float bankingAmount = Mathf.Sin(Vector2.SignedAngle(new Vector2(rb.linearVelocity.x, rb.linearVelocity.z), new Vector2(priorVel.x, priorVel.z)) * Mathf.Deg2Rad);
+
+            //anim.transform.localRotation = Quaternion.Euler(0, 0, Mathf.Clamp(bankingAmount * -200 * (rb.linearVelocity.magnitude/11), -45, 45));
+            anim.transform.localRotation = Quaternion.Euler(0, 0, -Mathf.Clamp(bankingAmount * Mathf.Pow(rb.linearVelocity.magnitude, 2) * 1.5f, -45, 45));
+        }
+        else
+        {
+            anim.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            priorVel = new Vector3();
+        }
+        
 
 
         //Particle system effects
         ParticleSystem.MainModule particleMain = particles.main;
-        particleMain.startSpeed = rb.linearVelocity.magnitude/10;
+        particleMain.startSpeed = rb.linearVelocity.magnitude / 10;
         ParticleSystem.EmissionModule particleEmmission = particles.emission;
-        particleEmmission.rateOverTime = Mathf.Pow(rb.linearVelocity.magnitude/2,2);
+        particleEmmission.rateOverTime = Mathf.Pow(rb.linearVelocity.magnitude / 2, 2);
         if (isTouchingGround && !particles.isPlaying)
         {
             particles.Play();
         }
-        if(!isTouchingGround)
+        if (!isTouchingGround)
         {
             particles.Stop();
         }
@@ -209,12 +230,29 @@ public class PlayerController : MonoBehaviour
         // Debug.Log(moveDir);
         rb.AddForce(moveDir);
 
-        
-        if(transform.position.y < arenaFloor.transform.position.y)
+
+        if (transform.position.y < arenaFloor.transform.position.y)
         {
             rb.linearDamping = 4;
             rb.useGravity = false;
         }
+
+        priorVel = (4 * priorVel + rb.linearVelocity) / 5;
+
+        Vector3 currPos = transform.position;
+        currPos.y = 0;
+        Vector2 horizVel = (currPos - lastPos) / Time.fixedDeltaTime;
+        if (horizVel.magnitude >= 0.05f)
+        {
+            anim.SetBool("isMoving", true);
+        }
+        else
+        {
+            anim.SetBool("isMoving", false);
+            psp.isGliding = false;
+        }
+        AkUnitySoundEngine.SetRTPCValue("playerVelocity", 100f * Mathf.Clamp01(horizVel.magnitude / 10f));
+        lastPos = currPos;
     }
 
     
@@ -235,6 +273,8 @@ public class PlayerController : MonoBehaviour
                 anim.SetTrigger("land");
             }
         }
+        priorVel = rb.linearVelocity;
+        pauseBankingTimerStart = Time.time;
     }
 
     private void OnCollisionExit(Collision other)
@@ -250,6 +290,7 @@ public class PlayerController : MonoBehaviour
         Vector3 dir = new Vector3(imso.xAxis.action.ReadValue<float>(), 0, imso.yAxis.action.ReadValue<float>());
         rb.linearVelocity = Vector3.zero;
         rb.AddForce(dir * dashForce, ForceMode.Impulse);
+        priorVel = rb.linearVelocity;
     }
 
     public void Jump() {
@@ -260,5 +301,6 @@ public class PlayerController : MonoBehaviour
         anim.SetTrigger("jump");
         anim.ResetTrigger("land");
         inAir = true;
+        pauseBankingTimerStart = Time.time;
     }
 }

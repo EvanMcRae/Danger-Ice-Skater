@@ -38,7 +38,9 @@ namespace Enemies
         }
         public new void Update()
         {
-            if (PauseManager.paused) return;
+            if (PauseManager.ShouldNotRun()) return;
+            
+            base.Update();
 
             CheckIfCloseToWall(top.transform.position.z, bottom.transform.position.z, left.transform.position.x, right.transform.position.x);
             if (!movingAwayFromWall)

@@ -22,7 +22,7 @@ namespace Enemies.SpecificTypes {
             projectileTimer = projectileDelayMax;
         }
         public new void Update() {
-            if (PauseManager.paused) return;
+            if (PauseManager.ShouldNotRun()) return;
 
             if (!m_waiting && !m_isDead)
             {
