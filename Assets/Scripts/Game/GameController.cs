@@ -20,6 +20,8 @@ namespace Game {
         public bool tickDelay = true;
         public static float KILL_HEIGHT = -4f;
 
+        public PickupSpawner pickupSpawner;
+
         public int score;
 
         //public void Start()
@@ -33,6 +35,7 @@ namespace Game {
         {
             waveDelayTimer = timeBetweenWaves;
             waveStateHandler.StartGame();
+            pickupSpawner.StartSpawnLoop();
             score = 0;
         }
 
