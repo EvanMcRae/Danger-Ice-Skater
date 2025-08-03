@@ -69,6 +69,7 @@ namespace Waves {
             else {
                 finalSubwave = false;
                 WaveDone();
+                gc.gameEventBroadcaster.OnWaveClear.Invoke(ws.currentWaveCount);
             }
         }
 
