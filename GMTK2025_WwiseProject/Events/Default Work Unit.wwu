@@ -86,17 +86,6 @@
 						</Event>
 						<Event Name="GameOver" ID="{62315F2F-43DB-4459-B45B-E65EDC2E4F14}">
 							<ChildrenList>
-								<Action Name="" ID="{6E3BA86A-A93F-4ED9-9234-FC8AB2A652AB}" ShortID="349836090">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="2"/>
-										<Property Name="Scope" Type="int16" Value="1"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Music Switch" ID="{0770E6A8-DD92-4D4C-B486-93A021533D79}" WorkUnitID="{72CB28CD-56E5-4602-8B82-454C6ACE22C4}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
 								<Action Name="" ID="{9283A041-4D56-4271-9853-A6541884AC48}" ShortID="459462532">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="2"/>
@@ -116,6 +105,28 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Skates" ID="{78C948E0-F56D-4521-822D-BD83A7631CC3}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{884C988A-015D-4975-8753-325E0D81B2F2}" ShortID="256200667">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="38"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MusicSpeed" ID="{0AACEFE7-CCA8-4AB0-9BCB-AD4AEB1B4D0D}" WorkUnitID="{AA9D7DBE-CB2B-45C3-93D7-CBA6863CB875}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{9E5A6431-E2BB-4E91-94B3-533662B53BF5}" ShortID="231999061">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="23"/>
+										<Property Name="Delay" Type="Real64" Value="2.5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="GameOver" ID="{3535B191-1CFA-4E27-8179-4EAB12E105B9}" WorkUnitID="{96F1DF7E-81D2-4F50-9F39-99A2E5D279BB}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -269,7 +280,7 @@
 						</Folder>
 					</ChildrenList>
 				</Folder>
-				<Folder Name="UI" ID="{8F50C178-3D00-4210-AABF-5319FA168BE7}" ShortID="955776463">
+				<Folder Name="Utility" ID="{8F50C178-3D00-4210-AABF-5319FA168BE7}" ShortID="955776463">
 					<ChildrenList>
 						<Event Name="PauseGame" ID="{3E1FF75B-A95C-4AAC-8393-9E03EFB89250}">
 							<ChildrenList>
@@ -279,6 +290,17 @@
 										<Property Name="Scope" Type="int16" Value="1"/>
 									</PropertyList>
 									<ReferenceList/>
+								</Action>
+								<Action Name="" ID="{427F7733-E0C4-4692-B4C0-F99AA3C89BB4}" ShortID="26093031">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="12"/>
+										<Property Name="Volume" Type="Real64" Value="-96"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="LongSkate" ID="{DC7DFB9E-D900-47A0-BAB2-21F3FB0E120F}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
 								</Action>
 							</ChildrenList>
 						</Event>
@@ -291,6 +313,53 @@
 									</PropertyList>
 									<ReferenceList/>
 								</Action>
+								<Action Name="" ID="{BA260CDD-C790-4470-BD47-419E2898F69C}" ShortID="593779521">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="16"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="LongSkate" ID="{DC7DFB9E-D900-47A0-BAB2-21F3FB0E120F}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="StopSFX" ID="{8E5C8332-3E46-4982-9676-C79380634E61}">
+							<ChildrenList>
+								<Action Name="" ID="{97ED97CF-439A-4CD6-8AA0-CC4143E16B4D}" ShortID="790174670">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Enemy" ID="{00A5B2A1-9A90-40C7-8F66-FAD97043EB35}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{509EEA7B-1FDA-4665-84D3-5A7F5263C68B}" ShortID="531471459">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Player" ID="{7F6625A6-1464-4DC9-AF41-DC5EDF5E5CA0}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{26C7A420-F00B-46B5-9389-229C92594452}" ShortID="323140867">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Splashes" ID="{12A8AFB4-B27C-4749-9900-B862296E0322}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 					</ChildrenList>
@@ -302,6 +371,8 @@
 								<Action Name="" ID="{25D66511-28E3-4A07-82FD-7DE5F158F56F}" ShortID="197994508">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+										<Property Name="FadeTime" Type="Real64" Value="1.5"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
@@ -309,9 +380,21 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{4B5CEFBC-AC9C-43E3-886E-90B8EDFFAA3A}" ShortID="468121362">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="38"/>
+										<Property Name="GameParameterValue" Type="Real64" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MusicSpeed" ID="{0AACEFE7-CCA8-4AB0-9BCB-AD4AEB1B4D0D}" WorkUnitID="{AA9D7DBE-CB2B-45C3-93D7-CBA6863CB875}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 								<Action Name="" ID="{6B263DBB-B1FB-4284-B81F-FB551489A8D3}" ShortID="837161414">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="23"/>
+										<Property Name="Delay" Type="Real64" Value="1.5"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
@@ -320,6 +403,10 @@
 									</ReferenceList>
 								</Action>
 								<Action Name="" ID="{3F6EDA37-13A8-43A6-AF36-B9F1564C3968}" ShortID="624980043">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="1.5"/>
+										<Property Name="FadeInCurve" Type="int16" Value="5"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Music Switch" ID="{0770E6A8-DD92-4D4C-B486-93A021533D79}" WorkUnitID="{72CB28CD-56E5-4602-8B82-454C6ACE22C4}"/>
@@ -347,6 +434,8 @@
 								<Action Name="" ID="{D5FC20AF-C015-4A14-8FEE-9EE08911686B}" ShortID="395138077">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+										<Property Name="FadeTime" Type="Real64" Value="1.5"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
@@ -357,6 +446,7 @@
 								<Action Name="" ID="{9E2A9C01-7C5F-4740-A403-FC5151610342}" ShortID="21502706">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="23"/>
+										<Property Name="Delay" Type="Real64" Value="1.5"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
@@ -364,7 +454,24 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{030ED570-6B9A-4796-A88B-3CACF2B43243}" ShortID="1007228640">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="38"/>
+										<Property Name="Delay" Type="Real64" Value="1.5"/>
+										<Property Name="GameParameterValue" Type="Real64" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MusicSpeed" ID="{0AACEFE7-CCA8-4AB0-9BCB-AD4AEB1B4D0D}" WorkUnitID="{AA9D7DBE-CB2B-45C3-93D7-CBA6863CB875}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 								<Action Name="" ID="{04A56498-35B1-41D0-8CF5-ACAA45B62DEB}" ShortID="770806976">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="1.3"/>
+										<Property Name="FadeInCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="1.5"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Music Switch" ID="{0770E6A8-DD92-4D4C-B486-93A021533D79}" WorkUnitID="{72CB28CD-56E5-4602-8B82-454C6ACE22C4}"/>
