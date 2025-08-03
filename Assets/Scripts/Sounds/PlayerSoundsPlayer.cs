@@ -17,7 +17,7 @@ public class PlayerSoundsPlayer : MonoBehaviour
     public void RunGlideSound()
     {
         if (PauseManager.ShouldNotRun()) return;
-        if (!playerController.isTouchingGround || PlayerController.fallThroughHole) return;
+        if (!playerController.isTouchingGround || PlayerController.fallThroughHole || isGliding) return;
         isGliding = true;
         GlideEvent?.Post(playerController.gameObject);
     }

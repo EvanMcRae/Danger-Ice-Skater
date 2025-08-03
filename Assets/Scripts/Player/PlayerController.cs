@@ -127,14 +127,11 @@ public class PlayerController : MonoBehaviour
         float horizontal = imso.xAxis.action.ReadValue<float>();
         float vertical = imso.yAxis.action.ReadValue<float>();
 
-
         
         anim.SetBool("useGlideAnim", (Vector2.Dot(new Vector2(horizontal, vertical), new Vector2(rb.linearVelocity.x, rb.linearVelocity.z)) > 0 && rb.linearVelocity.magnitude > 10)
                                      || (horizontal == 0 && vertical == 0));
 
-        Debug.Log("Velocity:" + rb.linearVelocity.magnitude);
-
-        
+        if (!anim.GetBool("useGlideAnim")) psp.isGliding = false;
 
         if (fallThroughHole)
         {
@@ -242,9 +239,6 @@ public class PlayerController : MonoBehaviour
 
         priorVel = (4 * priorVel + rb.linearVelocity) / 5;
 
-        anim.SetBool("isInputting", horizontal != 0 || vertical != 0);
-        if (horizontal != 0 || vertical != 0) psp.isGliding = false;
-
         Vector3 currPos = transform.position;
         currPos.y = 0;
         Vector2 horizVel = (currPos - lastPos) / Time.fixedDeltaTime;
@@ -257,7 +251,7 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("isMoving", false);
             psp.isGliding = false;
         }
-        AkUnitySoundEngine.SetRTPCValue("playerVelocity", 100f * Mathf.Clamp01(horizVel.magnitude / 11.5f));
+        AkUnitySoundEngine.SetRTPCValue("playerVelocity", 100f * Mathf.Clamp01(horizVel.magnitude / 10f));
         lastPos = currPos;
     }
 
