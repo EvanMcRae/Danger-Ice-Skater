@@ -31,14 +31,18 @@ namespace Enemies.SpecificTypes {
             
             directionChangeTimer -= Time.deltaTime;
             if (directionChangeTimer <= 0) {
-                directionChangeTimer = directionChangeTime;
-                dir = new Vector3(Random.value * 2 - 1, 0, Random.value * 2 - 1).normalized;
-                if (Physics.Raycast(transform.position, dir, 2, 0)) {
-                    dir *= -1;
-                }
+                directionChangeTimer = directionChangeTime; 
+                RandomDir();
             }
             if (rotateTowardsPlayer) {
                 transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z), Vector3.up);
+            }
+        }
+
+        public void RandomDir() {
+            dir = new Vector3(Random.value * 2 - 1, 0, Random.value * 2 - 1).normalized;
+            if (Physics.Raycast(transform.position, dir, 2, 0)) {
+                dir *= -1;
             }
         }
 
@@ -51,6 +55,8 @@ namespace Enemies.SpecificTypes {
         }
 
         public void OnCollisionEnter(Collision collision) {
+            RandomDir();
+            
             if (pushPlayerOnCollision && collision.gameObject.CompareTag("Player")) {
                 Rigidbody playerRb = collision.gameObject.GetComponent<Rigidbody>();
 
