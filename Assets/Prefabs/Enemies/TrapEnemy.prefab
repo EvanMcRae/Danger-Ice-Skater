@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2537937922704579174}
   - component: {fileID: 8138859471652383118}
   - component: {fileID: 6028884704192459635}
+  - component: {fileID: 3497259682232375937}
   m_Layer: 9
   m_Name: TrapEnemy
   m_TagString: Enemy
@@ -116,6 +117,7 @@ MonoBehaviour:
   anim: {fileID: 6028884704192459635}
   canMove: 1
   movingAwayFromWall: 0
+  fallSFX: 
   player: {fileID: 0}
   rotateTowardsPlayer: 0
   move: 1
@@ -156,6 +158,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3497259682232375937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4314613379763922495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c262fe1b58a245d7a808848fcd56c46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepSound: FoxStep
 --- !u!1001 &5808434018404027205
 PrefabInstance:
   m_ObjectHideFlags: 0

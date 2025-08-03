@@ -137,7 +137,8 @@ namespace Enemies {
             base.Fall();
             anim.SetTrigger("falling");
             anim.Play("fall");
-            AkUnitySoundEngine.PostEvent(fallSFX, gameObject);
+            if (fallSFX != "")
+                AkUnitySoundEngine.PostEvent(fallSFX, gameObject);
         }
     }
 }

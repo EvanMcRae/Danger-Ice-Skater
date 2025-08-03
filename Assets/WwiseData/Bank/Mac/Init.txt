@@ -12,6 +12,9 @@ Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 	348963605	Reverb			\Default Work Unit\Master Audio Bus\SFX\Reverb	
 	1517463400	Distortion			\Default Work Unit\Master Audio Bus\SFX\Distortion	
 
+Effect plug-ins	ID	Name	Type				Notes
+	3900114836	Metal_Hangar	Wwise RoomVerb			
+
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			
 	3859886410	System	System			

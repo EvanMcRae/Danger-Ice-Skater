@@ -31,12 +31,12 @@ MonoBehaviour:
     - enemies:
       - enemy: 4
         count: 2
-      - enemy: 0
+      - enemy: 3
         count: 2
       randomEnemyCredits: 0
     - enemies:
-      - enemy: 0
-        count: 6
+      - enemy: 3
+        count: 3
       randomEnemyCredits: 0
     - enemies:
       - enemy: 4
@@ -44,7 +44,7 @@ MonoBehaviour:
       - enemy: 0
         count: 2
       - enemy: 3
-        count: 1
+        count: 2
       randomEnemyCredits: 0
     waveLevel: 0
   - subWaves:
@@ -58,7 +58,7 @@ MonoBehaviour:
       - enemy: 4
         count: 3
       - enemy: 3
-        count: 3
+        count: 2
       randomEnemyCredits: 0
     - enemies:
       - enemy: 2
@@ -90,16 +90,16 @@ MonoBehaviour:
       randomEnemyCredits: 0
     - enemies:
       - enemy: 3
-        count: 4
+        count: 3
       - enemy: 4
-        count: 2
+        count: 4
       - enemy: 1
-        count: 2
+        count: 1
       randomEnemyCredits: 0
     - enemies:
       - enemy: 1
-        count: 5
-      - enemy: 2
-        count: 3
+        count: 4
+      - enemy: 3
+        count: 4
       randomEnemyCredits: 0
     waveLevel: 0
