@@ -67,6 +67,10 @@ public class PlayerController : MonoBehaviour
 
     public GameObject splashPrefab;
 
+    public Image staminabarImage;
+    public Sprite happyImage;
+    public Sprite mehImage;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -122,6 +126,11 @@ public class PlayerController : MonoBehaviour
         if (staminaBar != null)
         {
             staminaBar.value = dashTimer;
+
+            if (dashTimer <= 0)
+                staminabarImage.sprite = happyImage;
+            else
+                staminabarImage.sprite = mehImage;
         }
 
         if (fallThroughHole)
@@ -329,6 +338,7 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(Vector3.up * dashForce, ForceMode.Impulse);
         anim.SetTrigger("jump");
         anim.ResetTrigger("land");
+        AkUnitySoundEngine.PostEvent("PlayerJump", gameObject);
         inAir = true;
         pauseBankingTimerStart = Time.time;
     }
