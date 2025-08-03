@@ -35,43 +35,6 @@
 											<PropertyList>
 												<Property Name="IsFolder" Type="bool" Value="True"/>
 											</PropertyList>
-											<ChildrenList>
-												<MusicTransition Name="Transition" ID="{BC60E98C-E0D7-4C9D-80D0-53704E6FE2E6}">
-													<PropertyList>
-														<Property Name="DestinationContextType" Type="int16" Value="2"/>
-														<Property Name="EnableDestinationFadeIn" Type="bool" Value="True"/>
-														<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
-														<Property Name="ExitSourceAt" Type="int16" Value="0"/>
-														<Property Name="SourceContextType" Type="int16" Value="2"/>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="DestinationContextObject">
-															<ObjectRef Name="Level Theme" ID="{67CC592A-167C-41EF-A15F-FBAE7F4BF26A}" WorkUnitID="{72CB28CD-56E5-4602-8B82-454C6ACE22C4}"/>
-														</Reference>
-														<Reference Name="SourceContextObject">
-															<ObjectRef Name="Menu Theme" ID="{E3B22AE3-CCD6-4032-8515-FC46A2649C85}" WorkUnitID="{72CB28CD-56E5-4602-8B82-454C6ACE22C4}"/>
-														</Reference>
-													</ReferenceList>
-													<TransitionInfo>
-														<SourceFadeOut>
-															<MusicFade Name="Source Fade-out" ID="{1E759516-4B65-4A6B-9F0C-2F94752E2E75}">
-																<PropertyList>
-																	<Property Name="FadeOffset" Type="Real64" Value="1"/>
-																	<Property Name="FadeTime" Type="Real64" Value="0.5"/>
-																	<Property Name="FadeType" Type="int16" Value="1"/>
-																</PropertyList>
-															</MusicFade>
-														</SourceFadeOut>
-														<DestinationFadeIn>
-															<MusicFade Name="Destination Fade-in" ID="{224159D7-A37E-4BD1-A61A-082AA039EC8D}">
-																<PropertyList>
-																	<Property Name="FadeOffset" Type="Real64" Value="2"/>
-																</PropertyList>
-															</MusicFade>
-														</DestinationFadeIn>
-													</TransitionInfo>
-												</MusicTransition>
-											</ChildrenList>
 											<TransitionInfo/>
 										</MusicTransition>
 									</ChildrenList>
@@ -334,6 +297,11 @@
 							<PropertyList>
 								<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
 								<Property Name="Tempo" Type="Real64" Value="139"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
