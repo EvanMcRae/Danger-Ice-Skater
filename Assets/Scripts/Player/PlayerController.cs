@@ -64,9 +64,12 @@ public class PlayerController : MonoBehaviour
     public bool startCutsceneActive = true;
     public bool startedThisFrame = false;
 
+    public GameObject splashPrefab;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        WaterSplashParticles.splashGameobj = splashPrefab;
         rb = GetComponent<Rigidbody>();
 
         pm = FindAnyObjectByType<PauseManager>();
@@ -164,6 +167,7 @@ public class PlayerController : MonoBehaviour
                 {
                     psp.RunSplashSound();
                     fallThroughHoleDamaged = true;
+                    WaterSplashParticles.CreateSplashParticles(transform.position.x, transform.position.z);
                     psh.Damage(2);
                 }
                 rb.useGravity = false;
