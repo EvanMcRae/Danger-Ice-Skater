@@ -20,16 +20,17 @@ namespace Enemies {
         }
 
         public new void Update() {
-            if (PauseManager.paused) return;
+            if (PauseManager.ShouldNotRun()) return;
 
             base.Update();
             if (rotateTowardsPlayer) {
-                transform.LookAt(player.transform);
+                transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z), Vector3.up);
+                //transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z);
             }
         }
 
         public void FixedUpdate() {
-            if (PauseManager.paused) return;
+            if (PauseManager.ShouldNotRun()) return;
 
             Vector3 vectorDiff = player.transform.position - transform.position;
             vectorDiff.Normalize();

@@ -11,7 +11,7 @@ public class gateOpen : MonoBehaviour
 
     public void Update()
     {
-        if (PauseManager.paused) return;
+        if (PauseManager.ShouldNotRun()) return;
 
         if (opened) Open();
         if (closing) Close();

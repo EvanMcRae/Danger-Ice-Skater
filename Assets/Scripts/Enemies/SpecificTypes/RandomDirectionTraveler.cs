@@ -25,7 +25,7 @@ namespace Enemies.SpecificTypes {
         }
 
         public new void Update() {
-            if (PauseManager.paused) return;
+            if (PauseManager.ShouldNotRun()) return;
             
             base.Update();
             
@@ -38,12 +38,12 @@ namespace Enemies.SpecificTypes {
                 }
             }
             if (rotateTowardsPlayer) {
-                transform.LookAt(player.transform);
+                transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z), Vector3.up);
             }
         }
 
         public void FixedUpdate() {
-            if (PauseManager.paused) return;
+            if (PauseManager.ShouldNotRun()) return;
             
             if (move) {
                 rb.AddForce(dir * moveForce, ForceMode.Force);
