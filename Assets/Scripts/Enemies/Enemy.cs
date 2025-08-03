@@ -18,7 +18,9 @@ namespace Enemies {
         public bool canMove = false;
         float moveForce = 2f;
         public bool movingAwayFromWall = false;
-        
+
+
+        public string fallSFX = "";
 
 
         public void DestroyEnemy()
@@ -63,6 +65,7 @@ namespace Enemies {
             if (transform.position.y <= GameController.KILL_HEIGHT && !m_isDead)
             {
                 WaterSplashParticles.CreateSplashParticles(transform.position.x, transform.position.z);
+                AkUnitySoundEngine.PostEvent("EnemySplash", gameObject);
                 DestroyEnemy();
             }
         }
@@ -134,6 +137,7 @@ namespace Enemies {
             base.Fall();
             anim.SetTrigger("falling");
             anim.Play("fall");
+            AkUnitySoundEngine.PostEvent(fallSFX, gameObject);
         }
     }
 }

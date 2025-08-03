@@ -18,6 +18,7 @@ namespace Enemies
 
         public new void Start()
         {
+            fallSFX = "SharkFall";
             base.Start();
             moveTowardsPlayer = true;
             rotateTowardsPlayer = true;

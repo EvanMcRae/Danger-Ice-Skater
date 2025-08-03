@@ -109,6 +109,7 @@ public class PauseManager : MonoBehaviour
     {
         ScreenWipe.current.WipeIn();
         ScreenWipe.current.PostWipe += GoToMainMenu;
+        AkUnitySoundEngine.PostEvent("StopSFX", WwiseGlobal);
     }
 
     public void GoToMainMenu()

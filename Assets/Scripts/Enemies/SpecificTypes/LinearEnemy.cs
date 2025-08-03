@@ -7,6 +7,7 @@ namespace Enemies
         public new void Start()
         {
             base.Start();
+            fallSFX = "PenguinFall";
             //moveTowardsPlayer = true;
         }
         public new void Update()
