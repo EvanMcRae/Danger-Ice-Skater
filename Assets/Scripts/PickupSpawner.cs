@@ -27,11 +27,17 @@ public class PickupSpawner : MonoBehaviour
 
     private void Start()
     {
+        
+    }
+
+    public void StartSpawnLoop()
+    {
         StartCoroutine(SpawnLoop());
     }
 
     private IEnumerator SpawnLoop()
     {
+        yield return new WaitForSeconds(1);
         while (true)
         {
             SpawnTwoPickups();
