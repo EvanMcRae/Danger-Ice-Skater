@@ -68,6 +68,8 @@ namespace Enemies {
                 AkUnitySoundEngine.PostEvent("EnemySplash", gameObject);
                 DestroyEnemy();
             }
+
+            
         }
 
         public float DistanceFromTarget(Vector3 target)
