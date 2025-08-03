@@ -63,17 +63,6 @@
 							<ChildrenList>
 								<Action Name="" ID="{B8675F7B-5B30-4393-AC7E-9F523B5B82A5}" ShortID="117496139">
 									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="2"/>
-										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="LongSkate" ID="{DC7DFB9E-D900-47A0-BAB2-21F3FB0E120F}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{077FDACE-BB39-49EE-8F3B-682F0D9A5159}" ShortID="458508572">
-									<PropertyList>
 										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
 									</PropertyList>
 									<ReferenceList>
@@ -179,17 +168,7 @@
 						<Folder Name="Hockey" ID="{257AF942-7EFA-492A-8E47-058CCED76509}" ShortID="601028921">
 							<ChildrenList>
 								<Event Name="HockeyShoot" ID="{D602C855-4B10-46C4-8DE8-27CB08BE07CF}"/>
-								<Event Name="HockeySwing" ID="{1FCCBCFA-EBAD-4B0A-B137-548F82F2342B}">
-									<ChildrenList>
-										<Action Name="" ID="{8F25BC1E-21C1-44E9-9307-01FC6F40981D}" ShortID="46977125">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="Hockey Swing" ID="{09A784B9-7D2E-428A-B167-F1B25686E57B}" WorkUnitID="{011BCBB3-3BD9-4294-9512-F4B94D42BCC6}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
+								<Event Name="HockeySwing" ID="{1FCCBCFA-EBAD-4B0A-B137-548F82F2342B}"/>
 								<Event Name="PuckHit" ID="{A2FD3928-5C1F-4902-905C-5FEB6C426D17}">
 									<ChildrenList>
 										<Action Name="" ID="{5099913D-20BF-4EEE-80E5-BCA8E6AFC58E}" ShortID="653933864">
@@ -249,6 +228,7 @@
 								<Action Name="" ID="{7DCC0670-B1E2-47DB-A772-F4E9397C34AB}" ShortID="259650832">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="8"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
 									</PropertyList>
 									<ReferenceList/>
 								</Action>
@@ -259,6 +239,7 @@
 								<Action Name="" ID="{AE4B2F0C-7E77-4892-AC1B-EBFDB72481CF}" ShortID="703187481">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="10"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
 									</PropertyList>
 									<ReferenceList/>
 								</Action>

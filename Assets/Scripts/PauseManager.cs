@@ -38,6 +38,8 @@ public class PauseManager : MonoBehaviour
     private bool menuOpen = false;
     private Sequence mySequence = null;
 
+    public GameObject WwiseGlobal;
+
     private void Start()
     {
         startPositions = new List<float>();
@@ -60,6 +62,7 @@ public class PauseManager : MonoBehaviour
         paused = true;
         Cursor.visible = true;
         eventSystem.SetSelectedGameObject(playButton);
+        AkUnitySoundEngine.PostEvent("PauseGame", WwiseGlobal);
     }
 
     public void Unpause()
@@ -80,6 +83,7 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = 1;
         Menus[0].SetActive(false);
         paused = false;
+        AkUnitySoundEngine.PostEvent("ResumeGame", WwiseGlobal);
         Cursor.visible = false;
     }
 
