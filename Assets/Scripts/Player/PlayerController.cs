@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
         {
             if (PauseManager.paused)
             {
-                pm.Unpause();
+                pm.Unpause(false);
             }
             else
             {

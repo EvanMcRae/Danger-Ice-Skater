@@ -94,7 +94,7 @@
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>
 					<CurrentSwitchList ShowAll="true">
-						<CurrentSwitchRef Name="Level" ID="{E65BD47D-CC9E-4A96-B6E1-9D6CD99CAC00}"/>
+						<CurrentSwitchRef Name="GameOver" ID="{3535B191-1CFA-4E27-8179-4EAB12E105B9}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>

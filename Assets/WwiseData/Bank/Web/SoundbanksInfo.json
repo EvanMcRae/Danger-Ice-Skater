@@ -165,7 +165,7 @@
     "Type": "User",
     "GUID": "{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}",
     "Language": "SFX",
-    "Hash": "{A1A02483-0966-9C08-8A93-86AB1D14E049}",
+    "Hash": "{8C7E6670-0D1F-FF73-B787-66EEDD4086C2}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -432,7 +432,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Player Death.wav",
-      "CachePath": "3D/{3D337DB2-7496-FBF9-AB20-406104F18A9E}.wem"
+      "CachePath": "6E/{6E3E7E08-0AB3-DE9E-F271-8BE8081F4558}.wem"
      },
      {
       "Id": "589060082",
@@ -456,7 +456,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Point Score_1.wav",
-      "CachePath": "9E/{9E525996-91B1-500A-76AE-88F68FF4F2BC}.wem"
+      "CachePath": "4D/{4DBDF886-9A3F-DA23-2F80-97D17BF7C5DA}.wem"
      },
      {
       "Id": "604233743",
@@ -528,7 +528,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "AfterExplode.wav",
-      "CachePath": "02/{0201207B-04C0-778F-1823-2B72ECE9F56A}.wem"
+      "CachePath": "BA/{BAEF0671-FD46-5E02-2A05-53D66777C889}.wem"
      },
      {
       "Id": "731922532",
@@ -592,7 +592,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Explosion Impact.wav",
-      "CachePath": "FC/{FCD15B0E-EAD6-321A-A6EE-466D99FCBB3F}.wem"
+      "CachePath": "BE/{BE85C2FE-238B-D701-3226-A7457246D337}.wem"
      },
      {
       "Id": "817391603",
@@ -688,7 +688,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Point Score.wav",
-      "CachePath": "F5/{F553F4D0-3C7A-0B61-F48E-8557E739A196}.wem"
+      "CachePath": "FC/{FCB0386B-8155-1584-89A3-93396D6A79AB}.wem"
      },
      {
       "Id": "994630770",
@@ -1462,6 +1462,28 @@
       ]
      },
      {
+      "Id": "3978245845",
+      "Name": "Pickup",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player\\Pickup",
+      "GUID": "{694A28E5-4760-44C0-A71B-6F7338C0538A}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.30082256",
+      "DurationMax": "0.30082256",
+      "MediaRefs": [
+       {
+        "Id": "603071773"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "348963605",
+        "Name": "Reverb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
+        "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
+       }
+      ]
+     },
+     {
       "Id": "2525052962",
       "Name": "PlayerDash",
       "ObjectPath": "\\Events\\Default Work Unit\\Player\\PlayerDash",
@@ -1644,17 +1666,42 @@
      {
       "Id": "2720783881",
       "Name": "PointScore",
-      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\PointScore",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player\\PointScore",
       "GUID": "{C1A9D683-9E86-4B1F-B3DE-B2F2D26FF22C}",
       "DurationType": "OneShot",
-      "DurationMin": "2",
-      "DurationMax": "2",
+      "DurationMin": "0.30082256",
+      "DurationMax": "0.30082256",
       "MediaRefs": [
        {
-        "Id": "603071773"
-       },
-       {
         "Id": "984296191"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "348963605",
+        "Name": "Reverb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
+        "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
+       }
+      ]
+     },
+     {
+      "Id": "2478589141",
+      "Name": "PuckGlide",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enemy\\Hockey\\PuckGlide",
+      "GUID": "{7D4F2260-1999-4FDC-A067-10DA73E951BD}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "720322715"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "348963605",
+        "Name": "Reverb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX\\Reverb",
+        "GUID": "{39432060-1A71-40A3-B958-9264FDE9BB75}"
        }
       ]
      },
@@ -2027,8 +2074,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Enemy\\Fox\\TrapExplode",
       "GUID": "{64F62B54-52AC-43DE-BFF6-8BB8D3772A86}",
       "DurationType": "OneShot",
-      "DurationMin": "1.1063749",
-      "DurationMax": "1.1063749",
+      "DurationMin": "1.5350922",
+      "DurationMax": "1.5350922",
       "MediaRefs": [
        {
         "Id": "722765083"
@@ -2188,6 +2235,6 @@
     ]
    }
   ],
-  "FileHash": "{7EC0E6BB-C951-ACA3-3AF0-39558B7FAA31}"
+  "FileHash": "{22B19A03-84CB-34C9-914A-EA37D169E679}"
  }
 }

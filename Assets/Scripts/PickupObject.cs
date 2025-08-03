@@ -37,6 +37,7 @@ public class PickupObject : MonoBehaviour
             FloatingTextManager.instance.ShowFloatingSprite(transform.position);
             gameController.pickUp();
             psh.Heal(1);
+            AkUnitySoundEngine.PostEvent("Pickup", psh.gameObject);
             Debug.Log("Player picked up: " + gameObject.name);
             Destroy(gameObject);
         }
