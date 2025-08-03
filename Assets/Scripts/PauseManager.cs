@@ -66,11 +66,12 @@ public class PauseManager : MonoBehaviour
         Menus[0].SetActive(true);
         paused = true;
         Cursor.visible = true;
+        MenuManager.pleaseNoSound = true;
         eventSystem.SetSelectedGameObject(playButton);
         AkUnitySoundEngine.PostEvent("PauseGame", WwiseGlobal);
     }
 
-    public void Unpause()
+    public void Unpause(bool user = true)
     {
         if (menuOpen)
         {
@@ -81,6 +82,8 @@ public class PauseManager : MonoBehaviour
         Menus[0].SetActive(false);
         paused = false;
         AkUnitySoundEngine.PostEvent("ResumeGame", WwiseGlobal);
+        if (user)
+            AkUnitySoundEngine.PostEvent("SelectUI", WwiseGlobal);
         Cursor.visible = false;
     }
 
@@ -90,6 +93,7 @@ public class PauseManager : MonoBehaviour
         TurnOffMenus();
         AkUnitySoundEngine.PostEvent("BackUI", WwiseGlobal);
         Menus[0].SetActive(true);
+        MenuManager.pleaseNoSound = true;
         eventSystem.SetSelectedGameObject(settingsButton);
     }
 
@@ -97,12 +101,15 @@ public class PauseManager : MonoBehaviour
     {
         TurnOffMenus(1);
         ActivateMenuWithAnimation(1);
+        AkUnitySoundEngine.PostEvent("SelectUI", WwiseGlobal);
         menuOpen = true;
+        MenuManager.pleaseNoSound = true;
         eventSystem.SetSelectedGameObject(settingsBackButton);
     }
 
     public void MainMenu()
     {
+        AkUnitySoundEngine.PostEvent("BackUI", WwiseGlobal);
         ScreenWipe.current.WipeIn();
         ScreenWipe.current.PostWipe += GoToMainMenu;
     }
@@ -126,16 +133,18 @@ public class PauseManager : MonoBehaviour
             {
                 float startPos = menu.transform.position.y;
 
+                MenuManager.tweening = true;
                 DG.Tweening.Sequence mySequence = DOTween.Sequence();
                 mySequence.Append(menu.transform.DOMoveY(-Screen.height, .4f));
                 mySequence.SetUpdate(true);
-
+                
                 if (index != excludeMenu)
                 {
                     mySequence.OnComplete(() =>
                     {
                         menu.transform.DOMoveY(startPos, 0f).SetUpdate(true);
                         menu.SetActive(false);
+                        MenuManager.tweening = false;
                     });
                 }
             }
@@ -155,10 +164,15 @@ public class PauseManager : MonoBehaviour
         pos.y = -Screen.height;
         Menus[index].transform.position = pos;
 
+        MenuManager.tweening = true;
         DG.Tweening.Sequence mySequence = DOTween.Sequence();
         mySequence.Append(menu.transform.DOMoveY(startPos + 50, .4f));
         mySequence.Append(menu.transform.DOMoveY(startPos, .5f));
         mySequence.SetUpdate(true);
+        mySequence.OnComplete(() =>
+        {
+            MenuManager.tweening = false;
+        });
     }
 
     private void OnDestroy()

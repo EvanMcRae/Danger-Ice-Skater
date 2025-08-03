@@ -1685,6 +1685,7 @@ GameObject:
   - component: {fileID: 3339294537347007359}
   - component: {fileID: 3290563131471644896}
   - component: {fileID: 8101263337610870300}
+  - component: {fileID: 1631700213839990223}
   m_Layer: 5
   m_Name: Main Menu Button
   m_TagString: Untagged
@@ -1807,6 +1808,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1631700213839990223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2256440430669353830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79219abd6765e4ef6b14a41c6b9492df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2478348166207511230
 GameObject:
   m_ObjectHideFlags: 0
@@ -3861,6 +3874,7 @@ GameObject:
   - component: {fileID: 14604527047029276}
   - component: {fileID: 1755901287181852311}
   - component: {fileID: 8942229407182271241}
+  - component: {fileID: 8221067738369575028}
   m_Layer: 5
   m_Name: Settings Button
   m_TagString: Untagged
@@ -3983,6 +3997,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8221067738369575028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6045652433369435514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79219abd6765e4ef6b14a41c6b9492df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6167745421120086562
 GameObject:
   m_ObjectHideFlags: 0
@@ -5411,6 +5437,7 @@ GameObject:
   - component: {fileID: 1485309302241759082}
   - component: {fileID: 8854357058239085878}
   - component: {fileID: 8194518309984159998}
+  - component: {fileID: 680755265080045238}
   m_Layer: 5
   m_Name: Resume Button
   m_TagString: Untagged
@@ -5524,15 +5551,27 @@ MonoBehaviour:
       - m_Target: {fileID: 8516922417927150815}
         m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
         m_MethodName: Unpause
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &680755265080045238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8546162174043694085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79219abd6765e4ef6b14a41c6b9492df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8689488953149025132
 GameObject:
   m_ObjectHideFlags: 0
