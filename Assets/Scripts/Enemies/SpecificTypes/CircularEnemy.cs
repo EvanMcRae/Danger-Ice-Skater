@@ -77,9 +77,10 @@ namespace Enemies
             if (dashDelay >= dashTime - .01f) {
                 anim.Play("dash");
                 Vector3 vectorDiff = player.transform.position - transform.position;
-                vectorDiff.Normalize();
+                Vector3 fixedVector = new Vector3(vectorDiff.x, 0, vectorDiff.z);
+                fixedVector.Normalize();
 
-                rb.AddForce(vectorDiff * dashForce, ForceMode.Impulse);
+                rb.AddForce(fixedVector * dashForce, ForceMode.Impulse);
             }
             else if(dashDelay >= dashTime - 3f) moveTowardsPlayer = false;
 

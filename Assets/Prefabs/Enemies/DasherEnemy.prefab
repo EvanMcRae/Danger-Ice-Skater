@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a98904ea505f4622a630aa3184ee790c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fallPos: {x: 0, y: 0, z: 0}
   gameEventBroadcaster: {fileID: 11400000, guid: f8714c97c5f2ac84fa1762773bdaad01, type: 2}
   rb: {fileID: 4713842041731944712}
   m_isDead: 0
@@ -167,7 +168,7 @@ MonoBehaviour:
   dashTimerMin: 3
   dashTimerMax: 7
   dashDelay: 0
-  dashForce: 20
+  dashForce: 15
 --- !u!95 &1996957714703517974
 Animator:
   serializedVersion: 7

@@ -33,9 +33,10 @@ namespace Enemies {
             if (PauseManager.paused) return;
 
             Vector3 vectorDiff = player.transform.position - transform.position;
-            vectorDiff.Normalize();
+            Vector3 fixedDiff = new Vector3(vectorDiff.x, 0, vectorDiff.z);
+            fixedDiff.Normalize();
             if (moveTowardsPlayer) {
-                rb.AddForce(vectorDiff * moveForce, ForceMode.Force);
+                rb.AddForce(fixedDiff * moveForce, ForceMode.Force);
             }
         }
 

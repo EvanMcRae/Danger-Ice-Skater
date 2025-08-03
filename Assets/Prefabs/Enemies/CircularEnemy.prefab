@@ -120,7 +120,7 @@ MonoBehaviour:
   pushPlayerOnCollision: 0
   pushForce: 0
   moveForce: 10
-  dashForce: 12
+  dashForce: 8
   minCircleForce: 2
   rangeTime: 5
   dashTime: 3
