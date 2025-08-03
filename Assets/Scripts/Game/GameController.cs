@@ -69,5 +69,13 @@ namespace Game {
             score += 1;
             gameEventBroadcaster.OnScoreIncreased.Invoke(score);
         }
+
+        public void pickUp()
+        {
+            score += 1;
+            gameEventBroadcaster.OnScoreIncreased.Invoke(score);
+        }
+
+       
     }
 }
