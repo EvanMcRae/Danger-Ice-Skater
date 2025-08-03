@@ -5025,7 +5025,7 @@ MonoBehaviour:
   invincibilityTime: 1
   health: 0
   maxHealth: 10
-  waveClearHealAmount: 0
+  waveClearHealAmount: 3
   anim: {fileID: 462644127917268244}
 --- !u!1001 &2959719243466186490
 PrefabInstance:
