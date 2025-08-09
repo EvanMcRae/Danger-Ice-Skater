@@ -253,12 +253,20 @@ public class PlayerController : MonoBehaviour
         {
             particles.Stop();
         }
-
-
+        
         Vector3 moveDir = new Vector3(horizontal * acceleration, 0, vertical * acceleration);
 
+        // Detect wall in front and cancel movement
+        if (Physics.Raycast(new Ray(transform.position, transform.forward), out RaycastHit wallHit, 0.55f, 1 << 11 | 1 << 12))
+        {
+            if (Vector3.Dot(moveDir.normalized, -wallHit.normal) > 0.5f)
+            {
+                moveDir = Vector3.ProjectOnPlane(moveDir, wallHit.normal);
+            }
+        }
+
         // Debug.Log(moveDir);
-        rb.AddForce(moveDir);
+            rb.AddForce(moveDir);
 
 
         if (transform.position.y < arenaFloor.transform.position.y)
