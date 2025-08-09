@@ -3476,6 +3476,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 191498367}
     - target: {fileID: 5643735597784242806, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
+      propertyPath: WwiseGlobal
+      value: 
+      objectReference: {fileID: 355807174}
+    - target: {fileID: 5643735597784242806, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 343089337}

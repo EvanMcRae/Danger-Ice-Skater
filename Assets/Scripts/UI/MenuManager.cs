@@ -55,7 +55,9 @@ public class MenuManager : MonoBehaviour
             //    menu.transform.DOMoveY(-Screen.height, 0f);
             //}
         }
-        PauseManager.globalWwise = WwiseGlobal;
+        if (PauseManager.globalWwise == null)
+            PauseManager.globalWwise = WwiseGlobal;
+        AkUnitySoundEngine.PostEvent("MenuMusic", PauseManager.globalWwise);
     }
 
     public void StartGame()
