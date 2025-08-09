@@ -44,6 +44,11 @@ public class MenuManager : MonoBehaviour
     public static bool tweening = false;
     public GameObject previousButton;
 
+    private void Awake()
+    {
+        pleaseNoSound = true;
+    }
+    
     private void Start()
     {
         startPositions = new List<float>(); ///[Menus.Length];
