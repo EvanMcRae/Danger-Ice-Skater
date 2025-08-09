@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (imso.pause.action.WasPressedThisFrame() && pm != null && psh != null && psh.health != 0)
+        if (imso.pause.action.WasPressedThisFrame() && pm != null && psh != null && psh.health != 0 && ScreenWipe.over)
         {
             if (PauseManager.paused)
             {
