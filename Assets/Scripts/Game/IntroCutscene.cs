@@ -5,7 +5,7 @@ using TMPro;
 using Game;
 using DG.Tweening;
 
-public class introCutscene : MonoBehaviour
+public class IntroCutscene : MonoBehaviour
 {
     public GameObject gameManager, player;
     public GameObject nextButton, charSprite, textBox;
