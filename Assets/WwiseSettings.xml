@@ -21,7 +21,7 @@
   <PackageSource>https://github.com/danielambrits/WwiseUnityAddressables</PackageSource>
   <AddressableBankFolder>WwiseData/Bank</AddressableBankFolder>
   <UseCustomBuildScript>false</UseCustomBuildScript>
-  <AddressableAssetBuilderPath>Assets/AddressableAssetsData/DataBuilders/BuildScriptWwisePacked.asset</AddressableAssetBuilderPath>
+  <AddressableAssetBuilderPath>Assets/AddressableAssetsData/DataBuilders\BuildScriptWwisePacked.asset</AddressableAssetBuilderPath>
   <AutomaticallyUpdateExternalSourcesPath>false</AutomaticallyUpdateExternalSourcesPath>
   <ExternalSourcesPath>WwiseData/Bank</ExternalSourcesPath>
   <XMLTranslatorTimeout>0</XMLTranslatorTimeout>

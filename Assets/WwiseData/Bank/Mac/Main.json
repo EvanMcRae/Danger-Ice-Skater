@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{96CF619C-681C-4D4D-9A6C-F0BDE432C60E}",
     "Language": "SFX",
-    "Hash": "{C85B70F8-D09E-310F-7945-35D30C4F2B96}",
+    "Hash": "{8C7E6670-0D1F-FF73-B787-66EEDD4086C2}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -301,7 +301,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Point Score_1.wav",
-      "CachePath": "FD/{FD874125-1784-DC17-6BE4-B3A6C576F9AF}.wem"
+      "CachePath": "4D/{4DBDF886-9A3F-DA23-2F80-97D17BF7C5DA}.wem"
      },
      {
       "Id": "604233743",
@@ -373,7 +373,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "AfterExplode.wav",
-      "CachePath": "66/{6682B888-F898-07C8-97F6-D255CE61CD4F}.wem"
+      "CachePath": "BA/{BAEF0671-FD46-5E02-2A05-53D66777C889}.wem"
      },
      {
       "Id": "731922532",
@@ -437,7 +437,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Explosion Impact.wav",
-      "CachePath": "B4/{B42459EE-17EF-70FC-A684-9FF137FA3464}.wem"
+      "CachePath": "BE/{BE85C2FE-238B-D701-3226-A7457246D337}.wem"
      },
      {
       "Id": "817391603",
@@ -533,7 +533,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Point Score.wav",
-      "CachePath": "05/{0520742F-6A97-E165-E5BD-3CCA1FA4BA2D}.wem"
+      "CachePath": "FC/{FCB0386B-8155-1584-89A3-93396D6A79AB}.wem"
      },
      {
       "Id": "994630770",
@@ -2080,6 +2080,6 @@
     ]
    }
   ],
-  "FileHash": "{F18AD152-D067-5EB7-86FE-D4D6D5C87BBF}"
+  "FileHash": "{15D75633-D1BD-88A3-5B2C-2C5E98B286BF}"
  }
 }
