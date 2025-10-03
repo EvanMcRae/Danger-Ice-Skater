@@ -4401,6 +4401,9 @@ MonoBehaviour:
   text: {fileID: 1732041389}
   imso: {fileID: 11400000, guid: 3839af05cfba756429ff20761423c8fa, type: 2}
   gameStarted: 0
+  PlayerImage: {fileID: 0}
+  happyImage: {fileID: 0}
+  mehImage: {fileID: 0}
 --- !u!4 &1341631291
 Transform:
   m_ObjectHideFlags: 0
@@ -6048,6 +6051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notifAnimation: {fileID: 1823138981}
+  geb: {fileID: 0}
 --- !u!95 &1823138981
 Animator:
   serializedVersion: 7

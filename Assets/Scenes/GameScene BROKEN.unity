@@ -1749,6 +1749,7 @@ MonoBehaviour:
   timeBetweenWaves: 5
   waveDelayTimer: 0
   tickDelay: 1
+  pickupSpawner: {fileID: 0}
   score: 0
 --- !u!4 &343089340
 Transform:
@@ -6309,6 +6310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notifAnimation: {fileID: 1823138981}
+  geb: {fileID: 0}
 --- !u!95 &1823138981
 Animator:
   serializedVersion: 7

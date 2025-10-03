@@ -603,6 +603,7 @@ MonoBehaviour:
   timeBetweenWaves: 5
   waveDelayTimer: 0
   tickDelay: 1
+  pickupSpawner: {fileID: 0}
   score: 0
 --- !u!4 &1068397258
 Transform:
