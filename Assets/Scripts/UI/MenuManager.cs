@@ -43,6 +43,7 @@ public class MenuManager : MonoBehaviour
     public static bool pleaseNoSound = true;
     public static bool tweening = false;
     public GameObject previousButton;
+    public AK.Wwise.Event MusicEvent;
 
     private void Awake()
     {
@@ -62,7 +63,8 @@ public class MenuManager : MonoBehaviour
         }
         if (PauseManager.globalWwise == null)
             PauseManager.globalWwise = WwiseGlobal;
-        AkUnitySoundEngine.PostEvent("MenuMusic", PauseManager.globalWwise);
+        
+        MusicEvent?.Post(PauseManager.globalWwise);
     }
 
     public void StartGame()

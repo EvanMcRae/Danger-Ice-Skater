@@ -2208,8 +2208,8 @@ GameObject:
   - component: {fileID: 355807176}
   - component: {fileID: 355807175}
   - component: {fileID: 355807177}
-  - component: {fileID: 355807180}
   - component: {fileID: 355807179}
+  - component: {fileID: 355807181}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -2294,7 +2294,7 @@ MonoBehaviour:
   scalingFactor: 1
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
---- !u!114 &355807180
+--- !u!114 &355807181
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2306,7 +2306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f342b9ec1ea4eff984bee80cb0f4c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerList: f7e1664c
+  triggerList: ae8d9d44
   useOtherObject: 0
   data:
     idInternal: 0
@@ -3828,6 +3828,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 343089337}
+    - target: {fileID: 5643735597784242806, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
+      propertyPath: MusicSwitch.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 8a89fe83070294136b45bd54ca4324d8, type: 2}
     - target: {fileID: 6228216940521737829, guid: 63cc1aa80b7ae2c4cb855d3bd3250c2a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
