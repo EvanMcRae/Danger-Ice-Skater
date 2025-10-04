@@ -943,6 +943,14 @@ MonoBehaviour:
   PlayerImage: {fileID: 0}
   happyImage: {fileID: 0}
   mehImage: {fileID: 0}
+  MenuMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 042c94a95f4a446dea8cf7519cd807e8, type: 2}
+  LightDrumTrack:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 5a69f8804089d4eccb43f5b60086fcbb, type: 2}
 --- !u!1 &882997991429394672
 GameObject:
   m_ObjectHideFlags: 0

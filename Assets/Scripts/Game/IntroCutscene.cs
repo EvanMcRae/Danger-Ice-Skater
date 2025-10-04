@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 using Game;
 using DG.Tweening;
+using System;
 
 public class IntroCutscene : MonoBehaviour
 {
@@ -33,25 +34,35 @@ public class IntroCutscene : MonoBehaviour
     public Sprite happyImage;
     public Sprite mehImage;
 
+    public AK.Wwise.Event MenuMusic, LightDrumTrack;
+    public GameObject globalWwise;
+
     public void Start()
     {
         text.text = dialogue[index];
         anim = nextButton.GetComponent<Animator>();
         if (PauseManager.globalWwise != null)
         {
-            AkUnitySoundEngine.PostEvent("LightDrumTrack", PauseManager.globalWwise);
+            globalWwise = PauseManager.globalWwise;
+            LightDrumTrack?.Post(globalWwise);
         }
         else // For testing
         {
-            GameObject globalWwise = FindFirstObjectByType<AkInitializer>().gameObject;
-            AkUnitySoundEngine.PostEvent("MenuMusic", globalWwise);
-            Invoke(nameof(PlayDrumTrack), 1f);
+            globalWwise = FindFirstObjectByType<AkInitializer>().gameObject;
+            MenuMusic?.Post(globalWwise, (uint)AkCallbackType.AK_MusicPlayStarted, PostEvent);
+            AkUnitySoundEngine.SetRTPCValue("musicVolume", 0);
         }
     }
 
-    void PlayDrumTrack()
+    private void PostEvent(object in_cookie, AkCallbackType in_type, AkCallbackInfo in_info)
     {
-        AkUnitySoundEngine.PostEvent("LightDrumTrack", PauseManager.globalWwise);
+        Invoke(nameof(PlayDrumTrack), 1f);
+    }
+
+    private void PlayDrumTrack()
+    {
+        LightDrumTrack.Post(globalWwise);
+        AkUnitySoundEngine.SetRTPCValue("musicVolume", 100 * PlayerPrefs.GetFloat("musicVolume"));
     }
 
     public void Update()
