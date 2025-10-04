@@ -62,7 +62,6 @@ public class MenuManager : MonoBehaviour
         }
         if (PauseManager.globalWwise == null)
             PauseManager.globalWwise = WwiseGlobal;
-        AkUnitySoundEngine.PostEvent("MenuMusic", PauseManager.globalWwise);
     }
 
     public void StartGame()
