@@ -41,8 +41,8 @@ namespace Waves {
             thisEnemy = null;
 
             //Open gate animation
-            gate1.GetComponent<gateOpen>().opened = true;
-            if (dualGate) gate2.GetComponent<gateOpen>().opened = true;
+            gate1.GetComponent<GateOpen>().opened = true;
+            if (dualGate) gate2.GetComponent<GateOpen>().opened = true;
         }
 
     }

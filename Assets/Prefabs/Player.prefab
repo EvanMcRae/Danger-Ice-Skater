@@ -4848,7 +4848,7 @@ GameObject:
   - component: {fileID: 3083590689317668306}
   - component: {fileID: 2939634649029205298}
   - component: {fileID: 7892994341498651269}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5007,6 +5007,9 @@ MonoBehaviour:
   startCutsceneActive: 1
   startedThisFrame: 0
   splashPrefab: {fileID: 7540800791336708385, guid: c455a7f4443775742ac3485f9f70ea4e, type: 3}
+  staminabarImage: {fileID: 0}
+  happyImage: {fileID: 0}
+  mehImage: {fileID: 0}
 --- !u!114 &7892994341498651269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5027,6 +5030,7 @@ MonoBehaviour:
   maxHealth: 10
   waveClearHealAmount: 3
   anim: {fileID: 462644127917268244}
+  killed: 0
 --- !u!1001 &2959719243466186490
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ using UnityEngine.UI;
 namespace UI.PlayerUI {
     public class WinLoseUI : MonoBehaviour {
 
-        public GameObject menuButton;
+        public GameObject restartButton;
         public GameEventBroadcaster geb;
         
         public RectTransform diePanel;
@@ -62,7 +62,7 @@ namespace UI.PlayerUI {
             Time.timeScale = 0;
 
             Cursor.visible = true;
-            EventSystem.current.SetSelectedGameObject(menuButton);
+            EventSystem.current.SetSelectedGameObject(restartButton);
 
             lostGame = true;
             AkUnitySoundEngine.PostEvent("GameOver", PauseManager.globalWwise);

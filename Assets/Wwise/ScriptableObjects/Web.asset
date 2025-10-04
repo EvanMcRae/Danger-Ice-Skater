@@ -74,7 +74,6 @@ MonoBehaviour:
   - AdvancedSettings.m_MemoryMediaReservedLimit
   - AdvancedSettings.m_MemoryMediaAllocSizeHuge
   - AdvancedSettings.m_MemoryDebugLevel
-  - AdvancedSettings.m_LoadBankAsynchronously
   UserSettings:
     m_BasePath: Audio\GeneratedSoundBanks
     m_StartupLanguage: English(US)

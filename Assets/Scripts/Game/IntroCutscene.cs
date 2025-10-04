@@ -5,7 +5,7 @@ using TMPro;
 using Game;
 using DG.Tweening;
 
-public class introCutscene : MonoBehaviour
+public class IntroCutscene : MonoBehaviour
 {
     public GameObject gameManager, player;
     public GameObject nextButton, charSprite, textBox;
@@ -37,7 +37,20 @@ public class introCutscene : MonoBehaviour
     {
         text.text = dialogue[index];
         anim = nextButton.GetComponent<Animator>();
+        if (PauseManager.globalWwise != null)
+        {
+            AkUnitySoundEngine.PostEvent("LightDrumTrack", PauseManager.globalWwise);
+        }
+        else // For testing
+        {
+            GameObject globalWwise = FindFirstObjectByType<AkInitializer>().gameObject;
+            AkUnitySoundEngine.PostEvent("MenuMusic", globalWwise);
+            Invoke(nameof(PlayDrumTrack), 1f);
+        }
+    }
 
+    void PlayDrumTrack()
+    {
         AkUnitySoundEngine.PostEvent("LightDrumTrack", PauseManager.globalWwise);
     }
 

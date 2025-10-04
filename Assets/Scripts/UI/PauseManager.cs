@@ -42,7 +42,7 @@ public class PauseManager : MonoBehaviour
     private Sequence mySequence = null;
 
     public GameObject WwiseGlobal;
-    public static GameObject globalWwise;
+    public static GameObject globalWwise = null;
 
     private void Start()
     {
@@ -57,7 +57,8 @@ public class PauseManager : MonoBehaviour
         }
         Cursor.visible = false;
         paused = false;
-        globalWwise = WwiseGlobal;
+        if (globalWwise == null)
+            globalWwise = WwiseGlobal;
     }
 
     public void Pause()

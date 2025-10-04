@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class gateOpen : MonoBehaviour
+public class GateOpen : MonoBehaviour
 {
     public bool opened = false;
     public bool open90;
