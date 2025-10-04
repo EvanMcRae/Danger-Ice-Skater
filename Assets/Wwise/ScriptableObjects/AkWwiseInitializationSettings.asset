@@ -20,7 +20,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0ed6bb43389be2f4caedd088fe81334e, type: 2}
   - {fileID: 11400000, guid: 80d10f36f28f49f469bd835ee1e68468, type: 2}
   - {fileID: 11400000, guid: e195a78315425954d91586a83672b7f0, type: 2}
-  InvalidReferencePlatforms: []
+  InvalidReferencePlatforms:
+  - Linux
   UserSettings:
     m_BasePath: Audio\GeneratedSoundBanks
     m_StartupLanguage: English(US)
@@ -64,7 +65,7 @@ MonoBehaviour:
     m_IOMemorySize: 2097152
     m_TargetAutoStreamBufferLengthMs: 380
     m_UseStreamCache: 0
-    m_LoadBankAsynchronously: 0
+    m_LoadBankAsynchronously: 1
     m_MaximumPinnedBytesInCache: 4294967295
     m_EnableGameSyncPreparation: 0
     m_ContinuousPlaybackLookAhead: 1
