@@ -112,16 +112,6 @@ public class HoleCutter : MonoBehaviour
             isDrawing = false;
             hasOverlapped = false;
         }
-
-        // TODO DEBUG - remove
-        if (Keyboard.current[Key.R].wasPressedThisFrame)
-        {
-            foreach (GameObject _ in Holes)
-            {
-                _.GetComponent<Hole>().SpawnRespawnVisuals();
-            }
-            Holes.Clear();
-        }
     }
 
     void MakeCutout(List<Vector2> points)
