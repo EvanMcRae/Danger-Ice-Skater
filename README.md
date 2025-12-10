@@ -12,7 +12,7 @@ Developed for the 2025 GMTK Game Jam (Theme: "Loop").
 - Dax Mikow
 - Evan McRae
 - Ryan Whitfield
-- Ky "Lupidcorvid" DeSilva
+- Ky DeSilva
 
 **Art**
 - Luke Schultz
